@@ -2,12 +2,12 @@
 .t2 { border: 1px solid black; }
 .t3 { border: 1px solid black; height: 50%; }
 
-p {
+div {
     border: 1px solid black;
     background-color: red;
 }
 
-p div {
+div div {
     background-color: blue;
 }
 
