@@ -7,6 +7,10 @@ p {
     background-color: red;
 }
 
+p h1 {
+    background-color: blue;
+}
+
 .aleft { text-align: left; }
 .aright { text-align: right; }
 .atop { vertical-align: top; }
