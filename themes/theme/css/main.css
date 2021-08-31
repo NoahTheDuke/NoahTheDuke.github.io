@@ -1,6 +1,5 @@
-#sidebar {
-    margin-left: 15px;
-    margin-top: 50px;
+.sidebar {
+    font-size: 100%;
 }
 
 .content {
@@ -25,10 +24,6 @@ footer {
     text-align: center;
 }
 
-#post-tags {
-    margin-top: 30px;
-}
-
 #prev-next {
     padding: 15px 0;
 }
@@ -42,7 +37,15 @@ article h2 {
 
 #post-meta {
     font-size: 14px;
-    color: rgba(0,0,0,0.4)
+    color: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-tags {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
 }
 
 #page-header {
@@ -51,4 +54,8 @@ article h2 {
 }
 #page-header h2 {
     font-size: 32px;
+}
+
+.tags ul, .tags-page ul {
+    list-style: none;
 }

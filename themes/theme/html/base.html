@@ -15,70 +15,9 @@
     </head>
 
     <body>
-        <header id="navbar" class="navbar container">
-            <nav class="navbar-container">
-                <a class="home-link" href="{{index-uri}}">{{title}}</a>
-                <ul class="navbar-links">
-                  <li class="navbar-item {% if home %}active{% endif %}">
-                      <a class="navbar-link" href="{{index-uri}}">Home</a>
-                  </li>
-                  <li class="navbar-item {% if archives %}active{% endif %}">
-                      <a class="navbar-link" href="{{archives-uri}}">Archives</a>
-                  </li>
-                  {% for nav-page in navbar-pages %}
-                  <li class="navbar-item {%ifequal page.uri nav-page.uri %} active {% endifequal %}">
-                      <a class="navbar-link" href="{{nav-page.uri}}">{{nav-page.title}}</a>
-                  </li>
-                  {% endfor %}
-                  <li class="navbar-item">
-                      <a class="navbar-link" href="{{rss-uri}}">RSS</a>
-                  </li>
-                </ul>
-            </nav>
-        </header>
-
-        <div class="content">
-            {% block content %}{% endblock %}
-        </div>
-
-        <aside class="sidebar">
-            {% if links|not-empty %}
-            <h3>Links</h3>
-            <ul id="links">
-                {% for page in links %}
-                <li><a href="{{page.uri}}">{{page.title}}</a></li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-
-            {% if latest-posts|not-empty %}
-            <div id="recent">
-                <h3>Recent Posts</h3>
-                <ul>
-                    {% for post in latest-posts %}
-                    <li><a href="{{post.uri}}">{{post.title}}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% endif %}
-
-            {% if tags|not-empty %}
-            <div id="tags">
-                <h3>Tags</h3>
-                <ul>
-                    {% for tag in tags %}
-                    <li><a href="{{tag.uri}}">{{tag.name}}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% endif %}
-        </aside>
-
-        <footer class="main-footer">
-            Copyright &copy; {{today|date:yyyy}} {{author}}
-            <div style="text-align: center;">
-                 Powered by <a href="http://cryogenweb.org">Cryogen</a>
-            </div>
-        </footer>
+        {% include "html/navbar.html" %}
+        {% include "html/content.html" %}
+        {% include "html/sidebar.html" %}
+        {% include "html/footer.html" %}
     </body>
 </html>

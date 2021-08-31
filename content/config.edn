@@ -1,6 +1,6 @@
 {:site-title                   "Thoughts and bits"
  :author                       "Noah Bogart"
- :description                  "This blog is awesome"
+ :description                  ""
  :site-url                     "https://noahtheduke.github.io/"
  :post-root                    "posts"
  :page-root                    "pages"

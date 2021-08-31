@@ -1,0 +1,21 @@
+<header id="navbar" class="navbar container">
+    <nav class="navbar-container">
+        <a class="home-link" href="{{index-uri}}">{{title|replace:" ":"&nbsp;"|safe}}</a>
+        <ul class="navbar-links">
+          <li class="navbar-item {% if home %}active{% endif %}">
+              <a class="navbar-link" href="{{index-uri}}">Home</a>
+          </li>
+          <li class="navbar-item {% if archives %}active{% endif %}">
+              <a class="navbar-link" href="{{archives-uri}}">Archives</a>
+          </li>
+          {% for nav-page in navbar-pages %}
+          <li class="navbar-item {%ifequal page.uri nav-page.uri %} active {% endifequal %}">
+              <a class="navbar-link" href="{{nav-page.uri}}">{{nav-page.title}}</a>
+          </li>
+          {% endfor %}
+          <li class="navbar-item">
+              <a class="navbar-link" href="{{rss-uri}}">RSS</a>
+          </li>
+        </ul>
+    </nav>
+</header>

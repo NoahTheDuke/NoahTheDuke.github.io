@@ -62,17 +62,13 @@ body > * {
 #navbar {
     height: var(--navbar-height);
     background-color: var(--navbar-bg-color);
-    left: 0;
-    right: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .navbar-container {
     display: flex;
-    justify-content: space-between;
     height: 100%;
     align-items: center;
-    grid-column: col-start 3 / span 8;
 }
 
 .navbar-item {
@@ -80,7 +76,12 @@ body > * {
     width: 100%;
 }
 
-.home-link,
+.home-link {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
 .navbar-link {
     color: var(--navbar-text-color);
     transition: color 0.2s ease-in-out;
