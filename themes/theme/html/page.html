@@ -21,6 +21,8 @@
     <div id="prev-next">
         {% if page.prev %}
         <a href="{{page.prev.uri}}">&laquo; {{page.prev.title}}</a>
+        {% else %}
+        <div></div>
         {% endif %}
         {% if all page.prev page.next %}
         ||

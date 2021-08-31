@@ -47,13 +47,15 @@
   #'util/trimmed-html-snippet
   (fn [_f] transform-html))
 
+(defn postprocess-article [article _params]
+  (println (e/emojify (:content article)))
+  (update article :content e/emojify))
+
 (defn init [fast?]
   (println "Init: fast compile enabled = " (boolean fast?))
   (load-plugins)
   (compile-assets-timed
-    {:postprocess-article-html-fn
-     (fn postprocess-article [article _params]
-       (update article :content e/emojify))})
+    {:postprocess-article-html-fn #'postprocess-article})
   (let [ignored-files (:ignored-files (resolve-config))]
     (run!
       #(if fast?

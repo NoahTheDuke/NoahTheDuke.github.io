@@ -21,12 +21,14 @@
     {{post.content|safe}}
     <a href="{{post.uri}}">Continue reading &#8594;</a>
     <hr>
-
 </article>
-    {% endfor %}
+{% endfor %}
+
 <div id="prev-next">
     {% if prev-uri %}
     <a class="left" href="{{prev-uri}}">&laquo; Prev</a>
+    {% else %}
+    <div></div>
     {% endif %}
     {% if next-uri %}
     <a class="right" href="{{next-uri}}">Next &raquo;</a>
