@@ -1,0 +1,12 @@
+{:title "Intro"
+ :date "2017-07-29T17:15"
+ :tags ["meta" "personal"]}
+
+Starting any project is difficult, and I suspect regular blogging is not an activity I’ll have much luck with, seeing as I’ve classically hated all forms of writing.
+However, along with the work in self-care and Success Oriented Mindset I’ve implemented over the last year, I think it’s time to attempt to conquer this issue as well.
+
+Also, at this point, all I have to do is twist something into a vaguely "programmery" design, and I fall head-over-heals into it, desperate for any reason to apply my skills at programming, even when I have no idea what I’m doing.
+
+No one will read this, and I sure as fuck hope not.
+That’s okay.
+We’ll see how I feel about it in a week.

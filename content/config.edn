@@ -1,0 +1,36 @@
+{:site-title                   "Thoughts and bits"
+ :author                       "Noah Bogart"
+ :description                  "This blog is awesome"
+ :site-url                     "https://noahtheduke.github.io/"
+ :post-root                    "posts"
+ :page-root                    "pages"
+ :post-root-uri                "posts-output"
+ :page-root-uri                "pages-output"
+ :tag-root-uri                 "tags-output"
+ :author-root-uri              "authors-output"
+ :public-dest                  "public"
+ :blog-prefix                  ""
+ :rss-name                     "feed.xml"
+ :recent-posts                 3
+ :post-date-format             "yyyy-MM-dd"
+ :archive-group-format         "yyyy MMMM"
+ :theme                        "theme"
+ :resources                    ["img"]
+ :keep-files                   [".git"]
+ :ignored-files                [#"\.#.*" #".*\.swp$"]
+ :previews?                    true
+ :posts-per-page               5
+ :blocks-per-preview           2
+ :clean-urls                   :trailing-slash
+ :collapse-subdirs?            false
+ :hide-future-posts?           true
+ :description-include-elements #{:p :h1 :h2 :h3 :h4 :h5 :h6}
+ :debug?                       false
+ :links [{:title "Stuff with Stuff"
+          :uri "https://journal.stuffwithstuff.com/"}
+         {:title "/r/roguelikedev"
+          :uri "https://www.reddit.com/r/roguelikedev/"}
+         {:title "iterate think thoughts"
+          :uri "https://yogthos.net/"}
+         {:title "Tonsky's blog"
+          :uri "https://tonsky.me/"}]}

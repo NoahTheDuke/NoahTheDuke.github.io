@@ -1,0 +1,15 @@
+{:paths ["src"]
+ :deps {org.clojure/clojure {:mvn/version "1.10.1"}
+        ring-server/ring-server {:mvn/version "0.5.0"}
+        ring/ring-devel {:mvn/version "1.8.2"}
+        compojure/compojure {:mvn/version "1.6.2"}
+        cryogen-asciidoc/cryogen-asciidoc {:mvn/version "0.3.3"}
+        cryogen-core/cryogen-core {:mvn/version "0.4.0"}
+        enlive/enlive {:mvn/version "1.1.6"}
+        clygments/clygments {:mvn/version "2.0.2"}
+        dawran6/emoji {:mvn/version "0.1.5"}}
+ :aliases {:build {:main-opts ["-m" "cryogen.core"]}
+           :serve {:exec-fn   cryogen.server/serve
+                   :exec-args {:port 1024}}
+           :serve-fast {:exec-fn   cryogen.server/serve
+                        :exec-args {:port 1024, :fast true}}}}
