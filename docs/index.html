@@ -42,6 +42,39 @@
 
 <article id="post">
     <div class="post-header">
+        <h2>From Elegance to Speed, with Clojure</h2>
+        <div id="post-meta">
+            
+            <div class="date">October 2, 2021</div>
+            
+            <div class="post-tags">
+                
+                <a href="/tags/clojure/">#clojure</a>
+                
+                <a href="/tags/personal/">#personal</a>
+                
+                <a href="/tags/programming/">#programming</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    <div class="paragraph"><p>I recently came across a <a href="http://johnj.com/from-elegance-to-speed.html">blogpost</a> about rewriting an "elegant" function in Clojure into an optimized function in Common Lisp.
+In it, John Jacobsen discusses how they went from this Clojure code:</p></div><div class="listingblock"><code class="language-clojure" data-lang="clojure"><div class="highlight"><pre><span></span><span class="p">(</span><span class="kd">defn </span><span class="nv">smt-8</span> <span class="p">[</span><span class="nv">times</span><span class="p">]</span>
+  <span class="p">(</span><span class="nf">-&gt;&gt;</span> <span class="nv">times</span>
+       <span class="p">(</span><span class="nf">partition</span> <span class="mi">8</span> <span class="mi">1</span><span class="p">)</span>
+       <span class="p">(</span><span class="nb">map </span><span class="p">(</span><span class="nf">juxt</span> <span class="nv">identity</span>
+                  <span class="p">(</span><span class="nb">comp </span><span class="p">(</span><span class="nb">partial apply </span><span class="nv">-</span><span class="p">)</span>
+                        <span class="p">(</span><span class="nf">juxt</span> <span class="nb">last </span><span class="nv">first</span><span class="p">))))</span>
+       <span class="p">(</span><span class="nb">filter </span><span class="p">(</span><span class="nb">comp </span><span class="p">(</span><span class="nb">partial &gt; </span><span class="mi">1000</span><span class="p">)</span> <span class="nv">second</span><span class="p">))))</span>
+</pre></div>
+</code></div>
+    <a href="/posts/2021-10-02/">Continue reading &#8594;</a>
+    <hr>
+</article>
+
+<article id="post">
+    <div class="post-header">
         <h2>Restarting the project</h2>
         <div id="post-meta">
             
@@ -149,35 +182,6 @@ Maybe I should? I honestly don’t find it compelling to write for myself.
 The kinds of thoughts that I write don’t accurately represent me internally in a given moment.
 Maybe like a sign post signifying the general area it might be helpful to write the various interpretations I’ve created from parts of my life, and then look back on them later, saying, "Ah from this vantage point, I can see the shape of the land, the whole from all of the pieces I could barely consider when in the tasks and minutia."</p></div>
     <a href="/posts/2017-08-06-pain/">Continue reading &#8594;</a>
-    <hr>
-</article>
-
-<article id="post">
-    <div class="post-header">
-        <h2>Marriage</h2>
-        <div id="post-meta">
-            
-            <div class="date">July 30, 2017</div>
-            
-            <div class="post-tags">
-                
-                <a href="/tags/personal/">#personal</a>
-                
-                <a href="/tags/polyamory/">#polyamory</a>
-                
-            </div>
-            
-        </div>
-    </div>
-    <div class="paragraph"><p>I’m at this weird crossroads in my life right now, where I can push hard to get married and settle down, and I could also dive back into the "dating" life I led in the winter/spring months.
-After lots of hemming and hawing, I had some excellent conversations with Ally on Friday night and Saturday morning, which has led me to the conclusion that I should get married.
-I should ask May, in fact, to marry me.</p></div><div class="paragraph"><p>I "preposed" to May on Saturday night, after we smanged.
-Almost said it during, but I had the good sense to wait until we were cuddling afterwards.
-Honestly, I’m a fool with timing.
-Thankfully, The Kindest Human, May, responded very positively and generously, considering that I had informally asked her to consider marrying me.
-We’re having a conversation tomorrow evening (2017-07-31T20:30 ish).
-I hope it goes well, and based on the comments we’ve made to each other, I suspect the smanging will eclipse the marriage talk, lol.</p></div>
-    <a href="/posts/2017-07-30-marriage/">Continue reading &#8594;</a>
     <hr>
 </article>
 
