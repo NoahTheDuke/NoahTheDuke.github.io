@@ -8,7 +8,19 @@
         enlive/enlive {:mvn/version "1.1.6"}
         clygments/clygments {:mvn/version "2.0.2"}
         dawran6/emoji {:mvn/version "0.1.5"}}
- :aliases {:build {:main-opts ["-m" "cryogen.core"]}
+ :aliases {
+           :repl/rebel {:extra-deps {nrepl/nrepl {:mvn/version "0.8.3"}
+                                     cider/cider-nrepl {:mvn/version "0.26.0"}
+                                     com.bhauman/rebel-readline {:mvn/version "0.1.4"}
+                                     criterium/criterium {:mvn/version "0.4.6"}
+                                     com.clojure-goes-fast/clj-java-decompiler {:mvn/version "0.3.0"}}
+                        :jvm-opts ["-Xmx6g"]
+                        :main-opts ["-m" "nrepl.cmdline"
+                                    "--middleware" "[cider.nrepl/cider-middleware]"
+                                    "-i"
+                                    "-f" "rebel-readline.main/-main"]}
+
+           :build {:main-opts ["-m" "cryogen.core"]}
            :serve {:exec-fn   cryogen.server/serve
                    :exec-args {:port 1024}}
            :serve-fast {:exec-fn   cryogen.server/serve
