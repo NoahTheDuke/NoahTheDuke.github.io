@@ -18,6 +18,16 @@ Programming stuff:
 * Lead development of [jinteki.net](https://github.com/mtgred/netrunner), an open source and free implementation of the asymmetric card game Netrunner (formerly Android: Netrunner).
 * Built [fixture-riveter](https://github.com/Batterii/fixture-riveter), a port of factory_bot to Typescript. I no longer work for the company and no one else has picked it up so consider it abandoned. (I'm still pretty proud of it, truth be told.)
 
+I can be found at these locations on various webbed sites:
+
+github: [github.com/NoahTheDuke](https://github.com/NoahTheDuke)
+
+Mastodon: [indieweb.social/@noahtheduke](https://indieweb.social/@noahtheduke)
+
+Lobsters: [lobste.rs/u/NoahTheDuke](https://lobste.rs/u/NoahTheDuke)
+
+Email: noah dot bogart at hey dot com
+
 What's I'm Listening To:
 
 ![](https://lastfm-recently-played.vercel.app/api?user=NoahTheDuke)
