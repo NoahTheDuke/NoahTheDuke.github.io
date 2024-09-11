@@ -1,47 +1,65 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html lang="en">
     <head>
-        <meta charset="utf-8"/>
+        <meta charset="utf-8">
         <title>Thoughts and bits: Archives</title>
         
         <meta name="description" content="">
         <meta name="keywords" content="">
         
-        <link rel="canonical" href="https://noahtheduke.github.io/archives/">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" />
-        <link href="/css/main.css" rel="stylesheet" type="text/css" />
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:300,400,700|Inconsolata" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
         <link href="/css/colors/colorful.css" rel="stylesheet" type="text/css" />
     </head>
-
     <body>
-        <header id="navbar" class="navbar container">
-    <nav class="navbar-container">
-        <a class="home-link" href="/">Thoughts&nbsp;and&nbsp;bits</a>
-        <ul class="navbar-links">
-          <li class="navbar-item ">
-              <a class="navbar-link" href="/">Home</a>
-          </li>
-          <li class="navbar-item active">
-              <a class="navbar-link" href="/archives/">Archives</a>
-          </li>
-          
-          <li class="navbar-item ">
-              <a class="navbar-link" href="/pages/about/">About</a>
-          </li>
-          
-          <li class="navbar-item">
-              <a class="navbar-link" href="/feed.xml">RSS</a>
-          </li>
-        </ul>
-    </nav>
-</header>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="Thoughts and bits" href="/">
+                    <img class="icon" src="/img/profile.webp">
+                    <div class="text desktop-and-tablet-only">Thoughts and bits</div>
+                    <div class="text mobile-only">Thoughts and bits</div>
+                </a>
+            </div>
 
-        <div class="content">
-    
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li ><a title="Home" href="/"><div class="menu-item-text">Home</div></a></li>
+                        <li  class="active" ><a title="Archives" href="/archives/"><div class="menu-item-text">Archives</div></a></li>
+                        
+                        <li ><a title="Tags" href="/tags/"><div class="menu-item-text">Tags</div></a></li>
+                        
+                        
+                        <li >
+                            <a href="/about/"><div class="menu-item-text">About</div></a>
+                        </li>
+                        
+                         <li><a title="RSS" href="/feed.xml"><div class="menu-item-text">RSS</div></a></li> 
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia">
+                    <ul>
+                        <li><a title="LinkedIn" href="https://www.linkedin.com/in/noah-bogart" rel="external"><svg class="icon icon-linkedin"><use xlink:href="/img/icons.svg#icon-linkedin"></use></svg></a></li>
+                        <li><a title="GitHub" href="https://github.com/NoahTheDuke" rel="external"><svg class="icon icon-github-circled"><use xlink:href="/img/icons.svg#icon-github-circled"></use></svg></a></li>
+                        <li><a title="RSS Feed" href="/feed.xml"><svg class="icon icon-rss-squared"><use xlink:href="/img/icons.svg#icon-rss-squared"></use></svg></a></li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
 <div id="posts">
     <div id="page-header">
-        <h2>Archives</h2>
+        <h1>Archives</h1>
     </div>
     
         <h4>2021 October</h4>
@@ -95,56 +113,15 @@
 
 </div>
 
-</div>
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2024 Noah Bogart
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+                <br>Theme by <a href="http://github.com/KingMob">KingMob</a>
+            </div>
+        </article>
 
-        <aside class="sidebar">
-    
-    <h3>Links</h3>
-    <ul id="links">
         
-        <li><a href="https://journal.stuffwithstuff.com/">Stuff with Stuff</a></li>
         
-        <li><a href="https://www.reddit.com/r/roguelikedev/">/r/roguelikedev</a></li>
-        
-        <li><a href="https://yogthos.net/">iterate think thoughts</a></li>
-        
-        <li><a href="https://tonsky.me/">Tonsky&#39;s blog</a></li>
-        
-    </ul>
-    
-
-    
-    <div class="tags">
-        <h3>Tags</h3>
-        <ul>
-            
-            <li><a href="/tags/archibus/">#archibus</a></li>
-            
-            <li><a href="/tags/clojure/">#clojure</a></li>
-            
-            <li><a href="/tags/javascript/">#javascript</a></li>
-            
-            <li><a href="/tags/meta/">#meta</a></li>
-            
-            <li><a href="/tags/personal/">#personal</a></li>
-            
-            <li><a href="/tags/polyamory/">#polyamory</a></li>
-            
-            <li><a href="/tags/programming/">#programming</a></li>
-            
-            <li><a href="/tags/tutorial/">#tutorial</a></li>
-            
-        </ul>
-    </div>
-    
-</aside>
-
-        <footer class="main-footer">
-    Copyright &copy; 2021 Noah Bogart
-    <div style="text-align: center;">
-        Powered by <a href="http://cryogenweb.org">Cryogen</a>
-    </div>
-</footer>
-
     </body>
 </html>

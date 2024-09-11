@@ -1,84 +1,93 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html lang="en">
     <head>
-        <meta charset="utf-8"/>
+        <meta charset="utf-8">
         <title>Thoughts and bits: Archibus and the SELECT N+1 Problem</title>
         
 <meta name="keywords" content="clojure,personal,programming,tutorial,javascript,archibus,polyamory,meta">
 
-<meta name="description" content="IntroThis past week, I had the opportunity to contribute to an existing custom report built for a client.
-It loaded incredibly slowly, so in between working on the contribution I had been tasked with, I also took it upon myself to speed it up.
-I think it’s time to share what I’ve learned.CaveatA big problem is that some portions of Archibus’ Web Central are poorly documented, so understanding exactly how a given feature works in detail can be time-consuming and even with effort subtleties can be missed.
- Don’t just take my word for how any given element works or doesn’t work.That being said, I’m here to help you make certain parts of your Archibus app run fast and beautiful, and blow away everyone who uses them.">
-<meta property="og:description" content="IntroThis past week, I had the opportunity to contribute to an existing custom report built for a client.
-It loaded incredibly slowly, so in between working on the contribution I had been tasked with, I also took it upon myself to speed it up.
-I think it’s time to share what I’ve learned.CaveatA big problem is that some portions of Archibus’ Web Central are poorly documented, so understanding exactly how a given feature works in detail can be time-consuming and even with effort subtleties can be missed.
- Don’t just take my word for how any given element works or doesn’t work.That being said, I’m here to help you make certain parts of your Archibus app run fast and beautiful, and blow away everyone who uses them.">
+<meta name="description" content="This past week, I had the opportunity to contribute to an existing custom report built for a client. It loaded incredibly slowly, so in between working on the contribution I had been tasked with, I also took it upon myself to speed it up. I think it&#39;s time to share what I&#39;ve learned.">
+
+<meta property="og:description" content="This past week, I had the opportunity to contribute to an existing custom report built for a client. It loaded incredibly slowly, so in between working on the contribution I had been tasked with, I also took it upon myself to speed it up. I think it&#39;s time to share what I&#39;ve learned.">
 
 <meta property="og:url" content="https://noahtheduke.github.io/posts/2017-08-27-archibus-n1-tutorial/" />
 <meta property="og:title" content="Archibus and the SELECT N+1 Problem" />
 <meta property="og:type" content="article" />
 
-        <link rel="canonical" href="https://noahtheduke.github.io/posts/2017-08-27-archibus-n1-tutorial/">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" />
-        <link href="/css/main.css" rel="stylesheet" type="text/css" />
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:300,400,700|Inconsolata" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
         <link href="/css/colors/colorful.css" rel="stylesheet" type="text/css" />
     </head>
-
     <body>
-        <header id="navbar" class="navbar container">
-    <nav class="navbar-container">
-        <a class="home-link" href="/">Thoughts&nbsp;and&nbsp;bits</a>
-        <ul class="navbar-links">
-          <li class="navbar-item ">
-              <a class="navbar-link" href="/">Home</a>
-          </li>
-          <li class="navbar-item ">
-              <a class="navbar-link" href="/archives/">Archives</a>
-          </li>
-          
-          <li class="navbar-item ">
-              <a class="navbar-link" href="/pages/about/">About</a>
-          </li>
-          
-          <li class="navbar-item">
-              <a class="navbar-link" href="/feed.xml">RSS</a>
-          </li>
-        </ul>
-    </nav>
-</header>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="Thoughts and bits" href="/">
+                    <img class="icon" src="/img/profile.webp">
+                    <div class="text desktop-and-tablet-only">Thoughts and bits</div>
+                    <div class="text mobile-only">Thoughts and bits</div>
+                </a>
+            </div>
 
-        <div class="content">
-    
-<article id="post">
-    <h2 class="post-header"><a href="/posts/2017-08-27-archibus-n1-tutorial/">Archibus and the SELECT N+1 Problem</a></h2>
-<div id="post-meta">
-    
-    <span>August 27, 2017</span>
-    
-    <span id="post-tags">
-        
-        <a href="/tags/tutorial/">#tutorial</a>
-        
-        <a href="/tags/programming/">#programming</a>
-        
-        <a href="/tags/javascript/">#javascript</a>
-        
-        <a href="/tags/archibus/">#archibus</a>
-        
-    </span>
-    
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li ><a title="Home" href="/"><div class="menu-item-text">Home</div></a></li>
+                        <li ><a title="Archives" href="/archives/"><div class="menu-item-text">Archives</div></a></li>
+                        
+                        <li ><a title="Tags" href="/tags/"><div class="menu-item-text">Tags</div></a></li>
+                        
+                        
+                        <li >
+                            <a href="/about/"><div class="menu-item-text">About</div></a>
+                        </li>
+                        
+                         <li><a title="RSS" href="/feed.xml"><div class="menu-item-text">RSS</div></a></li> 
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia">
+                    <ul>
+                        <li><a title="LinkedIn" href="https://www.linkedin.com/in/noah-bogart" rel="external"><svg class="icon icon-linkedin"><use xlink:href="/img/icons.svg#icon-linkedin"></use></svg></a></li>
+                        <li><a title="GitHub" href="https://github.com/NoahTheDuke" rel="external"><svg class="icon icon-github-circled"><use xlink:href="/img/icons.svg#icon-github-circled"></use></svg></a></li>
+                        <li><a title="RSS Feed" href="/feed.xml"><svg class="icon icon-rss-squared"><use xlink:href="/img/icons.svg#icon-rss-squared"></use></svg></a></li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta">
+        <h1>Archibus and the SELECT N+1 Problem</h1>
+        <div class="byline">
+            Aug 27, 2017
+            / <span title="August 27, 2017">@743.75</span>
+            / 
+                
+                <a href="/tags/archibus/">#archibus</a>
+                
+                <a href="/tags/javascript/">#javascript</a>
+                
+                <a href="/tags/programming/">#programming</a>
+                
+                <a href="/tags/tutorial/">#tutorial</a>
+                
+            
+        </div>
+    </div>
 </div>
 <div>
     
-    <div class="sect1"><h2 id="_intro">Intro</h2><div class="sectionbody"><div class="paragraph"><p>This past week, I had the opportunity to contribute to an existing custom report built for a client.
-It loaded incredibly slowly, so in between working on the contribution I had been tasked with, I also took it upon myself to speed it up.
-I think it’s time to share what I’ve learned.</p></div></div></div><div class="sect1"><h2 id="_caveat">Caveat</h2><div class="sectionbody"><div class="paragraph"><p>A big problem is that some portions of Archibus’ Web Central are poorly documented, so understanding exactly how a given feature works in detail can be time-consuming and even with effort subtleties can be missed.
- Don’t just take my word for how any given element works or doesn’t work.</p></div><div class="paragraph"><p>That being said, I’m here to help you make certain parts of your Archibus app run fast and beautiful, and blow away everyone who uses them.</p></div></div></div><div class="sect1"><h2 id="_overview">Overview</h2><div class="sectionbody"><div class="paragraph"><p>When creating reports for large data sets or building an exporter for a client-side piece of software, speed is a necessity.
-5-10 second loads for an axvw or for an export is not okay and will hinder both development and usage.
-The major issue for a lot of pages are the classic <a href="https://stackoverflow.com/questions/97197/what-is-n1-select-query-issue">SELECT N+1 problem</a> in disguise.</p></div></div></div><div class="sect1"><h2 id="_select_n1_problem">SELECT N+1 Problem</h2><div class="sectionbody"><div class="paragraph"><p>The SELECT N+1 Problem refers to the issue where queries to the database are nested such that for each top-level query, a new query is made.
-As a very dumb example (that explicitly ignores JOINs for now):</p></div><div class="listingblock"><code class="language-javascript" data-lang="javascript"><div class="highlight"><pre><span></span><span class="c1">// Build a restriction from the two dates in the console</span>
+    <p>This past week, I had the opportunity to contribute to an existing custom report built for a client. It loaded incredibly slowly, so in between working on the contribution I had been tasked with, I also took it upon myself to speed it up. I think it's time to share what I've learned.</p><h1 id="caveat">Caveat</h1><p>A big problem is that some portions of Archibus' Web Central are poorly documented, so understanding exactly how a given feature works in detail can be time-consuming and even with effort subtleties can be missed. Don't just take my word for how any given element works or doesn't work.</p><p>That being said, I'm here to help you make certain parts of your Archibus app run fast and beautiful, and blow away everyone who uses them.</p><h1 id="overview">Overview</h1><p>When creating reports for large data sets or building an exporter for a client-side piece of software, speed is a necessity. 5-10 second loads for an axvw or for an export is not okay and will hinder both development and usage. The major issue for a lot of pages are the classic <a href="https://stackoverflow.com/questions/97197/what-is-n1-select-query-issue">SELECT N+1 problem</a> in disguise.</p><h1 id="select-n1-problem">SELECT N+1 Problem</h1><p>The SELECT N+1 Problem refers to the issue where queries to the database are nested such that for each top-level query, a new query is made. As a very dumb example (that explicitly ignores JOINs for now):</p><code class="javascript highlight" data-lang="javascript"><pre><span></span><span class="c1">// Build a restriction from the two dates in the console</span>
 <span class="kd">var</span> <span class="nx">restriction</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Ab</span><span class="p">.</span><span class="nx">view</span><span class="p">.</span><span class="nx">Restriction</span><span class="p">();</span>
 <span class="nx">restriction</span><span class="p">.</span><span class="nx">addClause</span><span class="p">(</span><span class="s1">'wr.date_requested'</span><span class="p">,</span> <span class="nx">form</span><span class="p">.</span><span class="nx">date_requested</span><span class="p">.</span><span class="nx">from</span><span class="p">,</span> <span class="s1">'&gt;='</span><span class="p">);</span>
 <span class="nx">restriction</span><span class="p">.</span><span class="nx">addClause</span><span class="p">(</span><span class="s1">'wr.date_requested'</span><span class="p">,</span> <span class="nx">form</span><span class="p">.</span><span class="nx">date_requested</span><span class="p">.</span><span class="nx">to</span><span class="p">,</span> <span class="s1">'&lt;='</span><span class="p">);</span>
@@ -112,14 +121,7 @@ As a very dumb example (that explicitly ignores JOINs for now):</p></div><div cl
         <span class="c1">// Do work here</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</pre></div>
-</code></div><div class="paragraph"><p>In this contrived example, we get all of the work requests requested in a given period, and then iterate over the work requests, extract the building id, and then grab all of the buildings with that building id and do work on them each.
-It demonstrates the SELECT N+1 Problem because we are making 1 request for the top level (work requests), and then making individual requests for each record we received (N number of requests).</p></div><div class="paragraph"><p>For a slightly more robust example, in the DataView javascript (ab-core/controls/ab-data-view.js), <code>DataViewLevel.setRecords()</code> calls <code>this.nextLevel.refresh()</code>, which recursively calls <code>this.nextlevel.setRecords()</code>.
-If you’ve defined two (if not more god help you) levels, you’re going to be calling setRecords with the results of your first query, and then for each restriction you’ve determined (either by each record containing the next record in <code>record.toRestriction()</code> or by monkey-patching <code>getNextLevelRestriction()</code> in your own js file).
-With two levels, that’s N+1.
-If you define 3, such as by Work Request, by Building, by Craftsperson, you’re up to (N * N) + 1.</p></div><div class="paragraph"><p>For a report of 5 items each with 5 sub records, that’s not horrible but it’s certainly not ideal.
-For a report with 100 items, each with up to 5 sub records? Unreasonable.</p></div></div></div><div class="sect1"><h2 id="_solution">Solution</h2><div class="sectionbody"><div class="paragraph"><p>To solve this problem, we want to rely on two things:</p></div><div class="ulist"><ul><li><p>SQL</p></li><li><p>Javascript</p></li></ul></div><div class="paragraph"><p>With SQL, because of how it’s designed internally (regardless of platform), it is pure speed when building sets of data.
-So in our above contrived example, instead of passing in a restriction for the <code>wr_id</code> and then quering for each <code>bl_id</code> individually, let’s aggregate all building ids that are returned, and select them all at once:</p></div><div class="listingblock"><code class="language-javascript" data-lang="javascript"><div class="highlight"><pre><span></span><span class="c1">// Initially just as above</span>
+</pre></code><p>In this contrived example, we get all of the work requests requested in a given period, and then iterate over the work requests, extract the building id, and then grab all of the buildings with that building id and do work on them each. It demonstrates the SELECT N+1 Problem because we are making 1 request for the top level (work requests), and then making individual requests for each record we received (N number of requests).</p><p>For a slightly more robust example, in the DataView javascript (ab-core/controls/ab-data-view.js), <code>DataViewLevel.setRecords()</code> calls <code>this.nextLevel.refresh()</code>, which recursively calls <code>this.nextlevel.setRecords()</code>. If you've defined two (if not more god help you) levels, you're going to be calling setRecords with the results of your first query, and then for each restriction you've determined (either by each record containing the next record in <code>record.toRestriction()</code> or by monkey-patching <code>getNextLevelRestriction()</code> in your own js file). With two levels, that's N+1. If you define 3, such as by Work Request, by Building, by Craftsperson, you're up to (N * N) + 1.</p><p>For a report of 5 items each with 5 sub records, that's not horrible but it's certainly not ideal. For a report with 100 items, each with up to 5 sub records? Unreasonable.</p><h1 id="solution">Solution</h1><p>To solve this problem, we want to rely on two things:</p><ul><li>SQL</li><li>Javascript</li></ul><p>With SQL, because of how it's designed internally (regardless of platform), it is pure speed when building sets of data. So in our above contrived example, instead of passing in a restriction for the <code>wr_id</code> and then quering for each <code>bl_id</code> individually, let's aggregate all building ids that are returned, and select them all at once:</p><code class="javascript highlight" data-lang="javascript"><pre><span></span><span class="c1">// Initially just as above</span>
 <span class="kd">var</span> <span class="nx">restriction</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Ab</span><span class="p">.</span><span class="nx">view</span><span class="p">.</span><span class="nx">Restriction</span><span class="p">();</span>
 <span class="nx">restriction</span><span class="p">.</span><span class="nx">addClause</span><span class="p">(</span><span class="s1">'wr.date_requested'</span><span class="p">,</span> <span class="nx">form</span><span class="p">.</span><span class="nx">date_requested</span><span class="p">.</span><span class="nx">from</span><span class="p">,</span> <span class="s1">'&gt;='</span><span class="p">);</span>
 <span class="nx">restriction</span><span class="p">.</span><span class="nx">addClause</span><span class="p">(</span><span class="s1">'wr.date_requested'</span><span class="p">,</span> <span class="nx">form</span><span class="p">.</span><span class="nx">date_requested</span><span class="p">.</span><span class="nx">to</span><span class="p">,</span> <span class="s1">'&lt;='</span><span class="p">);</span>
@@ -185,73 +187,37 @@ So in our above contrived example, instead of passing in a restriction for the <
         <span class="c1">// Do work here</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</pre></div>
-</code></div><div class="paragraph"><p>To make this work for something like the DataViewLevel, instead of monkey-patching the <code>getNextLevelRestriction()</code> as the docs suggest, monkey-patch <code>setRecords()</code> to perform the above directly, grabbing the necessary <code>level.getData</code> and <code>level.bodyXTemplate</code> up front, with calls to <code>renderRecord()</code> where needed, instead of letting Archibus’ overly generic approach slow down your pages.</p></div></div></div><div class="sect1"><h2 id="_closing_remarks">Closing Remarks</h2><div class="sectionbody"><div class="paragraph"><p>When dealing with the database, always ask yourself, "How can I limit the total number
-of calls?" More than any other speed up you can write, that one will yield the most effective results for the lowest amount of effort.
-There are some very clever tricks that can be done in Java and javascript that will contribute to an overall snappier user experience, but if it takes 5+ seconds to load a single view or to generate a single exported file, your development time will slow down and your users will grow annoyed and uncomfortable.</p></div><div class="paragraph"><p>Thanks for reading if you got this far.
-Let me know if you have any thoughts! I’m interested to see how others have tackled this problem.</p></div></div></div>
+</pre></code><p>To make this work for something like the DataViewLevel, instead of monkey-patching the <code>getNextLevelRestriction()</code> as the docs suggest, monkey-patch <code>setRecords()</code> to perform the above directly, grabbing the necessary <code>level.getData</code> and <code>level.bodyXTemplate</code> up front, with calls to <code>renderRecord()</code> where needed, instead of letting Archibus' overly generic approach slow down your pages.</p><h1 id="closing-remarks">Closing Remarks</h1><p>When dealing with the database, always ask yourself, "How can I limit the total number of calls?" More than any other speed up you can write, that one will yield the most effective results for the lowest amount of effort. There are some very clever tricks that can be done in Java and javascript that will contribute to an overall snappier user experience, but if it takes 5+ seconds to load a single view or to generate a single exported file, your development time will slow down and your users will grow annoyed and uncomfortable.</p><p>Thanks for reading if you got this far. Let me know if you have any thoughts! I'm interested to see how others have tackled this problem.</p>
+</div>
+<br/>
+
+
+    
+    <div id="prev-next">
+    
+    <a class="prev" href="/posts/2021-08-31-restarting-the-project/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text">Restarting the project</div></a>
+    
+    
+    <a class="next" href="/posts/2017-08-08-blank/"><div class="nav-text"">Blank</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
+    
 </div>
 
-</article>
-<div id="prev-next">
     
-    <a href="/posts/2021-08-31-restarting-the-project/">&laquo; Restarting the project</a>
+
     
-    
-    <a class="right" href="/posts/2017-08-08-blank/">Blank &raquo;</a>
-    
-</div>
+
 
 </div>
 
-        <aside class="sidebar">
-    
-    <h3>Links</h3>
-    <ul id="links">
-        
-        <li><a href="https://journal.stuffwithstuff.com/">Stuff with Stuff</a></li>
-        
-        <li><a href="https://www.reddit.com/r/roguelikedev/">/r/roguelikedev</a></li>
-        
-        <li><a href="https://yogthos.net/">iterate think thoughts</a></li>
-        
-        <li><a href="https://tonsky.me/">Tonsky&#39;s blog</a></li>
-        
-    </ul>
-    
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2024 Noah Bogart
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+                <br>Theme by <a href="http://github.com/KingMob">KingMob</a>
+            </div>
+        </article>
 
-    
-    <div class="tags">
-        <h3>Tags</h3>
-        <ul>
-            
-            <li><a href="/tags/archibus/">#archibus</a></li>
-            
-            <li><a href="/tags/clojure/">#clojure</a></li>
-            
-            <li><a href="/tags/javascript/">#javascript</a></li>
-            
-            <li><a href="/tags/meta/">#meta</a></li>
-            
-            <li><a href="/tags/personal/">#personal</a></li>
-            
-            <li><a href="/tags/polyamory/">#polyamory</a></li>
-            
-            <li><a href="/tags/programming/">#programming</a></li>
-            
-            <li><a href="/tags/tutorial/">#tutorial</a></li>
-            
-        </ul>
-    </div>
-    
-</aside>
-
-        <footer class="main-footer">
-    Copyright &copy; 2021 Noah Bogart
-    <div style="text-align: center;">
-        Powered by <a href="http://cryogenweb.org">Cryogen</a>
-    </div>
-</footer>
-
+        
+        
     </body>
 </html>

@@ -5,32 +5,26 @@
  :post-root                    "posts"
  :page-root                    "pages"
  :post-root-uri                "posts"
- :page-root-uri                "pages"
+ :page-root-uri                ""
  :tag-root-uri                 "tags"
  :author-root-uri              "authors"
  :public-dest                  "docs"
  :blog-prefix                  ""
  :rss-name                     "feed.xml"
  :recent-posts                 3
- :post-date-format             "yyyy-MM-dd"
+ :post-date-format             "yyyy-MM-dd'T'HH:mm"
  :archive-group-format         "yyyy MMMM"
- :theme                        "theme"
+ :sass-src                     []
+ :sass-path                    "sass"
+ :theme                        "lotus"
  :resources                    ["img"]
  :keep-files                   [".git"]
  :ignored-files                [#"\.#.*" #".*\.swp$"]
  :previews?                    true
  :posts-per-page               5
- :blocks-per-preview           2
+ :blocks-per-preview           1
  :clean-urls                   :trailing-slash
  :collapse-subdirs?            false
  :hide-future-posts?           true
  :description-include-elements #{:p :h1 :h2 :h3 :h4 :h5 :h6}
- :debug?                       false
- :links [{:title "Stuff with Stuff"
-          :uri "https://journal.stuffwithstuff.com/"}
-         {:title "/r/roguelikedev"
-          :uri "https://www.reddit.com/r/roguelikedev/"}
-         {:title "iterate think thoughts"
-          :uri "https://yogthos.net/"}
-         {:title "Tonsky's blog"
-          :uri "https://tonsky.me/"}]}
+ :debug?                       false}
