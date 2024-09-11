@@ -4,6 +4,8 @@
 
 This past week, I had the opportunity to contribute to an existing custom report built for a client. It loaded incredibly slowly, so in between working on the contribution I had been tasked with, I also took it upon myself to speed it up. I think it's time to share what I've learned.
 
+<!-- more -->
+
 # Caveat
 
 A big problem is that some portions of Archibus' Web Central are poorly documented, so understanding exactly how a given feature works in detail can be time-consuming and even with effort subtleties can be missed. Don't just take my word for how any given element works or doesn't work.

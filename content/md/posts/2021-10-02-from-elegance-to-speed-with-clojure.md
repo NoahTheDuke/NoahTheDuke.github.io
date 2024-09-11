@@ -4,6 +4,8 @@
 
 I recently came across a [blogpost](http://johnj.com/from-elegance-to-speed.html) about rewriting an "elegant" function in Clojure into an optimized function in Common Lisp.
 
+<!-- more -->
+
 In it, John Jacobsen discusses how they went from this Clojure code:
 
 ```clojure

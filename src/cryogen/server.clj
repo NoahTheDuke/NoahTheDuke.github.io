@@ -25,13 +25,14 @@
 (def beat-length 86.4)
 
 (defn beat [^java.util.Date timestamp]
-  (let [instant (.toInstant timestamp)
-        ts (ZonedDateTime/ofInstant instant biel-mean-time)]
-    (->> (/ (+ (* 3600 (.getHour ts))
-               (* 60 (.getMinute ts))
-               (.getSecond ts))
-            beat-length)
-         (format "%.2f"))))
+  (when timestamp
+    (let [instant (.toInstant timestamp)
+          ts (ZonedDateTime/ofInstant instant biel-mean-time)]
+      (->> (/ (+ (* 3600 (.getHour ts))
+                 (* 60 (.getMinute ts))
+                 (.getSecond ts))
+              beat-length)
+           (format "%.2f")))))
 
 (comment
   (beat (java.util.Date.)))

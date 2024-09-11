@@ -22,7 +22,7 @@
  :ignored-files                [#"\.#.*" #".*\.swp$"]
  :previews?                    true
  :posts-per-page               5
- :blocks-per-preview           1
+ :blocks-per-preview           3
  :clean-urls                   :trailing-slash
  :collapse-subdirs?            false
  :hide-future-posts?           true
