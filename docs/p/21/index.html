@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Thoughts and bits</title>
+        
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:300,400,700|Inconsolata" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/colors/colorful.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="Thoughts and bits" href="/">
+                    <img class="icon" src="/img/profile.webp">
+                    <div class="text desktop-and-tablet-only">Thoughts and bits</div>
+                    <div class="text mobile-only">Thoughts and bits</div>
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li >
+                            <a title="Home" href="/">
+                                <div class="menu-item-text">Home</div>
+                            </a>
+                        </li>
+                        
+                        <li  class="active" >
+                            <a title="Posts" href="/p/1/">
+                                <div class=" menu-item-text">Posts</div>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="/about/">
+                                <div class="menu-item-text">About</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Archives" href="/archives/">
+                                <div class="menu-item-text">Archives</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Tags" href="/tags/">
+                                <div class="menu-item-text">Tags</div>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia">
+                    <ul>
+                        <li><a title="LinkedIn" href="https://www.linkedin.com/in/noah-bogart" rel="external"><svg class="icon icon-linkedin"><use xlink:href="/img/icons.svg#icon-linkedin"></use></svg></a></li>
+                        <li><a title="GitHub" href="https://github.com/NoahTheDuke" rel="external"><svg class="icon icon-github-circled"><use xlink:href="/img/icons.svg#icon-github-circled"></use></svg></a></li>
+                        <li><a title="RSS Feed" href="/feed.xml"><svg class="icon icon-rss-squared"><use xlink:href="/img/icons.svg#icon-rss-squared"></use></svg></a></li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2023-01-31-thoughts-on-rrr/" style="color:inherit;"><h1>Thoughts on RRR</h1></a>
+        <div class="byline">
+            Jan 31, 2023
+            <span title="January 31, 2023">@106.94</span>
+            / 
+                
+                <a href="/tags/RRR/">#RRR</a>
+                
+                <a href="/tags/The%20Cohost%20Global%20Feed/">#The Cohost Global Feed</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+            
+        </div>
+    </div>
+    <p>I feel like RRR showcased a style of melodrama that I don't see super frequently. The term that comes to mind is "legibility", a word/concept that @austin has placed into my brain. RRR doesn't try to use lots of dialogue or subtle acting, it leans into big emotions in all directions and keeps both the content and conveyance relatively easily understood, but then treats those big emotions as real and legitimate.</p><p>Mild spoilers below:</p><hr />
+    
+    <a class="button" href="/posts/cohost-mirror/2023-01-31-thoughts-on-rrr/">Continue reading &#8594;</a>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2022-12-20-jinteki-net-v114-rel/" style="color:inherit;"><h1>jinteki.net v114 release notes and thoughts</h1></a>
+        <div class="byline">
+            Dec 20, 2022
+            <span title="December 20, 2022">@133.33</span>
+            / 
+                
+                <a href="/tags/clojure/">#clojure</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/jinteki.net/">#jinteki.net</a>
+                
+                <a href="/tags/jnet/">#jnet</a>
+                
+                <a href="/tags/netrunner/">#netrunner</a>
+                
+            
+        </div>
+    </div>
+    <p>In <a href="https://github.com/mtgred/netrunner/releases/tag/114">release v114</a>, Francesco Pellegrini fixed a whole mess of bugs, added <code>set-mark</code> command, and added some tests to cover bug reports we couldn't reproduce. I added compiling css and cljs in Github Actions, to catch basic compiler errors.</p><h2 id="release-notes">Release Notes</h2><pre><code>    Compile css and cljs in github runner by @NoahTheDuke in #6822
+    fix Riot Suppression damage not being a cost by @francescopellegrini in #6829
+    fix Thule Subsea :agenda-stolen cost by @francescopellegrini in #6828
+    fix Deep Dive's second access cost not being :click by @francescopellegrini in #6836
+    fix Adjusted Matrix's ability cost to :lose-click by @francescopellegrini in #6835
+    Fix ice abilities not being a cost by @francescopellegrini in #6834
+    fix Hostile Architecture missing :once :per-turn by @francescopellegrini in #6839
+    Bump minimatch from 3.0.4 to 3.1.2 by @dependabot in #6823
+    Bump decode-uri-component from 0.2.0 to 0.2.2 by @dependabot in #6744
+    Fix Dedicated Technician Team test by @francescopellegrini in #6841
+    add set-mark command by @francescopellegrini in #6842
+    add missing :waiting-prompt on draw subs by @francescopellegrini in #6847
+    fix Hafrún icon missing faction color by @francescopellegrini in #6846
+    add test for Thunder Art Gallery on 0 credits by @francescopellegrini in #6850
+    fix World Tree interaction with facedown cards by @francescopellegrini in #6849
+    fix Meridian infinite approach when added to score area by @francescopellegrini in #6843
+</code></pre>
+    
+    <a class="button" href="/posts/cohost-mirror/2022-12-20-jinteki-net-v114-rel/">Continue reading &#8594;</a>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2022-12-09-full-parhelion-imple/" style="color:inherit;"><h1>Full Parhelion implementation on jinteki.net</h1></a>
+        <div class="byline">
+            Dec 9, 2022
+            <span title="December 9, 2022">@139.58</span>
+            / 
+                
+                <a href="/tags/The%20Cohost%20Global%20Feed/">#The Cohost Global Feed</a>
+                
+                <a href="/tags/android%20netrunner/">#android netrunner</a>
+                
+                <a href="/tags/android%3A%20netrunner/">#android: netrunner</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/jinteki.net/">#jinteki.net</a>
+                
+                <a href="/tags/jnet/">#jnet</a>
+                
+                <a href="/tags/netrunner/">#netrunner</a>
+                
+            
+        </div>
+    </div>
+    <p>I have just released Null Signal Games' newest set <a href="https://nullsignal.games/blog/parhelion-is-out-now/">Parhelion</a> on <a href="https://www.jinteki.net/">jinteki.net</a>. (<a href="https://github.com/mtgred/netrunner/releases/tag/112">Release notes here.</a>)</p><p>My life has been a mess the last year and it pains me that I don't have the time or availability to put 20+ hours of work into jnet anymore, as it desperately needs it, so please accept my humble apologies for the long delay between releases. Congrats to the whole jnet team for their hard work and tireless efforts in implementing 120 new cards in the span of a couple weeks in preparation for this day.</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2022-11-22-eggbug-eggbug/" style="color:inherit;"><h1></h1></a>
+        <div class="byline">
+            Nov 22, 2022
+            <span title="November 22, 2022">@476.39</span>
+            / 
+                
+                <a href="/tags/The%20Cohost%20Global%20Feed/">#The Cohost Global Feed</a>
+                
+                <a href="/tags/The%20Global%20Cohost%20Feed/">#The Global Cohost Feed</a>
+                
+                <a href="/tags/chosting/">#chosting</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/immortality%20%282022%29/">#immortality (2022)</a>
+                
+                <a href="/tags/immortality%20game/">#immortality game</a>
+                
+                <a href="/tags/immortality%20spoilers/">#immortality spoilers</a>
+                
+                <a href="/tags/shitpost/">#shitpost</a>
+                
+            
+        </div>
+    </div>
+    <p><img src="/img/cohost-mirror/407951-eggbug-eggbug/EF06D23E-76F4-4998-B6CA-F62BD3659807.png" alt="Screenshot of iPhone version of video game Immortality. A redheaded woman wearing a black dress faces the camera smirking, and there are two masks on thin pedestals with eggbug superimposed over to her left and right." /></p><p>:eggbug: 😏 :eggbug:</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2022-11-15-suburban-dreams/" style="color:inherit;"><h1>Suburban dreams</h1></a>
+        <div class="byline">
+            Nov 15, 2022
+            <span title="November 15, 2022">@278.47</span>
+            / 
+                
+                <a href="/tags/The%20Cohost%20Global%20Feed/">#The Cohost Global Feed</a>
+                
+                <a href="/tags/blog/">#blog</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/sex/">#sex</a>
+                
+                <a href="/tags/sexuality/">#sexuality</a>
+                
+            
+        </div>
+    </div>
+    <p>I have an alt that I use to write about my sex life and sexuality and related phenomena. I’d love to post it here, I suspect folks would be at least mildly interested, but I’ve accidentally become a normie.</p><p>I have a wife who raises our kids while I work, and two kids who run my wife and me ragged. I have a nice suburban house and a steady paycheck and all of the modern accouterment. This is an extremely comfortable and peaceful life.</p><p>I lost my job at the start of 2022 and spent 1.5 months grinding to find a new job, terrified every day that I wouldn’t and we’d lose everything. That kind of situation, that kind of fear restricts what one considers reasonable risk, meaning that I won’t post about my sex life too publicly for fear of offending the wrong person in power who could ruin my shit.</p>
+    
+    <a class="button" href="/posts/cohost-mirror/2022-11-15-suburban-dreams/">Continue reading &#8594;</a>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2022-11-09-i-wonder-what-it-s-l/" style="color:inherit;"><h1></h1></a>
+        <div class="byline">
+            Nov 9, 2022
+            <span title="November 9, 2022">@79.17</span>
+            / 
+                
+                <a href="/tags/The%20Cohost%20Global%20Feed/">#The Cohost Global Feed</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+            
+        </div>
+    </div>
+    <p>i wonder what it's like to have ample executive function. i have some store-bought, but i forget to eat it and it's just not that useful.</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2022-11-09-love-waking-up-to-a/" style="color:inherit;"><h1></h1></a>
+        <div class="byline">
+            Nov 9, 2022
+            <span title="November 9, 2022">@904.17</span>
+            / 
+                
+                <a href="/tags/The%20Cohost%20Global%20Feed/">#The Cohost Global Feed</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+            
+        </div>
+    </div>
+    <p>love waking up to a front page full of @starwars-characters posts because my timeline is slow at USA nighttime, love me a glup shitto</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2022-11-08-i-thought-i-hated-ga/" style="color:inherit;"><h1></h1></a>
+        <div class="byline">
+            Nov 8, 2022
+            <span title="November 8, 2022">@844.44</span>
+            / 
+                
+                <a href="/tags/The%20Cohost%20Global%20Feed/">#The Cohost Global Feed</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/game%20dev/">#game dev</a>
+                
+                <a href="/tags/no%20text/">#no text</a>
+                
+                <a href="/tags/rant/">#rant</a>
+                
+            
+        </div>
+    </div>
+    <p>I thought I hated game design but I actually hate graphics programming. I just wanna take data in and change it and push it out.</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2022-11-08-just-lost-roughly-2k/" style="color:inherit;"><h1></h1></a>
+        <div class="byline">
+            Nov 8, 2022
+            <span title="November 8, 2022">@333.33</span>
+            / 
+                
+                <a href="/tags/The%20Cohost%20Global%20Feed/">#The Cohost Global Feed</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+            
+        </div>
+    </div>
+    <p>just lost roughly 2k words on a chost cuz I misunderstood the “save draft” button :rip:</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2022-11-05-hey-staff-what-s-t/" style="color:inherit;"><h1></h1></a>
+        <div class="byline">
+            Nov 5, 2022
+            <span title="November 5, 2022">@21.53</span>
+            / 
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+            
+        </div>
+    </div>
+    <p>Hey @staff, what’s the process for giving out invites?</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2022-11-05-firefox-for-i-os-is-i/" style="color:inherit;"><h1></h1></a>
+        <div class="byline">
+            Nov 5, 2022
+            <span title="November 5, 2022">@233.33</span>
+            / 
+                
+                <a href="/tags/amgry/">#amgry</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/firefox/">#firefox</a>
+                
+                <a href="/tags/firefox%20ios/">#firefox ios</a>
+                
+                <a href="/tags/ios/">#ios</a>
+                
+            
+        </div>
+    </div>
+    <p>Firefox for iOS is incredibly fucked rn so I’m stuck using Safari. It’s not terrible but it’s different and awkward and I just don’t like it. 😤</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2022-10-31-staff-feature-reque/" style="color:inherit;"><h1></h1></a>
+        <div class="byline">
+            Oct 31, 2022
+            <span title="October 31, 2022">@401.39</span>
+            / 
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+            
+        </div>
+    </div>
+    <p>@staff feature request: if i see a self reply to a post, can the original be skipped? It’s one of my least favorite features from tumblr: seeing reply 3 with reply 2 with reply 1 to original post, then scroll down and see reply 2 with reply 1 to original post, then scroll down and see reply 1 to original post, then scroll down and see original post. Like holy shit, yes I get it, please leave me alone.</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2022-10-31-i-commented-on-someo/" style="color:inherit;"><h1></h1></a>
+        <div class="byline">
+            Oct 31, 2022
+            <span title="October 31, 2022">@211.81</span>
+            / 
+                
+                <a href="/tags/clojure/">#clojure</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/open%20source/">#open source</a>
+                
+                <a href="/tags/rant/">#rant</a>
+                
+            
+        </div>
+    </div>
+    <p>I commented on someone else’s post about open source community norms and brought up Rich Hickey’s Open Source is Not About You. I said  that I admired the stance after initially thinking it rude. However,,,</p><p>I can’t help but wonder what Clojure could look like if it was less preciously held by those in charge. I don’t want Rust levels of development speed, that’s too much and too fast for my taste. But it dampens my enthusiasm for the language and my faith in the team when they respond with such disinterest in things that don’t materially impact them directly.</p><p>Sharp edges and places of friction are ignored or brushed away as unimportant, like stack traces or error messages in general. Bugs that have available patches can be left to bitrot, sometimes for years (concat stack overflow patch), and bugs without patches can be ignored or treated as too prevalent to fix (keyword regex, type hinting symbol vs vector in defn).</p>
+    
+    <a class="button" href="/posts/cohost-mirror/2022-10-31-i-commented-on-someo/">Continue reading &#8594;</a>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2022-10-30-i-listen-to-the-egg/" style="color:inherit;"><h1></h1></a>
+        <div class="byline">
+            Oct 30, 2022
+            <span title="October 30, 2022">@192.36</span>
+            / 
+                
+                <a href="/tags/clojure/">#clojure</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/game%20dev/">#game dev</a>
+                
+                <a href="/tags/gamedev/">#gamedev</a>
+                
+                <a href="/tags/lisp/">#lisp</a>
+                
+                <a href="/tags/lisp%20game%20jam%202022/">#lisp game jam 2022</a>
+                
+                <a href="/tags/roguelikes/">#roguelikes</a>
+                
+            
+        </div>
+    </div>
+    <p>I listen to the <a href="https://eggplant.show/">Eggplant podcast</a> and think “I could make a game” but then I sit down to program and I have no ideas. The primary thing I enjoy is programming, not game design, even tho I want to enjoy game design.</p><p>Same with roguelikes. Every year during Roguelikedev Does the Complete Tutorial, I give it a try even tho I am very bad at roguelikes and have never beat one or even come close.</p><p>All of this is to say, I’ve joined the Lisp Game Jam 2022 using Clojure and I’m probably going to make a roguelike because graphics and action are hard lol. We’ll see how it goes!</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2022-10-30-git-init-git-add/" style="color:inherit;"><h1>git init; git add .; git commit -m ‘init’</h1></a>
+        <div class="byline">
+            Oct 30, 2022
+            <span title="October 30, 2022">@723.61</span>
+            / 
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+            
+        </div>
+    </div>
+    <p>So many dead and forgotten blogging platforms in my past. The only one I’ve ever used with any consistency was LiveJournal; I think a lot of that came from it being the <em>only</em> blogging platform available.</p><p>I’ve used Facebook as a blogging platform in the past, writing long form thoughts and ideas to my friends. That can feel better in the moment due to the laser precision audience but there’s a low ceiling of quality engagement and the closed platform means I can’t share beyond.</p><p>Why a new blog?</p>
+    
+    <a class="button" href="/posts/cohost-mirror/2022-10-30-git-init-git-add/">Continue reading &#8594;</a>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/2021-10-02-from-elegance-to-speed-with-clojure/" style="color:inherit;"><h1>From Elegance to Speed, with Clojure</h1></a>
+        <div class="byline">
+            Oct 2, 2021
+            <span title="October 2, 2021">@147.92</span>
+            / 
+                
+                <a href="/tags/clojure/">#clojure</a>
+                
+                <a href="/tags/personal/">#personal</a>
+                
+                <a href="/tags/programming/">#programming</a>
+                
+            
+        </div>
+    </div>
+    <p>I recently came across a <a href="http://johnj.com/from-elegance-to-speed.html">blogpost</a> about rewriting an "elegant" function in Clojure into an optimized function in Common Lisp.</p><!-- more --><p>In it, John Jacobsen discusses how they went from this Clojure code:</p>
+    
+    <a class="button" href="/posts/2021-10-02-from-elegance-to-speed-with-clojure/">Continue reading &#8594;</a>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/2021-08-31-restarting-the-project/" style="color:inherit;"><h1>Restarting the project</h1></a>
+        <div class="byline">
+            Aug 31, 2021
+            <span title="August 31, 2021">@709.03</span>
+            / 
+                
+                <a href="/tags/clojure/">#clojure</a>
+                
+                <a href="/tags/personal/">#personal</a>
+                
+                <a href="/tags/programming/">#programming</a>
+                
+            
+        </div>
+    </div>
+    <p>I started writing a little blog in the summer of 2017, when I had really hit a local maxima happiness. A year into my software career, feeling medium good about Avuity, feeling very good about May, it seemed right to talk about it, even privately. I'm very glad I wrote all those things down. It makes me quite happy to read <a href="/posts/2017-07-30-marriage/">Marriage</a> and see the seeds of good decisions, even if the execution took a lot of work.</p><p>Why start blogging again now? Because in between writing code every day, I feel like I have <em>thoughts</em> and <em>reactions</em> to things I read and try. I read all of <a href="https://www.oreilly.com/library/view/test-driven-development/0321146530/">Test-Driven Development</a> in a single day, and like <a href="https://sandimetz.com/99bottles">99 Bottles of OOP</a> before it, I walked away with my brain on fire. I've begun reading <a href="https://www.domainlanguage.com/ddd/">Domain-Driven Design</a>, and I can feel it poking at my brain in the same way. I don't want to lose this feeling, nor do I want to lose the insights these books are providing.</p><p>It's very easy to grind through a tough problem (personally or professionally) and then move onto the next problem without 1) reviewing what I (we, in the context of teams) learned or what challenged me, or 2) putting any effort into practicing or preparing for the future. Mindfulness when learning and practicing goes <em>a long way</em> towards cementing valuable lessons, much in the same way adding and reviewing flash cards might. (I've had my time with Anki, I don't think I need to do that right now.)</p>
+    
+    <a class="button" href="/posts/2021-08-31-restarting-the-project/">Continue reading &#8594;</a>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/2017-08-27-archibus-n1-tutorial/" style="color:inherit;"><h1>Archibus and the SELECT N+1 Problem</h1></a>
+        <div class="byline">
+            Aug 27, 2017
+            <span title="August 27, 2017">@743.75</span>
+            / 
+                
+                <a href="/tags/archibus/">#archibus</a>
+                
+                <a href="/tags/javascript/">#javascript</a>
+                
+                <a href="/tags/programming/">#programming</a>
+                
+                <a href="/tags/tutorial/">#tutorial</a>
+                
+            
+        </div>
+    </div>
+    <p>This past week, I had the opportunity to contribute to an existing custom report built for a client. It loaded incredibly slowly, so in between working on the contribution I had been tasked with, I also took it upon myself to speed it up. I think it's time to share what I've learned.</p><!-- more --><h1 id="caveat">Caveat</h1>
+    
+    <a class="button" href="/posts/2017-08-27-archibus-n1-tutorial/">Continue reading &#8594;</a>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/2017-08-08-blank/" style="color:inherit;"><h1>Blank</h1></a>
+        <div class="byline">
+            Aug 8, 2017
+            <span title="August 8, 2017">@122.22</span>
+            / 
+                
+                <a href="/tags/personal/">#personal</a>
+                
+            
+        </div>
+    </div>
+    <p>I'm siting here at 1215 after another long day, and I've been thinking to myself, what am I doing? I don't need to spend the money, I don't need to drink wine, I don't need any of this. On the other hand, the wine tastes amazing, the music in my headphones and the music played by the two jazz dudes in the corner are both bangin, I'm written some really good facebook posts today. I don't regret my decisions.</p><p>I had dinner with dad, and he whipped out some classic Jon Bogart-isms. Stuff like, if I actually wanted to do certain things I'd just change the rest of my life to make them happen (wrt travel vs eating out all the time). What's great is, I can let that shit fall away from me easily nowadays. I hear it, I recognize the kind of effect it's had on me at various points in my life, and I let it fall to the wayside. Jonny Dee is a smart man, he's encountered a lot over his life, and I value his wit and wisdom, but like so many pseudo-negative aspects of my life, I have to be willing to say, “No, I don't need to accept this as my current truth” the way I did in high school or college or after college.</p><p>I've been feeling really good recently about my place in the world, my goals and my efforts, and the work I've put into my various relationships. I don't know exactly where I'm headed, but like I said a couple posts ago, I'm at a crossroads and I'm trying so hard to navigate this one correctly.</p>
+    
+    <a class="button" href="/posts/2017-08-08-blank/">Continue reading &#8594;</a>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/2017-08-06-pain/" style="color:inherit;"><h1>Pain</h1></a>
+        <div class="byline">
+            Aug 6, 2017
+            <span title="August 6, 2017">@840.97</span>
+            / 
+                
+                <a href="/tags/personal/">#personal</a>
+                
+            
+        </div>
+    </div>
+    <p>I don't know what I'm here to write, I just know that I have this feeling like I should keep it up. So here I am, writing more.</p><p>What's the point of writing for one's self? Reflection? I don't get my actual feelings out if I'm not conversing with someone. Julie talks about reading her journals from when she went to therapy early in her relationship with Jon and how much clarity she finds in it, how nice it is to see the clear lines of work and effort and thought that went into various decisions in her life. I don't do that. Maybe I should? I honestly don't find it compelling to write for myself. The kinds of thoughts that I write don't accurately represent me internally in a given moment. Maybe like a sign post signifying the general area it might be helpful to write the various interpretations I've created from parts of my life, and then look back on them later, saying, "Ah from this vantage point, I can see the shape of the land, the whole from all of the pieces I could barely consider when in the tasks and minutia."</p><p>Compare this to when I was in high school and early college, writing on Livejournal. I experienced so many strong emotions I had trouble processing, and writing for that kind of audience helped a bit. So many of those old posts feel like I couldn't handle the changes in my life, external and internal. Not so much like that anymore.</p>
+    
+    <a class="button" href="/posts/2017-08-06-pain/">Continue reading &#8594;</a>
+    
+    <hr>
+    
+
+    <div id="prev-next">
+        
+        <a class="prev" href="/p/20/">&laquo; Prev</a>
+        
+        
+        <a class="next" href="/p/22/">Next &raquo;</a>
+        
+    </div>
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2024 Noah Bogart
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+                <br>Theme by <a href="http://github.com/KingMob">KingMob</a>
+            </div>
+        </article>
+
+        
+        
+    </body>
+</html>

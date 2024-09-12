@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Thoughts and bits</title>
+        
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:300,400,700|Inconsolata" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/colors/colorful.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="Thoughts and bits" href="/">
+                    <img class="icon" src="/img/profile.webp">
+                    <div class="text desktop-and-tablet-only">Thoughts and bits</div>
+                    <div class="text mobile-only">Thoughts and bits</div>
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li >
+                            <a title="Home" href="/">
+                                <div class="menu-item-text">Home</div>
+                            </a>
+                        </li>
+                        
+                        <li  class="active" >
+                            <a title="Posts" href="/p/1/">
+                                <div class=" menu-item-text">Posts</div>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="/about/">
+                                <div class="menu-item-text">About</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Archives" href="/archives/">
+                                <div class="menu-item-text">Archives</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Tags" href="/tags/">
+                                <div class="menu-item-text">Tags</div>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia">
+                    <ul>
+                        <li><a title="LinkedIn" href="https://www.linkedin.com/in/noah-bogart" rel="external"><svg class="icon icon-linkedin"><use xlink:href="/img/icons.svg#icon-linkedin"></use></svg></a></li>
+                        <li><a title="GitHub" href="https://github.com/NoahTheDuke" rel="external"><svg class="icon icon-github-circled"><use xlink:href="/img/icons.svg#icon-github-circled"></use></svg></a></li>
+                        <li><a title="RSS Feed" href="/feed.xml"><svg class="icon icon-rss-squared"><use xlink:href="/img/icons.svg#icon-rss-squared"></use></svg></a></li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2024-04-10-mental-math-pseudo-r/" style="color:inherit;"><h1>Mental Math Pseudo Random Number Generation</h1></a>
+        <div class="byline">
+            Apr 10, 2024
+            <span title="April 10, 2024">@402.08</span>
+            / 
+                
+                <a href="/tags/%23programming/">##programming</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/mental%20math/">#mental math</a>
+                
+                <a href="/tags/prng/">#prng</a>
+                
+                <a href="/tags/pseudo%20random%20number%20generation/">#pseudo random number generation</a>
+                
+                <a href="/tags/pseudo%20rng/">#pseudo rng</a>
+                
+                <a href="/tags/random%20number%20generation/">#random number generation</a>
+                
+                <a href="/tags/rng/">#rng</a>
+                
+            
+        </div>
+    </div>
+    <p>&gt; given a large prime p, a multiplier m, and a seed number x_0, a Lehmer PRNG can be defined by the recursive function x_{n+1} = m \cdot x_n \mod p.</p><p>&gt; One pair choice is p=59, m=6. Because 60 \equiv 1 \mod 59, each iteration is a simple matter of multiplying the ones digit by 6 and adding the tens digit. To illustrate, a sequence starting from 17 would continue 43, 22, 14, 25, 32, 15, 31, 9, 54, 29, ..., and taking just the unit's digit, that turns into 3, 2, 4, 5, 2, 5, 1, 9, 4, 9, which looks pretty random.</p><p><span x_i="">&gt; Next up is p=101, m=50. Because p=101, this construction has the advantage that the sequence goes from 1 to 100, making the distribution of the output stream uniform over 1 to 10 and providing a longer period. The choice of multiplier also simplifies computation: if the current state x_i is even, the next number x_{i+1} = 101 - \frac</span><span x_i-1="">{2}, and if odd, x_{i+1} = 50 - \frac</span>{2}. Not as nice as the previous example, but still not bad.</p>
+    
+    <a class="button" href="/posts/cohost-mirror/2024-04-10-mental-math-pseudo-r/">Continue reading &#8594;</a>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2024-04-09-bought-a-new-hat-at/" style="color:inherit;"><h1>Bought a new hat at the Indy children’s museum</h1></a>
+        <div class="byline">
+            Apr 9, 2024
+            <span title="April 9, 2024">@81.94</span>
+            / 
+                
+                <a href="/tags/Pallbearer/">#Pallbearer</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/indianapolis%20children%E2%80%99s%20museum/">#indianapolis children’s museum</a>
+                
+                <a href="/tags/teenage%20mutant%20ninja%20turtles/">#teenage mutant ninja turtles</a>
+                
+                <a href="/tags/tnmt/">#tnmt</a>
+                
+            
+        </div>
+    </div>
+    <p><img src="/img/cohost-mirror/5495029-bought-a-new-hat-at/IMG_9113.jpeg" alt="Me with a white beard and a pallbearer shirt and a teenage mutant ninja turtles hat" /></p><p>Might be the nerdiest clothing I own.</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2024-04-08-total-eclipse-of-the/" style="color:inherit;"><h1></h1></a>
+        <div class="byline">
+            Apr 8, 2024
+            <span title="April 8, 2024">@16.67</span>
+            / 
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+            
+        </div>
+    </div>
+    <p>Total eclipse of the shart</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2024-04-08-this-was-hell-505-d/" style="color:inherit;"><h1></h1></a>
+        <div class="byline">
+            Apr 8, 2024
+            <span title="April 8, 2024">@285.42</span>
+            / 
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/knotwords/">#knotwords</a>
+                
+            
+        </div>
+    </div>
+    <p><img src="/img/cohost-mirror/5469895-this-was-hell-505-d/IMG_9025.gif" alt="A gif of the ios game, Knotwords. Shows a crossword-style board slowly filling up with green squares in the order I discovered the words until I finally won. Has the words “Knotwords” at the top, and “April 7th, 2024, Daily Classic, Hints: 0, Time: 34:02” at the bottom." /></p><p>This was hell. 505 day streak</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2024-04-08-4-y-o-papa-can-we/" style="color:inherit;"><h1></h1></a>
+        <div class="byline">
+            Apr 8, 2024
+            <span title="April 8, 2024">@259.03</span>
+            / 
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/kidposting/">#kidposting</a>
+                
+            
+        </div>
+    </div>
+    <p>4 y/o: papa, can we get [toy on tv]?
+Me: No.
+4 y/o: momma, don’t listen to papa. Can we get [toy on tv]?</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2024-04-07-nothing-worse-than-m/" style="color:inherit;"><h1></h1></a>
+        <div class="byline">
+            Apr 7, 2024
+            <span title="April 7, 2024">@268.06</span>
+            / 
+                
+                <a href="/tags/Do%20they%20hate%20me%3F%3F%3F%3F/">#Do they hate me????</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+            
+        </div>
+    </div>
+    <p>Nothing worse than making a great joke in the group chat and only getting heart reacts.</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2024-04-06-sex-and-the-city-is/" style="color:inherit;"><h1>Sex and the City is dated and honestly hard to watch</h1></a>
+        <div class="byline">
+            Apr 6, 2024
+            <span title="April 6, 2024">@899.31</span>
+            / 
+                
+                <a href="/tags/Sex%20and%20the%20city/">#Sex and the city</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/sex%20%26%20the%20city/">#sex &amp; the city</a>
+                
+            
+        </div>
+    </div>
+    <p>it does have some banger lines, tho: "sweetheart, that's all very nice but if you're not going to eat pussy, you're not a dyke.”</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2024-04-05-just-learned-that-m/" style="color:inherit;"><h1></h1></a>
+        <div class="byline">
+            Apr 5, 2024
+            <span title="April 5, 2024">@741.67</span>
+            / 
+                
+                <a href="/tags/M.I.A/">#M.I.A</a>
+                
+                <a href="/tags/M.I.A./">#M.I.A.</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+            
+        </div>
+    </div>
+    <p>Just learned that M.I.A. was outspoken against the covid vaccine. 😩</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2024-04-05-shift-leaders-are-cl/" style="color:inherit;"><h1></h1></a>
+        <div class="byline">
+            Apr 5, 2024
+            <span title="April 5, 2024">@718.06</span>
+            / 
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/haha%20jk...%20unless%3F/">#haha jk... unless?</a>
+                
+                <a href="/tags/shitchost/">#shitchost</a>
+                
+                <a href="/tags/shitpost/">#shitpost</a>
+                
+            
+        </div>
+    </div>
+    <p>Shift leaders are class traitors.</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2024-04-04-i-ve-been-sitting-on/" style="color:inherit;"><h1></h1></a>
+        <div class="byline">
+            Apr 4, 2024
+            <span title="April 4, 2024">@193.75</span>
+            / 
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+            
+        </div>
+    </div>
+    <p>I’ve been sitting on the seed of a blog post for a minute that goes something like “modern civil rights activists/sjws hurt their messaging by trying to redefine the word “racism” to mean systemic racism instead of the colloquial definition of interpersonal race-based prejudice.” Because I’m not a writer i don’t have a lot else to say about it yet lol but it’s been bouncing around in my brain for like 3 years.</p><p>i’m mostly writing this now to incentivize writing more later. tired of merely thinking this</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2024-04-04-my-wife-are-you-a-p/" style="color:inherit;"><h1></h1></a>
+        <div class="byline">
+            Apr 4, 2024
+            <span title="April 4, 2024">@978.47</span>
+            / 
+                
+                <a href="/tags/and%20then%20he%20promptly%20fell%20asleep%20in%20her%20arms/">#and then he promptly fell asleep in her arms</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/handsome%20hunky/">#handsome hunky</a>
+                
+                <a href="/tags/kidposting/">#kidposting</a>
+                
+                <a href="/tags/wifeposting/">#wifeposting</a>
+                
+            
+        </div>
+    </div>
+    <p>my wife: are you a pretty boy? yes yes
+2 y/o: no, i hanome hucky
+her: you're a handsome hunky?
+him: yeah!!!!!!</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2024-04-04-cannot-believe-rob-d/" style="color:inherit;"><h1>cannot believe rob dropped an &quot;anne of green gables&quot; reference in the manaan episode of amca</h1></a>
+        <div class="byline">
+            Apr 4, 2024
+            <span title="April 4, 2024">@878.47</span>
+            / 
+                
+                <a href="/tags/AMCA/">#AMCA</a>
+                
+                <a href="/tags/Anne%20of%20Green%20Gables/">#Anne of Green Gables</a>
+                
+                <a href="/tags/Rob%20Zacny/">#Rob Zacny</a>
+                
+                <a href="/tags/a%20more%20civilized%20age/">#a more civilized age</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/i%27m%20fuckin%20behind%20on%20my%20podcasts%20%F0%9F%98%A9/">#i&#39;m fuckin behind on my podcasts 😩</a>
+                
+                <a href="/tags/there%20are%20dozens%20of%20us.%20dozens%21%21/">#there are dozens of us. dozens!!</a>
+                
+            
+        </div>
+    </div>
+    <p>everyone's roasting him but i knew it! i picked it up!!!!!! anne stans rise up!!!!!!!!!!!!!!</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2024-04-04-the-ones-who-walk-aw/" style="color:inherit;"><h1></h1></a>
+        <div class="byline">
+            Apr 4, 2024
+            <span title="April 4, 2024">@745.83</span>
+            / 
+                
+                <a href="/tags/Wish%20%282023%29/">#Wish (2023)</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/is%20this%20anything%3F/">#is this anything?</a>
+                
+                <a href="/tags/omelas/">#omelas</a>
+                
+                <a href="/tags/the%20ones%20who%20walk%20away%20from%20omelas/">#the ones who walk away from omelas</a>
+                
+            
+        </div>
+    </div>
+    <p>The Ones Who Walk Away From Rosas</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2024-04-03-happy-day-in-our-hou/" style="color:inherit;"><h1>Happy day in our house: Wish has come to Disney+</h1></a>
+        <div class="byline">
+            Apr 3, 2024
+            <span title="April 3, 2024">@16.67</span>
+            / 
+                
+                <a href="/tags/Wish%20%282023%29/">#Wish (2023)</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/kidposting/">#kidposting</a>
+                
+            
+        </div>
+    </div>
+    <p><img src="/img/cohost-mirror/5407800-happy-day-in-our-hou/IMG_8966.jpeg" alt="4 year old girl with brown hair faces a tv playing Wish wearing an oversized Asha’s purple dress" /></p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2024-04-03-i-picked-up-going-un/" style="color:inherit;"><h1>I picked up Going Under again, a good little podcast game</h1></a>
+        <div class="byline">
+            Apr 3, 2024
+            <span title="April 3, 2024">@362.50</span>
+            / 
+                
+                <a href="/tags/Going%20Under%20%282020%29/">#Going Under (2020)</a>
+                
+                <a href="/tags/Nintendo%20Switch/">#Nintendo Switch</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/going%20under/">#going under</a>
+                
+                <a href="/tags/noahtheduke%20reviews/">#noahtheduke reviews</a>
+                
+                <a href="/tags/video%20game%20review/">#video game review</a>
+                
+            
+        </div>
+    </div>
+    <div style="display: none;">Going Under Review</div><div style="display: flex; flex-wrap: wrap; color: rgb(186, 222, 252); background-color: rgb(22, 24, 28); border-radius: 5px; border: 1px solid rgb(36, 40, 50); overflow: hidden; box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 5px; --noir-inline-color: #9ed3fb; --noir-inline-background-color: #121316; --noir-inline-border-top-color: #7e7567; --noir-inline-border-right-color: #7e7567; --noir-inline-border-bottom-color: #7e7567; --noir-inline-border-left-color: #7e7567;" data-noir-inline-color="" data-noir-inline-background-color="" data-noir-inline-border-top-color="" data-noir-inline-border-right-color="" data-noir-inline-border-bottom-color="" data-noir-inline-border-left-color=""><div style="display: flex; flex-wrap: wrap; background-color: rgb(36, 40, 50); width: 100%; padding-top: 0.75rem; padding-bottom: 0.25rem; z-index: 2; --noir-inline-background-color: #1d2028;" data-noir-inline-background-color=""><div style="margin-bottom: auto; padding-right: 0; flex: 0 0 auto; width: auto; max-width: 100%; position: relative; padding-left: 15px;"><a href="https://www.backloggd.com/u/NoahTheDuke/"><img style="width: 40px; height: 40px; border-radius: 4px; vertical-align: middle; margin: 0;" src="https://backloggd-s3.b-cdn.net/y6847fkfVpZsD2hS5bDaSaB3" /></a></div><div style="min-width: 0; flex-basis: 0; flex-grow: 1; max-width: 100%; position: relative; width: 100%; padding-right: 15px; padding-left: 15px;"><div style="display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px; font-size: .9rem; margin-bottom: 0.25rem;"><div style="min-width: 0; flex-basis: 0; flex-grow: 1; max-width: 100%; position: relative; width: 100%; padding-right: 15px; padding-left: 15px;"><div style="display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px; margin-bottom: 0.25rem;"><div style="position: relative; width: auto; max-width: 100%; padding-left: 15px; padding-right: 0; margin-bottom: auto; margin-top: auto; margin-right: -0.5rem;"><a style="margin-bottom: auto; margin-top: auto; color: rgb(203, 212, 220); font-weight: 700; text-decoration: none; display: block; --noir-inline-color: #cdc8c2;" href="https://www.backloggd.com/u/NoahTheDuke/" data-noir-inline-color=""></a><p style="font-size: 1.1rem; line-height: normal; margin: 0;">NoahTheDuke</p></div><div style="position: relative; width: auto; max-width: 100%; padding-left: 15px; margin-top: auto;"><p style="margin: 0px; line-height: normal; font-weight: 200; color: rgb(143, 156, 167); --noir-inline-color: #a9a196;" data-noir-inline-color="">reviewed <a style="color: rgb(255, 255, 255); text-decoration: none; --noir-inline-color: #e8e6e3;" href="https://www.backloggd.com/u/NoahTheDuke/review/1506310/" data-noir-inline-color="">Going Under</a></p></div></div><div style="display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px;"><div style="position: relative; width: auto; max-width: 100%; padding-left: 15px; padding-right: 0; margin-top: auto; margin-bottom: auto;"><div style="display: flex; flex-wrap: wrap; font-size: 1.15rem; line-height: 17px; unicode-bidi: bidi-override; color: rgba(146, 161, 204, 0.23); height: auto; width: auto; margin: 0px auto; position: relative; padding: 0px; white-space: nowrap; --noir-inline-color: rgba(144, 171, 203, 0.23);" data-noir-inline-color=""><div style="color: rgb(234, 55, 122); display: block; height: 100%; left: 0px; overflow: hidden; padding: 0px; position: absolute; top: 0px; white-space: nowrap; width: 70%; z-index: 1; --noir-inline-color: #eb4583;" data-noir-inline-color=""> ★★★★★</div><div style="padding: 0; display: block; z-index: 0;">★★★★★</div></div></div><div style="position: relative; width: auto; max-width: 100%; padding-left: 0.5rem; padding-right: 0.25rem; margin-top: auto; margin-bottom: auto; position: relative; margin-left: 0.5rem;"><a style="text-decoration: none;" href="https://www.backloggd.com/u/NoahTheDuke/games/added/game_status:completed/"></a><p style="margin: 0px; color: rgb(203, 212, 220); padding: 0px; line-height: normal; font-weight: 600; --noir-inline-color: #cdc8c2;" data-noir-inline-color="">Completed</p><div style="background-color: rgb(67, 185, 79); border-radius: 10px; height: 7px; left: -1px; position: absolute; top: 6px; width: 7px; --noir-inline-background-color: #36943f;" data-noir-inline-background-color=""></div></div><div style="position: relative; width: auto; max-width: 100%; padding-left: 0px; padding-right: 0.25rem; line-height: normal; font-weight: 200; color: rgb(143, 156, 167); margin-right: -0.75rem; --noir-inline-color: #a9a196;" data-noir-inline-color=""><p style="margin: 0;">on</p></div><div style="position: relative; width: auto; max-width: 100%; padding-left: 15px; margin-top: auto; margin-bottom: auto;"><a style="margin-top: 0px; margin-bottom: 0px; margin-left: auto; color: rgb(203, 212, 220); line-height: normal; text-decoration: none; font-weight: 600; --noir-inline-color: #cdc8c2;" href="https://www.backloggd.com/u/NoahTheDuke/games/added/played_platform:nintendo-switch/" data-noir-inline-color=""></a><p style="margin: 0;">Nintendo Switch</p></div></div></div></div></div></div><div style="width: 100%; height: 0; margin-bottom: 160px;"><img style="min-width: 100%; width: 100%; min-height: 267px; object-fit: cover; margin: 0; transform: translateY(-25%);" src="https://images.igdb.com/igdb/image/upload/t_1080p/sc7bvs.png" /></div><div style="display: flex; flex-wrap: wrap; margin-top: calc(-160px + 0.5rem); z-index: 0; background: linear-gradient(rgba(125, 185, 232, 0) 0px, rgb(22, 24, 28) calc(160px + 3rem)); padding-top: 160px; width: 100%; --noir-inline-background-image: linear-gradient(rgba(21, 75, 118, 0) 0px, #121316 calc(160px + 3rem)); --noir-inline-background-color: transparent;" data-noir-inline-background-image="" data-noir-inline-background-color=""><div style="min-width: 0; flex-basis: 0; flex-grow: 1; max-width: 100%; position: relative; width: 100%; padding-right: 15px; padding-left: 15px;"><div style="font-weight: 400; font-size: 0.9rem; margin-bottom: 0;"><p style="margin: 0; display: inline-block; word-break: break-word; width: 100%;"></p><p>
+								I cranked up the accessibility features cuz I already put 20 hours in and never got close to finishing it, and I certainly haven’t gotten better in the intervening years lol.<br /><br />This game is pretty good. Cute writing, fairly obvious and funny commentary on start ups and VC culture. The “corporate art” style is killer, imo. Really pops, gives everything a sense of place. The soundtrack is a lot of fun too.<br /><br />I’m playing on the Switch and I must say that it’s fairly choppy/framey. Not unsurprising given the hardware’s age, but it still struggles to show a fight with a handful of enemies and some fire effects without stuttering.
+							</p></div></div></div><div style="display: flex; flex-wrap: wrap; width: 100%; background-color: rgb(22, 24, 28); z-index: 1; padding-top: 0.5rem; padding-bottom: 1rem; --noir-inline-background-color: #121316;" data-noir-inline-background-color=""><div style="position: relative; width: auto; max-width: 100%; padding-left: 15px; padding-right: 15px; margin-left: auto;"><p style="margin: 0px; font-size: 0.9rem; line-height: normal; color: rgb(143, 156, 167); --noir-inline-color: #a9a196;" data-noir-inline-color="">Reviewed on Apr 03, 2024</p></div></div></div><div style="text-align: right; font-size: min(1.87vw, 70%); opacity: 0.7;"> made with @nex3's <a href="https://nex3.github.io/cohost-backloggd">Backloggd formatter</a></div>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2024-03-29-new-adrian-berenguer/" style="color:inherit;"><h1>New Adrián Berenguer!!!!!</h1></a>
+        <div class="byline">
+            Mar 29, 2024
+            <span title="March 29, 2024">@855.56</span>
+            / 
+                
+                <a href="/tags/Adri%C3%A1n%20Berenguer/">#Adrián Berenguer</a>
+                
+                <a href="/tags/anbr/">#anbr</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/instrumental%20music/">#instrumental music</a>
+                
+                <a href="/tags/music%20recommendations/">#music recommendations</a>
+                
+                <a href="/tags/song%20of%20the%20day/">#song of the day</a>
+                
+            
+        </div>
+    </div>
+    <p>https://www.youtube.com/watch?v=wtcU42rthCM</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2024-03-28-taken-from-stimslack/" style="color:inherit;"><h1>Taken from stimslack</h1></a>
+        <div class="byline">
+            Mar 28, 2024
+            <span title="March 28, 2024">@920.14</span>
+            / 
+                
+                <a href="/tags/android%3A%20netrunner/">#android: netrunner</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/jinteki.net/">#jinteki.net</a>
+                
+                <a href="/tags/jnet/">#jnet</a>
+                
+                <a href="/tags/netrunner/">#netrunner</a>
+                
+                <a href="/tags/out%20of%20context%20jnet/">#out of context jnet</a>
+                
+            
+        </div>
+    </div>
+    <p><img src="/img/cohost-mirror/5314383-taken-from-stimslack/IMG_8919.jpeg" alt="Jnet chat, both players say gg. P2 says “i have some instructions for you. do you own a shovel?” P1: “i do not” P2: “well, bare hands are fine. go to your yard. dig a deep hole. put this in there, for the good of the game.”" /></p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2024-03-28-chappell-roan-cali/" style="color:inherit;"><h1>Chappell Roan - California</h1></a>
+        <div class="byline">
+            Mar 28, 2024
+            <span title="March 28, 2024">@782.64</span>
+            / 
+                
+                <a href="/tags/Chappell%20Roan/">#Chappell Roan</a>
+                
+                <a href="/tags/The%20Rise%20and%20Fall%20of%20a%20Midwest%20princess/">#The Rise and Fall of a Midwest princess</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/song%20of%20the%20day/">#song of the day</a>
+                
+                <a href="/tags/to%20think%20i%20almost%20had%20it%20going%20but%20i%20let%20you%20down/">#to think i almost had it going but i let you down</a>
+                
+            
+        </div>
+    </div>
+    <p>https://www.youtube.com/watch?v=GcXlN7meclE</p><p>Come get me out of California
+No leaves are brown
+I miss the seasons in Missouri
+My dying town
+Thought I'd be cool in California
+I'd make you proud
+To think I almost had it going
+But I let you down</p><p>shit's got me cryin</p>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2024-03-28-my-2-y-o-was-stresse/" style="color:inherit;"><h1>My 2 y/o was STRESSED last night</h1></a>
+        <div class="byline">
+            Mar 28, 2024
+            <span title="March 28, 2024">@763.19</span>
+            / 
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/kidposting/">#kidposting</a>
+                
+            
+        </div>
+    </div>
+    <p>Things he shouted out at various points of his sleep:</p><ul><li>lala stop it!!! (lala is what he calls his sister)</li><li>bubbles empty 😤😩😤😩</li><li>bus come back!!!</li></ul>
+    
+    <hr>
+    
+    <div class="post-header">
+        <a href="/posts/cohost-mirror/2024-03-28-https-github-com-m/" style="color:inherit;"><h1></h1></a>
+        <div class="byline">
+            Mar 28, 2024
+            <span title="March 28, 2024">@436.81</span>
+            / 
+                
+                <a href="/tags/android%3A%20netrunner/">#android: netrunner</a>
+                
+                <a href="/tags/clojure/">#clojure</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/devblog/">#devblog</a>
+                
+                <a href="/tags/functional%20programming/">#functional programming</a>
+                
+                <a href="/tags/jinteki.net/">#jinteki.net</a>
+                
+                <a href="/tags/jnet/">#jnet</a>
+                
+                <a href="/tags/netrunner/">#netrunner</a>
+                
+                <a href="/tags/thank%20you%20drugs/">#thank you drugs</a>
+                
+                <a href="/tags/thrugs/">#thrugs</a>
+                
+            
+        </div>
+    </div>
+    <p>https://github.com/mtgred/netrunner/pull/7346</p><p>this shit is another hefty one. i rewrote the primary data structure for costs. will be much simpler to track costs, add modifiers later, keep normal and additional costs distinct, and intelligently handle stealth costs.</p><p>once this is done, i'm gonna implement system-wide additional cost checking, allowing you to reject paying for any and all additional costs.</p>
+    
+    <a class="button" href="/posts/cohost-mirror/2024-03-28-https-github-com-m/">Continue reading &#8594;</a>
+    
+    <hr>
+    
+
+    <div id="prev-next">
+        
+        <a class="prev" href="/p/4/">&laquo; Prev</a>
+        
+        
+        <a class="next" href="/p/6/">Next &raquo;</a>
+        
+    </div>
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2024 Noah Bogart
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+                <br>Theme by <a href="http://github.com/KingMob">KingMob</a>
+            </div>
+        </article>
+
+        
+        
+    </body>
+</html>

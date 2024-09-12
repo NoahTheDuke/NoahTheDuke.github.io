@@ -8,7 +8,10 @@
     <ul>
     {% for post in posts %}
         <li>
-            <a href="{{post.uri}}">{{post.title}}</a>
+            <a href="{{post.uri}}">{{post.date|date:"MMM dd"}}</a>
+            {% if post.title|not-empty %}
+            - <a href="{{post.uri}}">{{post.title}}</a>
+            {% endif %}
         </li>
     {% endfor %}
     </ul>

@@ -5,19 +5,21 @@
    [clygments.core :as clygments]
    [compojure.core :refer [defroutes GET]]
    [compojure.route :as route]
+   [cryogen.core :as cryogen]
    [cryogen-core.compiler :refer [compile-assets-timed]]
    [cryogen-core.config :refer [resolve-config]]
+   [cryogen-core.flexmark :as flexmark]
    [cryogen-core.io :refer [path]]
    [cryogen-core.plugins :refer [load-plugins]]
    [cryogen-core.util :as util]
    [cryogen-core.watcher :refer [start-watcher! start-watcher-for-changes!]]
-   [emoji.core :as e]
    [net.cgrand.enlive-html :as enlive]
    [ring.server.standalone :as ring-server]
    [ring.util.codec :refer [url-decode]]
    [ring.util.response :refer [file-response redirect]]
    [selmer.filters :refer [add-filter!]])
   (:import
+   (com.vdurmont.emoji EmojiParser)
    (java.io File)
    (java.time ZoneId ZonedDateTime)))
 
@@ -37,7 +39,14 @@
 (comment
   (beat (java.util.Date.)))
 
-(add-filter! :.beat #'beat)
+(do (add-filter! :.beat #'beat)
+    nil)
+
+(defn sort-by-lower-case-name [tags]
+  (sort-by (comp str/lower-case str :name) tags))
+
+(do (add-filter! :sort-by-lowercase-name #'sort-by-lower-case-name)
+    nil)
 
 (defn transform-html
   "Creates an enlive-snippet from `html-string` then removes
@@ -72,26 +81,24 @@
             :else
             node)))))
 
-(comment
-  (do (transform-html "<p>I recently came across a <a href=\"http://johnj.com/from-elegance-to-speed.html\">blogpost</a> about rewriting an &quot;elegant&quot; function in Clojure into an optimized function in Common Lisp. In it, John Jacobsen discusses how they went from this Clojure code:</p>\n<pre><code class=\"clojure\">(defn smt-8 [times]\n  (-&gt;&gt; times\n       (partition 8 1)\n       (map (juxt identity\n                  (comp (partial apply -)\n                        (juxt last first))))\n       (filter (comp (partial &gt; 1000) second))))\n</code></pre>\n<p>to this Common Lisp code:</p>\n<pre><code class=\"clojure\">(loop for x below (- (the fixnum array-size) 8)\n     if (&lt; (- (the fixnum (elt *s* (+ (the fixnum x) 8)))\n              (the fixnum (elt *s* (the fixnum x))))\n           1000)\n     collect x)\n</code></pre>\n")
-      nil))
-
 (alter-var-root
   #'util/trimmed-html-snippet
   (fn [_f] transform-html))
 
 (defn postprocess-article [article _params]
-  (println (e/emojify (:content article)))
-  (update article :content e/emojify))
+  (update article :content (comp EmojiParser/parseToUnicode str)))
 
 (def resolved-config (delay (resolve-config)))
 
 (def extra-config-dev
   "Add dev-time configuration overrides here, such as `:hide-future-posts? false`"
-  {:postprocess-article-html-fn #'postprocess-article})
+  {
+   ; #_#_:postprocess-article-html-fn #'postprocess-article
+   })
 
 (defn init [fast?]
   (load-plugins)
+  (flexmark/init)
   (compile-assets-timed extra-config-dev)
   (let [ignored-files (-> @resolved-config :ignored-files)]
     (run!
@@ -157,9 +164,9 @@
       opts)))
 
 (defn -main [& args]
-  (serve {:port 3000 :fast ((set args) "fast")}))
+  (apply cryogen/-main args))
 
 (comment
-  (def srv (serve {:join? false, :fast false}))
+  (def srv (serve {:join? false :fast false}))
   (.stop srv)
   ,)

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Thoughts and bits: splint reaches 1.0</title>
+        
+<meta name="keywords" content="linter,clojure,cohost mirror,programming,devblog,linters,splint">
+
+<meta name="description" content="i don&#39;t like waiting around for version 1.0. 0ver is funny but annoying. BE NOT AFRAID. so i&#39;ve released splint 1.0.it has disabling rules, it doesn&#39;t choke on any code i&#39;ve thrown at it so far, and the set of rules it has is pretty great. there&#39;s loads more work to be done, such as moving most of the &quot;lint&quot; rules to &quot;style&quot;, which will invariably break folks config lol, but why wait?the specific updates this time are:">
+
+<meta property="og:description" content="i don&#39;t like waiting around for version 1.0. 0ver is funny but annoying. BE NOT AFRAID. so i&#39;ve released splint 1.0.it has disabling rules, it doesn&#39;t choke on any code i&#39;ve thrown at it so far, and the set of rules it has is pretty great. there&#39;s loads more work to be done, such as moving most of the &quot;lint&quot; rules to &quot;style&quot;, which will invariably break folks config lol, but why wait?the specific updates this time are:">
+
+<meta property="og:url" content="https://noahtheduke.github.io/posts/cohost-mirror/2023-03-22-splint-reaches-1-0/" />
+<meta property="og:title" content="splint reaches 1.0" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:300,400,700|Inconsolata" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/colors/colorful.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="Thoughts and bits" href="/">
+                    <img class="icon" src="/img/profile.webp">
+                    <div class="text desktop-and-tablet-only">Thoughts and bits</div>
+                    <div class="text mobile-only">Thoughts and bits</div>
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li >
+                            <a title="Home" href="/">
+                                <div class="menu-item-text">Home</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Posts" href="/p/1/">
+                                <div class=" menu-item-text">Posts</div>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="/about/">
+                                <div class="menu-item-text">About</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Archives" href="/archives/">
+                                <div class="menu-item-text">Archives</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Tags" href="/tags/">
+                                <div class="menu-item-text">Tags</div>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia">
+                    <ul>
+                        <li><a title="LinkedIn" href="https://www.linkedin.com/in/noah-bogart" rel="external"><svg class="icon icon-linkedin"><use xlink:href="/img/icons.svg#icon-linkedin"></use></svg></a></li>
+                        <li><a title="GitHub" href="https://github.com/NoahTheDuke" rel="external"><svg class="icon icon-github-circled"><use xlink:href="/img/icons.svg#icon-github-circled"></use></svg></a></li>
+                        <li><a title="RSS Feed" href="/feed.xml"><svg class="icon icon-rss-squared"><use xlink:href="/img/icons.svg#icon-rss-squared"></use></svg></a></li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta">
+        <h1>splint reaches 1.0</h1>
+        <div class="byline">
+            Mar 22, 2023
+            <span title="March 22, 2023">@893.75</span>
+            / 
+                
+                <a href="/tags/clojure/">#clojure</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/devblog/">#devblog</a>
+                
+                <a href="/tags/linter/">#linter</a>
+                
+                <a href="/tags/linters/">#linters</a>
+                
+                <a href="/tags/programming/">#programming</a>
+                
+                <a href="/tags/splint/">#splint</a>
+                
+            
+        </div>
+    </div>
+</div>
+<div>
+    
+    <p>i don't like waiting around for version 1.0. <a href="https://0ver.org/">0ver</a> is funny but annoying. BE NOT AFRAID. so i've released <a href="https://cljdoc.org/d/io.github.noahtheduke/splint/1.0.1/doc/home">splint 1.0</a>.</p><p>it has disabling rules, it doesn't choke on any code i've thrown at it so far, and the set of rules it has is pretty great. there's loads more work to be done, such as moving most of the "lint" rules to "style", which will invariably break folks config lol, but why wait?</p><p>the specific updates this time are:</p><ul><li>Add <code>--parallel</code> and <code>--no-parallel</code> to support running it single-threaded, defaults to true.</li><li><code>style/def-fn</code>: Prefer <code>(let [z f] (defn x [y] (z y)))</code> over <code>(def x (let [z f] (fn [y] (z y))))</code>. (Based on the clj-kondo linter.)</li><li><code>lint/try-splicing</code>: Prefer <code>(try (do ~@body) (finally ...))</code> over <code>(try ~@body (finally ...))</code>.</li><li><code>lint/body-unquote-splicing</code>: Prefer <code>(binding [max mymax] (let [res# (do ~@body)] res#))</code> over <code>(binding [max mymax] ~@body)</code>.</li></ul>
+</div>
+<br/>
+
+
+    
+    <div id="prev-next">
+    
+    <a class="prev" href="/posts/cohost-mirror/2023-03-23-adhd-vibes/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text">adhd vibes</div></a>
+    
+    
+    <a class="next" href="/posts/cohost-mirror/2023-03-22-whomst-can-i-talk-to/"><div class="nav-text"">whomst can i talk to?</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
+    
+</div>
+
+    
+
+    
+
+
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2024 Noah Bogart
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+                <br>Theme by <a href="http://github.com/KingMob">KingMob</a>
+            </div>
+        </article>
+
+        
+        
+    </body>
+</html>

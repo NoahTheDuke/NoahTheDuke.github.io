@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Thoughts and bits: Splint 1.3.0 and 1.4.0 and 1.50</title>
+        
+<meta name="keywords" content="linter,clojure,cohost mirror,programming,functional programming,devblog,linters,splint">
+
+<meta name="description" content="Gonna put the patch notes below the foldv1.3.0 is all new rules, some of which might be helpful! These are all pretty self-explanatory:">
+
+<meta property="og:description" content="Gonna put the patch notes below the foldv1.3.0 is all new rules, some of which might be helpful! These are all pretty self-explanatory:">
+
+<meta property="og:url" content="https://noahtheduke.github.io/posts/cohost-mirror/2023-05-12-splint-1-3-0-and-1-4/" />
+<meta property="og:title" content="Splint 1.3.0 and 1.4.0 and 1.50" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:300,400,700|Inconsolata" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/colors/colorful.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="Thoughts and bits" href="/">
+                    <img class="icon" src="/img/profile.webp">
+                    <div class="text desktop-and-tablet-only">Thoughts and bits</div>
+                    <div class="text mobile-only">Thoughts and bits</div>
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li >
+                            <a title="Home" href="/">
+                                <div class="menu-item-text">Home</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Posts" href="/p/1/">
+                                <div class=" menu-item-text">Posts</div>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="/about/">
+                                <div class="menu-item-text">About</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Archives" href="/archives/">
+                                <div class="menu-item-text">Archives</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Tags" href="/tags/">
+                                <div class="menu-item-text">Tags</div>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia">
+                    <ul>
+                        <li><a title="LinkedIn" href="https://www.linkedin.com/in/noah-bogart" rel="external"><svg class="icon icon-linkedin"><use xlink:href="/img/icons.svg#icon-linkedin"></use></svg></a></li>
+                        <li><a title="GitHub" href="https://github.com/NoahTheDuke" rel="external"><svg class="icon icon-github-circled"><use xlink:href="/img/icons.svg#icon-github-circled"></use></svg></a></li>
+                        <li><a title="RSS Feed" href="/feed.xml"><svg class="icon icon-rss-squared"><use xlink:href="/img/icons.svg#icon-rss-squared"></use></svg></a></li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta">
+        <h1>Splint 1.3.0 and 1.4.0 and 1.50</h1>
+        <div class="byline">
+            May 12, 2023
+            <span title="May 12, 2023">@852.78</span>
+            / 
+                
+                <a href="/tags/clojure/">#clojure</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/devblog/">#devblog</a>
+                
+                <a href="/tags/functional%20programming/">#functional programming</a>
+                
+                <a href="/tags/linter/">#linter</a>
+                
+                <a href="/tags/linters/">#linters</a>
+                
+                <a href="/tags/programming/">#programming</a>
+                
+                <a href="/tags/splint/">#splint</a>
+                
+            
+        </div>
+    </div>
+</div>
+<div>
+    
+    <p>Gonna put the patch notes below the fold</p><hr /><p>v1.3.0 is all new rules, some of which might be helpful! These are all pretty self-explanatory:</p><ul><li><code>naming/single-segment-namespace</code>: Prefer <code>(ns foo.bar)</code> to <code>(ns foo)</code>.</li><li><code>lint/prefer-require-over-use</code>: Prefer <code>(:require [clojure.string ...])</code> to <code>(:use clojure.string)</code>. Accepts different styles in the replacement form: <code>:as</code>, <code>:refer [...]</code> and <code>:refer :all</code>.</li><li><code>naming/conventional-aliases</code>: Prefer idiomatic aliases for core libraries (<code>[clojure.string :as str]</code> to <code>[clojure.string :as string]</code>).</li><li><code>naming/lisp-case</code>: Prefer kebab-case over other cases for top-level definitions. Relies on <a href="https://github.com/clj-commons/camel-snake-kebab">camel-snake-kebab</a>.</li><li><code>style/multiple-arity-order</code>: Function definitions should have multiple arities sorted fewest arguments to most: <code>(defn foo ([a] 1) ([a b] 2) ([a b &amp; more] 3))</code></li></ul><p>v1.4.0 added <code>-v</code> and <code>--version</code> to the cli, which is obvious in hindsight. Also adds <code>config TYPE</code> to print either the <code>full</code> config (any local merged on top of default), the <code>local</code> (just the local file), and the <code>diff</code> (to only see where the local is different from default when explicitly setting local config to match defaults).</p><p>I also fixed a couple small bugs.</p><p>v1.5.0 adds a new genre! <code>metrics</code> will handle rules that are like style rules but meant to help give you rough measures of code quality (complexity, etc). <code>metrics/fn-length</code> is my first attempt to see how it works and how it looks. I suspect I won't like it but we'll see lol.</p><ul><li><code>metrics/fn-length</code>: Function bodies shouldn't be longer than 10 lines. Has <code>:body</code> and <code>:defn</code> styles, and <code>:length</code> configurable value to set maximum length.</li></ul><p>Changed how I write tests to make it better: Now I'm using <code>nubank/matcher-combinators</code> to do sub-matching, meaning I can check multiple things at once in a single assertion. Love it. Here's some other changes:</p><ul><li>Track end position of diagnostics.</li><li>Attach location metadata to function "arities" when a defn arg+body isn't wrapped in a list.</li><li>Parse <code>defn</code> forms in postprocessing and attach as metadata instead of parsing in individual rules.</li></ul><p>Fixed some bugs:</p><ul><li>Fix <code>style/multiple-arity-order</code> with <code>:arglists</code> metadata.</li><li>Fix binding pattern when binding is falsey.</li><li>Skip <code>#(.someMethod %)</code> in <code>lint/fn-wrapper</code>.</li><li>Skip <code>and</code> and <code>or</code> in <code>style/prefer-condp</code>.</li></ul>
+</div>
+<br/>
+
+
+    
+    <div id="prev-next">
+    
+    <a class="prev" href="/posts/cohost-mirror/2023-05-13-finished-death-stran/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text">Finished death stranding</div></a>
+    
+    
+    <a class="next" href="/posts/cohost-mirror/2023-05-08-culs-de-sac-more-li/"><div class="nav-text""></div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
+    
+</div>
+
+    
+
+    
+
+
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2024 Noah Bogart
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+                <br>Theme by <a href="http://github.com/KingMob">KingMob</a>
+            </div>
+        </article>
+
+        
+        
+    </body>
+</html>

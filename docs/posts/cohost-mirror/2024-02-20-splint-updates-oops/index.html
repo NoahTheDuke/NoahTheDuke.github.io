@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Thoughts and bits: Splint updates! Oops it&#39;s been 8 months edition</title>
+        
+<meta name="keywords" content="clojure,cohost mirror,programming,functional programming,devblog,splint">
+
+<meta name="description" content="I forgot to post about the updates back in December, so I&#39;m gonna write about everything from 1.11 through 1.14.The biggest changes since last summer are a global top-level entry in .splint.edn that applies to all files, supporting the upcoming Clojure 1.12 interop syntax ((^[] String/toUpperCase &quot;noah&quot;)), and simplifying the internal logic of the pattern DSL so that the short forms are expanded to their full forms before processing.Paired with the global entry in .splint.edn, I implemented :excludes, which will skip specified files or directories in global or in specific rules. The paths can be specified with Java&#39;s java.nio.file.FileSystem/getPathMatcher globs or regexes, as well as :re-find and :string. Details here.">
+
+<meta property="og:description" content="I forgot to post about the updates back in December, so I&#39;m gonna write about everything from 1.11 through 1.14.The biggest changes since last summer are a global top-level entry in .splint.edn that applies to all files, supporting the upcoming Clojure 1.12 interop syntax ((^[] String/toUpperCase &quot;noah&quot;)), and simplifying the internal logic of the pattern DSL so that the short forms are expanded to their full forms before processing.Paired with the global entry in .splint.edn, I implemented :excludes, which will skip specified files or directories in global or in specific rules. The paths can be specified with Java&#39;s java.nio.file.FileSystem/getPathMatcher globs or regexes, as well as :re-find and :string. Details here.">
+
+<meta property="og:url" content="https://noahtheduke.github.io/posts/cohost-mirror/2024-02-20-splint-updates-oops/" />
+<meta property="og:title" content="Splint updates! Oops it&#39;s been 8 months edition" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:300,400,700|Inconsolata" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/colors/colorful.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="Thoughts and bits" href="/">
+                    <img class="icon" src="/img/profile.webp">
+                    <div class="text desktop-and-tablet-only">Thoughts and bits</div>
+                    <div class="text mobile-only">Thoughts and bits</div>
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li >
+                            <a title="Home" href="/">
+                                <div class="menu-item-text">Home</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Posts" href="/p/1/">
+                                <div class=" menu-item-text">Posts</div>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="/about/">
+                                <div class="menu-item-text">About</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Archives" href="/archives/">
+                                <div class="menu-item-text">Archives</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Tags" href="/tags/">
+                                <div class="menu-item-text">Tags</div>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia">
+                    <ul>
+                        <li><a title="LinkedIn" href="https://www.linkedin.com/in/noah-bogart" rel="external"><svg class="icon icon-linkedin"><use xlink:href="/img/icons.svg#icon-linkedin"></use></svg></a></li>
+                        <li><a title="GitHub" href="https://github.com/NoahTheDuke" rel="external"><svg class="icon icon-github-circled"><use xlink:href="/img/icons.svg#icon-github-circled"></use></svg></a></li>
+                        <li><a title="RSS Feed" href="/feed.xml"><svg class="icon icon-rss-squared"><use xlink:href="/img/icons.svg#icon-rss-squared"></use></svg></a></li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta">
+        <h1>Splint updates! Oops it&#39;s been 8 months edition</h1>
+        <div class="byline">
+            Feb 20, 2024
+            <span title="February 20, 2024">@970.83</span>
+            / 
+                
+                <a href="/tags/clojure/">#clojure</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/devblog/">#devblog</a>
+                
+                <a href="/tags/functional%20programming/">#functional programming</a>
+                
+                <a href="/tags/programming/">#programming</a>
+                
+                <a href="/tags/splint/">#splint</a>
+                
+            
+        </div>
+    </div>
+</div>
+<div>
+    
+    <p>I forgot to post about the updates back in December, so I'm gonna write about everything from 1.11 through 1.14.</p><p>The biggest changes since last summer are a <code>global</code> top-level entry in <code>.splint.edn</code> that applies to all files, supporting the upcoming Clojure 1.12 interop syntax (<code>(^[] String/toUpperCase "noah")</code>), and simplifying the internal logic of the pattern DSL so that the short forms are expanded to their full forms before processing.</p><p>Paired with the <code>global</code> entry in <code>.splint.edn</code>, I implemented <code>:excludes</code>, which will skip specified files or directories in <code>global</code> or in specific rules. The paths can be specified with Java's <a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileSystem.html#getPathMatcher-java.lang.String-">java.nio.file.FileSystem/getPathMatcher</a> globs or regexes, as well as <code>:re-find</code> and <code>:string</code>. <a href="https://cljdoc.org/d/io.github.noahtheduke/splint/1.14.0/doc/configuration#excluding-files">Details here.</a></p><p>Additionally, there are performance increases to roughly 20 existing rules. I went through all of the rules that used <code>:on-match</code> in combination with <code>when</code> to move those checks into the DSL, avoiding the costly aggregation of star args (<code>?*</code>) and forcing early exits where possible. I also simplified the <code>?|</code> matcher so it's much much faster. I'd love to be able to speed up <code>?*</code> and <code>?+</code>, but those are gonna be harder to optimize given the reliance on continuations.</p><p>My only thought is that I could check to see if a given <code>?*</code> or <code>?+</code> pattern is the final pattern in a given sequence, and if so, not use continuations but some sort of slice? Like how I did before switching to continuations last summer.</p><p>Full change logs below the fold.</p><hr /><h2 id="v111---2023-12-11">v1.11 - 2023-12-11</h2><h3 id="new-rules">New Rules</h3><ul><li><code>lint/underscore-in-namespace</code>: Prefer <code>(ns foo-bar)</code> to <code>(ns foo_bar)</code>.</li><li><code>performance/dot-equals</code>: Prefer <code>(.equals "foo" bar)</code> to <code>(= "foo" bar)</code>. Only cares about string literals right now.</li><li><code>performance/single-literal-merge</code>: Prefer <code>(assoc m :a 1 :b 2)</code> to <code>(merge m {:a 1 :b 2})</code>. Has <code>:single</code> and <code>:multiple</code> styles, either a single <code>assoc</code> call or threaded multiple calls.</li><li><code>performance/into-transducer</code>: Prefer <code>(into [] (map f) coll)</code> to <code>(into [] (map f coll))</code>.</li><li><code>style/trivial-for</code>: Prefer <code>(map f items)</code> over <code>(for [item items] (f item))</code>.</li><li><code>style/reduce-str</code>: Prefer <code>(clojure.string/join coll)</code> over <code>(reduce str coll)</code>.</li></ul><h3 id="added">Added</h3><ul><li><code>global</code> top-level <code>.splint.edn</code> config that applies to all rules.</li><li>Support <code>:excludes</code> in both <code>global</code> and rules-specific configs. Accepts a vector of <a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileSystem.html#getPathMatcher-java.lang.String-">java.nio.file.FileSystem/getPathMatcher</a> globs or regexes. When in <code>global</code>, matching files are removed from being processed at all. When in a specific rule, the rule is disabled before matching files are checked.</li></ul><h3 id="changed">Changed</h3><ul><li>Added <code>min</code>, <code>max</code>, and <code>distinct?</code> to <code>lint/redundant-call</code>.</li><li>Change <code>style/set-literal-as-fn</code> default to <code>false</code>. It's not idiomatic and I don't know that it's any faster either.</li></ul><h3 id="fixed">Fixed</h3><ul><li>Project file now accepts all reader macros.</li><li><code>--auto-gen-config</code>, adds test.</li></ul><h2 id="v112---2024-02-09">v1.12 - 2024-02-09</h2><h3 id="added-1">Added</h3><ul><li><code>re-find:</code> and <code>string:</code> syntaxes for path <code>:excludes</code>. <code>re-find</code> uses <code>clojure.core/re-find</code>, so the regex doesn't have to match the entire file path, just any portion. <code>string</code> uses <code>clojure.string/includes?</code>, so a fixed string anywhere in the file path.</li></ul><h3 id="changed-1">Changed</h3><ul><li>Updated [edamame][edamame] to v1.4.25 in support of the new Clojure 1.12 <code>^[]</code>/<code>:param-tags</code> feature.</li></ul><h2 id="v113---2024-02-14">v1.13 - 2024-02-14</h2><h3 id="new-rules-1">New Rules</h3><ul><li><code>lint/prefer-method-values</code>: Prefer <code>(^[] String/toUpperCase "noah")</code> to <code>(.toUpperCase "noah")</code>.</li><li><code>lint/require-explicit-param-tags</code>: Prefer <code>(^[File] File/mkdir (io/file \"a\"))</code> to <code>(File/mkdir (io/file \"a\"))</code>. Prefer <code>(^[String String] File/createTempFile \"abc\" \"b\")</code> to <code>(^[_ _] File/createTempFile \"abc\" \"b\")</code>. Has <code>:missing</code>, <code>:wildcard</code>, and <code>:both</code> styles, which check for lack of any <code>:param-tags</code>, usage of <code>_</code> in a <code>:param-tags</code>, and both. Defaults to <code>:wildcard</code>.</li></ul><h3 id="changed-2">Changed</h3><ul><li>Add support for <code>lint/prefer-method-values</code> in <code>performance/dot-equals</code>.</li><li>Switch <code>new_rule.tmpl</code> to use <code>deftest</code>. <code>defexpect</code> is a thin wrapper and has the annoying "if given two non-expect entries, wrap in expect", which doesn't work when we use custom expect macros.</li></ul><h2 id="v1140---2024-02-19">v1.14.0 - 2024-02-19</h2><h3 id="changed-3">Changed</h3><ul><li><p>General performance increases in rules:</p></li><li><p><code>lint/body-unquote-splicing</code></p><ul><li><code>lint/if-else-nil</code></li><li><code>lint/underscore-in-namespace</code></li><li><code>lint/warn-on-reflection</code></li><li><code>metrics/parameter-count</code></li><li><code>naming/conversion-function</code></li><li><code>naming/predicate</code></li><li><code>naming/record-name</code></li><li><code>naming/single-segment-namespace</code></li><li><code>style/def-fn</code></li><li><code>style/eq-zero</code></li><li><code>style/prefer-clj-string</code></li><li><code>style/prefer-condp</code></li><li><code>style/reduce-str</code></li><li><code>style/single-key-in</code></li><li><code>style/tostring</code></li><li><code>style/useless-do</code></li></ul></li><li><p>Remove documentation about <code>?_</code> short form, as it's covered by the existing <code>?</code> and <code>_</code> binding rules.</p></li><li><p>Expand <code>?foo</code> short-forms in patterns to their <code>(? foo)</code> special form. Simplifies matching functions, makes the pattern DSL more consistent. Now <code>?|foo</code> will throw immediately instead of part-way through macroexpansion.</p></li><li><p>Updated pattern docs with a small example at the top.</p></li><li><p>Simplified <code>?|</code> matcher logic to use a set, as that's faster than creating multiple <code>read-form</code> patterns in a let block and checking each one.</p></li></ul><h3 id="fixed-1">Fixed</h3><ul><li>Correctly suggest <code>Obj/staticMethod</code> when given <code>(. Obj (staticMethod))</code> in <code>lint/dot-class-usage</code>.</li><li>Only suggest <code>naming/conversion-functions</code> when there's no <code>-</code> in the part before <code>-to-</code>. (Will warn on <code>f-to-g</code>, will not warn on <code>expect-f-to-c</code>.)</li><li>Correctly render args in <code>lint/assoc-fn</code>.</li></ul>
+</div>
+<br/>
+
+
+    
+    <div id="prev-next">
+    
+    <a class="prev" href="/posts/cohost-mirror/2024-02-20-https-www-rascal-n/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text"></div></a>
+    
+    
+    <a class="next" href="/posts/cohost-mirror/2024-02-20-the-only-bullet-hell/"><div class="nav-text""></div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
+    
+</div>
+
+    
+
+    
+
+
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2024 Noah Bogart
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+                <br>Theme by <a href="http://github.com/KingMob">KingMob</a>
+            </div>
+        </article>
+
+        
+        
+    </body>
+</html>

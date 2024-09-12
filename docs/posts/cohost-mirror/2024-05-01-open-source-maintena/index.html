@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Thoughts and bits: open source maintenance</title>
+        
+<meta name="keywords" content="neovim,rust,just,cohost mirror,programming,rust-lang,open source software,vim,open source">
+
+<meta name="description" content="i am the maintainer of the vim syntax highlighting file for just, vim-just, and while i did the heavy lifting to write up the initial version back in 2021, i haven&#39;t cared much about keeping up with the latest changes and have let others make changes as they do.last year, someone offered to help out so i added them to the repo. i suspect it&#39;s their first time being a &quot;contributor&quot; on an open source project cuz they&#39;ve spent the last year absolutely dedicated to the task of improving both the syntax highlighting and the bespoke syntax test runner we have that&#39;s written in rust. the project isn&#39;t that exciting and doesn&#39;t require that much effort but they&#39;ve stayed up to date (to the day) of new syntaxes added to just and have been poking and prodding the test runner to make it faster and more idiomatic, including writing their own custom version of vim&#39;s built-in :ToHtml as it was removed in neovim. today, they mentioned &quot;but we don&#39;t want code like this in production&quot; which cracked me up because there&#39;s no &quot;production&quot; to be had here! doesn&#39;t matter, they give a shit and so i give a shit with them.there&#39;s no real point here, it&#39;s just fun to see someone really dive in and own something. i know open source maintenance is a touchy subject after the xz/liblzma stuff, but i still think it&#39;s worthwhile to give people a chance to make their mark and spend their effort on cool things.">
+
+<meta property="og:description" content="i am the maintainer of the vim syntax highlighting file for just, vim-just, and while i did the heavy lifting to write up the initial version back in 2021, i haven&#39;t cared much about keeping up with the latest changes and have let others make changes as they do.last year, someone offered to help out so i added them to the repo. i suspect it&#39;s their first time being a &quot;contributor&quot; on an open source project cuz they&#39;ve spent the last year absolutely dedicated to the task of improving both the syntax highlighting and the bespoke syntax test runner we have that&#39;s written in rust. the project isn&#39;t that exciting and doesn&#39;t require that much effort but they&#39;ve stayed up to date (to the day) of new syntaxes added to just and have been poking and prodding the test runner to make it faster and more idiomatic, including writing their own custom version of vim&#39;s built-in :ToHtml as it was removed in neovim. today, they mentioned &quot;but we don&#39;t want code like this in production&quot; which cracked me up because there&#39;s no &quot;production&quot; to be had here! doesn&#39;t matter, they give a shit and so i give a shit with them.there&#39;s no real point here, it&#39;s just fun to see someone really dive in and own something. i know open source maintenance is a touchy subject after the xz/liblzma stuff, but i still think it&#39;s worthwhile to give people a chance to make their mark and spend their effort on cool things.">
+
+<meta property="og:url" content="https://noahtheduke.github.io/posts/cohost-mirror/2024-05-01-open-source-maintena/" />
+<meta property="og:title" content="open source maintenance" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:300,400,700|Inconsolata" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/colors/colorful.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="Thoughts and bits" href="/">
+                    <img class="icon" src="/img/profile.webp">
+                    <div class="text desktop-and-tablet-only">Thoughts and bits</div>
+                    <div class="text mobile-only">Thoughts and bits</div>
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li >
+                            <a title="Home" href="/">
+                                <div class="menu-item-text">Home</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Posts" href="/p/1/">
+                                <div class=" menu-item-text">Posts</div>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="/about/">
+                                <div class="menu-item-text">About</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Archives" href="/archives/">
+                                <div class="menu-item-text">Archives</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Tags" href="/tags/">
+                                <div class="menu-item-text">Tags</div>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia">
+                    <ul>
+                        <li><a title="LinkedIn" href="https://www.linkedin.com/in/noah-bogart" rel="external"><svg class="icon icon-linkedin"><use xlink:href="/img/icons.svg#icon-linkedin"></use></svg></a></li>
+                        <li><a title="GitHub" href="https://github.com/NoahTheDuke" rel="external"><svg class="icon icon-github-circled"><use xlink:href="/img/icons.svg#icon-github-circled"></use></svg></a></li>
+                        <li><a title="RSS Feed" href="/feed.xml"><svg class="icon icon-rss-squared"><use xlink:href="/img/icons.svg#icon-rss-squared"></use></svg></a></li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta">
+        <h1>open source maintenance</h1>
+        <div class="byline">
+            May 1, 2024
+            <span title="May 1, 2024">@858.33</span>
+            / 
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/just/">#just</a>
+                
+                <a href="/tags/neovim/">#neovim</a>
+                
+                <a href="/tags/open%20source/">#open source</a>
+                
+                <a href="/tags/open%20source%20software/">#open source software</a>
+                
+                <a href="/tags/programming/">#programming</a>
+                
+                <a href="/tags/rust/">#rust</a>
+                
+                <a href="/tags/rust-lang/">#rust-lang</a>
+                
+                <a href="/tags/vim/">#vim</a>
+                
+            
+        </div>
+    </div>
+</div>
+<div>
+    
+    <p>i am the maintainer of the vim syntax highlighting file for just, <a href="https://github.com/NoahTheDuke/vim-just">vim-just</a>, and while i did the heavy lifting to write up the initial version back in 2021, i haven't cared much about keeping up with the latest changes and have let others make changes as they do.</p><p>last year, someone offered to help out so i added them to the repo. i suspect it's their first time being a "contributor" on an open source project cuz they've spent the last year absolutely dedicated to the task of improving both the syntax highlighting and the bespoke syntax test runner we have that's written in rust. the project isn't that exciting and doesn't require that much effort but they've stayed up to date (to the day) of new syntaxes added to just and have been poking and prodding the test runner to make it faster and more idiomatic, including writing their own custom version of vim's built-in <code>:ToHtml</code> as it was removed in neovim. today, they mentioned "but we don't want code like this in production" which cracked me up because there's no "production" to be had here! doesn't matter, they give a shit and so i give a shit with them.</p><p>there's no real point here, it's just fun to see someone really dive in and own something. i know open source maintenance is a touchy subject after the xz/liblzma stuff, but i still think it's worthwhile to give people a chance to make their mark and spend their effort on cool things.</p>
+</div>
+<br/>
+
+
+    
+    <div id="prev-next">
+    
+    <a class="prev" href="/posts/cohost-mirror/2024-05-01-splint-v1-15-0-cus/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text">splint v1.15.0 - custom rules support!</div></a>
+    
+    
+    <a class="next" href="/posts/cohost-mirror/2024-04-29-see-things-for-what/"><div class="nav-text""></div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
+    
+</div>
+
+    
+
+    
+
+
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2024 Noah Bogart
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+                <br>Theme by <a href="http://github.com/KingMob">KingMob</a>
+            </div>
+        </article>
+
+        
+        
+    </body>
+</html>

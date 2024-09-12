@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Thoughts and bits: Clojure Linters</title>
+        
+<meta name="keywords" content="clojure,linting,cohost mirror">
+
+<meta name="description" content="Clojure’s best linter, clj-kondo, is pretty dang great. It covers a lot of ground: checks syntax, provides light type checking, tracks variables and usage, an entire hook system for linting/reading custom macros statically (without code execution), etc. it’s quite extensive.However,,,">
+
+<meta property="og:description" content="Clojure’s best linter, clj-kondo, is pretty dang great. It covers a lot of ground: checks syntax, provides light type checking, tracks variables and usage, an entire hook system for linting/reading custom macros statically (without code execution), etc. it’s quite extensive.However,,,">
+
+<meta property="og:url" content="https://noahtheduke.github.io/posts/cohost-mirror/2023-02-22-clojure-linters/" />
+<meta property="og:title" content="Clojure Linters" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:300,400,700|Inconsolata" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/colors/colorful.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="Thoughts and bits" href="/">
+                    <img class="icon" src="/img/profile.webp">
+                    <div class="text desktop-and-tablet-only">Thoughts and bits</div>
+                    <div class="text mobile-only">Thoughts and bits</div>
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li >
+                            <a title="Home" href="/">
+                                <div class="menu-item-text">Home</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Posts" href="/p/1/">
+                                <div class=" menu-item-text">Posts</div>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="/about/">
+                                <div class="menu-item-text">About</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Archives" href="/archives/">
+                                <div class="menu-item-text">Archives</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Tags" href="/tags/">
+                                <div class="menu-item-text">Tags</div>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia">
+                    <ul>
+                        <li><a title="LinkedIn" href="https://www.linkedin.com/in/noah-bogart" rel="external"><svg class="icon icon-linkedin"><use xlink:href="/img/icons.svg#icon-linkedin"></use></svg></a></li>
+                        <li><a title="GitHub" href="https://github.com/NoahTheDuke" rel="external"><svg class="icon icon-github-circled"><use xlink:href="/img/icons.svg#icon-github-circled"></use></svg></a></li>
+                        <li><a title="RSS Feed" href="/feed.xml"><svg class="icon icon-rss-squared"><use xlink:href="/img/icons.svg#icon-rss-squared"></use></svg></a></li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta">
+        <h1>Clojure Linters</h1>
+        <div class="byline">
+            Feb 22, 2023
+            <span title="February 22, 2023">@440.97</span>
+            / 
+                
+                <a href="/tags/clojure/">#clojure</a>
+                
+                <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+                
+                <a href="/tags/linting/">#linting</a>
+                
+            
+        </div>
+    </div>
+</div>
+<div>
+    
+    <p>Clojure’s best linter, <a href="https://github.com/clj-kondo/clj-kondo">clj-kondo</a>, is pretty dang great. It covers a lot of ground: checks syntax, provides light type checking, tracks variables and usage, an entire hook system for linting/reading custom macros statically (without code execution), etc. it’s quite extensive.</p><h1 id="however">However,,,</h1><hr /><p>However, it’s written in incredibly imperative Clojure due to the nature of the domain problem, and for performance reasons, all of the lints it implements are written imperatively as well, exactly at the place where they should be checked, instead of being abstracted into a common interface.</p><p>Additionally, Borkdude, the maintainer, has found  clj-kondo in the annoying position of being popular, as it is the basis for many other community tools such as clojure-lsp. He must be conservative in what he introduces, conservative in what he deprecates or removes, and resistant to any big changes overall.</p><p>This makes modifying clj-kondo for any reason really tiresome lol. There are a number of ideas I have for making it better but after talking with Borkdude I don’t think they’ll be viable for all of the above reasons.</p><p>That’s why I’ve built my own linter. It’s in the very early stages, but I’m growing more and more fond of it.</p><p>That being said, I end every day exhausted beyond recognition, and can’t face an evening barely coherent at my computer, so progress is very very slow.</p>
+</div>
+<br/>
+
+
+    
+    <div id="prev-next">
+    
+    <a class="prev" href="/posts/cohost-mirror/2023-02-22-v-small-rant-about-v/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text"></div></a>
+    
+    
+    <a class="next" href="/posts/cohost-mirror/2023-02-20-neither-grower-nor-s/"><div class="nav-text""></div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
+    
+</div>
+
+    
+
+    
+
+
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2024 Noah Bogart
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+                <br>Theme by <a href="http://github.com/KingMob">KingMob</a>
+            </div>
+        </article>
+
+        
+        
+    </body>
+</html>

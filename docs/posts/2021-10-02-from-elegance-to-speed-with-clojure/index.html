@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Thoughts and bits: From Elegance to Speed, with Clojure</title>
         
-<meta name="keywords" content="pixar,capitalism,clojure,tutorial,reviews,gender,personal,cohost mirror,programming,polyamory,finances,money,meta,javascript,ayyy lmao,archibus">
+<meta name="keywords" content="clojure,personal,programming">
 
 <meta name="description" content="I recently came across a blogpost about rewriting an &quot;elegant&quot; function in Clojure into an optimized function in Common Lisp.In it, John Jacobsen discusses how they went from this Clojure code:">
 
@@ -38,14 +38,33 @@
                         <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
                     </label>
                     <ul class="menu">
-                        <li ><a title="Home" href="/"><div class="menu-item-text">Home</div></a></li>
-                        <li ><a title="Archives" href="/archives/"><div class="menu-item-text">Archives</div></a></li>
-                        
-                        <li ><a title="Tags" href="/tags/"><div class="menu-item-text">Tags</div></a></li>
-                        
+                        <li >
+                            <a title="Home" href="/">
+                                <div class="menu-item-text">Home</div>
+                            </a>
+                        </li>
                         
                         <li >
-                            <a href="/about/"><div class="menu-item-text">About</div></a>
+                            <a title="Posts" href="/p/1/">
+                                <div class=" menu-item-text">Posts</div>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="/about/">
+                                <div class="menu-item-text">About</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Archives" href="/archives/">
+                                <div class="menu-item-text">Archives</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Tags" href="/tags/">
+                                <div class="menu-item-text">Tags</div>
+                            </a>
                         </li>
                         
                     </ul>
@@ -109,7 +128,7 @@
   <span class="p">(</span><span class="nb">take </span><span class="nv">n</span> <span class="p">(</span><span class="nb">iterate </span><span class="o">#</span><span class="p">(</span><span class="nb">+ </span><span class="nv">%</span> <span class="p">(</span><span class="nb">rand-int </span><span class="mi">1000</span><span class="p">))</span> <span class="mi">0</span><span class="p">)))</span>
 
 <span class="p">(</span><span class="k">def </span><span class="nv">*s*</span> <span class="p">(</span><span class="nf">time-sequence</span> <span class="nv">initial-size</span><span class="p">))</span>
-</pre></code><p><strong>NOTE</strong></p><blockquote><p>Before we dive into code and times, I want to preface that I don't really understand how John is determining <code>kHz</code> and <code>MHz</code> when discussing performance. I'd like to be able to more easily compare our two sets of numbers (so that for a given version I can figure out the ratio needed to compare), but alas, the provided Clojure times are fuzzy, so I am stuck relying strictly on the Common Lisp "msec" output.</p></blockquote><h1 id="initial-version">Initial version</h1><p>To start, running <code>(timing (count (smt-8 *s*)))</code> gives these times:</p><code class="clojure highlight" data-lang="clojure"><pre><span></span><span class="nv">duration</span> <span class="mf">17154.473751</span> <span class="nv">msec...</span> <span class="nv">result</span> <span class="mi">2025</span>
+</pre></code><aside><p><strong>NOTE</strong></p><p>Before we dive into code and times, I want to preface that I don't really understand how John is determining <code>kHz</code> and <code>MHz</code> when discussing performance. I'd like to be able to more easily compare our two sets of numbers (so that for a given version I can figure out the ratio needed to compare), but alas, the provided Clojure times are fuzzy, so I am stuck relying strictly on the Common Lisp "msec" output.</p></aside><h1 id="initial-version">Initial version</h1><p>To start, running <code>(timing (count (smt-8 *s*)))</code> gives these times:</p><code class="clojure highlight" data-lang="clojure"><pre><span></span><span class="nv">duration</span> <span class="mf">17154.473751</span> <span class="nv">msec...</span> <span class="nv">result</span> <span class="mi">2025</span>
 <span class="nv">duration</span> <span class="mf">17163.81631</span> <span class="nv">msec...</span> <span class="nv">result</span> <span class="mi">2025</span>
 <span class="nv">duration</span> <span class="mf">17149.326539</span> <span class="nv">msec...</span> <span class="nv">result</span> <span class="mi">2025</span>
 </pre></code><p>That's 17 full seconds. I don't need John's Clojure times to know this is bad, hah. There are some immediate improvements to be made, so let's dive right in instead of lollygagging here.</p><h1 id="loose-change">Loose Change</h1><p>To whit, the functional programming functions should be excised. <code>partial</code>, <code>juxt</code>, <code>apply</code>, and <code>comp</code> have their place but should be used sparingly instead of as the go-to:</p><ul><li><code>partial</code> always creates a variadic function, collects the missing arguments, and then uses <code>apply</code> to pass those in when called. This requires multiple additional calls and overhead. Much better to write an anonymous function (using either <code>#()</code> or <code>fn</code> form) and specify the placement of the missing argument.</li><li>For a proof-of-concept, <code>juxt</code> allows for expressive computations. However, we should be wary of <code>(juxt identity ...)</code> because that indicates we're adding overhead (extra function calls) for only slight readability gains: <code>(juxt identity ...)</code> is equivalent to <code>(fn [input] [input ...])</code>.</li><li><code>apply</code> is perfect for when the number of inputs is unknown, but in a function like ours, we know the number of inputs and should just write them out directly.</li><li>Lastly, I just don't like <code>comp</code> very much, hah. It has uses in functional composition, but in almost all cases, I prefer to see the composition written explicitly.</li></ul><p>All of this together means that the <code>map</code> fn can be easily rewritten as <code>(fn [input] [input (- (last input) (first input))])</code>, and the <code>filter</code> fn as <code>#(&gt; 1000 (second %))</code>:</p><code class="clojure highlight" data-lang="clojure"><pre><span></span><span class="p">(</span><span class="kd">defn </span><span class="nv">try-1</span> <span class="p">[</span><span class="nv">times</span><span class="p">]</span>
@@ -215,7 +234,7 @@
     
     <div id="prev-next">
     
-    <a class="prev" href="/posts/2023-09-14-pixar-movie-rankings/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text">pixar movie rankings</div></a>
+    <a class="prev" href="/posts/cohost-mirror/2022-10-30-git-init-git-add/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text">git init; git add .; git commit -m ‘init’</div></a>
     
     
     <a class="next" href="/posts/2021-08-31-restarting-the-project/"><div class="nav-text"">Restarting the project</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>

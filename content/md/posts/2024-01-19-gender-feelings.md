@@ -1,6 +1,8 @@
 {:title "gender feelings"
  :date "2024-01-19T17:08"
- :tags ["cohost mirror" "gender"]}
+ :tags ["cohost mirror" "gender"]
+ :cohost-id 4225466
+ :cohost-url "4225466-gender-feelings"}
 
 i wrote [this post](/posts/2024-01-14-trans-jerry) last week but i actually came up with the joke back in the fall. i've been mulling it over ever since, and i think i know why it resonates. this might take a moment to write out tho, so my apologies up front.
 

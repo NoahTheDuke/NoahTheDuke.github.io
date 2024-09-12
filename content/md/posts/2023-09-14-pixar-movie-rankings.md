@@ -1,6 +1,8 @@
 {:title "pixar movie rankings"
  :date "2023-09-14T11:05"
- :tags ["cohost mirror" "reviews" "pixar"]}
+ :tags ["cohost mirror" "reviews" "pixar"]
+ :cohost-id 2842001
+ :cohost-url "2842001-pixar-movie-rankings"}
 
 i watched elemental last night and while i'm still coalescing my thoughts on it, i decided to rank the pixar films. feast your eyes on this and scream at me in the comments and rechosts
 

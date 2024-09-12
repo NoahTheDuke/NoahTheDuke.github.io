@@ -3,11 +3,13 @@
         ring-server/ring-server {:mvn/version "0.5.0"}
         ring/ring-devel {:mvn/version "1.12.2"}
         compojure/compojure {:mvn/version "1.7.1"}
-        cryogen-flexmark/cryogen-flexmark {:mvn/version "0.1.4"}
         cryogen-core/cryogen-core {:mvn/version "0.4.6"}
         enlive/enlive {:mvn/version "1.1.6"}
         clygments/clygments {:mvn/version "2.0.2"}
-        dawran6/emoji {:mvn/version "0.1.5"}}
+        com.vdurmont/emoji-java {:mvn/version "5.1.1"}
+        babashka/fs {:mvn/version "0.5.22"}
+        dev.weavejester/medley {:mvn/version "1.8.1"}
+        com.vladsch.flexmark/flexmark-all {:mvn/version "0.64.8"}}
  :aliases {:repl/rebel {:extra-deps {nrepl/nrepl {:mvn/version "1.3.0"}
                                      cider/cider-nrepl {:mvn/version "0.50.2"}
                                      com.bhauman/rebel-readline {:mvn/version "0.1.4"}
@@ -18,7 +20,7 @@
                                     "--middleware" "[cider.nrepl/cider-middleware]"
                                     "-i"
                                     "-f" "rebel-readline.main/-main"]}
-           :build {:main-opts ["-m" "cryogen.core"]}
+           :build {:main-opts ["-m" "cryogen.server"]}
            :serve {:exec-fn   cryogen.server/serve
                    :exec-args {:port 3000}}
            :fast {:exec-args {:fast true}}}}

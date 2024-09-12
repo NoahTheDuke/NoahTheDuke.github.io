@@ -7,8 +7,8 @@
     </div>
 
     <ul>
-        {% for tag in tags|sort-by:name %}
-        <li><a href="{{tag.uri}}">{{tag.name}}</a></li>
+        {% for tag in tags|sort-by-lowercase-name %}
+        <li><a href="{{tag.uri}}">{{tag.name|safe}}</a></li>
         {% endfor %}
     </ul>
 </div>

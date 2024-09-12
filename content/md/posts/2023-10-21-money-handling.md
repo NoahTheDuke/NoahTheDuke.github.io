@@ -1,6 +1,8 @@
 {:title "Money Handling When Married"
  :date "2023-10-21T10:22"
- :tags ["cohost mirror" "money" "finances"]}
+ :tags ["cohost mirror" "money" "finances"]
+ :cohost-id 3252059
+ :cohost-url "3252059-money-handling-when"}
 
 Before I got married, I heard lots of advice about how to handle money in marriage, such as “have separate bank accounts” and “only use one joint bank account” and “as long as bills are covered, you should buy whatever you want” and “every penny must be accounted for to make sure nothing funny is happening”.
 

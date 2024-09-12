@@ -15,7 +15,9 @@
         </div>
     </div>
     {{post.content|safe}}
+    {% if not post.full-post %}
     <a class="button" href="{{post.uri}}">Continue reading &#8594;</a>
+    {% endif %}
     <hr>
     {% endfor %}
 

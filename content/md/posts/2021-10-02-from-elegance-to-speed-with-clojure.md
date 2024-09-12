@@ -61,9 +61,9 @@ And how I've adapted John's data generation:
 (def *s* (time-sequence initial-size))
 ```
 
-**NOTE**
-
-> Before we dive into code and times, I want to preface that I don't really understand how John is determining `kHz` and `MHz` when discussing performance. I'd like to be able to more easily compare our two sets of numbers (so that for a given version I can figure out the ratio needed to compare), but alas, the provided Clojure times are fuzzy, so I am stuck relying strictly on the Common Lisp "msec" output.
+| **NOTE**
+|
+| Before we dive into code and times, I want to preface that I don't really understand how John is determining `kHz` and `MHz` when discussing performance. I'd like to be able to more easily compare our two sets of numbers (so that for a given version I can figure out the ratio needed to compare), but alas, the provided Clojure times are fuzzy, so I am stuck relying strictly on the Common Lisp "msec" output.
 
 # Initial version
 

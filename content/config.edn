@@ -21,7 +21,7 @@
  :keep-files                   [".git"]
  :ignored-files                [#"\.#.*" #".*\.swp$"]
  :previews?                    true
- :posts-per-page               5
+ :posts-per-page               20
  :blocks-per-preview           3
  :clean-urls                   :trailing-slash
  :collapse-subdirs?            false
