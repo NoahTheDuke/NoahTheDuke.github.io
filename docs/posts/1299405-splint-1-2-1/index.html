@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Thoughts and bits: splint 1.2.1</title>
+        
+<meta name="keywords" content="cohost mirror,clojure,splint,linter,linters,programming,devblog,functional programming">
+
+<meta name="description" content="since 1.0, i&#39;ve done a fair amount of work:now checks :spat/lit metadata in patterns to allow patterns to use the &quot;special&quot; symbols the dsl is looking for as plain data: &#39;(defn example [^:spat/lit _] will look for the symbol _, not match on anything.wrote a bunch of documentation for rules and patterns and how they work and are built.cleaned up the rules documentation pages quite a bit: outside links, an :updated field to show the most recent version a rule was changed, a nice &lt;hr&gt; between each rule to ensure visual clarity.moved 20+ rules from lint to style genres because they&#39;re purely style related.added ctx to :on-match function signature, allowing for global config to be passed in.added :chosen-style, which allows for rules to define different &quot;styles&quot; instead of having multiple conflicting rules for the same scenario.added &quot;markdown&quot; as an output format. same as &quot;full&quot; but will use ### headers and fenced code blocks to make it look pretty. i&#39;m not sure the use-case here, but kibit has it and it was easy to add.shit&#39;s coming along nicely and i feel good about it. still fast as hell">
+
+<meta property="og:description" content="since 1.0, i&#39;ve done a fair amount of work:now checks :spat/lit metadata in patterns to allow patterns to use the &quot;special&quot; symbols the dsl is looking for as plain data: &#39;(defn example [^:spat/lit _] will look for the symbol _, not match on anything.wrote a bunch of documentation for rules and patterns and how they work and are built.cleaned up the rules documentation pages quite a bit: outside links, an :updated field to show the most recent version a rule was changed, a nice &lt;hr&gt; between each rule to ensure visual clarity.moved 20+ rules from lint to style genres because they&#39;re purely style related.added ctx to :on-match function signature, allowing for global config to be passed in.added :chosen-style, which allows for rules to define different &quot;styles&quot; instead of having multiple conflicting rules for the same scenario.added &quot;markdown&quot; as an output format. same as &quot;full&quot; but will use ### headers and fenced code blocks to make it look pretty. i&#39;m not sure the use-case here, but kibit has it and it was easy to add.shit&#39;s coming along nicely and i feel good about it. still fast as hell">
+
+<meta property="og:url" content="https://noahtheduke.github.io/posts/1299405-splint-1-2-1/" />
+<meta property="og:title" content="splint 1.2.1" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:300,400,700|Inconsolata" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/colors/colorful.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="Thoughts and bits" href="/">
+                    <img class="icon" src="/img/profile.webp">
+                    <div class="text desktop-and-tablet-only">Thoughts and bits</div>
+                    <div class="text mobile-only">Thoughts and bits</div>
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li >
+                            <a title="Home" href="/">
+                                <div class="menu-item-text">Home</div>
+                            </a>
+                        </li>
+                        <li >
+                            <a title="Posts" href="/p/1/">
+                                <div class=" menu-item-text">Posts</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a href="/cohost-archive/">
+                                <div class="menu-item-text">Cohost Archive</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a href="/now/">
+                                <div class="menu-item-text">Now</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Archives" href="/archives/">
+                                <div class="menu-item-text">Archives</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Tags" href="/tags/">
+                                <div class="menu-item-text">Tags</div>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a class="menu-item-img" href="https://mykocalico.neocities.org/buttons">
+                                 <img src="/img/i-was-on-cohost.gif">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia">
+                    <ul>
+                        <li>
+                            <a title="Email"
+                               href="mailto:noah.bogart@hey.com"
+                               target="_blank"
+                               rel="external"
+                               >
+                               <svg class="icon icon-mail-alt">
+                                   <use xlink:href="/img/icons.svg#icon-mail-alt"></use>
+                               </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="LinkedIn"
+                               href="https://www.linkedin.com/in/noah-bogart"
+                               target="_blank"
+                               rel="external"
+                               >
+                                <svg class="icon icon-linkedin">
+                                    <use xlink:href="/img/icons.svg#icon-linkedin"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="GitHub"
+                               href="https://github.com/NoahTheDuke"
+                               target="_blank"
+                               rel="external"
+                               >
+                               <svg class="icon icon-github-circled">
+                                   <use xlink:href="/img/icons.svg#icon-github-circled"></use>
+                               </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="RSS Feed"
+                               href="/feed.xml"
+                               >
+                               <svg class="icon icon-rss-squared">
+                                   <use xlink:href="/img/icons.svg#icon-rss-squared"></use>
+                               </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <h1>splint 1.2.1</h1>
+    <div class="byline">
+        <span title="Fri, April 7, 2023, 15:18 PM">
+            Apr 7, 2023, @845.83
+        </span>
+        / 
+            
+            <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+            
+            <a href="/tags/clojure/">#clojure</a>
+            
+            <a href="/tags/splint/">#splint</a>
+            
+            <a href="/tags/linter/">#linter</a>
+            
+            <a href="/tags/linters/">#linters</a>
+            
+            <a href="/tags/programming/">#programming</a>
+            
+            <a href="/tags/devblog/">#devblog</a>
+            
+            <a href="/tags/functional%20programming/">#functional programming</a>
+            
+        
+        
+        / <a href="https://cohost.org/noahtheduke/post/1299405-splint-1-2-1">Cohost post</a>
+        
+    </div>
+</div>
+<hr>
+<div>
+    
+    <p>since 1.0, i've done a fair amount of work:</p><ul><li><p>now checks <code>:spat/lit</code> metadata in patterns to allow patterns to use the "special" symbols the dsl is looking for as plain data: <code>'(defn example [^:spat/lit _]</code> will look for the symbol <code>_</code>, not match on anything.</p></li><li><p>wrote a bunch of documentation for rules and patterns and how they work and are built.</p></li><li><p>cleaned up the rules documentation pages quite a bit: outside links, an <code>:updated</code> field to show the most recent version a rule was changed, a nice <code>&lt;hr&gt;</code> between each rule to ensure visual clarity.</p></li><li><p>moved 20+ rules from <code>lint</code> to <code>style</code> genres because they're purely style related.</p></li><li><p>added <code>ctx</code> to <code>:on-match</code> function signature, allowing for global config to be passed in.</p></li><li><p>added <code>:chosen-style</code>, which allows for rules to define different "styles" instead of having multiple conflicting rules for the same scenario.</p></li><li><p>added <code>"markdown"</code> as an output format. same as <code>"full"</code> but will use <code>###</code> headers and fenced code blocks to make it look pretty. i'm not sure the use-case here, but kibit has it and it was easy to add.</p></li></ul><p>shit's coming along nicely and i feel good about it. still fast as hell</p>
+</div>
+<hr>
+<div>
+    Liked the post? Hated the post? Felt nothing whatsoever about the post?
+
+    <a href="mailto:noah.bogart+blogcomment@hey.com?subject=RE: splint 1.2.1">Email me</a>, and let me know!
+</div>
+
+    <br>
+    
+    <div id="prev-next">
+    
+    <div class="prev"></div>
+    
+    
+    <div class="next"></div>
+    
+</div>
+
+    
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2024 Noah Bogart
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+                <br>Theme by <a href="http://github.com/KingMob">KingMob</a>
+            </div>
+        </article>
+
+        
+        
+    </body>
+</html>

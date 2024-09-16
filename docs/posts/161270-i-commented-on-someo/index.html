@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Thoughts and bits: </title>
+        
+<meta name="keywords" content="cohost mirror,clojure,rant,open source">
+
+<meta name="description" content="I commented on someone else’s post about open source community norms and brought up Rich Hickey’s Open Source is Not About You. I said  that I admired the stance after initially thinking it rude. However,,,I can’t help but wonder what Clojure could look like if it was less preciously held by those in charge. I don’t want Rust levels of development speed, that’s too much and too fast for my taste. But it dampens my enthusiasm for the language and my faith in the team when they respond with such disinterest in things that don’t materially impact them directly.Sharp edges and places of friction are ignored or brushed away as unimportant, like stack traces or error messages in general. Bugs that have available patches can be left to bitrot, sometimes for years (concat stack overflow patch), and bugs without patches can be ignored or treated as too prevalent to fix (keyword regex, type hinting symbol vs vector in defn).">
+
+<meta property="og:description" content="I commented on someone else’s post about open source community norms and brought up Rich Hickey’s Open Source is Not About You. I said  that I admired the stance after initially thinking it rude. However,,,I can’t help but wonder what Clojure could look like if it was less preciously held by those in charge. I don’t want Rust levels of development speed, that’s too much and too fast for my taste. But it dampens my enthusiasm for the language and my faith in the team when they respond with such disinterest in things that don’t materially impact them directly.Sharp edges and places of friction are ignored or brushed away as unimportant, like stack traces or error messages in general. Bugs that have available patches can be left to bitrot, sometimes for years (concat stack overflow patch), and bugs without patches can be ignored or treated as too prevalent to fix (keyword regex, type hinting symbol vs vector in defn).">
+
+<meta property="og:url" content="https://noahtheduke.github.io/posts/161270-i-commented-on-someo/" />
+<meta property="og:title" content="" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:300,400,700|Inconsolata" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/colors/colorful.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="Thoughts and bits" href="/">
+                    <img class="icon" src="/img/profile.webp">
+                    <div class="text desktop-and-tablet-only">Thoughts and bits</div>
+                    <div class="text mobile-only">Thoughts and bits</div>
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li >
+                            <a title="Home" href="/">
+                                <div class="menu-item-text">Home</div>
+                            </a>
+                        </li>
+                        <li >
+                            <a title="Posts" href="/p/1/">
+                                <div class=" menu-item-text">Posts</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a href="/cohost-archive/">
+                                <div class="menu-item-text">Cohost Archive</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a href="/now/">
+                                <div class="menu-item-text">Now</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Archives" href="/archives/">
+                                <div class="menu-item-text">Archives</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Tags" href="/tags/">
+                                <div class="menu-item-text">Tags</div>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a class="menu-item-img" href="https://mykocalico.neocities.org/buttons">
+                                 <img src="/img/i-was-on-cohost.gif">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia">
+                    <ul>
+                        <li>
+                            <a title="Email"
+                               href="mailto:noah.bogart@hey.com"
+                               target="_blank"
+                               rel="external"
+                               >
+                               <svg class="icon icon-mail-alt">
+                                   <use xlink:href="/img/icons.svg#icon-mail-alt"></use>
+                               </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="LinkedIn"
+                               href="https://www.linkedin.com/in/noah-bogart"
+                               target="_blank"
+                               rel="external"
+                               >
+                                <svg class="icon icon-linkedin">
+                                    <use xlink:href="/img/icons.svg#icon-linkedin"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="GitHub"
+                               href="https://github.com/NoahTheDuke"
+                               target="_blank"
+                               rel="external"
+                               >
+                               <svg class="icon icon-github-circled">
+                                   <use xlink:href="/img/icons.svg#icon-github-circled"></use>
+                               </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="RSS Feed"
+                               href="/feed.xml"
+                               >
+                               <svg class="icon icon-rss-squared">
+                                   <use xlink:href="/img/icons.svg#icon-rss-squared"></use>
+                               </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <h1></h1>
+    <div class="byline">
+        <span title="Mon, October 31, 2022, 00:05 AM">
+            Oct 31, 2022, @211.81
+        </span>
+        / 
+            
+            <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+            
+            <a href="/tags/clojure/">#clojure</a>
+            
+            <a href="/tags/rant/">#rant</a>
+            
+            <a href="/tags/open%20source/">#open source</a>
+            
+        
+        
+        / <a href="https://cohost.org/noahtheduke/post/161270-i-commented-on-someo">Cohost post</a>
+        
+    </div>
+</div>
+<hr>
+<div>
+    
+    <p>I commented on someone else’s post about open source community norms and brought up Rich Hickey’s Open Source is Not About You. I said  that I admired the stance after initially thinking it rude. However,,,</p><p>I can’t help but wonder what Clojure could look like if it was less preciously held by those in charge. I don’t want Rust levels of development speed, that’s too much and too fast for my taste. But it dampens my enthusiasm for the language and my faith in the team when they respond with such disinterest in things that don’t materially impact them directly.</p><p>Sharp edges and places of friction are ignored or brushed away as unimportant, like stack traces or error messages in general. Bugs that have available patches can be left to bitrot, sometimes for years (concat stack overflow patch), and bugs without patches can be ignored or treated as too prevalent to fix (keyword regex, type hinting symbol vs vector in defn).</p><p>I like that they care about stability and have a core ideal of additive change, but at a certain point it feels closer to “once written, code cannot change” which I think leads to worse decision making over time. The bigger the stakes, the harder it is to make any decision.</p><p>I love Clojure and I want to continue to use it for the rest of my career; that’s why it hurts to see them choose to act like this. People like Ambrose Bonnaire-Seargent (typed clojure) shouldn’t feel like they have to write their own library to fix the mistakes in Clojure itself because the core team are too stuck in their ways to merge his patches.</p><p>Breaks my damn heart.</p>
+</div>
+<hr>
+<div>
+    Liked the post? Hated the post? Felt nothing whatsoever about the post?
+
+    <a href="mailto:noah.bogart+blogcomment@hey.com?subject=RE: ">Email me</a>, and let me know!
+</div>
+
+    <br>
+    
+    <div id="prev-next">
+    
+    <div class="prev"></div>
+    
+    
+    <div class="next"></div>
+    
+</div>
+
+    
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2024 Noah Bogart
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+                <br>Theme by <a href="http://github.com/KingMob">KingMob</a>
+            </div>
+        </article>
+
+        
+        
+    </body>
+</html>

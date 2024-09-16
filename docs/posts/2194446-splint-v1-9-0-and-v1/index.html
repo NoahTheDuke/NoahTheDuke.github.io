@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Thoughts and bits: Splint v1.9.0 and v1.10.0</title>
+        
+<meta name="keywords" content="cohost mirror,clojure,splint,devblog,linter,linters,functional programming,programming">
+
+<meta name="description" content="Forgot to post after releasing v1.9.0 back in May, so this is gonna be fuckin huge.In short: v1.9 added a new rule (style/prefer-clj-string) and a new cli flag (--[no-]summary). v1.10 added reading available deps.edn and project.clj files to determine the directories to check, changing the pattern DSL to use a variation of pangloss/pattern&#39;s DSL, and to add 5 new rules, 4 of which are performance rules (style/redundant-regex-constructor, performance/assoc-many, performance/avoid-satisfies, performance/get-in-literals, performance/get-keyword).The change in v1.10 means that you can run bb splint or clojure -M:splint and it&#39;ll &quot;just work&quot;: it&#39;ll check the primary directories and the directories under and :test alias without any extra fiddling. This makes it much easier to use quickly. I&#39;ve always been annoyed at clj-kondo&#39;s insistence on forcing the --lint flag for choosing files, and loved Rubocop&#39;s &quot;just run it&quot; mentality.">
+
+<meta property="og:description" content="Forgot to post after releasing v1.9.0 back in May, so this is gonna be fuckin huge.In short: v1.9 added a new rule (style/prefer-clj-string) and a new cli flag (--[no-]summary). v1.10 added reading available deps.edn and project.clj files to determine the directories to check, changing the pattern DSL to use a variation of pangloss/pattern&#39;s DSL, and to add 5 new rules, 4 of which are performance rules (style/redundant-regex-constructor, performance/assoc-many, performance/avoid-satisfies, performance/get-in-literals, performance/get-keyword).The change in v1.10 means that you can run bb splint or clojure -M:splint and it&#39;ll &quot;just work&quot;: it&#39;ll check the primary directories and the directories under and :test alias without any extra fiddling. This makes it much easier to use quickly. I&#39;ve always been annoyed at clj-kondo&#39;s insistence on forcing the --lint flag for choosing files, and loved Rubocop&#39;s &quot;just run it&quot; mentality.">
+
+<meta property="og:url" content="https://noahtheduke.github.io/posts/2194446-splint-v1-9-0-and-v1/" />
+<meta property="og:title" content="Splint v1.9.0 and v1.10.0" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:300,400,700|Inconsolata" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/colors/colorful.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="Thoughts and bits" href="/">
+                    <img class="icon" src="/img/profile.webp">
+                    <div class="text desktop-and-tablet-only">Thoughts and bits</div>
+                    <div class="text mobile-only">Thoughts and bits</div>
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li >
+                            <a title="Home" href="/">
+                                <div class="menu-item-text">Home</div>
+                            </a>
+                        </li>
+                        <li >
+                            <a title="Posts" href="/p/1/">
+                                <div class=" menu-item-text">Posts</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a href="/cohost-archive/">
+                                <div class="menu-item-text">Cohost Archive</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a href="/now/">
+                                <div class="menu-item-text">Now</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Archives" href="/archives/">
+                                <div class="menu-item-text">Archives</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Tags" href="/tags/">
+                                <div class="menu-item-text">Tags</div>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a class="menu-item-img" href="https://mykocalico.neocities.org/buttons">
+                                 <img src="/img/i-was-on-cohost.gif">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia">
+                    <ul>
+                        <li>
+                            <a title="Email"
+                               href="mailto:noah.bogart@hey.com"
+                               target="_blank"
+                               rel="external"
+                               >
+                               <svg class="icon icon-mail-alt">
+                                   <use xlink:href="/img/icons.svg#icon-mail-alt"></use>
+                               </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="LinkedIn"
+                               href="https://www.linkedin.com/in/noah-bogart"
+                               target="_blank"
+                               rel="external"
+                               >
+                                <svg class="icon icon-linkedin">
+                                    <use xlink:href="/img/icons.svg#icon-linkedin"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="GitHub"
+                               href="https://github.com/NoahTheDuke"
+                               target="_blank"
+                               rel="external"
+                               >
+                               <svg class="icon icon-github-circled">
+                                   <use xlink:href="/img/icons.svg#icon-github-circled"></use>
+                               </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="RSS Feed"
+                               href="/feed.xml"
+                               >
+                               <svg class="icon icon-rss-squared">
+                                   <use xlink:href="/img/icons.svg#icon-rss-squared"></use>
+                               </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <h1>Splint v1.9.0 and v1.10.0</h1>
+    <div class="byline">
+        <span title="Tue, July 25, 2023, 14:30 PM">
+            Jul 25, 2023, @812.50
+        </span>
+        / 
+            
+            <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+            
+            <a href="/tags/clojure/">#clojure</a>
+            
+            <a href="/tags/splint/">#splint</a>
+            
+            <a href="/tags/devblog/">#devblog</a>
+            
+            <a href="/tags/linter/">#linter</a>
+            
+            <a href="/tags/linters/">#linters</a>
+            
+            <a href="/tags/functional%20programming/">#functional programming</a>
+            
+            <a href="/tags/programming/">#programming</a>
+            
+        
+        
+        / <a href="https://cohost.org/noahtheduke/post/2194446-splint-v1-9-0-and-v1">Cohost post</a>
+        
+    </div>
+</div>
+<hr>
+<div>
+    
+    <p>Forgot to post after releasing v1.9.0 back in May, so this is gonna be fuckin huge.</p><p>In short: v1.9 added a new rule (<code>style/prefer-clj-string</code>) and a new cli flag (<code>--[no-]summary</code>). v1.10 added reading available <code>deps.edn</code> and <code>project.clj</code> files to determine the directories to check, changing the pattern DSL to use a variation of pangloss/pattern's DSL, and to add 5 new rules, 4 of which are <code>performance</code> rules (<code>style/redundant-regex-constructor</code>, <code>performance/assoc-many</code>, <code>performance/avoid-satisfies</code>, <code>performance/get-in-literals</code>, <code>performance/get-keyword</code>).</p><p>The change in v1.10 means that you can run <code>bb splint</code> or <code>clojure -M:splint</code> and it'll "just work": it'll check the primary directories and the directories under and <code>:test</code> alias without any extra fiddling. This makes it much easier to use quickly. I've always been annoyed at clj-kondo's insistence on forcing the <code>--lint</code> flag for choosing files, and loved Rubocop's "just run it" mentality.</p><p>The <code>performance</code> rules are disabled by default cuz they might make code more wordy or annoying to work with, and they're <em>highly</em> opinionated. I like them but I get it.</p><p>Full release docs/change logs under the fold.</p><hr /><h2 id="v190">v1.9.0</h2><h3 id="new-rules">New Rules</h3><ul><li><code>style/prefer-clj-string</code>: Prefer <code>clojure.string</code> functions over raw interop. Defaults to <code>true</code>.</li></ul><h3 id="added">Added</h3><ul><li><code>--[no]summary</code> cli flag to print or not print the summary line.</li></ul><h3 id="changed">Changed</h3><ul><li><p><code>:filename</code> in <code>Diagnostic</code> is now a <code>java.io.File</code> object, not a string. This is propogated through everything. I suspect no one is using these so I think I could change the <code>Diagnostic</code> as well, but maybe I'll wait a min.</p></li><li><p><code>make-edamame-opts</code> now accepts both <code>features</code> and <code>ns-state</code>, and <code>parse-string</code> and <code>parse-string-all</code> take in <code>features</code> instead of <code>ns-state</code>.</p></li><li><p>The runner tracks the filetype of each file and runs over <code>cljc</code> files twice, both <code>clj</code> and <code>cljs</code>, with their respective sides of the reader conditionals applied.</p></li><li><p>Diagnostics are deduped before printing.</p></li><li><p><code>lint/warn-on-reflection</code> only runs in <code>clj</code> files.</p></li><li><p>Remove <code>farolero</code>. Didn't provide any benefits over judicious <code>try</code>/<code>catch</code> use. :(</p></li><li><p>Extend the <code>matcher-combinators.core/Matcher</code> protocol to <code>java.io.File</code>, making <code>match?</code> work nicely with both strings and file objects.</p></li><li><p>Performance improvements by converting <code>rules-by-type</code> from a map of simple-type -&gt; map of rule name -&gt; rule to simple-type -&gt; vec of rule.</p></li></ul><h3 id="fixed">Fixed</h3><ul><li>Correctly print special characters/clojure.core vars (<code>@</code>, not <code>splint/deref</code>, etc).</li></ul><h2 id="v1100">v1.10.0</h2><p>The big feature here is adding support to run <code>splint</code> without specifying paths. Now Splint will read the <code>deps.edn</code> or <code>project.clj</code> file in the current directory and check the paths in the base definition as well as <code>:dev</code> and <code>:test</code> aliases/profiles if no path argument is given. Splint still doesn't support specifying paths in <code>.splint.edn</code>, nor does it allow for using paths from a project file as well as additional paths when called, but those are planned.</p><p>The second big change is moving from the old DSL to the new <code>pangloss/pattern</code> inspired DSL. More flexible, more usable, overall better.</p><p>The third is adding <code>performance</code> rules. These are off by default and are designed for those who want to pinch their cycles. Some affect common code (<code>get-in</code>) and some are much more rare (<code>satisfies</code>), but they're all designed to help you be mindful of slower paths.</p><h3 id="breaking">Breaking</h3><ul><li><p>Moved <code>spat.parser</code> to <code>splint.parser</code>.</p></li><li><p>Moved <code>spat.pattern</code> to <code>splint.pattern</code>. RIP <code>spat</code>, you treated me well for 9 months, but keeping <code>spat</code> and <code>splint</code> separate is no longer helpful.</p></li><li><p>Switched to the new pattern system, updated all rules.</p></li></ul><h3 id="new-rules-1">New Rules</h3><ul><li><p><code>performance/assoc-many</code>: Prefer <code>(-&gt; m (assoc :k1 1) (assoc :k2 2))</code> over <code>(assoc m :k1 1 :k2 2)</code>.</p></li><li><p><code>performance/avoid-satisfies</code>: Do not use <code>clojure.core/satisfies?</code>, full stop.</p></li><li><p><code>performance/get-in-literals</code>: Prefer <code>(-&gt; m :k1 :k2 :k3)</code> over <code>(get-in m [:k1 :k2 :k3])</code>.</p></li><li><p><code>performance/get-keyword</code>: Prefer <code>(:k m)</code> over <code>(get m :k)</code>.</p></li><li><p><code>style/redundant-regex-constructor</code>: Prefer <code>#"abc"</code> over <code>(re-pattern #"abc")</code>.</p></li></ul><h3 id="added-1">Added</h3><ul><li><p>Implemented faster/more efficient versions of Clojure standard library functions:</p><ul><li><p><code>-&gt;list</code>: concrete list building instead of apply . Useful anywhere a lazy-seq might be returned otherwise. seq/vec input: 40/43 us -&gt; 28/15 us</p></li><li><p><code>mapv*</code>: <code>mapv</code> but short-circuits empty input and uses <code>object-array</code>. Still unsure of this one. 36 us -&gt; 36 us</p></li><li><p><code>run!*</code>: <code>run!</code> but short-circuits empty input and uses <code>.iterator</code> to perform the side-effects. Does not support <code>reduced</code>. 7 us -&gt; 950 ns</p></li><li><p><code>pmap*</code>: Avoids lazy-seq overhead and relies on Java's built-in Executors. 3.34 s -&gt; 202 ms</p></li><li><p><code>walk*</code> and <code>postwalk*</code>: Primarily useful in <code>replace</code>, but may prove useful otherwise. Only supports <code>simple-type</code> defined types. 72 us -&gt; 25 us</p></li></ul></li><li><p><code>splint.config/read-project-file</code> returns a map of <code>:clojure-version</code> and <code>:paths</code>, taken from the project file (<code>deps.edn</code> or <code>project.clj</code>) in the current directory. If no file is found, <code>:paths</code> is <code>nil</code> and <code>:clojure-version</code> is pulled from <code>*clojure-version*</code>.</p></li><li><p><code>:min-clojure-version</code> in <code>defrule</code>, allowing for rules to specify the minimum version of clojure they require. Rules that are below the supported version are disabled at preparation time and can't be enabled during a run. Acceptable shape is a map of at least one of <code>:major</code>, <code>:minor</code>, and <code>:incremental</code>.</p><ul><li>Include this in rule documentation.</li></ul></li><li><p><code>test-helpers/with-temp-file</code> and <code>test-helpers/print-to-file!</code> to test file contents.</p></li></ul><h3 id="changed-1">Changed</h3><ul><li><p>Move <code>spat.parser/parse-string</code> and <code>spat.parser/parse-string-all</code> into the test-helper namespace, and replace with <code>parse-file</code> which accepts the <code>file-obj</code> map.</p></li><li><p>Parse data reader/tagged literals as maps instead of lists, and put the extension (dialect) into the symbol's metadata.</p></li><li><p>Defer building cli summary until needed.</p></li><li><p>Use new <code>splint.config/slurp-edn</code> to read config files, parsed with [edamame][edamame].</p></li><li><p>Changed <code>:spat/lit</code> metadata to <code>:splint/lit</code>. <code>:spat/lit</code> still works for the time being, but no promises.</p></li><li><p><code>splint.printer/print-results</code> now accepts only the <code>results</code> object, which should additionally have <code>:checked-files</code> and <code>:total-time</code>.</p></li><li><p>Output formats <code>simple</code>, <code>full,</code> and <code>clj-kondo</code> now print the number of files checked as well: <code>"Linting took 1ms, checked 3 files, 3 style warnings"</code></p></li><li><p>Moved <code>splint.replace/revert-splint-reader-macros</code> into <code>splint.printer</code> where it belongs.</p></li><li><p>Rely on undefined behavior in <code>symbol</code> to correctly print unprintable special characters by converting sexprs to strings and then converting those to symbols.</p></li><li><p>Move <code>simple-type</code> and <code>drop-quote</code> to <code>splint.utils</code>.</p></li></ul>
+</div>
+<hr>
+<div>
+    Liked the post? Hated the post? Felt nothing whatsoever about the post?
+
+    <a href="mailto:noah.bogart+blogcomment@hey.com?subject=RE: Splint v1.9.0 and v1.10.0">Email me</a>, and let me know!
+</div>
+
+    <br>
+    
+    <div id="prev-next">
+    
+    <div class="prev"></div>
+    
+    
+    <div class="next"></div>
+    
+</div>
+
+    
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2024 Noah Bogart
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+                <br>Theme by <a href="http://github.com/KingMob">KingMob</a>
+            </div>
+        </article>
+
+        
+        
+    </body>
+</html>

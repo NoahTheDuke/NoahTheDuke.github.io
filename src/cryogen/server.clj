@@ -1,100 +1,28 @@
 (ns cryogen.server
   (:require
    [clojure.string :as str]
-   [clojure.walk :as walk]
-   [clygments.core :as clygments]
    [compojure.core :refer [defroutes GET]]
    [compojure.route :as route]
-   [cryogen.core :as cryogen]
    [cryogen-core.compiler :refer [compile-assets-timed]]
    [cryogen-core.config :refer [resolve-config]]
    [cryogen-core.flexmark :as flexmark]
    [cryogen-core.io :refer [path]]
    [cryogen-core.plugins :refer [load-plugins]]
-   [cryogen-core.util :as util]
    [cryogen-core.watcher :refer [start-watcher! start-watcher-for-changes!]]
-   [net.cgrand.enlive-html :as enlive]
+   [cryogen.core :as cryogen]
    [ring.server.standalone :as ring-server]
    [ring.util.codec :refer [url-decode]]
    [ring.util.response :refer [file-response redirect]]
-   [selmer.filters :refer [add-filter!]])
+   )
   (:import
-   (com.vdurmont.emoji EmojiParser)
    (java.io File)
-   (java.time ZoneId ZonedDateTime)))
-
-(def biel-mean-time (ZoneId/of "UTC+01:00"))
-(def beat-length 86.4)
-
-(defn beat [^java.util.Date timestamp]
-  (when timestamp
-    (let [instant (.toInstant timestamp)
-          ts (ZonedDateTime/ofInstant instant biel-mean-time)]
-      (->> (/ (+ (* 3600 (.getHour ts))
-                 (* 60 (.getMinute ts))
-                 (.getSecond ts))
-              beat-length)
-           (format "%.2f")))))
-
-(comment
-  (beat (java.util.Date.)))
-
-(do (add-filter! :.beat #'beat)
-    nil)
-
-(defn sort-by-lower-case-name [tags]
-  (sort-by (comp str/lower-case str :name) tags))
-
-(do (add-filter! :sort-by-lowercase-name #'sort-by-lower-case-name)
-    nil)
-
-(defn transform-html
-  "Creates an enlive-snippet from `html-string` then removes
-  the newline nodes"
-  [html-string]
-  (->> (enlive/html-snippet html-string)
-       (walk/postwalk
-        (fn [node]
-          (cond
-            ; ;; empty nodes
-            (seq? node)
-            (remove #(and (string? %) (re-matches #"\n\h*" %)) node)
-            ;; language-tagged code blocks
-            (= :pre (:tag node))
-            (let [n (first (:content node))]
-              (if (and (= 1 (count (:content node)))
-                       (= :code (:tag n))
-                       (-> n :attrs :class))
-                (let [klass (-> n :attrs :class)
-                      lang (keyword klass)
-                      content (-> (:content n)
-                                  (first)
-                                  (clygments/highlight lang :html))
-                      code (-> (enlive/html-snippet content)
-                               (first)
-                               :content)]
-                  {:tag :code
-                   :attrs {:class (str klass " highlight")
-                           :data-lang klass}
-                   :content code})
-                node))
-            :else
-            node)))))
-
-(alter-var-root
-  #'util/trimmed-html-snippet
-  (fn [_f] transform-html))
-
-(defn postprocess-article [article _params]
-  (update article :content (comp EmojiParser/parseToUnicode str)))
+   ))
 
 (def resolved-config (delay (resolve-config)))
 
 (def extra-config-dev
   "Add dev-time configuration overrides here, such as `:hide-future-posts? false`"
-  {
-   ; #_#_:postprocess-article-html-fn #'postprocess-article
-   })
+  {})
 
 (defn init [fast?]
   (load-plugins)

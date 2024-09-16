@@ -1,28 +1,57 @@
 (ns cryogen-core.compiler
-  (:require [clojure.java.io :as io]
-            [clojure.pprint :refer [pprint]]
-            [clojure.string :as str]
-            [clojure.zip :as zip]
-            [cryogen-core.config :refer [resolve-config]]
-            [cryogen-core.infer-meta :refer [using-inferred-metadata]]
-            [cryogen-core.io :as cryogen-io]
-            [cryogen-core.klipse :as klipse]
-            [cryogen-core.markup :as m]
-            [cryogen-core.rss :as rss]
-            [cryogen-core.sass :as sass]
-            [cryogen-core.schemas :as schemas]
-            [cryogen-core.sitemap :as sitemap]
-            [cryogen-core.toc :as toc]
-            [cryogen-core.util :as util]
-            [cryogen-core.zip-util :as zip-util]
-            [clj-commons.format.exceptions :refer [print-exception]]
-            [net.cgrand.enlive-html :as enlive]
-            [schema.core :as s]
-            [selmer.parser :refer [cache-off!]]
-            [text-decoration.core :refer [red green yellow blue cyan]])
-  (:import (java.net URLEncoder)
-           (java.util Date)
-           java.util.Locale))
+  (:require
+   [clj-commons.format.exceptions :refer [print-exception]]
+   [clojure.java.io :as io]
+   [clojure.pprint :refer [pprint]]
+   [clojure.string :as str]
+   [clojure.zip :as zip]
+   [cryogen-core.config :refer [resolve-config]]
+   [cryogen-core.infer-meta :refer [using-inferred-metadata]]
+   [cryogen-core.io :as cryogen-io]
+   [cryogen-core.klipse :as klipse]
+   [cryogen-core.markup :as markup]
+   [cryogen-core.rss :as rss]
+   [cryogen-core.sass :as sass]
+   [cryogen-core.schemas :as schemas]
+   [cryogen-core.sitemap :as sitemap]
+   [cryogen-core.toc :as toc]
+   [cryogen-core.util :as util :refer [blue cyan green red yellow]]
+   [cryogen-core.zip-util :as zip-util]
+   [medley.core :as m]
+   [net.cgrand.enlive-html :as enlive]
+   [schema.core :as s]
+   [selmer.filters :refer [add-filter!]]
+   [selmer.parser :refer [cache-off!]])
+  (:import
+   (java.net URLEncoder)
+   (java.time ZoneId ZonedDateTime)
+   (java.util Date Locale)))
+
+
+(def biel-mean-time (ZoneId/of "UTC+01:00"))
+(def beat-length 86.4)
+
+(defn beat [^java.util.Date timestamp]
+  (when timestamp
+    (let [instant (.toInstant timestamp)
+          ts (ZonedDateTime/ofInstant instant biel-mean-time)]
+      (->> (/ (+ (* 3600 (.getHour ts))
+                 (* 60 (.getMinute ts))
+                 (.getSecond ts))
+              beat-length)
+           (format "%.2f")))))
+
+(comment
+  (beat (java.util.Date.)))
+
+(do (add-filter! :.beat #'beat)
+    nil)
+
+(defn sort-by-lower-case-name [tags]
+  (sort-by (comp str/lower-case str :name) tags))
+
+(do (add-filter! :sort-by-lowercase-name #'sort-by-lower-case-name)
+    nil)
 
 (cache-off!)
 
@@ -74,14 +103,14 @@
   at the content directory."
   [root mu ignored-files]
   (let [assets (cryogen-io/find-assets
-                (cryogen-io/path content-root (m/dir mu) root)
-                (m/exts mu)
+                (cryogen-io/path content-root (markup/dir mu) root)
+                (markup/exts mu)
                 ignored-files)]
     (if (seq assets)
       assets
       (cryogen-io/find-assets
        (cryogen-io/path content-root root)
-       (m/exts mu)
+       (markup/exts mu)
        ignored-files))))
 
 (defn find-posts
@@ -130,9 +159,9 @@
     (let [re-root     (re-pattern (str "^.*?(" (:page-root config) "|" (:post-root config) ")/"))
           page-fwd    (str/replace (str page) "\\" "/")  ;; make it work on Windows
           page-name   (if (:collapse-subdirs? config) (.getName page) (str/replace page-fwd re-root ""))
-          file-name   (str/replace page-name (util/re-pattern-from-exts (m/exts markup)) ".html")
+          file-name   (str/replace page-name (util/re-pattern-from-exts (markup/exts markup)) ".html")
           page-meta   (read-page-meta page-name rdr)
-          content     ((m/render-fn markup) rdr (assoc config :page-meta page-meta))
+          content     ((markup/render-fn markup) rdr (assoc config :page-meta page-meta))
           content-dom (util/trimmed-html-snippet content)]
       {:file-name   file-name
        :page-meta   page-meta
@@ -160,7 +189,7 @@
   (update
    article
    :toc
-   #(if %
+   #(when %
       (toc/generate-toc content-dom
                         {:list-type toc
                          :toc-class (or toc-class (:toc-class config) "toc")}))))
@@ -182,6 +211,7 @@
          {:type          :page
           :uri           (page-uri file-name :page-root-uri config)
           :page-index    (:page-index page-meta)
+          :tags          (-> (:tags page-meta) distinct vec)
           :klipse/global (:klipse config)
           :klipse/local  (:klipse page-meta)})
         (add-toc config))))
@@ -189,34 +219,33 @@
 (defn parse-post
   "Return a map with the given post's information."
   [page config markup]
-  (let [{:keys [file-name page-meta content-dom]} (page-content page config markup)]
-    (let [date            (if (:date page-meta)
-                            (.parse (java.text.SimpleDateFormat. (:post-date-format config)) (:date page-meta))
-                            (util/parse-post-date file-name (:post-date-format config)))
-          archive-fmt     (java.text.SimpleDateFormat. ^String (:archive-group-format config) (Locale/getDefault))
-          formatted-group (.format archive-fmt date)]
-      (-> (merge-meta-and-content file-name (update page-meta :layout #(or % :post)) content-dom)
-          (merge
-           {:type                    :post
-            :date                    date
-            :formatted-archive-group formatted-group
-            :parsed-archive-group    (.parse archive-fmt formatted-group)
-            :uri                     (page-uri file-name :post-root-uri config)
-            :tags                    (set (:tags page-meta))
-            :klipse/global           (:klipse config)
-            :klipse/local            (:klipse page-meta)})
-          (add-toc config)))))
+  (let [{:keys [file-name page-meta content-dom]} (page-content page config markup)
+        date            (if (:date page-meta)
+                          (.parse (java.text.SimpleDateFormat. (:post-date-format config)) (:date page-meta))
+                          (util/parse-post-date file-name (:post-date-format config)))
+        archive-fmt     (java.text.SimpleDateFormat. ^String (:archive-group-format config) (Locale/getDefault))
+        formatted-group (.format archive-fmt date)]
+    (-> (merge-meta-and-content file-name (update page-meta :layout #(or % :post)) content-dom)
+        (merge
+         {:type                    :post
+          :date                    date
+          :formatted-archive-group formatted-group
+          :parsed-archive-group    (.parse archive-fmt formatted-group)
+          :uri                     (page-uri file-name :post-root-uri config)
+          :tags                    (-> (:tags page-meta) distinct vec)
+          :klipse/global           (:klipse config)
+          :klipse/local            (:klipse page-meta)})
+        (add-toc config))))
 
 (defn read-posts
   "Returns a sequence of maps representing the data from markdown files of posts.
    Sorts the sequence by post date."
-  [config incremental-compile-filter]
-  (->> (m/markups)
+  [config]
+  (->> (markup/markups)
        (mapcat
         (fn [mu]
           (->>
            (find-posts config mu)
-           (filter incremental-compile-filter)
            (pmap #(parse-post % config mu))
            (remove #(= (:draft? %) true)))))
        (sort-by :date)
@@ -226,13 +255,12 @@
 (defn read-pages
   "Returns a sequence of maps representing the data from markdown files of pages.
   Sorts the sequence by post date."
-  [config incremental-compile-filter]
-  (->> (m/markups)
+  [config]
+  (->> (markup/markups)
        (mapcat
         (fn [mu]
           (->>
            (find-pages config mu)
-           (filter incremental-compile-filter)
            (map #(parse-page % config mu)))))
        (sort-by :page-index)))
 
@@ -348,7 +376,6 @@
    file-path
    (htmlize-content params)))
 
-
 (defn compile-pages
   "Compiles all the pages into html and spits them out into the public folder"
   [{:keys [blog-prefix page-root-uri debug?] :as params} pages]
@@ -372,7 +399,7 @@
 (defn compile-posts
   "Compiles all the posts into html and spits them out into the public folder"
   [{:keys [blog-prefix post-root-uri debug?] :as params} posts]
-  (when-not (empty? posts)
+  (when (seq posts)
     (println (blue "compiling posts"))
     (cryogen-io/create-folder (cryogen-io/path "/" blog-prefix post-root-uri))
     (doseq [{:keys [uri] :as post} posts]
@@ -430,8 +457,10 @@
           :content))
 
 (defn preview-dom [blocks-per-preview content-dom]
-  (or (content-until-more-marker content-dom)
-      (take blocks-per-preview content-dom)))
+  (->> (or (content-until-more-marker content-dom)
+           content-dom)
+       (take blocks-per-preview)
+       (take-while #(not (#{:hr :h1 :h2 :h3 :h4 :h5 :h6 :h7 :h8} (:tag %))))))
 
 (defn create-preview
   "Creates a single post preview"
@@ -528,27 +557,46 @@
                                      :selmer/context  (cryogen-io/path "/" blog-prefix "/")
                                      :uri             uri})))))
 
-(defn compile-authors
-  "For each author, creates a page with filtered posts."
-  [{:keys [blog-prefix author-root-uri author] :as params} posts]
-  (println (blue "compiling authors"))
-  (cryogen-io/create-folder (cryogen-io/path "/" blog-prefix author-root-uri))
-  ;; if the post author is empty defaults to config's :author
-  (doseq [{:keys [author posts]} (group-for-author posts author)]
-    (let [uri (page-uri (str author ".html") :author-root-uri params)]
+(defn compile-cohost-archive
+  "Compiles all the pages into html and spits them out into the public folder"
+  [{:keys [blog-prefix page-root-uri debug? blocks-per-preview raw-pages] :as params}
+   cohost-posts]
+  (when-not (empty? cohost-posts)
+    (println (blue "compiling cohost archive"))
+    (cryogen-io/create-folder (cryogen-io/path "/" blog-prefix page-root-uri))
+    (doseq [{:keys [uri] :as post} cohost-posts]
       (println "-->" (cyan uri))
+      (when debug?
+        (print-debug-info post))
       (write-html uri
-                  params
-                  (render-file "/html/author.html"
-                               (merge params
-                                      {:author          author
-                                       :groups          (group-for-archive posts)
-                                       :selmer/context  (cryogen-io/path "/" blog-prefix "/")
-                                       :uri             uri}))))))
+        params
+        (render-file (str "/html/" (:layout post))
+                     (merge params
+                            {:active-page     "posts"
+                             :home            false
+                             :selmer/context  (cryogen-io/path "/" blog-prefix "/")
+                             :post            post
+                             :uri             uri}))))
+    (let [archive-root (m/find-first :cohost-root raw-pages)
+          page-previews (->> cohost-posts
+                             (remove :cohost-root)
+                             (map #(create-preview blocks-per-preview %))
+                             (map content-dom->html))]
+      (println "-->" (cyan (:uri archive-root)))
+      (write-html (:uri archive-root)
+        params
+        (render-file "/html/cohost-archive.html"
+                     (merge params
+                            {:active-page     "pages"
+                             :home            false
+                             :selmer/context  (cryogen-io/path "/" blog-prefix "/")
+                             :page            archive-root
+                             :cohost-previews page-previews
+                             :uri             (:uri archive-root)}))))))
 
 (defn tag-posts
   "Converts the tags in each post into links"
-  [posts config]
+  [config posts]
   (map #(update-in % [:tags] (partial map (partial tag-info config))) posts))
 
 (defn- content-dir?
@@ -557,9 +605,9 @@
   (.isDirectory (io/file (cryogen-io/path content-root dir))))
 
 (defn- markup-entries [post-root page-root]
-  (let [entries (for [mu (m/markups)
+  (let [entries (for [mu (markup/markups)
                       t  (distinct [post-root page-root])]
-                  [(cryogen-io/path (m/dir mu) t) t])]
+                  [(cryogen-io/path (markup/dir mu) t) t])]
     (apply concat entries)))
 
 (defn copy-resources-from-markup-folders
@@ -571,7 +619,7 @@
      content-root
      (merge config
             {:resources     folders
-             :ignored-files (map #(util/re-pattern-from-exts (m/exts %)) (m/markups))}))))
+             :ignored-files (map #(util/re-pattern-from-exts (markup/exts %)) (markup/markups))}))))
 
 (defn compile-assets
   "Generates all the html and copies over resources specified in the config.
@@ -598,24 +646,21 @@
    - `config` - the site-wide configuration ± from `config.edn` and the provided overrides
    - `params` - `config` + content such as `:pages` etc.
    - `site-data` - a subset of the site content such as `:pages`, `:posts` - see the code below"
-  ([] (compile-assets {} nil))
-  ([overrides-and-hooks] (compile-assets overrides-and-hooks nil))
+  ([] (compile-assets {}))
   ([{:keys [extend-params-fn update-article-fn]
      :or   {extend-params-fn            (fn [params _] params)
             update-article-fn           (fn [article _] article)}
      :as   overrides-and-hooks}
-    changeset]
+    ]
    (println (green "compiling assets..."))
    (when-not (empty? overrides-and-hooks)
      (println (yellow "overriding config.edn with:"))
      (pprint overrides-and-hooks))
-   (let [inc-compile? (seq changeset) ; Don't recompile unchanged posts/pages (ie. most time-consuming)
-         inc-compile-filter (only-changed-files-filter changeset)
-         overrides    (dissoc overrides-and-hooks
-                              :extend-params-fn :update-article-fn)
-         {:keys [^String site-url blog-prefix rss-name recent-posts keep-files ignored-files previews? author-root-uri theme]
+   (let [overrides    (dissoc overrides-and-hooks
+                              :lxtend-params-fn :update-article-fn)
+         {:keys [^String site-url blog-prefix rss-name recent-posts keep-files author-root-uri theme]
           :as   config} (resolve-config overrides)
-         all-posts        (->> (read-posts config inc-compile-filter)
+         all-posts        (->> (read-posts config)
                                (map klipse/klipsify)
                                (map (partial add-description config))
                                (map #(update-article-fn % config))
@@ -625,57 +670,53 @@
          posts (get grouped-posts false [])
          posts (add-prev-next :date posts)
          posts-by-tag (group-by-tags posts)
-         posts        (tag-posts posts config)
+         posts        (tag-posts config posts)
          latest-posts (->> posts (take recent-posts) vec)
-         pages        (->> (read-pages config inc-compile-filter)
+         pages        (->> (read-pages config)
                            (map klipse/klipsify)
                            (map (partial add-description config))
-                           (map #(update-article-fn % config))
-                           (remove nil?))
-         home-page    (->> pages
-                           (filter #(boolean (:home? %)))
-                           (first))
+                           (keep #(update-article-fn % config)))
+         home-page    (m/find-first :home? pages)
          other-pages  (->> pages
                            (remove #{home-page})
                            (add-prev-next :page-index))
+         cohost-pages (->> (read-posts (assoc config :post-root "cohost-archive"))
+                           (tag-posts config)
+                           (map klipse/klipsify)
+                           (map (partial add-description config))
+                           (keep #(update-article-fn % config)))
          [navbar-pages
           sidebar-pages] (group-pages other-pages)
-         params0      (merge
-                       config
-                       {:today         (Date.)
-                        :title         (:site-title config)
-                        :active-page   "home"
-                        :tags          (map (partial tag-info config) (keys posts-by-tag))
-                        :latest-posts  latest-posts
-                        :navbar-pages  navbar-pages
-                        :sidebar-pages sidebar-pages
-                        :home-page     (if home-page
-                                         home-page
-                                         (assoc (first latest-posts) :layout "home.html"))
-                        :archives-uri  (page-uri "archives.html" config)
-                        :index-uri     (page-uri "index.html" config)
-                        :timeline-uri  (page-uri (cryogen-io/path "p" "1.html") config)
-                        :tags-uri      (page-uri "tags.html" config)
-                        :rss-uri       (cryogen-io/path "/" blog-prefix rss-name)
-                        :site-url      (if (.endsWith site-url "/") (.substring site-url 0 (dec (count site-url))) site-url)})
-         params       (extend-params-fn
-                       params0
-                       {:posts posts
-                        :pages pages
-                        :posts-by-tag posts-by-tag
-                        :navbar-pages navbar-pages
-                        :sidebar-pages sidebar-pages})]
+         other-pages (remove :cohost-root other-pages)
+         params (merge
+                 config
+                 {:today         (Date.)
+                  :title         (:site-title config)
+                  :active-page   "home"
+                  :tags          (map (partial tag-info config) (keys posts-by-tag))
+                  :latest-posts  latest-posts
+                  :navbar-pages  navbar-pages
+                  :sidebar-pages sidebar-pages
+                  :home-page     (if home-page
+                                   home-page
+                                   (assoc (first latest-posts) :layout "home.html"))
+                  :archives-uri  (page-uri "archives.html" config)
+                  :index-uri     (page-uri "index.html" config)
+                  :timeline-uri  (page-uri (cryogen-io/path "p" "1.html") config)
+                  :tags-uri      (page-uri "tags.html" config)
+                  :rss-uri       (cryogen-io/path "/" blog-prefix rss-name)
+                  :site-url      (if (.endsWith site-url "/") (.substring site-url 0 (dec (count site-url))) site-url)
+                  :raw-posts posts
+                  :raw-pages pages})]
 
-     (assert (not (and (:posts params) (not (:posts params0))))
+     (assert (not (:posts params))
              (str "Sorry, you cannot add `:posts` to params because this is"
                   " used internally at some places. Pick a different keyword."))
 
      (selmer.parser/set-resource-path!
       (util/file->url (io/as-file (cryogen-io/path "themes" theme))))
      (cryogen-io/set-public-path! (:public-dest config))
-
-     (when-not inc-compile?
-       (cryogen-io/wipe-public-folder keep-files))
+     (cryogen-io/wipe-public-folder keep-files)
      (println (blue "compiling sass"))
      (sass/compile-sass->css! config)
      (println (blue "copying theme resources"))
@@ -684,35 +725,30 @@
      (cryogen-io/copy-resources "content" config)
      (copy-resources-from-markup-folders config)
      (compile-pages params other-pages)
-     (compile-posts params posts)
-     (compile-posts params unlisted-posts)
+     (compile-posts params (concat posts unlisted-posts))
      (compile-tags params posts-by-tag)
      (compile-tags-page params)
      (compile-preview-pages params posts)
      (compile-index params)
      (compile-archives params posts)
-     (when author-root-uri
-       (println (blue "generating authors views"))
-       (compile-authors params posts))
+     (compile-cohost-archive params cohost-pages)
      (println (blue "generating site map"))
      (->> (sitemap/generate site-url config)
           (cryogen-io/create-file (cryogen-io/path "/" blog-prefix "sitemap.xml")))
      (println (blue "generating main rss"))
      (->> (rss/make-channel config posts)
           (cryogen-io/create-file (cryogen-io/path "/" blog-prefix rss-name)))
-     (if (:rss-filters config) (println (blue "generating filtered rss")))
-     (rss/make-filtered-channels config posts-by-tag)
-     (when inc-compile?
-       (println (yellow "BEWARE: Incremental compilation, things are missing. Make a full build before publishing."))))))
+     (when (:rss-filters config)
+       (println (blue "generating filtered rss")))
+     (rss/make-filtered-channels config posts-by-tag))))
 
 (defn compile-assets-timed
   "See the docstring for [[compile-assets]]"
   ([] (compile-assets-timed {}))
-  ([config] (compile-assets-timed config {}))
-  ([config changeset]
+  ([config]
    (time
     (try
-      (compile-assets config changeset)
+      (compile-assets config)
       (catch Exception e
         (if (or (instance? IllegalArgumentException e)
                 (instance? clojure.lang.ExceptionInfo e))

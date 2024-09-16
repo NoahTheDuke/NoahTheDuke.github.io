@@ -1,6 +1,6 @@
 (ns cryogen-core.flexmark
   (:require
-   [clojure.string :as s]
+   [clojure.string :as str]
    [cryogen-core.markup :refer [markup-registry rewrite-hrefs]])
   (:import
    (com.vladsch.flexmark.ext.aside AsideExtension)
@@ -38,15 +38,21 @@
     (exts [this] #{".md"})
     (render-fn [this]
       (fn [rdr config]
-        (->> (java.io.BufferedReader. rdr)
-             (line-seq)
-             (s/join "\n")
-             (.parse parser)
-             (.render renderer)
-             (rewrite-hrefs (:blog-prefix config))))))))
+        (let [g (str "_______" (gensym) "_______")
+              file (->> (java.io.BufferedReader. rdr)
+                        (line-seq)
+                        (str/join "\n"))
+              file (-> file
+                       (str/replace #"\R\R+" g)
+                       (str/replace "\n" "\n\n")
+                       (str/replace g "\n\n"))]
+          (->> file
+               (.parse parser)
+               (.render renderer)
+               (rewrite-hrefs (:blog-prefix config)))))))))
 
 (comment
   (markdown))
 
 (defn init []
-  (swap! markup-registry conj (markdown)))
+  (reset! markup-registry [(markdown)]))

@@ -1,0 +1,40 @@
+{:title "splint v1.15.0 - custom rules support!"
+ :date "2024-05-01T18:07:25.488Z"
+ :tags ["cohost mirror" "clojure" "splint" "programming" "functional programming" "devblog"]
+ :cohost-url "5796000-splint-v1-15-0-cus"}
+
+I've been sitting on this release for a little while now, trying to find the right way to approach to supporting custom rules.
+
+The way the rules work currently, when a file with `defrule` is evaluated, the `defrule` macro adds the generated rule to a global atom. This simplifies a lot of stuff in the codebase, and makes adding new rules to splint pretty easy: make a new file, require it in the entrypoint for the library. However, users can't access that entrypoint from the cli, and while I've not exactly hidden the code, I don't think people should have to write their own entrypoint wrappers merely to include their own rules.
+
+Inspired by RuboCop YET AGAIN, I've added a new option, settable in the config file or by passing the relevant flag at the cli, to call `load-file` on a given set of files which will presumably call their custom `defrule` invocations. Because I'm relying on Clojure's built-in behavior, there is no extra code necessary for me to parse or validate the paths myself; I pass them to `load-file` in a loop and print any exceptions that are thrown.
+
+This doesn't particularly scale if you have many such files, but I don't want to support loading a file-seq (every file in a tree, for example), that feels way too risky even for this already risky behavior.
+
+Here's hoping some people use and like this! It's one of the coolest features I've put in yet.
+
+I also added two new rules, small idiomatic suggestions that imo are much better. I don't have a fancy blog to discuss them, giving them an air of authority, but that's okay. Until people start contributing to Splint, I'm gonna do whatever I want lmao.
+
+Can get it [here](https://github.com/NoahTheDuke/splint/releases/tag/v1.15.0).
+
+Full changelog under the fold:
+
+---
+
+## 1.15.0 - 2024-05-01
+
+### New Rules
+
+- `style/is-eq-order`: Prefer `(is (= 200 status))` over `(is (= status 200))` when writing assertions.
+- `style/prefer-for-with-literals`: Prefer `(for [item coll] {:a 1 :b item})` over `(map #(hash-map :a 1 :b %) coll)`. (See [#10](https://github.com/NoahTheDuke/splint/issues/10).)
+
+### Added
+
+- `-r`/`--require` cli flag that can be used multiple times and `require` top-level config option that takes a vector of strings. These are loaded with `load-file` at run-time to allow for custom rules to be written and used. (See [#8](https://github.com/NoahTheDuke/splint/issues/8).) This is inherently unsafe, so don't run code you don't know!!!!!
+
+### Changed
+
+- Slight change to the patterns, now a tail-position `?*` or `?+` will immediately return the rest of the current input instead of accumulating it one-by-one. (I mentioned this potential optimization in [my last cohost post about splint](https://cohost.org/noahtheduke/post/4532528-splint-updates-oops). I think it really only matters when consuming large inputs. For anything less than idk maybe 8 elements, it doesn't matter.)
+- Reformatted every file to use [Tonsky's Better Clojure formatting](https://tonsky.me/blog/clojurefmt/).
+- `lint/warn-on-reflection` now checks that the file contains a proper `ns` form before issuing a diagnostic.
+- Updated README speed comparison chart.

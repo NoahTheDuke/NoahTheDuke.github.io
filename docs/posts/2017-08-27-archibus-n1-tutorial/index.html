@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <title>Thoughts and bits: Archibus and the SELECT N+1 Problem</title>
         
-<meta name="keywords" content="tutorial,programming,javascript,archibus">
+<meta name="keywords" content="archibus,javascript,programming,tutorial">
 
-<meta name="description" content="This past week, I had the opportunity to contribute to an existing custom report built for a client. It loaded incredibly slowly, so in between working on the contribution I had been tasked with, I also took it upon myself to speed it up. I think it&#39;s time to share what I&#39;ve learned.Caveat">
+<meta name="description" content="This past week, I had the opportunity to contribute to an existing custom report built for a client. It loaded incredibly slowly, so in between working on the contribution I had been tasked with, I also took it upon myself to speed it up. I think it&#39;s time to share what I&#39;ve learned.">
 
-<meta property="og:description" content="This past week, I had the opportunity to contribute to an existing custom report built for a client. It loaded incredibly slowly, so in between working on the contribution I had been tasked with, I also took it upon myself to speed it up. I think it&#39;s time to share what I&#39;ve learned.Caveat">
+<meta property="og:description" content="This past week, I had the opportunity to contribute to an existing custom report built for a client. It loaded incredibly slowly, so in between working on the contribution I had been tasked with, I also took it upon myself to speed it up. I think it&#39;s time to share what I&#39;ve learned.">
 
 <meta property="og:url" content="https://noahtheduke.github.io/posts/2017-08-27-archibus-n1-tutorial/" />
 <meta property="og:title" content="Archibus and the SELECT N+1 Problem" />
@@ -43,15 +43,21 @@
                                 <div class="menu-item-text">Home</div>
                             </a>
                         </li>
-                        
                         <li >
                             <a title="Posts" href="/p/1/">
                                 <div class=" menu-item-text">Posts</div>
                             </a>
                         </li>
+                        
                         <li >
-                            <a href="/about/">
-                                <div class="menu-item-text">About</div>
+                            <a href="/cohost-archive/">
+                                <div class="menu-item-text">Cohost Archive</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a href="/now/">
+                                <div class="menu-item-text">Now</div>
                             </a>
                         </li>
                         
@@ -67,14 +73,58 @@
                             </a>
                         </li>
                         
+                        <li>
+                            <a class="menu-item-img" href="https://mykocalico.neocities.org/buttons">
+                                 <img src="/img/i-was-on-cohost.gif">
+                            </a>
+                        </li>
                     </ul>
                 </nav>
 
                 <nav id="socialmedia">
                     <ul>
-                        <li><a title="LinkedIn" href="https://www.linkedin.com/in/noah-bogart" rel="external"><svg class="icon icon-linkedin"><use xlink:href="/img/icons.svg#icon-linkedin"></use></svg></a></li>
-                        <li><a title="GitHub" href="https://github.com/NoahTheDuke" rel="external"><svg class="icon icon-github-circled"><use xlink:href="/img/icons.svg#icon-github-circled"></use></svg></a></li>
-                        <li><a title="RSS Feed" href="/feed.xml"><svg class="icon icon-rss-squared"><use xlink:href="/img/icons.svg#icon-rss-squared"></use></svg></a></li>
+                        <li>
+                            <a title="Email"
+                               href="mailto:noah.bogart@hey.com"
+                               target="_blank"
+                               rel="external"
+                               >
+                               <svg class="icon icon-mail-alt">
+                                   <use xlink:href="/img/icons.svg#icon-mail-alt"></use>
+                               </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="LinkedIn"
+                               href="https://www.linkedin.com/in/noah-bogart"
+                               target="_blank"
+                               rel="external"
+                               >
+                                <svg class="icon icon-linkedin">
+                                    <use xlink:href="/img/icons.svg#icon-linkedin"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="GitHub"
+                               href="https://github.com/NoahTheDuke"
+                               target="_blank"
+                               rel="external"
+                               >
+                               <svg class="icon icon-github-circled">
+                                   <use xlink:href="/img/icons.svg#icon-github-circled"></use>
+                               </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="RSS Feed"
+                               href="/feed.xml"
+                               >
+                               <svg class="icon icon-rss-squared">
+                                   <use xlink:href="/img/icons.svg#icon-rss-squared"></use>
+                               </svg>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </nav>
@@ -84,132 +134,198 @@
             
 <div id="post">
     <div class="post-header">
-    <div id="post-meta">
-        <h1>Archibus and the SELECT N+1 Problem</h1>
-        <div class="byline">
-            Aug 27, 2017
-            <span title="August 27, 2017">@743.75</span>
-            / 
-                
-                <a href="/tags/archibus/">#archibus</a>
-                
-                <a href="/tags/javascript/">#javascript</a>
-                
-                <a href="/tags/programming/">#programming</a>
-                
-                <a href="/tags/tutorial/">#tutorial</a>
-                
+    <h1>Archibus and the SELECT N+1 Problem</h1>
+    <div class="byline">
+        <span title="Sun, August 27, 2017, 12:51 PM">
+            Aug 27, 2017, @743.75
+        </span>
+        / 
             
-        </div>
+            <a href="/tags/archibus/">#archibus</a>
+            
+            <a href="/tags/javascript/">#javascript</a>
+            
+            <a href="/tags/programming/">#programming</a>
+            
+            <a href="/tags/tutorial/">#tutorial</a>
+            
+        
+        
     </div>
 </div>
+<hr>
 <div>
     
-    <p>This past week, I had the opportunity to contribute to an existing custom report built for a client. It loaded incredibly slowly, so in between working on the contribution I had been tasked with, I also took it upon myself to speed it up. I think it's time to share what I've learned.</p><!-- more --><h1 id="caveat">Caveat</h1><p>A big problem is that some portions of Archibus' Web Central are poorly documented, so understanding exactly how a given feature works in detail can be time-consuming and even with effort subtleties can be missed. Don't just take my word for how any given element works or doesn't work.</p><p>That being said, I'm here to help you make certain parts of your Archibus app run fast and beautiful, and blow away everyone who uses them.</p><h1 id="overview">Overview</h1><p>When creating reports for large data sets or building an exporter for a client-side piece of software, speed is a necessity. 5-10 second loads for an axvw or for an export is not okay and will hinder both development and usage. The major issue for a lot of pages are the classic <a href="https://stackoverflow.com/questions/97197/what-is-n1-select-query-issue">SELECT N+1 problem</a> in disguise.</p><h1 id="select-n1-problem">SELECT N+1 Problem</h1><p>The SELECT N+1 Problem refers to the issue where queries to the database are nested such that for each top-level query, a new query is made. As a very dumb example (that explicitly ignores JOINs for now):</p><code class="javascript highlight" data-lang="javascript"><pre><span></span><span class="c1">// Build a restriction from the two dates in the console</span>
+    <p>This past week, I had the opportunity to contribute to an existing custom report built for a client. It loaded incredibly slowly, so in between working on the contribution I had been tasked with, I also took it upon myself to speed it up. I think it's time to share what I've learned.</p><h1 id="caveat">Caveat</h1><p>A big problem is that some portions of Archibus' Web Central are poorly documented, so understanding exactly how a given feature works in detail can be time-consuming and even with effort subtleties can be missed. Don't just take my word for how any given element works or doesn't work.</p><p>That being said, I'm here to help you make certain parts of your Archibus app run fast and beautiful, and blow away everyone who uses them.</p><h1 id="overview">Overview</h1><p>When creating reports for large data sets or building an exporter for a client-side piece of software, speed is a necessity. 5-10 second loads for an axvw or for an export is not okay and will hinder both development and usage. The major issue for a lot of pages are the classic <a href="https://stackoverflow.com/questions/97197/what-is-n1-select-query-issue">SELECT N+1 problem</a> in disguise.</p><h1 id="select-n1-problem">SELECT N+1 Problem</h1><p>The SELECT N+1 Problem refers to the issue where queries to the database are nested such that for each top-level query, a new query is made. As a very dumb example (that explicitly ignores JOINs for now):</p><code class="javascript highlight" data-lang="javascript"><pre><span></span><span class="c1">// Build a restriction from the two dates in the console</span>
+
 <span class="kd">var</span> <span class="nx">restriction</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Ab</span><span class="p">.</span><span class="nx">view</span><span class="p">.</span><span class="nx">Restriction</span><span class="p">();</span>
+
 <span class="nx">restriction</span><span class="p">.</span><span class="nx">addClause</span><span class="p">(</span><span class="s1">'wr.date_requested'</span><span class="p">,</span> <span class="nx">form</span><span class="p">.</span><span class="nx">date_requested</span><span class="p">.</span><span class="nx">from</span><span class="p">,</span> <span class="s1">'&gt;='</span><span class="p">);</span>
+
 <span class="nx">restriction</span><span class="p">.</span><span class="nx">addClause</span><span class="p">(</span><span class="s1">'wr.date_requested'</span><span class="p">,</span> <span class="nx">form</span><span class="p">.</span><span class="nx">date_requested</span><span class="p">.</span><span class="nx">to</span><span class="p">,</span> <span class="s1">'&lt;='</span><span class="p">);</span>
 
 <span class="c1">// Get all of the work request records within the restriction</span>
+
 <span class="kd">var</span> <span class="nx">wrRecords</span> <span class="o">=</span> <span class="nx">View</span><span class="p">.</span><span class="nx">dataSources</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'wrDS'</span><span class="p">).</span><span class="nx">getRecords</span><span class="p">(</span><span class="nx">restriction</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">blDS</span> <span class="o">=</span> <span class="nx">View</span><span class="p">.</span><span class="nx">dataSources</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'blDS'</span><span class="p">);</span>
 
 <span class="c1">// Loop over each record</span>
+
 <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">wrRecords</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+
     <span class="kd">var</span> <span class="nx">wrRec</span> <span class="o">=</span> <span class="nx">wrRecords</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
 
     <span class="c1">// Do stuff with wrRec here</span>
 
     <span class="c1">// Build a restriction from the bl_id in each work request record</span>
+
     <span class="kd">var</span> <span class="nx">blId</span> <span class="o">=</span> <span class="nx">wrRec</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">'wr.bl_id'</span><span class="p">);</span>
+
     <span class="kd">var</span> <span class="nx">blRes</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Ab</span><span class="p">.</span><span class="nx">view</span><span class="p">.</span><span class="nx">Restriction</span><span class="p">();</span>
+
     <span class="nx">blRes</span><span class="p">.</span><span class="nx">addClause</span><span class="p">(</span><span class="s1">'bl.bl_id'</span><span class="p">,</span> <span class="nx">blId</span><span class="p">);</span>
 
     <span class="c1">// Get all of the building records with that bl_id</span>
+
     <span class="c1">// NOTE: OBVIOUSLY, THIS IS DUMB AND CONTRIVED.</span>
+
     <span class="c1">// (Honestly, I can't remember right now if you need to do</span>
+
     <span class="c1">// blDS.clearRestrictions() :shrug:)</span>
+
     <span class="kd">var</span> <span class="nx">blRecords</span> <span class="o">=</span> <span class="nx">blDS</span><span class="p">.</span><span class="nx">getRecords</span><span class="p">(</span><span class="nx">blRes</span><span class="p">);</span>
 
     <span class="c1">// Loop over each building record</span>
+
     <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">blRecords</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+
         <span class="kd">var</span> <span class="nx">blRec</span> <span class="o">=</span> <span class="nx">blRecords</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
 
         <span class="c1">// Do work here</span>
+
     <span class="p">}</span>
+
 <span class="p">}</span>
-</pre></code><p>In this contrived example, we get all of the work requests requested in a given period, and then iterate over the work requests, extract the building id, and then grab all of the buildings with that building id and do work on them each. It demonstrates the SELECT N+1 Problem because we are making 1 request for the top level (work requests), and then making individual requests for each record we received (N number of requests).</p><p>For a slightly more robust example, in the DataView javascript (ab-core/controls/ab-data-view.js), <code>DataViewLevel.setRecords()</code> calls <code>this.nextLevel.refresh()</code>, which recursively calls <code>this.nextlevel.setRecords()</code>. If you've defined two (if not more god help you) levels, you're going to be calling setRecords with the results of your first query, and then for each restriction you've determined (either by each record containing the next record in <code>record.toRestriction()</code> or by monkey-patching <code>getNextLevelRestriction()</code> in your own js file). With two levels, that's N+1. If you define 3, such as by Work Request, by Building, by Craftsperson, you're up to (N * N) + 1.</p><p>For a report of 5 items each with 5 sub records, that's not horrible but it's certainly not ideal. For a report with 100 items, each with up to 5 sub records? Unreasonable.</p><h1 id="solution">Solution</h1><p>To solve this problem, we want to rely on two things:</p><ul><li>SQL</li><li>Javascript</li></ul><p>With SQL, because of how it's designed internally (regardless of platform), it is pure speed when building sets of data. So in our above contrived example, instead of passing in a restriction for the <code>wr_id</code> and then quering for each <code>bl_id</code> individually, let's aggregate all building ids that are returned, and select them all at once:</p><code class="javascript highlight" data-lang="javascript"><pre><span></span><span class="c1">// Initially just as above</span>
+</pre></code><p>In this contrived example, we get all of the work requests requested in a given period, and then iterate over the work requests, extract the building id, and then grab all of the buildings with that building id and do work on them each. It demonstrates the SELECT N+1 Problem because we are making 1 request for the top level (work requests), and then making individual requests for each record we received (N number of requests).</p><p>For a slightly more robust example, in the DataView javascript (ab-core/controls/ab-data-view.js), <code>DataViewLevel.setRecords()</code> calls <code>this.nextLevel.refresh()</code>, which recursively calls <code>this.nextlevel.setRecords()</code>. If you've defined two (if not more god help you) levels, you're going to be calling setRecords with the results of your first query, and then for each restriction you've determined (either by each record containing the next record in <code>record.toRestriction()</code> or by monkey-patching <code>getNextLevelRestriction()</code> in your own js file). With two levels, that's N+1. If you define 3, such as by Work Request, by Building, by Craftsperson, you're up to (N * N) + 1.</p><p>For a report of 5 items each with 5 sub records, that's not horrible but it's certainly not ideal. For a report with 100 items, each with up to 5 sub records? Unreasonable.</p><h1 id="solution">Solution</h1><p>To solve this problem, we want to rely on two things:</p><ul><li><p>SQL</p></li><li><p>Javascript</p></li></ul><p>With SQL, because of how it's designed internally (regardless of platform), it is pure speed when building sets of data. So in our above contrived example, instead of passing in a restriction for the <code>wr_id</code> and then quering for each <code>bl_id</code> individually, let's aggregate all building ids that are returned, and select them all at once:</p><code class="javascript highlight" data-lang="javascript"><pre><span></span><span class="c1">// Initially just as above</span>
+
 <span class="kd">var</span> <span class="nx">restriction</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Ab</span><span class="p">.</span><span class="nx">view</span><span class="p">.</span><span class="nx">Restriction</span><span class="p">();</span>
+
 <span class="nx">restriction</span><span class="p">.</span><span class="nx">addClause</span><span class="p">(</span><span class="s1">'wr.date_requested'</span><span class="p">,</span> <span class="nx">form</span><span class="p">.</span><span class="nx">date_requested</span><span class="p">.</span><span class="nx">from</span><span class="p">,</span> <span class="s1">'&gt;='</span><span class="p">);</span>
+
 <span class="nx">restriction</span><span class="p">.</span><span class="nx">addClause</span><span class="p">(</span><span class="s1">'wr.date_requested'</span><span class="p">,</span> <span class="nx">form</span><span class="p">.</span><span class="nx">date_requested</span><span class="p">.</span><span class="nx">to</span><span class="p">,</span> <span class="s1">'&lt;='</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">wrRecords</span> <span class="o">=</span> <span class="nx">View</span><span class="p">.</span><span class="nx">dataSources</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'wrDS'</span><span class="p">).</span><span class="nx">getRecords</span><span class="p">(</span><span class="nx">restriction</span><span class="p">);</span>
 
 <span class="c1">// Here, we loop over the retrieved wr records and grab just the bl_id.</span>
+
 <span class="kd">var</span> <span class="nx">blIds</span> <span class="o">=</span> <span class="nx">wrRecords</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">rec</span><span class="p">)</span> <span class="p">{</span>
+
     <span class="k">return</span> <span class="nx">rec</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">'wr.bl_id'</span><span class="p">);</span>
+
 <span class="p">});</span>
 
 <span class="c1">// Restriction.addClause can take in an array, and will "correctly" format the</span>
+
 <span class="c1">// elements for the datasource field, wrapping the whole thing in `()`. If you</span>
+
 <span class="c1">// don't trust Archibus to handle that correctly, a simple</span>
+
 <span class="c1">//     var blIdRes = "('" + blIds.join("', '") + "')";</span>
+
 <span class="c1">// will do in a pinch (tho this fucks up if the values you're concating have</span>
+
 <span class="c1">// apostrophies in them, lol)</span>
 
 <span class="c1">// Also note that this doesn't have to be the only restriction you pass in. If</span>
+
 <span class="c1">// necessary, pass in any number of restrictions to this bottom-level dataSource,</span>
+
 <span class="c1">// to further refine your search.</span>
+
 <span class="kd">var</span> <span class="nx">blIdRes</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Ab</span><span class="p">.</span><span class="nx">view</span><span class="p">.</span><span class="nx">Restriction</span><span class="p">();</span>
+
 <span class="nx">blIdRes</span><span class="p">.</span><span class="nx">addClause</span><span class="p">(</span><span class="s1">'bl.bl_id'</span><span class="p">,</span> <span class="nx">blIds</span><span class="p">,</span> <span class="s1">'IN'</span><span class="p">);</span>
 
 <span class="c1">// Here we get all records from the bottom-level dataSource that fall under the</span>
+
 <span class="c1">// combination of both restrictions. They come back in a potentially massive array</span>
+
 <span class="c1">// of DataRecords, which is fine because the trip to the database is the actual</span>
+
 <span class="c1">// source of the slow downs.</span>
+
 <span class="kd">var</span> <span class="nx">tempRecords</span> <span class="o">=</span> <span class="nx">View</span><span class="p">.</span><span class="nx">dataSources</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'blDS'</span><span class="p">).</span><span class="nx">getRecords</span><span class="p">(</span><span class="nx">blIdRes</span><span class="p">);</span>
 
 <span class="c1">// One issue I've not mentioned yet is that these records will come back in *an*</span>
+
 <span class="c1">// order, but without any information related to the totals of each subquery or any</span>
+
 <span class="c1">// easy way to select within each having already fetched them. To solve this, we</span>
+
 <span class="c1">// construct a plain javascript object (a dictionary) and use the different</span>
+
 <span class="c1">// subquery elements (those individual items in the blIds array above) to act as</span>
+
 <span class="c1">// the key to an array of the records from the bottom-level query.</span>
+
 <span class="kd">var</span> <span class="nx">allBlRecords</span> <span class="o">=</span> <span class="p">{};</span>
+
 <span class="nx">tempRecords</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">record</span><span class="p">,</span> <span class="nx">idx</span><span class="p">)</span> <span class="p">{</span>
+
     <span class="kd">var</span> <span class="nx">key</span> <span class="o">=</span> <span class="nx">record</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">'wr.bl_id'</span><span class="p">);</span>
+
     <span class="k">if</span> <span class="p">(</span><span class="nx">key</span> <span class="k">in</span> <span class="nx">allBlRecords</span><span class="p">)</span> <span class="p">{</span>
+
         <span class="nx">allBlRecords</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">push</span><span class="p">(</span><span class="nx">record</span><span class="p">);</span>
+
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+
         <span class="nx">allBlRecords</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">record</span><span class="p">];</span>
+
     <span class="p">}</span>
+
 <span class="p">});</span>
 
 <span class="c1">// Now we can enter our actual work for-loop, but this time with all information</span>
+
 <span class="c1">// we need generated up front.</span>
+
 <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">wrRecords</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+
     <span class="kd">var</span> <span class="nx">wrRec</span> <span class="o">=</span> <span class="nx">wrRecords</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
 
     <span class="c1">// Do stuff with wrRec here like before, but really cool stuff this time.</span>
 
     <span class="c1">// Notice here that all we're doing is retreiving an array of records from</span>
+
     <span class="c1">// a plain javascript object. This is an incredibly fast operation for any</span>
+
     <span class="c1">// browser (even IE 9 handles this faster than a database hit).</span>
+
     <span class="kd">var</span> <span class="nx">blRecords</span> <span class="o">=</span> <span class="nx">allBlRecords</span><span class="p">[</span><span class="nx">wrRec</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">'wr.bl_id'</span><span class="p">)];</span>
 
     <span class="c1">// Loop over each building record</span>
+
     <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">blRecords</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+
         <span class="kd">var</span> <span class="nx">blRec</span> <span class="o">=</span> <span class="nx">blRecords</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
 
         <span class="c1">// Do work here</span>
+
     <span class="p">}</span>
+
 <span class="p">}</span>
 </pre></code><p>To make this work for something like the DataViewLevel, instead of monkey-patching the <code>getNextLevelRestriction()</code> as the docs suggest, monkey-patch <code>setRecords()</code> to perform the above directly, grabbing the necessary <code>level.getData</code> and <code>level.bodyXTemplate</code> up front, with calls to <code>renderRecord()</code> where needed, instead of letting Archibus' overly generic approach slow down your pages.</p><h1 id="closing-remarks">Closing Remarks</h1><p>When dealing with the database, always ask yourself, "How can I limit the total number of calls?" More than any other speed up you can write, that one will yield the most effective results for the lowest amount of effort. There are some very clever tricks that can be done in Java and javascript that will contribute to an overall snappier user experience, but if it takes 5+ seconds to load a single view or to generate a single exported file, your development time will slow down and your users will grow annoyed and uncomfortable.</p><p>Thanks for reading if you got this far. Let me know if you have any thoughts! I'm interested to see how others have tackled this problem.</p>
 </div>
-<br/>
+<hr>
+<div>
+    Liked the post? Hated the post? Felt nothing whatsoever about the post?
 
+    <a href="mailto:noah.bogart+blogcomment@hey.com?subject=RE: Archibus and the SELECT N+1 Problem">Email me</a>, and let me know!
+</div>
 
+    <br>
     
     <div id="prev-next">
     
@@ -221,10 +337,6 @@
 </div>
 
     
-
-    
-
-
 </div>
 
             <hr/>

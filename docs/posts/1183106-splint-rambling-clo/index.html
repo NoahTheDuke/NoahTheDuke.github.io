@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Thoughts and bits: Splint rambling: Clojure Parsers</title>
+        
+<meta name="keywords" content="cohost mirror,clojure,linters,splint,parsing">
+
+<meta name="description" content="I want another parser because I want access to comments. Without comments, I can&#39;t parse magic comments, meaning I can&#39;t enable or disable rules inline, only globally. That&#39;s annoying and not ideal. However, every solution I&#39;ve dreamed up has some deep issue.">
+
+<meta property="og:description" content="I want another parser because I want access to comments. Without comments, I can&#39;t parse magic comments, meaning I can&#39;t enable or disable rules inline, only globally. That&#39;s annoying and not ideal. However, every solution I&#39;ve dreamed up has some deep issue.">
+
+<meta property="og:url" content="https://noahtheduke.github.io/posts/1183106-splint-rambling-clo/" />
+<meta property="og:title" content="Splint rambling: Clojure Parsers" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:300,400,700|Inconsolata" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/colors/colorful.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="Thoughts and bits" href="/">
+                    <img class="icon" src="/img/profile.webp">
+                    <div class="text desktop-and-tablet-only">Thoughts and bits</div>
+                    <div class="text mobile-only">Thoughts and bits</div>
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li >
+                            <a title="Home" href="/">
+                                <div class="menu-item-text">Home</div>
+                            </a>
+                        </li>
+                        <li >
+                            <a title="Posts" href="/p/1/">
+                                <div class=" menu-item-text">Posts</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a href="/cohost-archive/">
+                                <div class="menu-item-text">Cohost Archive</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a href="/now/">
+                                <div class="menu-item-text">Now</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Archives" href="/archives/">
+                                <div class="menu-item-text">Archives</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Tags" href="/tags/">
+                                <div class="menu-item-text">Tags</div>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a class="menu-item-img" href="https://mykocalico.neocities.org/buttons">
+                                 <img src="/img/i-was-on-cohost.gif">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia">
+                    <ul>
+                        <li>
+                            <a title="Email"
+                               href="mailto:noah.bogart@hey.com"
+                               target="_blank"
+                               rel="external"
+                               >
+                               <svg class="icon icon-mail-alt">
+                                   <use xlink:href="/img/icons.svg#icon-mail-alt"></use>
+                               </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="LinkedIn"
+                               href="https://www.linkedin.com/in/noah-bogart"
+                               target="_blank"
+                               rel="external"
+                               >
+                                <svg class="icon icon-linkedin">
+                                    <use xlink:href="/img/icons.svg#icon-linkedin"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="GitHub"
+                               href="https://github.com/NoahTheDuke"
+                               target="_blank"
+                               rel="external"
+                               >
+                               <svg class="icon icon-github-circled">
+                                   <use xlink:href="/img/icons.svg#icon-github-circled"></use>
+                               </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="RSS Feed"
+                               href="/feed.xml"
+                               >
+                               <svg class="icon icon-rss-squared">
+                                   <use xlink:href="/img/icons.svg#icon-rss-squared"></use>
+                               </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <h1>Splint rambling: Clojure Parsers</h1>
+    <div class="byline">
+        <span title="Wed, March 15, 2023, 18:36 PM">
+            Mar 15, 2023, @983.33
+        </span>
+        / 
+            
+            <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+            
+            <a href="/tags/clojure/">#clojure</a>
+            
+            <a href="/tags/linters/">#linters</a>
+            
+            <a href="/tags/splint/">#splint</a>
+            
+            <a href="/tags/parsing/">#parsing</a>
+            
+        
+        
+        / <a href="https://cohost.org/noahtheduke/post/1183106-splint-rambling-clo">Cohost post</a>
+        
+    </div>
+</div>
+<hr>
+<div>
+    
+    <p>I want another parser because I want access to comments. Without comments, I can't parse magic comments, meaning I can't enable or disable rules inline, only globally. That's annoying and not ideal. However, every solution I've dreamed up has some deep issue.</p><hr /><p>All times below are about parsing the 8.5k lines in <code>clojure/core.clj</code>.</p><ul><li><p><a href="https://github.com/borkdude/edamame">Edamame</a> is our current parser and it's quite fast (40-60ms) but it drops comments. I've forked it to try to add them, but that would mean handling them in every other part of the parser, such as syntax-quote and maps and sets, making dealing with those objects really hard. <img src="/img/sob.png" alt="emoji github:sob" height="20" width="20" align="absmiddle" /></p></li><li><p><a href="https://github.com/clj-commons/rewrite-clj">Rewrite-clj</a> is much slower (180ms) only exposes comments in the zip api, meaning I have to operate on the zipper objects with zipper functions (horrible and slow). It's nice to rely on Clojure built-ins instead of <code>(loop [zloc zloc] (z/next* ...))</code> nonsense.</p></li><li><p><a href="https://github.com/carocad/parcera">parcera</a> looked promising, but the pre-processing in <code>parcera/ast</code> is slow (240ms) and operating on the Java directly is deeply cumbersome. The included grammar also makes some odd choices and I don't know ANTLR4 well enough to know how to fix them (such as including the <code>:</code> in keyword strings). And maybe this isn't such a big deal but matching against strings is annoying. Means I'm writing something other than Clojure code.</p></li></ul>
+</div>
+<hr>
+<div>
+    Liked the post? Hated the post? Felt nothing whatsoever about the post?
+
+    <a href="mailto:noah.bogart+blogcomment@hey.com?subject=RE: Splint rambling: Clojure Parsers">Email me</a>, and let me know!
+</div>
+
+    <br>
+    
+    <div id="prev-next">
+    
+    <div class="prev"></div>
+    
+    
+    <div class="next"></div>
+    
+</div>
+
+    
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2024 Noah Bogart
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+                <br>Theme by <a href="http://github.com/KingMob">KingMob</a>
+            </div>
+        </article>
+
+        
+        
+    </body>
+</html>

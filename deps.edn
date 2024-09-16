@@ -6,7 +6,6 @@
         cryogen-core/cryogen-core {:mvn/version "0.4.6"}
         enlive/enlive {:mvn/version "1.1.6"}
         clygments/clygments {:mvn/version "2.0.2"}
-        com.vdurmont/emoji-java {:mvn/version "5.1.1"}
         babashka/fs {:mvn/version "0.5.22"}
         dev.weavejester/medley {:mvn/version "1.8.1"}
         com.vladsch.flexmark/flexmark-all {:mvn/version "0.64.8"}}

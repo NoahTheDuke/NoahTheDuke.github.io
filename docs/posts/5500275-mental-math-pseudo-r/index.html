@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Thoughts and bits: Mental Math Pseudo Random Number Generation</title>
+        
+<meta name="keywords" content="cohost mirror,mental math,pseudo random number generation,pseudo rng,prng,rng,random number generation,programming">
+
+<meta name="description" content="&gt; given a large prime p, a multiplier m, and a seed number x_0, a Lehmer PRNG can be defined by the recursive function x_{n+1} = m \cdot x_n \mod p.&gt; One pair choice is p=59, m=6. Because 60 \equiv 1 \mod 59, each iteration is a simple matter of multiplying the ones digit by 6 and adding the tens digit. To illustrate, a sequence starting from 17 would continue 43, 22, 14, 25, 32, 15, 31, 9, 54, 29, ..., and taking just the unit&#39;s digit, that turns into 3, 2, 4, 5, 2, 5, 1, 9, 4, 9, which looks pretty random.&gt; Next up is p=101, m=50. Because p=101, this construction has the advantage that the sequence goes from 1 to 100, making the distribution of the output stream uniform over 1 to 10 and providing a longer period. The choice of multiplier also simplifies computation: if the current state x_i is even, the next number x_{i+1} = 101 - \frac{2}, and if odd, x_{i+1} = 50 - \frac{2}. Not as nice as the previous example, but still not bad.">
+
+<meta property="og:description" content="&gt; given a large prime p, a multiplier m, and a seed number x_0, a Lehmer PRNG can be defined by the recursive function x_{n+1} = m \cdot x_n \mod p.&gt; One pair choice is p=59, m=6. Because 60 \equiv 1 \mod 59, each iteration is a simple matter of multiplying the ones digit by 6 and adding the tens digit. To illustrate, a sequence starting from 17 would continue 43, 22, 14, 25, 32, 15, 31, 9, 54, 29, ..., and taking just the unit&#39;s digit, that turns into 3, 2, 4, 5, 2, 5, 1, 9, 4, 9, which looks pretty random.&gt; Next up is p=101, m=50. Because p=101, this construction has the advantage that the sequence goes from 1 to 100, making the distribution of the output stream uniform over 1 to 10 and providing a longer period. The choice of multiplier also simplifies computation: if the current state x_i is even, the next number x_{i+1} = 101 - \frac{2}, and if odd, x_{i+1} = 50 - \frac{2}. Not as nice as the previous example, but still not bad.">
+
+<meta property="og:url" content="https://noahtheduke.github.io/posts/5500275-mental-math-pseudo-r/" />
+<meta property="og:title" content="Mental Math Pseudo Random Number Generation" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:300,400,700|Inconsolata" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/colors/colorful.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="Thoughts and bits" href="/">
+                    <img class="icon" src="/img/profile.webp">
+                    <div class="text desktop-and-tablet-only">Thoughts and bits</div>
+                    <div class="text mobile-only">Thoughts and bits</div>
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li >
+                            <a title="Home" href="/">
+                                <div class="menu-item-text">Home</div>
+                            </a>
+                        </li>
+                        <li >
+                            <a title="Posts" href="/p/1/">
+                                <div class=" menu-item-text">Posts</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a href="/cohost-archive/">
+                                <div class="menu-item-text">Cohost Archive</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a href="/now/">
+                                <div class="menu-item-text">Now</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Archives" href="/archives/">
+                                <div class="menu-item-text">Archives</div>
+                            </a>
+                        </li>
+                        
+                        <li >
+                            <a title="Tags" href="/tags/">
+                                <div class="menu-item-text">Tags</div>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a class="menu-item-img" href="https://mykocalico.neocities.org/buttons">
+                                 <img src="/img/i-was-on-cohost.gif">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia">
+                    <ul>
+                        <li>
+                            <a title="Email"
+                               href="mailto:noah.bogart@hey.com"
+                               target="_blank"
+                               rel="external"
+                               >
+                               <svg class="icon icon-mail-alt">
+                                   <use xlink:href="/img/icons.svg#icon-mail-alt"></use>
+                               </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="LinkedIn"
+                               href="https://www.linkedin.com/in/noah-bogart"
+                               target="_blank"
+                               rel="external"
+                               >
+                                <svg class="icon icon-linkedin">
+                                    <use xlink:href="/img/icons.svg#icon-linkedin"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="GitHub"
+                               href="https://github.com/NoahTheDuke"
+                               target="_blank"
+                               rel="external"
+                               >
+                               <svg class="icon icon-github-circled">
+                                   <use xlink:href="/img/icons.svg#icon-github-circled"></use>
+                               </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="RSS Feed"
+                               href="/feed.xml"
+                               >
+                               <svg class="icon icon-rss-squared">
+                                   <use xlink:href="/img/icons.svg#icon-rss-squared"></use>
+                               </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <h1>Mental Math Pseudo Random Number Generation</h1>
+    <div class="byline">
+        <span title="Wed, April 10, 2024, 04:39 AM">
+            Apr 10, 2024, @402.08
+        </span>
+        / 
+            
+            <a href="/tags/cohost%20mirror/">#cohost mirror</a>
+            
+            <a href="/tags/mental%20math/">#mental math</a>
+            
+            <a href="/tags/pseudo%20random%20number%20generation/">#pseudo random number generation</a>
+            
+            <a href="/tags/pseudo%20rng/">#pseudo rng</a>
+            
+            <a href="/tags/prng/">#prng</a>
+            
+            <a href="/tags/rng/">#rng</a>
+            
+            <a href="/tags/random%20number%20generation/">#random number generation</a>
+            
+            <a href="/tags/programming/">#programming</a>
+            
+        
+        
+        / <a href="https://cohost.org/noahtheduke/post/5500275-mental-math-pseudo-r">Cohost post</a>
+        
+    </div>
+</div>
+<hr>
+<div>
+    
+    <p>&gt; given a large prime p, a multiplier m, and a seed number x_0, a Lehmer PRNG can be defined by the recursive function x_{n+1} = m \cdot x_n \mod p.</p><p>&gt; One pair choice is p=59, m=6. Because 60 \equiv 1 \mod 59, each iteration is a simple matter of multiplying the ones digit by 6 and adding the tens digit. To illustrate, a sequence starting from 17 would continue 43, 22, 14, 25, 32, 15, 31, 9, 54, 29, ..., and taking just the unit's digit, that turns into 3, 2, 4, 5, 2, 5, 1, 9, 4, 9, which looks pretty random.</p><p><span x_i="">&gt; Next up is p=101, m=50. Because p=101, this construction has the advantage that the sequence goes from 1 to 100, making the distribution of the output stream uniform over 1 to 10 and providing a longer period. The choice of multiplier also simplifies computation: if the current state x_i is even, the next number x_{i+1} = 101 - \frac</span><span x_i-1="">{2}, and if odd, x_{i+1} = 50 - \frac</span>{2}. Not as nice as the previous example, but still not bad.</p><p>https://blog.yunwilliamyu.net/2011/08/14/mindhack-mental-math-pseudo-random-number-generators/</p>
+</div>
+<hr>
+<div>
+    Liked the post? Hated the post? Felt nothing whatsoever about the post?
+
+    <a href="mailto:noah.bogart+blogcomment@hey.com?subject=RE: Mental Math Pseudo Random Number Generation">Email me</a>, and let me know!
+</div>
+
+    <br>
+    
+    <div id="prev-next">
+    
+    <div class="prev"></div>
+    
+    
+    <div class="next"></div>
+    
+</div>
+
+    
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2024 Noah Bogart
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+                <br>Theme by <a href="http://github.com/KingMob">KingMob</a>
+            </div>
+        </article>
+
+        
+        
+    </body>
+</html>

@@ -7,7 +7,6 @@
  :post-root-uri                "posts"
  :page-root-uri                ""
  :tag-root-uri                 "tags"
- :author-root-uri              "authors"
  :public-dest                  "docs"
  :blog-prefix                  ""
  :rss-name                     "feed.xml"

@@ -9,8 +9,8 @@ pom.xml.asc
 .lein-repl-history
 .lein-plugins/
 .lein-failures
-/themes/lotus/css/blog.css
-/themes/lotus/css/blog.css.map
+.rebel_readline_history
 .cpcache/
 .cache/
 .nrepl-port
+posts.json
