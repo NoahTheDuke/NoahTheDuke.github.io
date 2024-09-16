@@ -92,6 +92,8 @@
       opts)))
 
 (defn -main [& args]
+  (load-plugins)
+  (flexmark/init)
   (apply cryogen/-main args))
 
 (comment
