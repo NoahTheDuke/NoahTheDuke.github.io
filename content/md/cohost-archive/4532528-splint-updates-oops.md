@@ -17,6 +17,7 @@ Full change logs below the fold.
 
 ---
 
+
 ## v1.11 - 2023-12-11
 
 ### New Rules
@@ -71,7 +72,7 @@ Full change logs below the fold.
 
 - General performance increases in rules:
 
-- `lint/body-unquote-splicing`
+  - `lint/body-unquote-splicing`
   - `lint/if-else-nil`
   - `lint/underscore-in-namespace`
   - `lint/warn-on-reflection`

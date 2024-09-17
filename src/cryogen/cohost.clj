@@ -5,103 +5,104 @@
    [clojure.java.io :as io]
    [clojure.string :as str]
    [ring.util.codec :as c]
-   [medley.core :as m]
-   [selmer.parser :as selmer]))
+   [selmer.parser :as selmer]
+   [medley.core :as m]))
 
 (def good-posts
   #{;; original list
-    "3252059-money-handling-when"
-    "3566741-thoughts-on-being-po"
-    "2842001-pixar-movie-rankings"
-    "4225466-gender-feelings"
-    "3201474-at-this-point-i-don"
+    "https://cohost.org/noahtheduke/post/3252059-money-handling-when"
+    "https://cohost.org/noahtheduke/post/3566741-thoughts-on-being-po"
+    "https://cohost.org/noahtheduke/post/2842001-pixar-movie-rankings"
+    "https://cohost.org/noahtheduke/post/4225466-gender-feelings"
+    "https://cohost.org/noahtheduke/post/3201474-at-this-point-i-don"
+    ;; new good posts
+    "https://cohost.org/noahtheduke/post/4962364-buying-digital-music"
+    "https://cohost.org/noahtheduke/post/4738263-the-oldest-house"
     ;; new additions
-    "4867618-to-be-a-pedant"
-    "7392136-cw-suicidal-ideatio"
-    "6365357-i-dropped-my-iphone"
-    "6120035-just-look-at-this-fu"
-    "6002566-only-through-repetit"
-    "5500275-mental-math-pseudo-r"
-    "5434180-in-the-comment-of-th"
-    "5174669-looks-bad-tastes-gr"
-    "5168099-i-think-a-lot-about"
-    "5099857-the-main-goal-of-th"
-    "5075781-hot-take-spellcheck"
-    "4997698-if-daylight-saving-t"
-    "4962364-buying-digital-music"
-    "4944983-name-ideas"
-    "4738263-the-oldest-house"
-    "4687878-learned-about-the-ta"
-    "4253502-i-want-a-tattoo-that"
-    "3905105-super-hexagon-by-t"
-    "3895180-encanto-isn-t-good"
-    "3746439-i-ve-used-my-switch"
-    "3656388-i-ended-up-buying"
-    "3611722-the-funny-thing-abou"
-    "3296132-i-don-t-know-how-to"
-    "3271389-george-lucas-selling"
-    "3261127-ynab-privacy"
-    "3213204-on-the-one-hand-i-d"
-    "3070906-bought-some-more-mus"
-    "2901583-if-you-re-gonna-crit"
-    "2848499-got-a-new-shirt"
-    "2837714-how-do-you-come-up-w"
-    "2812517-y-all-ever-think-abo"
-    "2801315-jumbled-sexuality-th"
-    "2646635-looking-for-a-live-a"
-    "2598417-old-memories"
-    "2546608-cw-gamergate"
-    "2195959-bogos-binted-was"
-    "1950335-i-understand-that-co"
-    "1215841-whomst-can-i-talk-to"
-    "1645249-went-to-a-concert-an"
-    "1360941-cw-suicide"
-    "1249274-company-fired-some-o"
+    "https://cohost.org/noahtheduke/post/4867618-to-be-a-pedant"
+    "https://cohost.org/noahtheduke/post/7392136-cw-suicidal-ideatio"
+    "https://cohost.org/noahtheduke/post/6365357-i-dropped-my-iphone"
+    "https://cohost.org/noahtheduke/post/6120035-just-look-at-this-fu"
+    "https://cohost.org/noahtheduke/post/6002566-only-through-repetit"
+    "https://cohost.org/noahtheduke/post/5500275-mental-math-pseudo-r"
+    "https://cohost.org/noahtheduke/post/5434180-in-the-comment-of-th"
+    "https://cohost.org/noahtheduke/post/5174669-looks-bad-tastes-gr"
+    "https://cohost.org/noahtheduke/post/5168099-i-think-a-lot-about"
+    "https://cohost.org/noahtheduke/post/5099857-the-main-goal-of-th"
+    "https://cohost.org/noahtheduke/post/5075781-hot-take-spellcheck"
+    "https://cohost.org/noahtheduke/post/4997698-if-daylight-saving-t"
+    "https://cohost.org/noahtheduke/post/4944983-name-ideas"
+    "https://cohost.org/noahtheduke/post/4687878-learned-about-the-ta"
+    "https://cohost.org/noahtheduke/post/4253502-i-want-a-tattoo-that"
+    "https://cohost.org/noahtheduke/post/3905105-super-hexagon-by-t"
+    "https://cohost.org/noahtheduke/post/3895180-encanto-isn-t-good"
+    "https://cohost.org/noahtheduke/post/3746439-i-ve-used-my-switch"
+    "https://cohost.org/noahtheduke/post/3656388-i-ended-up-buying"
+    "https://cohost.org/noahtheduke/post/3611722-the-funny-thing-abou"
+    "https://cohost.org/noahtheduke/post/3296132-i-don-t-know-how-to"
+    "https://cohost.org/noahtheduke/post/3271389-george-lucas-selling"
+    "https://cohost.org/noahtheduke/post/3261127-ynab-privacy"
+    "https://cohost.org/noahtheduke/post/3213204-on-the-one-hand-i-d"
+    "https://cohost.org/noahtheduke/post/3070906-bought-some-more-mus"
+    "https://cohost.org/noahtheduke/post/2901583-if-you-re-gonna-crit"
+    "https://cohost.org/noahtheduke/post/2848499-got-a-new-shirt"
+    "https://cohost.org/noahtheduke/post/2837714-how-do-you-come-up-w"
+    "https://cohost.org/noahtheduke/post/2812517-y-all-ever-think-abo"
+    "https://cohost.org/noahtheduke/post/2801315-jumbled-sexuality-th"
+    "https://cohost.org/noahtheduke/post/2646635-looking-for-a-live-a"
+    "https://cohost.org/noahtheduke/post/2598417-old-memories"
+    "https://cohost.org/noahtheduke/post/2546608-cw-gamergate"
+    "https://cohost.org/noahtheduke/post/2195959-bogos-binted-was"
+    "https://cohost.org/noahtheduke/post/1950335-i-understand-that-co"
+    "https://cohost.org/noahtheduke/post/1215841-whomst-can-i-talk-to"
+    "https://cohost.org/noahtheduke/post/1645249-went-to-a-concert-an"
+    "https://cohost.org/noahtheduke/post/1360941-cw-suicide"
+    "https://cohost.org/noahtheduke/post/1249274-company-fired-some-o"
     ;; friends at the table
-    "5249141-palisade-41-is-reall"
-    "5050236-i-hope-i-never-forge"
+    "https://cohost.org/noahtheduke/post/5249141-palisade-41-is-reall"
+    "https://cohost.org/noahtheduke/post/5050236-i-hope-i-never-forge"
     ;; ttrpgs
-    "5032286-reign-2e"
-    "5094613-more-reign-2e-though"
-    "5058467-i-forgot-about-the"
-    "4378205-just-popped-into-my"
+    "https://cohost.org/noahtheduke/post/5032286-reign-2e"
+    "https://cohost.org/noahtheduke/post/5094613-more-reign-2e-though"
+    "https://cohost.org/noahtheduke/post/5058467-i-forgot-about-the"
+    "https://cohost.org/noahtheduke/post/4378205-just-popped-into-my"
     ;; memes/jokes
-    "407951-eggbug-eggbug"
-    "5656627-the-bene-gesserit-l"
-    "4174530-trans-jerry-i-have"
-    "7509572-hole-w-t-we-gardena"
-    "7272516-fanfic-of-william-gi"
-    "5136426-may-thy-knife-chip-a"
-    "4904173-eggs-bene-gesserit"
+    "https://cohost.org/noahtheduke/post/407951-eggbug-eggbug"
+    "https://cohost.org/noahtheduke/post/5656627-the-bene-gesserit-l"
+    "https://cohost.org/noahtheduke/post/4174530-trans-jerry-i-have"
+    "https://cohost.org/noahtheduke/post/7509572-hole-w-t-we-gardena"
+    "https://cohost.org/noahtheduke/post/7272516-fanfic-of-william-gi"
+    "https://cohost.org/noahtheduke/post/5136426-may-thy-knife-chip-a"
+    "https://cohost.org/noahtheduke/post/4904173-eggs-bene-gesserit"
     ;; taylor swift
-    "4030418-everyone-i-know-post"
-    "4047732-i-spent-multiple-hou"
-    "4032503-here-s-the-chart"
-    "1887941-album-is-easy-lover"
-    "2436561-this-album-is-so-fuc"
-    "1798662-saw-taylor-swift-las"
-    ;; programming
-    "7369102-ocaml-wishlist"
-    "7108863-they-merged-it-my-c"
-    "7020673-learning-a-new-progr"
-    "6286441-clojure-enterprise"
-    "5980051-i-think-i-severely"
-    "5793881-open-source-maintena"
-    "5258703-ruminations-on-techn"
-    "5018957-yuki-s-vacation-an"
-    "4896592-what-is-this-data-st"
-    "4445263-viscerally-annoyed"
-    "4086578-tyranny-of-the-blank"
-    "2711345-if-your-programming"
-    "2400662-mild-success"
-    "1789527-in-increasing-order"
-    "161270-i-commented-on-someo"
+    "https://cohost.org/noahtheduke/post/4030418-everyone-i-know-post"
+    "https://cohost.org/noahtheduke/post/4047732-i-spent-multiple-hou"
+    "https://cohost.org/noahtheduke/post/4032503-here-s-the-chart"
+    "https://cohost.org/noahtheduke/post/1887941-album-is-easy-lover"
+    "https://cohost.org/noahtheduke/post/2436561-this-album-is-so-fuc"
+    "https://cohost.org/noahtheduke/post/1798662-saw-taylor-swift-las"
+    ;https://cohost.org/noahtheduke/post/; programming
+    "https://cohost.org/noahtheduke/post/7369102-ocaml-wishlist"
+    "https://cohost.org/noahtheduke/post/7108863-they-merged-it-my-c"
+    "https://cohost.org/noahtheduke/post/7020673-learning-a-new-progr"
+    "https://cohost.org/noahtheduke/post/6286441-clojure-enterprise"
+    "https://cohost.org/noahtheduke/post/5980051-i-think-i-severely"
+    "https://cohost.org/noahtheduke/post/5793881-open-source-maintena"
+    "https://cohost.org/noahtheduke/post/5258703-ruminations-on-techn"
+    "https://cohost.org/noahtheduke/post/5018957-yuki-s-vacation-an"
+    "https://cohost.org/noahtheduke/post/4896592-what-is-this-data-st"
+    "https://cohost.org/noahtheduke/post/4445263-viscerally-annoyed"
+    "https://cohost.org/noahtheduke/post/4086578-tyranny-of-the-blank"
+    "https://cohost.org/noahtheduke/post/2711345-if-your-programming"
+    "https://cohost.org/noahtheduke/post/2400662-mild-success"
+    "https://cohost.org/noahtheduke/post/1789527-in-increasing-order"
+    "https://cohost.org/noahtheduke/post/161270-i-commented-on-someo"
     })
 
 (def skip-posts
-  #{"7300465-i-should-probably-st"
-    "5145221-especially-when-your"
-    "7148525-how-i-feel-when-my-w"
+  #{"https://cohost.org/noahtheduke/post/7300465-i-should-probably-st"
+    "https://cohost.org/noahtheduke/post/5145221-especially-when-your"
+    "https://cohost.org/noahtheduke/post/7148525-how-i-feel-when-my-w"
     })
 
 (def good-tags
@@ -117,8 +118,8 @@
     "wifeposting"})
 
 (defn post-filter [post]
-  (and (not (skip-posts (:filename post)))
-       (or (good-posts (:filename post))
+  (and (not (skip-posts (:singlePostPageUrl post)))
+       (or (good-posts (:singlePostPageUrl post))
            (some good-tags (:tags post)))))
 
 (def posts
@@ -142,27 +143,39 @@
   (->> posts
        (remove :pinned)
        (map #(dissoc % :astMap))
-       (take 1)
        (map #(dissoc % :postingProject))
        (map #(assoc % :shareTree (filter (fn [st] (seq (:blocks st))) (:shareTree %))))
        ; (m/find-first #(str/includes? (:headline %) "blog"))
-       ; (m/find-first #(= "4039109-1-death-stranding-2" (:filename %)))
+       (m/find-first #(= "4027959-may-hands-me-a-fancy" (:filename %)))
        ))
 
 (defmulti render-block "convert block to html" :type)
+
+(defn combine-blocks [blocks]
+  (->> blocks
+       (keep render-block)
+       (str/join "\n\n")
+       (str/trim)
+       (not-empty)))
 
 (defmethod render-block "markdown"
   render-block--markdown
   [block]
   (let [block-str (-> block
                       :markdown
-                      :content
-                      str/trim
+                      (:content "")
                       not-empty)]
-    (if (:share? block)
-      (format "<div style=\"white-space: pre-line;\">%s</div>"
-              block-str)
-      block-str)))
+    (when block-str
+      (if (str/includes? block-str " | ")
+        block-str
+        (str/join "  \n" (str/split block-str #"(?<!\p{Space})\n(?![\p{Space}\W\p{Digit}])"))))))
+
+(comment
+  (render-block
+   {:type "markdown"
+    :markdown
+    {:content
+     "* many such things\n* many more such things\nthis is some bullshit"}}))
 
 (defmethod render-block "attachment"
   render-block--attachment
@@ -213,10 +226,7 @@
   [block]
   (->> (:attachments block)
        (map #(assoc % ::filename (::filename block)))
-       (map render-block)
-       (str/join "\n\n")
-       (str/trim)
-       (not-empty)))
+       (combine-blocks)))
 
 (defmethod render-block "ask"
   render-block--ast
@@ -226,18 +236,11 @@
               "Anonymous")
           (-> block :ask :content str/trim)))
 
-(defn combine-blocks [blocks]
-  (->> blocks
-       (keep render-block)
-       (str/join "\n\n")
-       (str/trim)
-       (not-empty)))
-
 (defn render-body [post]
   (let [shares (not-empty (:shares post))
         body (->> (:blocks post)
                   (map #(assoc % ::filename (:filename post)))
-                  combine-blocks)]
+                  (combine-blocks))]
     (if shares
       (str "**@noahtheduke** posted:\n\n" body)
       body)))

@@ -3,5 +3,5 @@
  :tags ["cohost mirror" "wifeposting" "half-price books" "reading is hard"]
  :cohost-url "3651910-me-holding-six-book"}
 
-Me, holding six books at Half-Price Books
+Me, holding six books at Half-Price Books  
 My wife May: that’s a lot of books for someone who doesn’t read books.

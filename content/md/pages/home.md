@@ -17,3 +17,21 @@ Programming stuff:
 * Built [fixture-riveter](https://github.com/Batterii/fixture-riveter), a port of [factory_bot](https://github.com/thoughtbot/factory_bot) to Typescript. I no longer work for the company and no one else has picked it up so consider it abandoned. (I'm still pretty proud of it, truth be told.)
 
 I can be reached at: <noah.bogart@hey.com>
+
+## Banners
+
+<table>
+    <tr>
+        <td>
+            <img src="/img/88x31.png" alt="noahbogart.com" />
+        </td>
+        <td>
+            <a href="https://mykocalico.neocities.org/buttons">
+                <picture>
+                  <source srcset="/img/i-was-on-cohost.gif" media="(prefers-reduced-motion: no-preference)" />
+                  <img src="/img/i-was-on-cohost.png" alt="i was on cohost" />
+                </picture>
+            </a>
+        </td>
+    </tr>
+</table>

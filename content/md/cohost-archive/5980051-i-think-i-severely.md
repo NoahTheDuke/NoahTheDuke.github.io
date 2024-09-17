@@ -43,7 +43,7 @@ GOOD SONG THOUGH.
 
 **@noahtheduke** posted:
 
-> I think I severely stunted my learning for multiple days by trying to understand everything.
+> I think I severely stunted my learning for multiple days by trying to understand everything. 
 
 What's a couple days? No, really, what's a couple of days? Things take a very very long time to learn, even the simplest things take time. Every day, my 2 year old puts on his shoes and every day he fucks it up in some small way and sometimes he gets it and sometimes he doesn't, but every day he's trying. He's better now than he was a week ago, but day to day the changes are so small as to be imperceptible among the regression to the mean.
 

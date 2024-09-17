@@ -15,18 +15,18 @@ my 4 year old probably has sensory processing disorder and adhd, she's self-conf
 
 transcription of this morning, after offering other foods:
 
-Me: "well, what do you want for breakfast?"
-Her: "a egg!"
-Me: "hardboiled?"
-Her: "yes".
-Me: \<makes the egg> here you go, little lady."
-Her: "no, I’m not hungry."
-Me: "remember yesterday when you were upset and didn’t want to play at the playground even tho you asked to go because you were hungry?"
-Her: "yeah"
-Me: "wanna eat the hard boiled egg we made that your asked for?"
-Her: "no, i don’t like hard boiled eggs, it’s going to be gross."
-Me: "sweet girl, you don’t want cereal, hard boiled eggs, yogurt, or any of our leftovers. you haven’t eaten anything. you need food energy if we’re going to play. we can’t go to the play place if you don’t have any food energy."
-Her: "\<crying> Nooooooooooooo i wanna go!"
-Me: "what do you want to eat?"
-Her: "i’m not hungry!!!!!!!!!!!!"
+Me: "well, what do you want for breakfast?"  
+Her: "a egg!"  
+Me: "hardboiled?"  
+Her: "yes".  
+Me: \<makes the egg> here you go, little lady."  
+Her: "no, I’m not hungry."  
+Me: "remember yesterday when you were upset and didn’t want to play at the playground even tho you asked to go because you were hungry?"  
+Her: "yeah"  
+Me: "wanna eat the hard boiled egg we made that your asked for?"  
+Her: "no, i don’t like hard boiled eggs, it’s going to be gross."  
+Me: "sweet girl, you don’t want cereal, hard boiled eggs, yogurt, or any of our leftovers. you haven’t eaten anything. you need food energy if we’re going to play. we can’t go to the play place if you don’t have any food energy."  
+Her: "\<crying> Nooooooooooooo i wanna go!"  
+Me: "what do you want to eat?"  
+Her: "i’m not hungry!!!!!!!!!!!!"  
 Me: 🤡

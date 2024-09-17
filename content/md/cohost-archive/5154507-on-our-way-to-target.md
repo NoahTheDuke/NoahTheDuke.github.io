@@ -4,5 +4,5 @@
  :cohost-url "5154507-on-our-way-to-target"}
 
 On our way to target
- Me: i miss community spaces.
+ Me: i miss community spaces.  
 My wife : you don’t think target is a community spa- hahaha

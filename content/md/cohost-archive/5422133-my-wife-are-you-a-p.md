@@ -4,6 +4,6 @@
  :cohost-url "5422133-my-wife-are-you-a-p"}
 
 my wife: are you a pretty boy? yes yes
-2 y/o: no, i hanome hucky
-her: you're a handsome hunky?
+2 y/o: no, i hanome hucky  
+her: you're a handsome hunky?  
 him: yeah!!!!!!

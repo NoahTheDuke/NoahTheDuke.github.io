@@ -73,11 +73,6 @@
                             </a>
                         </li>
                         
-                        <li>
-                            <a class="menu-item-img" href="https://mykocalico.neocities.org/buttons">
-                                 <img src="/img/i-was-on-cohost.gif">
-                            </a>
-                        </li>
                     </ul>
                 </nav>
 
@@ -159,15 +154,10 @@
 <div>
     
     <p>I re-discovered a data structure I used many years ago from a game engine. It’s like a queue but is well built for recursive or nested work. The name I know it as is the Pipeline.</p><p>The data structure is <code>{ processed: queue, added: queue }</code>. It has the methods <code>enqueue(…args: any[]): pipeline</code>, <code>peek(): any</code>, and <code>pop(): pipeline</code>.</p><p>When you call <code>enqueue</code>, you pass in any number of items, which are added to the back of the <code>added</code> internal queue. Like a classic queue, if <code>enqueue</code> is called multiple times in a row, each set of items is added at the end.</p><p>When you call <code>pop</code>, the contents of <code>added</code> are prepended to the contents of <code>processed</code>, and <code>added</code> is cleared, then the pipeline is returned.</p><p>When you call <code>peek</code>, you get the first item in <code>added</code> or <code>processed</code>.</p><p>Okay so that’s the implementation. What does it look like? Here’s how it works in Clojure:</p><code class="clojure highlight" data-lang="clojure"><pre><span></span><span class="p">(</span><span class="nb">-&gt; </span><span class="p">(</span><span class="nf">make-pipeline</span><span class="p">)</span> <span class="c1">;; {:processed &lt;-()-&lt; :added &lt;-()-&lt;}</span>
-
     <span class="p">(</span><span class="nf">queue</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1">;; {:processed &lt;-()-&lt; :added &lt;-(1 2 3)-&lt;}</span>
-
     <span class="p">(</span><span class="nf">queue</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1">;; {:processed &lt;-()-&lt; :added &lt;-(1 2 3 4 5 6)-&lt;}</span>
-
     <span class="p">(</span><span class="nf">pop</span><span class="p">)</span>  <span class="c1">;; {:processed &lt;-(2 3 4 5 6)-&lt; :added &lt;-()-&lt;}</span>
-
     <span class="p">(</span><span class="nf">queue</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">)</span>  <span class="c1">;; {:processed &lt;-(2 3 4 5 6)-&lt; :added &lt;-(7 8 9)-&lt;}</span>
-
     <span class="p">(</span><span class="nf">pop</span><span class="p">))</span> <span class="c1">;; {:processed &lt;-(8 9 2 3 4 5 6)-&lt; :added &lt;-()-&lt;}</span>
 </pre></code><p>Does that make sense? I hope so.</p><p>I know it as a pipeline, name taken from the game engine I learned it from years ago, but I’ve never seen it since. It’s very useful when processing sets of things with potential items that will have their own nested sets of things that must be accomplished first, each of which may also etc etc.</p><p>What is it?????</p>
 </div>

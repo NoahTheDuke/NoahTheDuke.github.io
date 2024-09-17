@@ -12,5 +12,5 @@
 **@noahtheduke** posted:
 
 Hole wæt! We Gardena in geardagum,
-þeod-cyninga þrym gefrunon,
+þeod-cyninga þrym gefrunon,  
 hu ða æþelingas ellen fremedon.

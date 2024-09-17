@@ -73,11 +73,6 @@
                             </a>
                         </li>
                         
-                        <li>
-                            <a class="menu-item-img" href="https://mykocalico.neocities.org/buttons">
-                                 <img src="/img/i-was-on-cohost.gif">
-                            </a>
-                        </li>
                     </ul>
                 </nav>
 
@@ -164,7 +159,7 @@
 <hr>
 <div>
     
-    <p>i don't like waiting around for version 1.0. <a href="https://0ver.org/">0ver</a> is funny but annoying. BE NOT AFRAID. so i've released <a href="https://cljdoc.org/d/io.github.noahtheduke/splint/1.0.1/doc/home">splint 1.0</a>.</p><p>it has disabling rules, it doesn't choke on any code i've thrown at it so far, and the set of rules it has is pretty great. there's loads more work to be done, such as moving most of the "lint" rules to "style", which will invariably break folks config lol, but why wait?</p><p>the specific updates this time are:</p><ul><li><p>Add <code>--parallel</code> and <code>--no-parallel</code> to support running it single-threaded, defaults to true.</p></li><li><p><code>style/def-fn</code>: Prefer <code>(let [z f] (defn x [y] (z y)))</code> over <code>(def x (let [z f] (fn [y] (z y))))</code>. (Based on the clj-kondo linter.)</p></li><li><p><code>lint/try-splicing</code>: Prefer <code>(try (do ~@body) (finally ...))</code> over <code>(try ~@body (finally ...))</code>.</p></li><li><p><code>lint/body-unquote-splicing</code>: Prefer <code>(binding [max mymax] (let [res# (do ~@body)] res#))</code> over <code>(binding [max mymax] ~@body)</code>.</p></li></ul>
+    <p>i don't like waiting around for version 1.0. <a href="https://0ver.org/">0ver</a> is funny but annoying. BE NOT AFRAID. so i've released <a href="https://cljdoc.org/d/io.github.noahtheduke/splint/1.0.1/doc/home">splint 1.0</a>.</p><p>it has disabling rules, it doesn't choke on any code i've thrown at it so far, and the set of rules it has is pretty great. there's loads more work to be done, such as moving most of the "lint" rules to "style", which will invariably break folks config lol, but why wait?</p><p>the specific updates this time are:</p><ul><li>Add <code>--parallel</code> and <code>--no-parallel</code> to support running it single-threaded, defaults to true.</li><li><code>style/def-fn</code>: Prefer <code>(let [z f] (defn x [y] (z y)))</code> over <code>(def x (let [z f] (fn [y] (z y))))</code>. (Based on the clj-kondo linter.)</li><li><code>lint/try-splicing</code>: Prefer <code>(try (do ~@body) (finally ...))</code> over <code>(try ~@body (finally ...))</code>.</li><li><code>lint/body-unquote-splicing</code>: Prefer <code>(binding [max mymax] (let [res# (do ~@body)] res#))</code> over <code>(binding [max mymax] ~@body)</code>.</li></ul>
 </div>
 <hr>
 <div>

@@ -35,6 +35,6 @@ Megaton Sword | Blood Hails Steel - Steel Hails Fire | 101 | 7:24:23
 Nintendo | Kirby and the Forgotten Land Original Soundtrack | 204 | 7:20:34
 Taylor Swift | 1989 (Taylor's Version) | 127 | 7:17:6
 
-I think this is fairly representative of my current tastes! Except for Megaton Sword, I don't remember listening to this album so much. Maybe I listened to it alone for a whole day and just don't remember that?
+I think this is fairly representative of my current tastes! Except for Megaton Sword, I don't remember listening to this album so much. Maybe I listened to it alone for a whole day and just don't remember that? 
 
 This also doesn't include the roughly 950 plays of "After Laughter" by Paramore, because I played it almost entirely for my children who are obsessed. I made the regrettable decision to delete the whole album from last.fm, which now pains me in retrospect, but too bad dumbass!

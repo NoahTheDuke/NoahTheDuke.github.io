@@ -13,11 +13,11 @@
 
 ![](/img/cohost-mirror/5375470-oops-meant-to-post-a/alarm3.png)
 
-<div style="white-space: pre-line;">this is AWESOME what an amazing fucking bit</div>
+this is AWESOME what an amazing fucking bit
 
-<div style="white-space: pre-line;">if these are playable i wanna try them so bad fjdhkasldfasfd</div>
+if these are playable i wanna try them so bad fjdhkasldfasfd
 
-<div style="white-space: pre-line;">you can find em here by going to set-unhinged https://www.jinteki.net/cards</div>
+you can find em here by going to set-unhinged https://www.jinteki.net/cards
 <hr>
 
 

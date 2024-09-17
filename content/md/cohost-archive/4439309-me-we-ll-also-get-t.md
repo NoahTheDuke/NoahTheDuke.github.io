@@ -11,10 +11,10 @@
 
 **@noahtheduke** posted:
 
-Me: we’ll also get the Oyster Mushrooms dish
+Me: we’ll also get the Oyster Mushrooms dish  
 Server: great choice
-…
-Server: here’s your oyster mushrooms \*leaves*
-Me: where are the oysters?
-May: …are you serious? That’s just their name.
+…  
+Server: here’s your oyster mushrooms \*leaves*  
+Me: where are the oysters?  
+May: …are you serious? That’s just their name.  
 Me: i hope whoever named them oyster mushrooms gets hit by a car.

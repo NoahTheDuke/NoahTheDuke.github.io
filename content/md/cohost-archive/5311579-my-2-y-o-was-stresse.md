@@ -3,7 +3,7 @@
  :tags ["cohost mirror" "kidposting"]
  :cohost-url "5311579-my-2-y-o-was-stresse"}
 
-Things he shouted out at various points of his sleep:
+Things he shouted out at various points of his sleep: 
 
 - lala stop it!!! (lala is what he calls his sister)
 - bubbles empty 😤😩😤😩

@@ -7,32 +7,32 @@ i watched elemental last night and while i'm still coalescing my thoughts on it,
 
 EDIT: descending, so cars is my fave
 
-cars
-toy story 2
-turning red
-coco
-ratatouille
-cars 3
-a bug's life
-the good dinosaur
-monster's inc
-luca
-elemental
-onward
-brave
-incredibles 2
-the incredibles
-monsters university
+cars  
+toy story 2  
+turning red  
+coco  
+ratatouille  
+cars 3  
+a bug's life  
+the good dinosaur  
+monster's inc  
+luca  
+elemental  
+onward  
+brave  
+incredibles 2  
+the incredibles  
+monsters university  
 toy story
 
-cars 2
-inside out
-toy story 3
-toy story 4
-soul
-finding nemo
-finding dory
-wall-e
+cars 2  
+inside out  
+toy story 3  
+toy story 4  
+soul  
+finding nemo  
+finding dory  
+wall-e  
 up
 
 lightyear (unranked, haven't seen this one)

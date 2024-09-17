@@ -26,7 +26,7 @@ Books I'm reading:
 * [Neuromancer - William Gibson](https://en.wikipedia.org/wiki/Neuromancer)
 * [Doppelganger - Naomi Klein](https://en.wikipedia.org/wiki/Doppelganger:_A_Trip_Into_the_Mirror_World)
 * [Mistborn - Brandon Sanderson](https://en.wikipedia.org/wiki/Mistborn:_The_Final_Empire)
- 
+
 Software I'm working on:
 
 * [Splint](https://github.com/NoahTheDuke/splint)
