@@ -1,7 +1,7 @@
 {:site-title                   "Thoughts and bits"
  :author                       "Noah Bogart"
  :description                  ""
- :site-url                     "https://noahtheduke.github.io/"
+ :site-url                     "https://noahbogart.com/"
  :post-root                    "posts"
  :page-root                    "pages"
  :post-root-uri                "posts"

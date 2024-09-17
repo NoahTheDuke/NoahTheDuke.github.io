@@ -10,7 +10,7 @@
 
 <meta property="og:description" content="Forgot to post after releasing v1.9.0 back in May, so this is gonna be fuckin huge.In short: v1.9 added a new rule (style/prefer-clj-string) and a new cli flag (--[no-]summary). v1.10 added reading available deps.edn and project.clj files to determine the directories to check, changing the pattern DSL to use a variation of pangloss/pattern&#39;s DSL, and to add 5 new rules, 4 of which are performance rules (style/redundant-regex-constructor, performance/assoc-many, performance/avoid-satisfies, performance/get-in-literals, performance/get-keyword).The change in v1.10 means that you can run bb splint or clojure -M:splint and it&#39;ll &quot;just work&quot;: it&#39;ll check the primary directories and the directories under and :test alias without any extra fiddling. This makes it much easier to use quickly. I&#39;ve always been annoyed at clj-kondo&#39;s insistence on forcing the --lint flag for choosing files, and loved Rubocop&#39;s &quot;just run it&quot; mentality.">
 
-<meta property="og:url" content="https://noahtheduke.github.io/posts/2194446-splint-v1-9-0-and-v1/" />
+<meta property="og:url" content="https://noahbogart.com/posts/2194446-splint-v1-9-0-and-v1/" />
 <meta property="og:title" content="Splint v1.9.0 and v1.10.0" />
 <meta property="og:type" content="article" />
 

@@ -10,7 +10,7 @@
 
 <meta property="og:description" content="@chreke posted:To be fair, I’ve never worked in a big Lisp code base—my experience is only limited to experiments—but I have worked in large Erlang code bases with lots of business logic, where I would often run into issues with the lack of types for domain objects.To illustrate my point, consider the following example—you’re asked to extend the following pseudocode to send an email after a user has finished their registration:The question is, what is user? It looks like it will be a map that contains a :password key, but does it also have an email address? If so, is it under the key :email or :email-address? Is the email a string or is it some kind of “email object”? If there is an email address, is it mandatory? Has it been validated in a previous step or do we need to go back and add validation somewhere?Clojure / Lisp devs, how do you deal with this? spec? Docs? I know &quot;the Lisp way&quot; is to do interactive and iterative development, but at some point I would assume you end up in a situation where you can&#39;t look at what&#39;s inside the user variable. (Or maybe this isn&#39;t a real problem and I&#39;m just too ML-pilled)">
 
-<meta property="og:url" content="https://noahtheduke.github.io/posts/6286441-clojure-enterprise/" />
+<meta property="og:url" content="https://noahbogart.com/posts/6286441-clojure-enterprise/" />
 <meta property="og:title" content="Clojure: Enterprise Edition reply" />
 <meta property="og:type" content="article" />
 

@@ -10,7 +10,7 @@
 
 <meta property="og:description" content="&gt; given a large prime p, a multiplier m, and a seed number x_0, a Lehmer PRNG can be defined by the recursive function x_{n+1} = m \cdot x_n \mod p.&gt; One pair choice is p=59, m=6. Because 60 \equiv 1 \mod 59, each iteration is a simple matter of multiplying the ones digit by 6 and adding the tens digit. To illustrate, a sequence starting from 17 would continue 43, 22, 14, 25, 32, 15, 31, 9, 54, 29, ..., and taking just the unit&#39;s digit, that turns into 3, 2, 4, 5, 2, 5, 1, 9, 4, 9, which looks pretty random.&gt; Next up is p=101, m=50. Because p=101, this construction has the advantage that the sequence goes from 1 to 100, making the distribution of the output stream uniform over 1 to 10 and providing a longer period. The choice of multiplier also simplifies computation: if the current state x_i is even, the next number x_{i+1} = 101 - \frac{2}, and if odd, x_{i+1} = 50 - \frac{2}. Not as nice as the previous example, but still not bad.">
 
-<meta property="og:url" content="https://noahtheduke.github.io/posts/5500275-mental-math-pseudo-r/" />
+<meta property="og:url" content="https://noahbogart.com/posts/5500275-mental-math-pseudo-r/" />
 <meta property="og:title" content="Mental Math Pseudo Random Number Generation" />
 <meta property="og:type" content="article" />
 

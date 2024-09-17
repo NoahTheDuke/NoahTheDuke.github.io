@@ -10,7 +10,7 @@
 
 <meta property="og:description" content="@noahtheduke posted:All times below are about parsing the 8.5k lines in clojure/core.clj.Edamame is our current parser and it&#39;s quite fast (40-60ms) but it drops comments. I&#39;ve forked it to try to add them, but that would mean handling them in every other part of the parser, such as syntax-quote and maps and sets, making dealing with those objects really hard. Rewrite-clj is much slower (180ms) only exposes comments in the zip api, meaning I have to operate on the zipper objects with zipper functions (horrible and slow). It&#39;s nice to rely on Clojure built-ins instead of (loop [zloc zloc] (z/next* ...)) nonsense.parcera looked promising, but the pre-processing in parcera/ast is slow (240ms) and operating on the Java directly is deeply cumbersome. The included grammar also makes some odd choices and I don&#39;t know ANTLR4 well enough to know how to fix them (such as including the : in keyword strings). And maybe this isn&#39;t such a big deal but matching against strings is annoying. Means I&#39;m writing something other than Clojure code.">
 
-<meta property="og:url" content="https://noahtheduke.github.io/posts/1183207-quick-follow-up-beca/" />
+<meta property="og:url" content="https://noahbogart.com/posts/1183207-quick-follow-up-beca/" />
 <meta property="og:title" content="" />
 <meta property="og:type" content="article" />
 

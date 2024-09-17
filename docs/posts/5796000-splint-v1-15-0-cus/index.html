@@ -10,7 +10,7 @@
 
 <meta property="og:description" content="I&#39;ve been sitting on this release for a little while now, trying to find the right way to approach to supporting custom rules.The way the rules work currently, when a file with defrule is evaluated, the defrule macro adds the generated rule to a global atom. This simplifies a lot of stuff in the codebase, and makes adding new rules to splint pretty easy: make a new file, require it in the entrypoint for the library. However, users can&#39;t access that entrypoint from the cli, and while I&#39;ve not exactly hidden the code, I don&#39;t think people should have to write their own entrypoint wrappers merely to include their own rules.Inspired by RuboCop YET AGAIN, I&#39;ve added a new option, settable in the config file or by passing the relevant flag at the cli, to call load-file on a given set of files which will presumably call their custom defrule invocations. Because I&#39;m relying on Clojure&#39;s built-in behavior, there is no extra code necessary for me to parse or validate the paths myself; I pass them to load-file in a loop and print any exceptions that are thrown.">
 
-<meta property="og:url" content="https://noahtheduke.github.io/posts/5796000-splint-v1-15-0-cus/" />
+<meta property="og:url" content="https://noahbogart.com/posts/5796000-splint-v1-15-0-cus/" />
 <meta property="og:title" content="splint v1.15.0 - custom rules support!" />
 <meta property="og:type" content="article" />
 
