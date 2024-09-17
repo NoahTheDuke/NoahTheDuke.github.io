@@ -1,9 +1,9 @@
 {:title "Home"
- :layout :page
+ :layout :home
  :home? true
  :navbar? true}
 
-I'm Noah. I am not a good poster, I don't have the generative spark. I've got a wife and two kids and a house in the suburbs, a basement full of crowdfunded board games I never get to play because time is scarce, and more programming books than I can fit on my shelves. I love Clojure and would use it for the rest of my career if I could.
+I'm Noah. I've got a wife and two kids and a house in the suburbs, a basement full of crowdfunded board games I never get to play because time is scarce, and more programming books than I can fit on my shelves. I love Clojure and would use it for the rest of my career if I could.
 
 deetz: he/him - cis - straight - white - 30 or 40 years old
 
@@ -16,14 +16,16 @@ Programming stuff:
 * Lead development of [jinteki.net](https://github.com/mtgred/netrunner), an open source and free implementation of the asymmetric card game Netrunner (formerly Android: Netrunner).
 * Built [fixture-riveter](https://github.com/Batterii/fixture-riveter), a port of [factory_bot](https://github.com/thoughtbot/factory_bot) to Typescript. I no longer work for the company and no one else has picked it up so consider it abandoned. (I'm still pretty proud of it, truth be told.)
 
-I can be reached at: <noah.bogart@hey.com>
+I can be reached at: <noah.bogart@hey.com>.
 
 ## Banners
 
 <table>
     <tr>
         <td>
-            <img src="/img/88x31.png" alt="noahbogart.com" />
+            <a href="https://noahbogart.com">
+                <img src="/img/88x31.webp" alt="noahbogart.com" style="image-rendering: pixelated"/>
+            </a>
         </td>
         <td>
             <a href="https://mykocalico.neocities.org/buttons">
@@ -35,3 +37,6 @@ I can be reached at: <noah.bogart@hey.com>
         </td>
     </tr>
 </table>
+
+<!--<ul class="eighty-eight-x-thirty-one">-->
+<!--<li><a href="https://cwr.beesbuzz.biz/redirect?dir=prev&from=https%3A%2F%2Fnoahbogart.com">← Previous</a> | This website is part of the <a href="https://cwr.beesbuzz.biz/">Ex-Cohost Webring</a>. | <a href="https://cwr.beesbuzz.biz/redirect?from=https%3A%2F%2Fnoahbogart.com">Next →</a></li></ul>-->
