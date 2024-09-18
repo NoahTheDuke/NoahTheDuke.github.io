@@ -421,18 +421,18 @@
   (when-not (empty? posts-by-tag)
     (println (blue "compiling tags"))
     (cryogen-io/create-folder (cryogen-io/path "/" blog-prefix tag-root-uri))
-    (doseq [[tag posts] posts-by-tag]
-      (let [{:keys [name uri file-path]} (tag-info params tag)]
-        (println "-->" (cyan uri))
-        (write-html file-path
-                    params
-                    (render-file "/html/tag.html"
-                                 (merge params
-                                        {:active-page     "tags"
-                                         :selmer/context  (cryogen-io/path "/" blog-prefix "/")
-                                         :name            name
-                                         :posts           posts
-                                         :uri             uri})))))))
+    (doseq [[tag posts] posts-by-tag
+            :let [{:keys [name uri file-path]} (tag-info params tag)]]
+      (println "-->" (cyan uri))
+      (write-html file-path
+        params
+        (render-file "/html/tag.html"
+                     (merge params
+                            {:active-page     "tags"
+                             :selmer/context  (cryogen-io/path "/" blog-prefix "/")
+                             :name            name
+                             :posts           posts
+                             :uri             uri}))))))
 
 (defn compile-tags-page
   "Compiles a page with links to each tag page. Spits the page into the public folder"
@@ -647,23 +647,16 @@
    - `params` - `config` + content such as `:pages` etc.
    - `site-data` - a subset of the site content such as `:pages`, `:posts` - see the code below"
   ([] (compile-assets {}))
-  ([{:keys [extend-params-fn update-article-fn]
-     :or   {extend-params-fn            (fn [params _] params)
-            update-article-fn           (fn [article _] article)}
-     :as   overrides-and-hooks}
-    ]
+  ([overrides]
    (println (green "compiling assets..."))
-   (when-not (empty? overrides-and-hooks)
+   (when-not (empty? overrides)
      (println (yellow "overriding config.edn with:"))
-     (pprint overrides-and-hooks))
-   (let [overrides    (dissoc overrides-and-hooks
-                              :lxtend-params-fn :update-article-fn)
-         {:keys [^String site-url blog-prefix rss-name recent-posts keep-files author-root-uri theme]
+     (pprint overrides))
+   (let [{:keys [^String site-url blog-prefix rss-name recent-posts keep-files theme]
           :as   config} (resolve-config overrides)
          all-posts        (->> (read-posts config)
                                (map klipse/klipsify)
                                (map (partial add-description config))
-                               (map #(update-article-fn % config))
                                (remove nil?))
          grouped-posts (group-by #(get % :unlisted? false) all-posts)
          unlisted-posts (get grouped-posts true [])
@@ -674,8 +667,7 @@
          latest-posts (->> posts (take recent-posts) vec)
          pages        (->> (read-pages config)
                            (map klipse/klipsify)
-                           (map (partial add-description config))
-                           (keep #(update-article-fn % config)))
+                           (map (partial add-description config)))
          home-page    (m/find-first :home? pages)
          other-pages  (->> pages
                            (remove #{home-page})
@@ -683,8 +675,7 @@
          cohost-pages (->> (read-posts (assoc config :post-root "cohost-archive"))
                            (tag-posts config)
                            (map klipse/klipsify)
-                           (map (partial add-description config))
-                           (keep #(update-article-fn % config)))
+                           (map (partial add-description config)))
          [navbar-pages
           sidebar-pages] (group-pages other-pages)
          other-pages (remove :cohost-root other-pages)

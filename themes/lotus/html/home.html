@@ -17,6 +17,23 @@
     </div>
     {% if page.toc %}{{page.toc|safe}}{% endif %}
     {{page.content|safe}}
-
 </div>
+<h2>Banners</h2>
+<table>
+    <tr>
+        <td>
+            <a href="https://noahbogart.com">
+                <img src="/img/88x31.webp" alt="noahbogart.com" style="image-rendering: pixelated"/>
+            </a>
+        </td>
+        <td>
+            <a href="https://mykocalico.neocities.org/buttons">
+                <picture>
+                  <source srcset="/img/i-was-on-cohost.gif" media="(prefers-reduced-motion: no-preference)" />
+                  <img src="/img/i-was-on-cohost.png" alt="i was on cohost" />
+                </picture>
+            </a>
+        </td>
+    </tr>
+</table>
 {% endblock %}

@@ -1,5 +1,5 @@
 body {
-  font-family: Oxygen, Tahoma, Verdana, Helvetica, Arial, sans-serif;
+  font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.25;
@@ -192,7 +192,7 @@ blockquote .author {
 }
 
 code, kbd, samp {
-  font-family: Inconsolata, Consolas, "Deja Vu Sans Mono", "Bitstream Vera Sans Mono", "Droid Sans Mono", "Andale Mono", Anonymous, "Monaco", monospaced;
+  font-family: "Courier New", monospaced;
 }
 
 .button {
@@ -213,7 +213,7 @@ code, kbd, samp {
 }
 .button:hover {
   background: #522158;
-  color: #fff;
+  color: #ffffff;
 }
 .button:active {
   top: 1px;
@@ -256,10 +256,6 @@ code, kbd, samp {
 #menucont .menu li .menu-item-text {
   padding: 10px 20px;
   width: 100%;
-}
-#menucont .menu li .menu-item-img {
-  padding: 10px 20px;
-  width: 50%;
 }
 
 @keyframes fadeIn {
@@ -410,6 +406,72 @@ body {
   text-align: center;
 }
 
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  color: inherit;
+  border-left: 0.25em solid #d1d9e0;
+}
+
+.markdown-alert > :first-child {
+  margin-top: 0;
+}
+
+.markdown-alert > :last-child {
+  margin-bottom: 0;
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: #0969da;
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: #0969da;
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: #8250df;
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: #8250df;
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: #9a6700;
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: #9a6700;
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: #1a7f37;
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: #1a7f37;
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: #cf222e;
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: #d1242f;
+}
+
+.admonition {
+  margin-right: 8px;
+}
+
 /* ==================================================
    Global Styles
 ================================================== */
@@ -471,7 +533,7 @@ img {
 ================================================== */
 #sidebar {
   background: #522158;
-  color: #fff;
+  color: #ffffff;
   -webkit-overflow-scrolling: touch;
   display: flex;
   flex-flow: column nowrap;
@@ -486,7 +548,7 @@ img {
 #sidebar #logo {
   padding: 20px;
   width: 100%;
-  color: #fff;
+  color: #ffffff;
 }
 #sidebar #logo .icon {
   display: block;
@@ -502,7 +564,7 @@ img {
   mask-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAwIDBDMjAgMCAwIDIwIDAgMTAwczIwIDEwMCAxMDAgMTAwIDEwMC0yMCAxMDAtMTAwUzE4MCAwIDEwMCAweiIvPjwvc3ZnPg==);
 }
 #sidebar #logo .text {
-  color: #fff;
+  color: #ffffff;
   width: 100%;
   font-size: 30px;
   line-height: 0.8;
@@ -558,7 +620,7 @@ img {
   }
 }
 #socialmedia ul .icon {
-  fill: #fff;
+  fill: #ffffff;
   max-height: 100%;
   max-width: 100%;
   opacity: 0.85;
@@ -595,26 +657,6 @@ img {
   color: rgba(0, 0, 0, 0.4);
   text-transform: uppercase;
   font-size: 11px;
-}
-
-.eighty-eight-x-thirty-one {
-  /* We first create a flex layout context */
-  display: flex;
-  
-  /* Then we define the flow direction 
-     and if we allow the items to wrap 
-   * Remember this is the same as:
-   * flex-direction: row;
-   * flex-wrap: wrap;
-   */
-  flex-flow: row wrap;
-  
-  /* Then we define how is distributed the remaining space */
-  justify-content: space-around;
-  
-  padding: 0;
-  margin: 0;
-  list-style: none;
 }
 
 /*# sourceMappingURL=blog.css.map */

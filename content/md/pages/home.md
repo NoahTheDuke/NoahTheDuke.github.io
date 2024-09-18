@@ -9,6 +9,7 @@ deetz: he/him - cis - straight - white - 30 or 40 years old
 
 I commissioned profile picture from [Flynn Nichols](https://www.patreon.com/icelevel).
 
+
 Programming stuff:
 
 * Built [Splint](https://cljdoc.org/d/io.github.noahtheduke/splint), a Clojure linter focused on style and code shape.
@@ -17,26 +18,3 @@ Programming stuff:
 * Built [fixture-riveter](https://github.com/Batterii/fixture-riveter), a port of [factory_bot](https://github.com/thoughtbot/factory_bot) to Typescript. I no longer work for the company and no one else has picked it up so consider it abandoned. (I'm still pretty proud of it, truth be told.)
 
 I can be reached at: <noah.bogart@hey.com>.
-
-## Banners
-
-<table>
-    <tr>
-        <td>
-            <a href="https://noahbogart.com">
-                <img src="/img/88x31.webp" alt="noahbogart.com" style="image-rendering: pixelated"/>
-            </a>
-        </td>
-        <td>
-            <a href="https://mykocalico.neocities.org/buttons">
-                <picture>
-                  <source srcset="/img/i-was-on-cohost.gif" media="(prefers-reduced-motion: no-preference)" />
-                  <img src="/img/i-was-on-cohost.png" alt="i was on cohost" />
-                </picture>
-            </a>
-        </td>
-    </tr>
-</table>
-
-<!--<ul class="eighty-eight-x-thirty-one">-->
-<!--<li><a href="https://cwr.beesbuzz.biz/redirect?dir=prev&from=https%3A%2F%2Fnoahbogart.com">← Previous</a> | This website is part of the <a href="https://cwr.beesbuzz.biz/">Ex-Cohost Webring</a>. | <a href="https://cwr.beesbuzz.biz/redirect?from=https%3A%2F%2Fnoahbogart.com">Next →</a></li></ul>-->

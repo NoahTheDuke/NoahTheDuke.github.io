@@ -4,16 +4,16 @@
    [cryogen-core.markup :refer [markup-registry rewrite-hrefs]])
   (:import
    (com.vladsch.flexmark.ext.aside AsideExtension)
-   (com.vladsch.flexmark.ext.emoji EmojiExtension)
    (com.vladsch.flexmark.ext.attributes AttributesExtension)
+   (com.vladsch.flexmark.ext.emoji EmojiExtension)
    (com.vladsch.flexmark.ext.footnotes FootnoteExtension)
    (com.vladsch.flexmark.ext.gfm.strikethrough StrikethroughExtension)
    (com.vladsch.flexmark.ext.superscript SuperscriptExtension)
    (com.vladsch.flexmark.ext.tables TablesExtension)
-   com.vladsch.flexmark.html.HtmlRenderer
-   com.vladsch.flexmark.parser.Parser
+   (com.vladsch.flexmark.html HtmlRenderer)
+   (com.vladsch.flexmark.parser Parser)
    (com.vladsch.flexmark.util.data MutableDataSet)
-   cryogen_core.markup.Markup
+   (cryogen_core.markup Markup)
    (java.util ArrayList)))
 
 (defn markdown
@@ -34,25 +34,16 @@
         parser (.build (Parser/builder options))
         renderer (.build (HtmlRenderer/builder options))]
    (reify Markup
-    (dir [this] "md")
-    (exts [this] #{".md"})
-    (render-fn [this]
+    (dir [_this] "md")
+    (exts [_this] #{".md"})
+    (render-fn [_this]
       (fn [rdr config]
-        (let [g (str "_______" (gensym) "_______")
-              file (->> (java.io.BufferedReader. rdr)
-                        (line-seq)
-                        (str/join "\n"))
-              file (-> file
-                       (str/replace #"\R\R+" g)
-                       (str/replace "\n" "\n\n")
-                       (str/replace g "\n\n"))]
-          (->> file
-               (.parse parser)
-               (.render renderer)
-               (rewrite-hrefs (:blog-prefix config)))))))))
-
-(comment
-  (markdown))
+        (->> (java.io.BufferedReader. rdr)
+             (line-seq)
+             (str/join "\n")
+             (.parse parser)
+             (.render renderer)
+             (rewrite-hrefs (:blog-prefix config))))))))
 
 (defn init []
-  (reset! markup-registry [(markdown)]))
+  (swap! markup-registry conj (markdown)))

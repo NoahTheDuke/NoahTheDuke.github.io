@@ -16,7 +16,7 @@
  :sass-src                     []
  :sass-path                    "sass"
  :theme                        "lotus"
- :resources                    ["img" "CNAME"]
+ :resources                    ["img" "CNAME" "site.webmanifest"]
  :keep-files                   [".git"]
  :ignored-files                [#"\.#.*" #".*\.swp$"]
  :previews?                    true

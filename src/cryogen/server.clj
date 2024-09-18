@@ -7,16 +7,15 @@
    [cryogen-core.config :refer [resolve-config]]
    [cryogen-core.flexmark :as flexmark]
    [cryogen-core.io :refer [path]]
+   [cryogen-core.markup :refer [clear-registry]]
    [cryogen-core.plugins :refer [load-plugins]]
    [cryogen-core.watcher :refer [start-watcher! start-watcher-for-changes!]]
    [cryogen.core :as cryogen]
    [ring.server.standalone :as ring-server]
    [ring.util.codec :refer [url-decode]]
-   [ring.util.response :refer [file-response redirect]]
-   )
+   [ring.util.response :refer [file-response redirect]])
   (:import
-   (java.io File)
-   ))
+   (java.io File)))
 
 (def resolved-config (delay (resolve-config)))
 
@@ -81,6 +80,7 @@
 (defn serve
   "Entrypoint for running via tools-deps (clojure)"
   [{:keys [fast join?] :as opts}]
+  (clear-registry)
   (ring-server/serve
     handler
     (merge

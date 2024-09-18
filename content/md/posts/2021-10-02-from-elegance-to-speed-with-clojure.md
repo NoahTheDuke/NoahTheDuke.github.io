@@ -59,9 +59,8 @@ And how I've adapted John's data generation:
 (def *s* (time-sequence initial-size))
 ```
 
-| **NOTE**
-|
-| Before we dive into code and times, I want to preface that I don't really understand how John is determining `kHz` and `MHz` when discussing performance. I'd like to be able to more easily compare our two sets of numbers (so that for a given version I can figure out the ratio needed to compare), but alas, the provided Clojure times are fuzzy, so I am stuck relying strictly on the Common Lisp "msec" output.
+> [!NOTE]
+> Before we dive into code and times, I want to preface that I don't really understand how John is determining `kHz` and `MHz` when discussing performance. I'd like to be able to more easily compare our two sets of numbers (so that for a given version I can figure out the ratio needed to compare), but alas, the provided Clojure times are fuzzy, so I am stuck relying strictly on the Common Lisp "msec" output.
 
 # Initial version
 
@@ -110,8 +109,7 @@ A small speed up, but 2 seconds saved is a win in my book. What's our next step?
 
 Ah yes, of course. The first suggestion any time speed is required in Clojure: convert your sequences to `` loop`s. This requires inlining both the `map `` and `filter` transformations, which makes our code harder to understand and more brittle, but we're here for speed lol.
 
-**NOTE**
-
+> [!NOTE]
 > I'm still relying on `partition` and `first`/`last` because I think it's important to show how each step of the process changes 1) the shape of the code and 2) the speed. My process for writing all of this code, of course, was not so smooth. I have some experience writing "fast" Clojure and dove right into some of the more unwieldy versions, but backfilling these early versions is a good refresher as well as a reminder of just how much is required to make Clojure performant.
 
 ```clojure

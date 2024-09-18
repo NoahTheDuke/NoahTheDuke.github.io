@@ -4,7 +4,9 @@
    [clojure.walk :as walk]
    [hiccup.core :as hiccup]
    [net.cgrand.enlive-html :as enlive]
-   [clygments.core :as clygments]))
+   [clygments.core :as clygments]
+   [cryogen-core.flexmark :as flexmark]
+   [cryogen-core.markup :refer [render-fn]]))
 
 (defn filter-html-elems
   "Recursively walks a sequence of enlive-style html elements depth first
@@ -42,6 +44,57 @@
        (enlive/texts)
        (apply str)))
 
+(defn highlight-code-block [node]
+  (let [n (first (:content node))]
+    (if (and (= 1 (count (:content node)))
+             (= :code (:tag n))
+             (-> n :attrs :class))
+      (let [klass (-> n :attrs :class)
+            lang (keyword klass)
+            content (-> (:content n)
+                        (first)
+                        (clygments/highlight lang :html))
+            code (-> (enlive/html-snippet content)
+                     (first)
+                     :content)]
+        {:tag :code
+         :attrs {:class (str klass " highlight")
+                 :data-lang klass}
+         :content code})
+      node)))
+
+(defn make-admonition [a-type body nodes]
+  (let [body-contents (-> (enlive/html [:p body])
+                          (first)
+                          (update :content concat nodes))]
+    (first
+     (enlive/html
+      [:div {:class (str "markdown-alert markdown-alert-" (str/lower-case a-type))}
+       [:p {:class "markdown-alert-title"}
+        (let [icon (str "admonition-" (str/lower-case a-type))]
+          [:svg {:class (str "admonition " icon)
+                 :width "16"
+                 :height "16"}
+           [:use {:xlink:href (str "/img/icons.svg#" icon)}]])
+        (str/capitalize a-type)]
+       body-contents]))))
+
+(comment
+  (enlive/at)
+  (enlive->html-text (make-admonition "NOTE" "asd" nil)))
+
+(defn admonition-block [node]
+  (let [block-content (:content node)]
+    (if (= :p (:tag (first block-content)))
+      (let [quote-str (-> block-content first :content first)]
+        (if (string? quote-str)
+          (let [[_full a-type body] (re-matches #"\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\n+(.*)" quote-str)]
+            (if body
+              (make-admonition a-type body (-> block-content first :content next))
+              node))
+          node))
+      node)))
+
 (defn trimmed-html-snippet
   "Creates an enlive-snippet from `html-string` then removes
   the newline nodes"
@@ -54,28 +107,20 @@
             (seq? node)
             (remove #(and (string? %) (re-matches #"\n\h*" %)) node)
             (= :pre (:tag node))
-            (let [n (first (:content node))]
-              (if (and (= 1 (count (:content node)))
-                       (= :code (:tag n))
-                       (-> n :attrs :class))
-                (let [klass (-> n :attrs :class)
-                      lang (keyword klass)
-                      content (-> (:content n)
-                                  (first)
-                                  (clygments/highlight lang :html))
-                      code (-> (enlive/html-snippet content)
-                               (first)
-                               :content)]
-                  {:tag :code
-                   :attrs {:class (str klass " highlight")
-                           :data-lang klass}
-                   :content code})
-                node))
+            (highlight-code-block node)
+            (= :blockquote (:tag node))
+            (admonition-block node)
+            #_node
             :else
             node)))))
 
-(trimmed-html-snippet
- "<p><em>May hands me a fancy grape</em>: Here, taste this.\n<em>Me</em>, who just ate all of the kids left over refried beans: Getting a lot of bean from these grapes.</p>\n")
+(comment
+  (let [render (render-fn (flexmark/markdown))]
+    (trimmed-html-snippet (render
+                           (java.io.StringReader. "
+> [!NOTE]
+> Before we dive into code and times, I want to preface that I don't really understand how John is determining `kHz` and `MHz` when discussing performance. I'd like to be able to more easily compare our two sets of numbers (so that for a given version I can figure out the ratio needed to compare), but alas, the provided Clojure times are fuzzy, so I am stuck relying strictly on the Common Lisp \"msec\" output.
+") nil))))
 
 (defn hic=
   "Tests whether the xs are equivalent hiccup."

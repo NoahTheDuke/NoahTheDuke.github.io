@@ -8,8 +8,12 @@
         clygments/clygments {:mvn/version "2.0.2"}
         babashka/fs {:mvn/version "0.5.22"}
         dev.weavejester/medley {:mvn/version "1.8.1"}
+        org.clojure/data.json {:mvn/version "2.5.0"}
         com.vladsch.flexmark/flexmark-all {:mvn/version "0.64.8"}}
- :aliases {:repl/rebel {:extra-deps {nrepl/nrepl {:mvn/version "1.3.0"}
+ :aliases {:dev {}
+           :test {}
+           :repl/rebel {:extra-paths ["dev"]
+                        :extra-deps {nrepl/nrepl {:mvn/version "1.3.0"}
                                      cider/cider-nrepl {:mvn/version "0.50.2"}
                                      com.bhauman/rebel-readline {:mvn/version "0.1.4"}
                                      criterium/criterium {:mvn/version "0.4.6"}
