@@ -36,12 +36,14 @@
 
 * [Cohost Union News](https://alyaza.neocities.org/CohostUnionNews) - News related to unions in the USA by alyaza birze.
 * [Crossplay](https://patrickklepek.substack.com) - The intersection of parenting and video games, by Patrick Klepick.
-* [Hillel Wayne](https://buttondown.com/hillelwayne) - Formal verification, software design, and software history. Author of [Practical TLA+](https://link.springer.com/book/10.1007/978-1-4842-3829-5).
 * [HTHRFLWRS](https://buttondown.com/HTHR) -  game design, creator of [SNAKE FARM](https://store.steampowered.com/app/2491640/SNAKE_FARM/).
+* [Hillel Wayne](https://buttondown.com/hillelwayne) - Formal verification, software design, and software history. Author of [Practical TLA+](https://link.springer.com/book/10.1007/978-1-4842-3829-5).
 * [Quick Play](https://quickplay.substack.com) - Reviews of short games.
+* [To the Teeth](https://totheteeth.substack.com) - Heavy metal releases and news.
 
 ## Podcasts
 
+* [404 Media](https://www.404media.co)'s podcast.
 * [Friends at the Table](https://friendsatthetable.net) - Actual play focused on critical world-building, smart characterization, and fun interactions between good friends.
-* [Remap Radio](https://remapradio.com) - Video game news and chit-chat.
-* [404 Media](https://www.404media.co)'s podcast
+* [Functional Design in Clojure](https://clojuredesign.club/) - Discussions of functional programming and software design through the lens of Clojure.
+* [Remap Radio](https://remapradio.com)'s podcast.
