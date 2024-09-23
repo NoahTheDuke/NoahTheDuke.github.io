@@ -77,13 +77,13 @@
 
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
 
-<symbol id="admonition-note" viewBox="0 0 24 24" fill="none">
+<symbol id="alert-note" viewBox="0 0 24 24" fill="none">
 <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2"/>
 <path d="M12 8L12 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
 <path d="M12 16V15.9888" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
 </symbol>
 
-<symbol id="admonition-tip" viewBox="0 0 24 24" fill="none">
+<symbol id="alert-tip" viewBox="0 0 24 24" fill="none">
 <path d="M12 7C9.23858 7 7 9.23858 7 12C7 13.3613 7.54402 14.5955 8.42651 15.4972C8.77025 15.8484 9.05281 16.2663 9.14923 16.7482L9.67833 19.3924C9.86537 20.3272 10.6862 21 11.6395 21H12.3605C13.3138 21 14.1346 20.3272 14.3217 19.3924L14.8508 16.7482C14.9472 16.2663 15.2297 15.8484 15.5735 15.4972C16.456 14.5955 17 13.3613 17 12C17 9.23858 14.7614 7 12 7Z" stroke="currentColor" stroke-width="2"/>
 <path d="M12 4V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M18 6L19 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -93,20 +93,20 @@
 <path d="M10 17H14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </symbol>
 
-<symbol id="admonition-important" viewBox="0 0 24 24" fill="none">
+<symbol id="alert-important" viewBox="0 0 24 24" fill="none">
 <path d="M8 10H8.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M12 10H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M16 10H16.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M21 13V7C21 5.11438 21 4.17157 20.4142 3.58579C19.8284 3 18.8856 3 17 3H7C5.11438 3 4.17157 3 3.58579 3.58579C3 4.17157 3 5.11438 3 7V13C3 14.8856 3 15.8284 3.58579 16.4142C4.17157 17 5.11438 17 7 17H7.5C7.77614 17 8 17.2239 8 17.5V20V20.1499C8 20.5037 8.40137 20.7081 8.6875 20.5L13.0956 17.2941C13.3584 17.103 13.675 17 14 17H17C18.8856 17 19.8284 17 20.4142 16.4142C21 15.8284 21 14.8856 21 13Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
 </symbol>
 
-<symbol id="admonition-warning" viewBox="0 0 24 24" fill="none">
+<symbol id="alert-warning" viewBox="0 0 24 24" fill="none">
 <path d="M12 10V13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
 <path d="M12 16V15.9888" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
 <path d="M10.2518 5.147L3.6508 17.0287C2.91021 18.3618 3.87415 20 5.39912 20H18.6011C20.126 20 21.09 18.3618 20.3494 17.0287L13.7484 5.147C12.9864 3.77538 11.0138 3.77538 10.2518 5.147Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </symbol>
 
-<symbol id="admonition-caution" viewBox="0 0 24 24" fill="none">
+<symbol id="alert-caution" viewBox="0 0 24 24" fill="none">
 <path d="M3 9.22843V14.7716C3 15.302 3.21071 15.8107 3.58579 16.1858L7.81421 20.4142C8.18929 20.7893 8.69799 21 9.22843 21H14.7716C15.302 21 15.8107 20.7893 16.1858 20.4142L20.4142 16.1858C20.7893 15.8107 21 15.302 21 14.7716V9.22843C21 8.69799 20.7893 8.18929 20.4142 7.81421L16.1858 3.58579C15.8107 3.21071 15.302 3 14.7716 3H9.22843C8.69799 3 8.18929 3.21071 7.81421 3.58579L3.58579 7.81421C3.21071 8.18929 3 8.69799 3 9.22843Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M12 8V13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
 <path d="M12 16V15.9888" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>

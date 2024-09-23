@@ -63,7 +63,7 @@
          :content code})
       node)))
 
-(defn make-admonition [a-type body nodes]
+(defn make-alert [a-type body nodes]
   (let [body-contents (-> (enlive/html [:p body])
                           (first)
                           (update :content concat nodes))]
@@ -71,8 +71,8 @@
      (enlive/html
       [:div {:class (str "markdown-alert markdown-alert-" (str/lower-case a-type))}
        [:p {:class "markdown-alert-title"}
-        (let [icon (str "admonition-" (str/lower-case a-type))]
-          [:svg {:class (str "admonition " icon)
+        (let [icon (str "alert-" (str/lower-case a-type))]
+          [:svg {:class (str "alert " icon)
                  :width "16"
                  :height "16"}
            [:use {:xlink:href (str "/img/icons.svg#" icon)}]])
@@ -80,17 +80,16 @@
        body-contents]))))
 
 (comment
-  (enlive/at)
-  (enlive->html-text (make-admonition "NOTE" "asd" nil)))
+  (enlive->html-text (make-alert "NOTE" "asd" nil)))
 
-(defn admonition-block [node]
+(defn alert-block [node]
   (let [block-content (:content node)]
     (if (= :p (:tag (first block-content)))
       (let [quote-str (-> block-content first :content first)]
         (if (string? quote-str)
           (let [[_full a-type body] (re-matches #"\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\n+(.*)" quote-str)]
             (if body
-              (make-admonition a-type body (-> block-content first :content next))
+              (make-alert a-type body (-> block-content first :content next))
               node))
           node))
       node)))
@@ -109,7 +108,7 @@
             (= :pre (:tag node))
             (highlight-code-block node)
             (= :blockquote (:tag node))
-            (admonition-block node)
+            (alert-block node)
             #_node
             :else
             node)))))
