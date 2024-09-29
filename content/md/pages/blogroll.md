@@ -3,27 +3,53 @@
  :navbar? true
  :page-index 2}
 
+## Buttons
+
+I made a cool little 88x31 button because it's fun to make art. Use it to link to me if you collect these.
+
+<img src="/img/88x31.webp" alt="noahbogart.com" style="image-rendering: pixelated" width="88" height="31"/>
+
+<textarea aria-label="Button code" style="resize: none;" onclick="this.select()" spellcheck="false">&lt;a href="https://noahbogart.com" title="noahbogart.com" target="_blank"&gt;&lt;img src="https://noahbogart.com/img/88x31.webp" alt="noahbogart.com" style="image-rendering:pixelated;" width="88" heigh="31" /&gt;&lt;/a&gt;</textarea>
+
+If you have one, tell me so I can add it to my blogroll below:
+
+<div class="buttons">
+    <a href="https://virtualmoose.org" target="_blank"><img src="https://virtualmoose.org/wp-content/uploads/2024/09/88x31-export-export-1.png" style="image-rendering: pixelated" width="88" heigh="31"></a>
+    <a href="https://damien.zone" title="damien dot zone" target="_blank"><img src="https://files.damien.zone/88x31_damien.png" alt="damien dot zone" style="image-rendering:pixelated;" width="88" heigh="31"></a>
+    <a href="https://ewie.online/" target="_blank"><img src="/img/88x31-evie.png" style="image-rendering:pixelated;" width="88" heigh="31" /></a>
+    <a href="https://blog.radicaldream.land" target="_blank"><img src="https://i.postimg.cc/QxhG798p/dispatchblog-banner.gif" style="image-rendering:pixelated;" width="88" heigh="31" /></a>
+    <a href="https://jkap.io" target="_blank"><img src="https://files.crime.team/site/jkap-88x31.gif" style="image-rendering:pixelated;" width="88" heigh="31" /></a>
+    <a href="https://blog.aurahack.jp" target="_blank"><img src="https://aurahack.neocities.org/88x31.gif" style="image-rendering:pixelated;" width="88" heigh="31" /></a>
+    <a href="https://nickyflowers.com/" target="_blank"><img src="https://nickyflowers.com/nickyflowersbutton.gif" style="image-rendering:pixelated;" width="88" heigh="31" /></a>
+    <a href="https://wavebeem.com" target="_blank"><img
+    src="https://wavebeem.com/button.gif" alt="wavebeem.com" title="wavebeem.com" style="image-rendering: pixelated;" width="88" height="31" /></a>
+    <a href="https://blog.someplace-else.xyz/"><img src="https://natclayton.uk/wp-content/uploads/2024/09/elsewhere.gif" style="image-rendering: pixelated;" width="88" height="31" /></a>
+</div>
+
 ## Blogs / Newsletters
 
+* [2 Mello](https://2mello.net) - 2 Mello
+* [Aurahack](https://blog.aurahack.jp/) - Aurahack
 * [AURAMBLES](https://auratriolo.com/blog) - Aura Triolo
 * [Azhdarchid](https://azhdarchid.com) - Bruno Diaz
 * [Beyond Loom](http://beyondloom.com/blog/index.html) - John Earnest
 * [Blueberry Lemonade](https://blueberrylemonade.pika.page) - Kyle Labriola
 * [damien erambert](https://damien.zone) - Damien Erambert
 * [Dispatch from the Radical Dreamland](https://blog.radicaldream.land) - Lena Raines
+* [dissoc](https://blog.ambrosebs.com) - Ambrose Bonnaire-Sergeant 
 * [enceledean](https://enceledean.bearblog.dev) - Nic Tringali
 * [Entropy Arbitrage](https://john.colagioia.net/blog) - John Colagioia
+* [Evie On-Line](https://ewie.online/) - Evie Finch
 * [Izzy Muerte on Self Unemployed](https://izzys.casa) - Izzy Muerte
 * [jae kaplan](https://jkap.io) - Jae Kaplan
 * [Natalie's Blog](http://nex-3.com) - Natalie Weizenbaum
 * [Nic Hartley](https://redfennec.dev) - Nic Hartley
 * [Nicky Flowers](https://nickyflowers.com) - Nicky Flowers
 * [Nire Bryce](https://ellyardent.wordpress.com) - Nire Bryce
-* [The Transsexual Chofetz Chaim](https://shelraphen.com) - Shel Raphen
-* [someplace elsewhere](https://blog.someplace-else.xyz) - Nat Clayton
-* [Aurahack](https://blog.aurahack.jp/) - Aura
-* [dissoc](https://blog.ambrosebs.com) - Ambrose Bonnaire-Sergeant 
 * [Prophetlabs](https://prophetlabs.de) - Prophet/welltypedwitch
+* [someplace elsewhere](https://blog.someplace-else.xyz) - Nat Clayton
+* [The Transsexual Chofetz Chaim](https://shelraphen.com) - Shel Raphen
+* [wavebeem](https://www.wavebeem.com/) - Sage Fennel
 
 ## News sites
 

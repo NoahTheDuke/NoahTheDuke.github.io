@@ -665,4 +665,10 @@ img {
   padding: 0.75em;
 }
 
+.buttons {
+  text-wrap: balance;
+  text-align: center;
+  line-height: 20px;
+}
+
 /*# sourceMappingURL=blog.css.map */
