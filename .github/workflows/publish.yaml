@@ -1,4 +1,4 @@
-name: Deploy Hugo site to Pages
+name: Deploy Cryogen site to Github Pages
 
 on:
   push:
@@ -39,7 +39,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
-          java-version: ${{ matrix.java }}
+          java-version: 17
 
       - name: Install Dart Sass
         run: sudo snap install dart-sass
