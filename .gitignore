@@ -13,4 +13,5 @@ pom.xml.asc
 .cpcache/
 .cache/
 .nrepl-port
+docs/
 posts.json

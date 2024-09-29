@@ -672,7 +672,9 @@
          other-pages  (->> pages
                            (remove #{home-page})
                            (add-prev-next :page-index))
-         cohost-pages (->> (read-posts (assoc config :post-root "cohost-archive"))
+         cohost-pages (->> (read-posts (assoc config
+                                              :post-root "cohost-archive"
+                                              :post-root-uri "cohost-archive"))
                            (tag-posts config)
                            (map klipse/klipsify)
                            (map (partial add-description config)))
