@@ -58,7 +58,7 @@ jobs:
       - name: Build site
         run: |
           sudo snap install dart-sass
-          clojure -M:build
+          which sass
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
