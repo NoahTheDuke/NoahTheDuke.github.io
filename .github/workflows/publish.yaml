@@ -41,6 +41,11 @@ jobs:
           distribution: 'zulu'
           java-version: 17
 
+      - name: Install Dart Sass
+        run: |
+          sudo snap install dart-sass
+          sudo snap alias dart-sass sass
+
       - name: Install clojure tools
         uses: DeLaGuardo/setup-clojure@12.5
         with:
@@ -56,9 +61,7 @@ jobs:
           restore-keys: cljdeps-
 
       - name: Build site
-        run: |
-          sudo snap install dart-sass
-          which sass
+        run: clojure -M:build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
