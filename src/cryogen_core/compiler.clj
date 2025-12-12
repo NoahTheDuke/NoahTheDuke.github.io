@@ -724,7 +724,7 @@
      (compile-preview-pages params posts)
      (compile-index params)
      (compile-archives params posts)
-     (compile-cohost-archive params cohost-pages)
+     ; (compile-cohost-archive params cohost-pages)
      (println (blue "generating site map"))
      (->> (sitemap/generate site-url config)
           (cryogen-io/create-file (cryogen-io/path "/" blog-prefix "sitemap.xml")))
