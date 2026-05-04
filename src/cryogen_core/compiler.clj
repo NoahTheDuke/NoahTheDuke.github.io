@@ -261,7 +261,7 @@
         (fn [mu]
           (->>
            (find-pages config mu)
-           (map #(parse-page % config mu)))))
+           (mapv #(parse-page % config mu)))))
        (sort-by :page-index)))
 
 (defn tag-post
@@ -557,43 +557,6 @@
                                      :selmer/context  (cryogen-io/path "/" blog-prefix "/")
                                      :uri             uri})))))
 
-(defn compile-cohost-archive
-  "Compiles all the pages into html and spits them out into the public folder"
-  [{:keys [blog-prefix page-root-uri debug? blocks-per-preview raw-pages] :as params}
-   cohost-posts]
-  (when-not (empty? cohost-posts)
-    (println (blue "compiling cohost archive"))
-    (cryogen-io/create-folder (cryogen-io/path "/" blog-prefix page-root-uri))
-    (doseq [{:keys [uri] :as post} cohost-posts]
-      (println "-->" (cyan uri))
-      (when debug?
-        (print-debug-info post))
-      (write-html uri
-        params
-        (render-file (str "/html/" (:layout post))
-                     (merge params
-                            {:active-page     "posts"
-                             :home            false
-                             :selmer/context  (cryogen-io/path "/" blog-prefix "/")
-                             :post            post
-                             :uri             uri}))))
-    (let [archive-root (m/find-first :cohost-root raw-pages)
-          page-previews (->> cohost-posts
-                             (remove :cohost-root)
-                             (map #(create-preview blocks-per-preview %))
-                             (map content-dom->html))]
-      (println "-->" (cyan (:uri archive-root)))
-      (write-html (:uri archive-root)
-        params
-        (render-file "/html/cohost-archive.html"
-                     (merge params
-                            {:active-page     "pages"
-                             :home            false
-                             :selmer/context  (cryogen-io/path "/" blog-prefix "/")
-                             :page            archive-root
-                             :cohost-previews page-previews
-                             :uri             (:uri archive-root)}))))))
-
 (defn tag-posts
   "Converts the tags in each post into links"
   [config posts]
@@ -672,15 +635,8 @@
          other-pages  (->> pages
                            (remove #{home-page})
                            (add-prev-next :page-index))
-         cohost-pages (->> (read-posts (assoc config
-                                              :post-root "cohost-archive"
-                                              :post-root-uri "cohost-archive"))
-                           (tag-posts config)
-                           (map klipse/klipsify)
-                           (map (partial add-description config)))
          [navbar-pages
           sidebar-pages] (group-pages other-pages)
-         other-pages (remove :cohost-root other-pages)
          params (merge
                  config
                  {:today         (Date.)
@@ -724,7 +680,6 @@
      (compile-preview-pages params posts)
      (compile-index params)
      (compile-archives params posts)
-     ; (compile-cohost-archive params cohost-pages)
      (println (blue "generating site map"))
      (->> (sitemap/generate site-url config)
           (cryogen-io/create-file (cryogen-io/path "/" blog-prefix "sitemap.xml")))
