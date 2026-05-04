@@ -5,7 +5,7 @@
   (:import
    (com.vladsch.flexmark.ext.aside AsideExtension)
    (com.vladsch.flexmark.ext.attributes AttributesExtension)
-   (com.vladsch.flexmark.ext.emoji EmojiExtension)
+   (com.vladsch.flexmark.ext.emoji EmojiExtension EmojiImageType)
    (com.vladsch.flexmark.ext.footnotes FootnoteExtension)
    (com.vladsch.flexmark.ext.gfm.strikethrough StrikethroughExtension)
    (com.vladsch.flexmark.ext.superscript SuperscriptExtension)
@@ -30,7 +30,8 @@
                     (.set Parser/EXTENSIONS (ArrayList. extensions))
                     (.set HtmlRenderer/FENCED_CODE_LANGUAGE_CLASS_PREFIX "")
                     (.set HtmlRenderer/GENERATE_HEADER_ID true)
-                    (.set HtmlRenderer/RENDER_HEADER_ID true))
+                    (.set HtmlRenderer/RENDER_HEADER_ID true)
+                    (.set EmojiExtension/USE_IMAGE_TYPE EmojiImageType/UNICODE_ONLY))
         parser (.build (Parser/builder options))
         renderer (.build (HtmlRenderer/builder options))]
    (reify Markup

@@ -1,8 +1,9 @@
 {:title "Losing Skills"
  :date "2026-05-03T20:59"
+ :at-uri "at://did:plc:qbidoe2gpkfelnurqod37ikr/app.bsky.feed.post/3mkyk35mkgc2n"
  :tags ["vibecoding"]}
 
-For the last year, I've been driving a 2025 Toyota Sienna, a boat of a minivan. It's got all sorts of fancy features that I won't get into right now, but the big one that bothers me the most is a "lane drift" sensor that makes the steering wheel vibrate if you start to leave your lane (without a turn signal) and will actually turn the wheel/redirect the vehicle for you if you drift too far. Ostensibly, this is a great feature, as it helps you notice a Very Bad Thing :tm:, but I've found that it's had the opposite effect on me.
+For the last year, I've been driving a 2025 Toyota Sienna, a boat of a minivan. It's got all sorts of fancy features that I won't get into right now, but the big one that bothers me the most is a "lane drift" sensor that makes the steering wheel vibrate if you start to leave your lane (without a turn signal) and will actually turn the wheel/redirect the vehicle for you if you drift too far. Ostensibly, this is a great feature, as it helps you notice a Very Bad Thing:tm:, but I've found that it's had the opposite effect on me.
 
 Even tho I can toggle it off, and I now do, I've spent enough time with it on that I've noticed that I drift in my lanes significantly more. I drive a "normal" car pretty frequently as well, a 2016 Subaru, and regardless of how determined I am to pay attention, the last year I've had more close calls and moments of lane drifting that in the 20+ years of driving beforehand. I have lost my habitual lane touching, my gentle turns and checks that keep the car centered in my lane, because I have quite accidentally learned to drive with bowling bumpers. Instead of staying consistently midline, I grew to accept and rely on bouncing between the edges of the lane, making me a less safe driver for my self, my family, and for everyone on the highway around me.
 

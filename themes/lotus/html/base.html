@@ -12,9 +12,10 @@
         {% style "css/normalize.css" %}
         {% style "css/blog.css" %}
         {% style "css/colors/colorful.css" %}
-        <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+        {% script "js/bluesky.js" %}
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
         <link rel="manifest" href="site.webmanifest">
     </head>
     <body>
@@ -121,7 +122,7 @@
             <hr/>
             <div id="footercont">
                 Copyright &copy; {{today|date:yyyy}} <a href="mailto:noah.bogart@hey.com">{{author}}</a>
-                <br /><a href="/credits.html">Website credits</a>
+                <br /><a href="/credits">Website credits</a>
             </div>
         </article>
     </body>

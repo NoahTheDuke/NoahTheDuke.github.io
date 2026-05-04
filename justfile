@@ -14,3 +14,9 @@ new-post *title:
     touch {{new_post_stem}}-$(slugify {{title}}).md
     echo -en "{:title \"{{title}}\"\n :date \"{{now}}\"\n :tags []}" > {{new_post_stem}}-$(slugify {{title}}).md
     nvim {{new_post_stem}}-$(slugify {{title}}).md
+
+build:
+    clojure -M:build
+
+serve:
+    clojure -X:serve

@@ -15,7 +15,7 @@ If you have one, tell me so I can add it to my blogroll below:
 
 <div class="buttons">
     <a href="https://virtualmoose.org" target="_blank"><img src="https://virtualmoose.org/wp-content/uploads/2024/09/88x31-export-export-1.png" style="image-rendering: pixelated" width="88" heigh="31"></a>
-    <a href="https://damien.zone" title="damien dot zone" target="_blank"><img src="https://files.damien.zone/88x31_damien.png" alt="damien dot zone" style="image-rendering:pixelated;" width="88" heigh="31"></a>
+    <a href="https://damien.zone" title="damien dot zone" target="_blank"><img src="https://damien.zone/88x31_damien.png" alt="damien dot zone" style="image-rendering:pixelated;" width="88" heigh="31"></a>
     <a href="https://ewie.online/" target="_blank"><img src="/img/88x31-evie.png" style="image-rendering:pixelated;" width="88" heigh="31" /></a>
     <a href="https://blog.radicaldream.land" target="_blank"><img src="https://i.postimg.cc/QxhG798p/dispatchblog-banner.gif" style="image-rendering:pixelated;" width="88" heigh="31" /></a>
     <a href="https://jkap.io" target="_blank"><img src="https://files.crime.team/site/jkap-88x31.gif" style="image-rendering:pixelated;" width="88" heigh="31" /></a>
