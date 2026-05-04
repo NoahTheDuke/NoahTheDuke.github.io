@@ -1,6 +1,6 @@
 {:title "Winter Olympics 2026"
  :date "2026-02-13T14:46"
- :tags []}
+ :tags ["olympics"]}
 
 Every 2 years I enter a state of frenzy, where I become obsessed with the Olympics. I grew up watching the Olympics in prime time with my mom. The whole family and friends would watch, but my mom cared the most and so I did as well. I took many years off of watching for various reasons, missing 2006-2016, and each year since 2018 I've increased the amount I watch. This year is the most yet, relying on Peacock's streaming service that is equal parts shit and excellent.
 
@@ -20,5 +20,7 @@ Here's all the events I've watched so far (as of 2026-02-13):
 * Snowboard - Women's Big Air
 * Snowboard - Women's Cross
 * Snowboard - Women's Halfpipe
-* Speed Skating - Women's 3km
+* Speed Skating - Women's Short Track 3km
 * Skeleton - Women's
+
+* Speed Skating - Men's Short Track 1000m
