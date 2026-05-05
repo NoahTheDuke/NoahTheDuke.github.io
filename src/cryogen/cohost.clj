@@ -5,16 +5,16 @@
    [clojure.java.io :as io]
    [clojure.string :as str]
    [ring.util.codec :as c]
-   [selmer.parser :as selmer]
-   [medley.core :as m]))
+   [selmer.parser :as selmer]))
 
 (def good-posts
   #{;; original list
-    "https://cohost.org/noahtheduke/post/3252059-money-handling-when"
-    "https://cohost.org/noahtheduke/post/3566741-thoughts-on-being-po"
-    "https://cohost.org/noahtheduke/post/2842001-pixar-movie-rankings"
-    "https://cohost.org/noahtheduke/post/4225466-gender-feelings"
-    "https://cohost.org/noahtheduke/post/3201474-at-this-point-i-don"
+    ;"https://cohost.org/noahtheduke/post/3252059-money-handling-when"
+    ;"https://cohost.org/noahtheduke/post/3566741-thoughts-on-being-po"
+    ;"https://cohost.org/noahtheduke/post/2842001-pixar-movie-rankings"
+    ;"https://cohost.org/noahtheduke/post/4225466-gender-feelings"
+    ;"https://cohost.org/noahtheduke/post/3201474-at-this-point-i-don"
+    "https://cohost.org/noahtheduke/post/7871761-my-cohost-retrospect"
     ;; new good posts
     "https://cohost.org/noahtheduke/post/4962364-buying-digital-music"
     "https://cohost.org/noahtheduke/post/4738263-the-oldest-house"
@@ -81,7 +81,7 @@
     "https://cohost.org/noahtheduke/post/1887941-album-is-easy-lover"
     "https://cohost.org/noahtheduke/post/2436561-this-album-is-so-fuc"
     "https://cohost.org/noahtheduke/post/1798662-saw-taylor-swift-las"
-    ;https://cohost.org/noahtheduke/post/; programming
+    ;; programming
     "https://cohost.org/noahtheduke/post/7369102-ocaml-wishlist"
     "https://cohost.org/noahtheduke/post/7108863-they-merged-it-my-c"
     "https://cohost.org/noahtheduke/post/7020673-learning-a-new-progr"
@@ -97,17 +97,21 @@
     "https://cohost.org/noahtheduke/post/2400662-mild-success"
     "https://cohost.org/noahtheduke/post/1789527-in-increasing-order"
     "https://cohost.org/noahtheduke/post/161270-i-commented-on-someo"
+    "https://cohost.org/noahtheduke/post/1054973-clojure-linters"
     })
 
 (def skip-posts
   #{"https://cohost.org/noahtheduke/post/7300465-i-should-probably-st"
     "https://cohost.org/noahtheduke/post/5145221-especially-when-your"
     "https://cohost.org/noahtheduke/post/7148525-how-i-feel-when-my-w"
+    "https://cohost.org/noahtheduke/post/1465655-big-same"
+    "https://cohost.org/noahtheduke/post/4984957-some-languages-handl"
     })
 
 (def good-tags
   #{"adhdchosting"
     "adhd posting"
+    "clojure"
     "jnet"
     "jinteki.net"
     "kidposting"
@@ -120,34 +124,30 @@
 (defn post-filter [post]
   (and (not (skip-posts (:singlePostPageUrl post)))
        (or (good-posts (:singlePostPageUrl post))
-           (some good-tags (:tags post)))))
+           (some good-tags (:tags post)))
+       (seq (:blocks post))))
 
-(def posts
-  (->> (json/parse-string (slurp "/Users/noah/personal/cohost-dl/out/noahtheduke/posts.json") true)
-       (map #(assoc % :share (boolean (seq (:shareTree %)))))
-       (map #(assoc % :authors (concat (map (fn [p] (:handle p)) (:relatedProjects %))
-                                       [(:handle (:postingProject %))])))
-       (map #(update % :tags (fn [tags]
-                               (->> tags
-                                    (map (fn [t]
-                                           (if (str/starts-with? t "#")
-                                             (subs t 1)
-                                             t)))
-                                    (map (fn [t] (str/escape t {\" "\\\""})))
-                                    (cons "cohost mirror")
-                                    (distinct)
-                                    vec))))
-       (map #(update % :headline str/escape {\" "\\\""}))))
-
-(comment
-  (->> posts
-       (remove :pinned)
-       (map #(dissoc % :astMap))
-       (map #(dissoc % :postingProject))
-       (map #(assoc % :shareTree (filter (fn [st] (seq (:blocks st))) (:shareTree %))))
-       ; (m/find-first #(str/includes? (:headline %) "blog"))
-       (m/find-first #(= "4027959-may-hands-me-a-fancy" (:filename %)))
-       ))
+(def all-posts
+  (->> (fs/glob "/Users/noah/personal/cohost-data/project/noahtheduke/posts/published" "**/*.json")
+       (mapv #(let [f (fs/file %)]
+                (-> (json/parse-string (slurp f) true)
+                    (assoc :filename (fs/file-name (fs/parent f)))
+                    (update :shareTree (fn [s] (when (not-empty s)
+                                                 (subs s 35 (count s)))))
+                    (assoc :share (boolean (:shareTree %)))
+                    (assoc :authors (concat (map (fn [p] (:handle p)) (:relatedProjects %))
+                                            [(:handle (:postingProject %))]))
+                    (update :tags (fn [tags]
+                                    (->> tags
+                                         (map (fn [t]
+                                                (if (str/starts-with? t "#")
+                                                  (subs t 1)
+                                                  t)))
+                                         (map (fn [t] (str/escape t {\" "\\\""})))
+                                         (cons "cohost mirror")
+                                         (distinct)
+                                         vec)))
+                    (update :headline str/escape {\" "\\\""}))))))
 
 (defmulti render-block "convert block to html" :type)
 
@@ -267,21 +267,49 @@
 
 (def template (slurp (io/file "resources" "cohost_template.md")))
 
+(defn slugify
+  "As defined here: https://you.tools/slugify/"
+  ([string] (slugify string "-"))
+  ([string sep]
+   (if-not (string? string) ""
+     (as-> string $
+       (str/lower-case $)
+       (str/replace $ #"[\u0027\u2018\u2019\u201B\u2039\u203A\u275B\u275C\uFF07\u300C\u300D]" "")
+       (java.text.Normalizer/normalize $ java.text.Normalizer$Form/NFD)
+       (str/replace $ #"[^\x00-\x7F]+" "")
+       (str/trim $)
+       (str/split $ #"[ \t\n\x0B\f\r!\"#$%&'()*+,-./:;<=>?@\\\[\]^_`{|}~]+")
+       (filter seq $)
+       (str/join sep $)
+       (not-empty $)))))
+
 (defn render-post [post]
-  (let [rendered-post (str (str/trim (selmer/render template post)) "\n")
-        post-filename (str (:filename post) ".md")
-        post-path (io/file "content" "md" "cohost-archive" post-filename)]
+  (let [post (update post :headline #(or (not-empty %) "EDIT ME"))
+        rendered-post (str (str/trim (selmer/render template post)) "\n")
+        date (first (str/split (:publishedAt post) #"T"))
+        slug (slugify (:headline post))
+        post-filename (str date "-" slug ".md")
+        post-path (io/file "content" "md" "posts" post-filename)]
+    (prn post-path)
     (io/make-parents post-path)
     (spit post-path rendered-post)))
 
-(defn convert []
-  (fs/delete-tree (io/file "content" "md" "cohost-archive"))
+(defn convert [posts]
   (->> posts
-       (remove :pinned)
+       ; (remove :pinned)
        (filter post-filter)
-       (map #(assoc % :shares (build-shares %)))
        (map #(assoc % :body (render-body %)))
+       ; (remove :shareOfPost)
        (run! render-post)))
 
+(defn clean-and-convert [posts]
+  (fs/delete-tree (io/file "content" "md" "cohost-archive"))
+  (fs/delete-tree (io/file "content" "img" "cohost-mirror"))
+  (convert posts))
+
 (comment
-  (convert))
+  (convert all-posts)
+  (->> all-posts
+       (filter #(= "7871761-my-cohost-retrospect" (:filename %)))
+       (convert))
+  )

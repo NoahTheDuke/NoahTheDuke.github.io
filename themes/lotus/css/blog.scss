@@ -65,6 +65,9 @@ img {
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 /* ==================================================

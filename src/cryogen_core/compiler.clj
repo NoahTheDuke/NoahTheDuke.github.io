@@ -116,7 +116,8 @@
 (defn find-posts
   "Returns a list of markdown files representing posts under the post root."
   [{:keys [post-root ignored-files]} mu]
-  (find-entries post-root mu ignored-files))
+  (concat (find-entries post-root mu ignored-files)
+          (find-entries "cohost-archive" mu ignored-files)))
 
 (defn find-pages
   "Returns a list of markdown files representing pages under the page root."
