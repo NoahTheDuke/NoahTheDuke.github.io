@@ -3,6 +3,15 @@
  :at-uri "at://did:plc:qbidoe2gpkfelnurqod37ikr/app.bsky.feed.post/3ml27oyl34s2y"
  :tags ["atproto" "open source"]}
 
+> [!NOTE]
+> EDIT: I WROTE ALL THIS FUCKING SHIT AND FORGOT TO CREDIT THE AUTHOR OF MY JAVASCRIPT CODE! FUCK MY STUPID LIFE! I'M SORRY JONATHAN!
+>
+> The javascript & css for the bluesky comment support from [this post](https://capscollective.com/blog/bluesky-blog-comments/) by [Jonathan Moallem](http://jonjondev.com/) at [Caps Collective](https://capscollective.com/). I modified it lightly for my purposes but otherwise it's copy-pasted from inspecting the source code of that page. I claim no ownership and thank him heartily.
+
+back to the original post:
+
+---
+
 i've added support for [Bluesky](https://bsky.app/) replies to my posts. they don't load unless you click the link that says "load bluesky comments", and the js comes to like 50 lines? not terrible imo. why support this site? it's run by shitty techlords and the "credible exit" is still unknown. however, i decided i wanted to host my own pds because i like having control of stuff and why not experiment with cool tech. turns out, it's pretty easy, so now everything i post to bluesky and other atproto sites flows into [https://pds.noahbogart.com](https://pds.noahbogart.com). additionally, i set up my own [tangled](https://tangled.org) "knot" (git server), so anything i host there is sitting on [knot.noahbogart.com](https://knot.noahbogart.com).
 
 i've survived countless website deaths, lost or deliberately deleted thousands of words i've written (rip my shitty "rationalist" phase on tumblr, you will not be missed), joined and quit more forums than i care to remember, even contributed to some cool wikis that are lost to the sands of [internet time](https://en.wikipedia.org/wiki/Swatch_Internet_Time). it's the way of the internet, but i'm tired of it.
