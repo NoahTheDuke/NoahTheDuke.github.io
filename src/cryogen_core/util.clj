@@ -6,7 +6,9 @@
    [net.cgrand.enlive-html :as enlive]
    [clygments.core :as clygments]
    [cryogen-core.flexmark :as flexmark]
-   [cryogen-core.markup :refer [render-fn]]))
+   [cryogen-core.markup :refer [render-fn]])
+  (:import
+   (java.util.regex Pattern)))
 
 (defn filter-html-elems
   "Recursively walks a sequence of enlive-style html elements depth first
@@ -63,33 +65,31 @@
          :content code})
       node)))
 
-(defn make-alert [a-type body nodes]
-  (let [body-contents (-> (enlive/html [:p body])
-                          (first)
-                          (update :content concat nodes))]
-    (first
-     (enlive/html
-      [:div {:class (str "markdown-alert markdown-alert-" (str/lower-case a-type))}
-       [:p {:class "markdown-alert-title"}
-        (let [icon (str "alert-" (str/lower-case a-type))]
-          [:svg {:class (str "alert " icon)
-                 :width "16"
-                 :height "16"}
-           [:use {:xlink:href (str "/img/icons.svg#" icon)}]])
-        (str/capitalize a-type)]
-       body-contents]))))
-
-(comment
-  (enlive->html-text (make-alert "NOTE" "asd" nil)))
+(defn make-alert [a-type body-contents]
+  (first
+   (enlive/html
+    (into [:div {:class (str "markdown-alert markdown-alert-" (str/lower-case a-type))}
+           [:p {:class "markdown-alert-title"}
+            (let [icon (str "alert-" (str/lower-case a-type))]
+              [:svg {:class (str "alert " icon)
+                     :width "16"
+                     :height "16"}
+               [:use {:xlink:href (str "/img/icons.svg#" icon)}]])
+            (str/capitalize a-type)]]
+          body-contents))))
 
 (defn alert-block [node]
   (let [block-content (:content node)]
     (if (= :p (:tag (first block-content)))
       (let [quote-str (-> block-content first :content first)]
         (if (string? quote-str)
-          (let [[_full a-type body] (re-matches #"\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\n+(.*)" quote-str)]
-            (if body
-              (make-alert a-type body (-> block-content first :content next))
+          (let [[_full a-type] (re-find #"\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\n" quote-str)
+                quote-str (str/replace quote-str #"\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\n" "")]
+            (if a-type
+              (make-alert a-type (-> (vec block-content)
+                                     (update-in [0 :content] #(->> (next %)
+                                                                   (cons quote-str)
+                                                                   (vec)))))
               node))
           node))
       node)))
@@ -118,8 +118,7 @@
     (trimmed-html-snippet (render
                            (java.io.StringReader. "
 > [!NOTE]
-> Before we dive into code and times, I want to preface that I don't really understand how John is determining `kHz` and `MHz` when discussing performance. I'd like to be able to more easily compare our two sets of numbers (so that for a given version I can figure out the ratio needed to compare), but alas, the provided Clojure times are fuzzy, so I am stuck relying strictly on the Common Lisp \"msec\" output.
-") nil))))
+> EDIT: I WROTE ALL THIS FUCKING SHIT AND FORGOT TO CREDIT THE AUTHOR OF MY JAVASCRIPT CODE! FUCK MY STUPID LIFE! I'M SORRY JONATHAN!") nil))))
 
 (defn hic=
   "Tests whether the xs are equivalent hiccup."
