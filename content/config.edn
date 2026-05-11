@@ -26,4 +26,7 @@
  :collapse-subdirs?            false
  :hide-future-posts?           true
  :description-include-elements #{:p :h1 :h2 :h3 :h4 :h5 :h6}
- :debug?                       false}
+ :debug?                       false
+ :pages-order ["gallery.md"
+               "now.md"
+               "blogroll.md"]}

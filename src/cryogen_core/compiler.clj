@@ -1,5 +1,6 @@
 (ns cryogen-core.compiler
   (:require
+   [babashka.fs :as fs]
    [clj-commons.format.exceptions :refer [print-exception]]
    [clojure.java.io :as io]
    [clojure.pprint :refer [pprint]]
@@ -199,9 +200,15 @@
   "Merges the page metadata and content maps"
   [file-name page-meta content-dom]
   (merge
-   (update-in page-meta [:layout] #(str (name %) ".html"))
+   (update page-meta :layout #(str (name %) ".html"))
    {:file-name   file-name
     :content-dom content-dom}))
+
+(defn find-page
+  [config page page-meta]
+  (or (m/index-of (:pages-order config) (fs/file-name page))
+      (:page-index page-meta))
+  )
 
 (defn parse-page
   "Parses a page/post and returns a map of the content, uri, date etc."
@@ -211,7 +218,7 @@
         (merge
          {:type          :page
           :uri           (page-uri file-name :page-root-uri config)
-          :page-index    (:page-index page-meta)
+          :page-index    (find-page config page page-meta)
           :tags          (-> (:tags page-meta) distinct vec)
           :klipse/global (:klipse config)
           :klipse/local  (:klipse page-meta)})

@@ -526,9 +526,26 @@ img {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
+}
+
+p img {
   display: flex;
   box-sizing: border-box;
+  width: 75%;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 20px;
+}
+.gallery img {
+  box-sizing: border-box;
   width: 100%;
+}
+
+.nsfw:not(:hover) {
+  filter: blur(10px);
 }
 
 /* ==================================================
