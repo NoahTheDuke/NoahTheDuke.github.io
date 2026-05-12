@@ -31,7 +31,7 @@
       :link          (:site-url config)
       :description   (:description config)
       :lastBuildDate (Date.)}
-     %)
+     %&)
     (posts-to-items (:site-url config) posts)))
 
 (defn make-filtered-channels [{:keys [rss-filters blog-prefix] :as config} posts-by-tag]

@@ -39,12 +39,12 @@
 (defn enlive->html-text [node-or-nodes]
   (->> node-or-nodes
        (enlive/emit*)
-       (apply str)))
+       (str/join)))
 
 (defn enlive->plain-text [node-or-nodes]
   (->> node-or-nodes
        (enlive/texts)
-       (apply str)))
+       (str/join)))
 
 (defn highlight-code-block [node]
   (let [n (first (:content node))]

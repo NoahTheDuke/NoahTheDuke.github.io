@@ -531,7 +531,8 @@
       :else (->> (enlive/select
                   (preview-dom blocks-per-preview (:content-dom page))
                   [(set description-include-elements)])
-                 (util/enlive->plain-text)))))
+                 (util/enlive->html-text)
+                 ((fn [x] (str "<![CDATA[" x "]]>")))))))
 
 (defn compile-index
   "Compiles the index page into html and spits it out into the public folder"
@@ -568,7 +569,7 @@
 (defn tag-posts
   "Converts the tags in each post into links"
   [config posts]
-  (map #(update-in % [:tags] (partial map (partial tag-info config))) posts))
+  (mapv (fn [post] (update post :tags (fn [tags] (mapv #(tag-info config %) tags)))) posts))
 
 (defn- content-dir?
   "Checks that the dir exists in the content directory."
@@ -712,6 +713,8 @@
           (print-exception e)))))))
 
 (comment
+  (require '[cryogen-core.flexmark :as flexmark])
+  (flexmark/init)
   (def *config (resolve-config {}))
 
   ;; Build and copy only styles & theme
@@ -723,5 +726,15 @@
   (compile-assets
     ;; Insert the prefix and suffix of the only file you _want_ to process
    {:ignored-files [#"^(?!2019-12-12-nrepl-).*\.asc"]})
+
+  (compile-assets)
+
+  (->> (read-posts *config)
+       ; (map klipse/klipsify)
+       (map (partial add-description *config))
+       (take 10)
+       (tag-posts *config)
+       #_(rss/make-channel *config)
+       )
 
   nil)

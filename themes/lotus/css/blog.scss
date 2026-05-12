@@ -212,11 +212,14 @@ p img {
   @media (max-width: $mobile-breakpoint) {
     padding: 1rem;
   }
+  margin: auto;
+  max-width: 700px;
 }
 
 #main p:last-child {
     margin: 0;
 }
+
 
 .post-header {
   .byline {
@@ -224,11 +227,6 @@ p img {
       font-variant-caps: small-caps;
     }
   }
-}
-
-.post-content {
-  margin: 0 auto;
-  max-width: 700px;
 }
 
 #footercont {

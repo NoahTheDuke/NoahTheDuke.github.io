@@ -6,6 +6,8 @@ Every 2 years I enter a state of frenzy, where I become obsessed with the Olympi
 
 Here's all the events I've watched so far (as of 2026-02-13):
 
+<!--more-->
+
 * Alpine Skiing - Women's Downhill
 * Alpine Skiing - Women's Super-G
 * Biathlon - Women's 4x6km Relay

@@ -19,3 +19,6 @@ build:
 
 serve:
     clojure -X:serve
+
+repl:
+    clojure -M:repl/rebel

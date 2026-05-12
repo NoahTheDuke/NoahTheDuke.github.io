@@ -4,6 +4,8 @@
 
 I have some plans for the new year that I'd like to put to paper as a small measure of accountability and internal pressure to follow through. I don't expect to do all of these, all goals are transitory and cannot account for future changes, but I do plan to hold these in mind as I move through the year.
 
+<!--more-->
+
 1. Play Ring Fit Adventure every day. I got it for christmas and having played it once today, I found it tiring and oddly compelling. It's not a replacement for something as challenging as crossfit, but until my wife and I can figure out a reasonable compromise, this must be my primary method for staying active.
 
 2. Buy no new games. I own many games and yet I keep saying to myself, "Maybe this one will be amazing/so fun/something that I love." Occasionally I'm right, but mostly I enjoy them a little and then put them aside for the next thing. I know I won't be able to hold this line, but I'd like to sincerely try.

@@ -649,6 +649,10 @@ p img {
   opacity: 1;
 }
 
+#main {
+  margin: auto;
+  max-width: 700px;
+}
 @media (min-width: 700px) {
   #main {
     padding: 2rem;
@@ -666,11 +670,6 @@ p img {
 
 .post-header .byline .date {
   font-variant-caps: small-caps;
-}
-
-.post-content {
-  margin: 0 auto;
-  max-width: 700px;
 }
 
 #footercont {
