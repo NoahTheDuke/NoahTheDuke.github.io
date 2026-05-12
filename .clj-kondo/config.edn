@@ -1,1 +1,11 @@
-{:linters {:clojure-lsp/unused-public-var {:level :off}}}
+{:linters {:clojure-lsp/unused-public-var {:level :off}
+           :unresolved-var {:exclude [text-decoration.core/black text-decoration.core/red
+                                      text-decoration.core/green text-decoration.core/yellow
+                                      text-decoration.core/blue text-decoration.core/magenta
+                                      text-decoration.core/cyan text-decoration.core/white
+                                      text-decoration.core/default
+                                      text-decoration.core/bg-black text-decoration.core/bg-red
+                                      text-decoration.core/bg-green text-decoration.core/bg-yellow
+                                      text-decoration.core/bg-blue text-decoration.core/bg-magenta
+                                      text-decoration.core/bg-cyan text-decoration.core/bg-white
+                                      text-decoration.core/bg-default]}}}
