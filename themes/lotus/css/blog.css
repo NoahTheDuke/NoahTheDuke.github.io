@@ -544,10 +544,6 @@ p img {
   width: 100%;
 }
 
-.nsfw:not(:hover) {
-  filter: blur(10px);
-}
-
 /* ==================================================
    Sections
 ================================================== */
@@ -651,7 +647,6 @@ p img {
 
 #main {
   margin: auto;
-  max-width: 700px;
 }
 @media (min-width: 700px) {
   #main {
