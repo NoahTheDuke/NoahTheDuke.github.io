@@ -531,8 +531,7 @@
       :else (->> (enlive/select
                   (preview-dom blocks-per-preview (:content-dom page))
                   [(set description-include-elements)])
-                 (util/enlive->html-text)
-                 ((fn [x] (str "<![CDATA[" x "]]>")))))))
+                 (util/enlive->plain-text)))))
 
 (defn compile-index
   "Compiles the index page into html and spits it out into the public folder"
