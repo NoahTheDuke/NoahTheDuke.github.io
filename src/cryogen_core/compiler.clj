@@ -207,8 +207,7 @@
 (defn find-page
   [config page page-meta]
   (or (m/index-of (:pages-order config) (fs/file-name page))
-      (:page-index page-meta))
-  )
+      (:page-index page-meta)))
 
 (defn parse-page
   "Parses a page/post and returns a map of the content, uri, date etc."
@@ -549,12 +548,15 @@
                                      :selmer/context    (cryogen-io/path "/" blog-prefix "/")
                                      :uri               uri
                                      (:type home-page)  home-page})))))
+(defn archives-uri
+  [config]
+  (page-uri "archives.html" config))
 
 (defn compile-archives
   "Compiles the archives page into html and spits it out into the public folder"
   [{:keys [blog-prefix] :as params} posts]
   (println (blue "compiling archives"))
-  (let [uri (page-uri "archives.html" params)]
+  (let [uri (archives-uri params)]
     (write-html uri
                 params
                 (render-file "/html/archives.html"
@@ -657,7 +659,7 @@
                   :home-page     (if home-page
                                    home-page
                                    (assoc (first latest-posts) :layout "home.html"))
-                  :archives-uri  (page-uri "archives.html" config)
+                  :archives-uri  (archives-uri config)
                   :index-uri     (page-uri "index.html" config)
                   :timeline-uri  (page-uri (cryogen-io/path "p" "1.html") config)
                   :tags-uri      (page-uri "tags.html" config)

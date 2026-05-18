@@ -2,16 +2,36 @@
  :layout :home
  :home? true}
 
-I'm Noah. I've got a wife and three kids and a house in the suburbs, a basement full of crowdfunded board games I never get to play because time is scarce, and more programming books than I can fit on my shelves. I love Clojure and would use it for the rest of my career if I could.
+I'm Noah. [Learn about me](/about), if you wish.
 
-deetz: he/him - cis - straight - white - 30 or 40 years old
+<nav style="display: grid; grid-template-columns: 1fr 2fr 1fr;">
+<div>
+    <h4>Explore the site</h4>
+    <ul>
+        <li><a href="archives">The blog</a></li>
+        <li><a href="antilibrary">Antilibrary</a></li>
+        <li><a href="now">What am I read/listening to/playing?</a></li>
+        <li><a href="software-projects">Software Projects</a></li>
+        <li><a href="gallery">Gallery of art I've commissioned</a></li>
+        <li><a href="blogroll">Cool links from around the web</a></li>
+    </ul>
+</div>
+<div>
+    <h4>Where to find me</h4>
+    <ul>
+        <li><a href="mailto:noah.bogart@hey.com">Email me</a></li>
+        <li><a href="https://bsky.app/profile/noahbogart.com">Bluesky</a></li>
+        <li><a href="https://tangled.org/noahbogart.com">Tangled</a></li>
+        <li><a href="https://github.com/NoahTheDuke">Github</a></li>
+        <li><a href="feed.xml">RSS Feed</a></li>
+    </ul>
+</div>
+</nav>
 
-Programming stuff:
-
-* Built [Splint](https://cljdoc.org/d/io.github.noahtheduke/splint), a Clojure linter focused on style and code shape.
-* Revived [Lazytest](https://cljdoc.org/d/io.github.noahtheduke/lazytest), a Clojure BDD test framework.
-* Built [Scram](https://github.com/noahtheduke/scram), a Clojure cram-like testing library.
-* Former lead developer of [jinteki.net](https://github.com/mtgred/netrunner), an open source and free implementation of the asymmetric card game Netrunner (formerly Android: Netrunner).
-* Built [fixture-riveter](https://github.com/Batterii/fixture-riveter) in 2020, a faithful port of [factory_bot](https://github.com/thoughtbot/factory_bot) to Typescript. I no longer work for the company and no one else has picked it up so consider it abandoned. (I'm still pretty proud of it, truth be told.)
-
-I can be reached at: <noah.bogart@hey.com>.
+<br>
+<a href="https://mykocalico.neocities.org/buttons">
+    <picture>
+      <source srcset="/img/i-was-on-cohost.gif" media="(prefers-reduced-motion: no-preference)" />
+      <img src="/img/i-was-on-cohost.png" alt="i was on cohost" />
+    </picture>
+</a>

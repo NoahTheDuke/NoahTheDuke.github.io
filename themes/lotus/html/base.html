@@ -40,9 +40,9 @@
                                 <div class="menu-item-text">Home</div>
                             </a>
                         </li>
-                        <li {% if timeline %} class="active" {% endif %}>
-                            <a title="Posts" href="{{timeline-uri}}">
-                                <div class=" menu-item-text">Posts</div>
+                        <li {% if archives %} class="active" {% endif %}>
+                            <a title="Blog" href="{{archives-uri}}">
+                                <div class="menu-item-text">Blog</div>
                             </a>
                         </li>
                         {% for nav-page in navbar-pages %}
@@ -52,58 +52,6 @@
                             </a>
                         </li>
                         {% endfor %}
-                        <li {% if archives %} class="active" {% endif %}>
-                            <a title="Archives" href="{{archives-uri}}">
-                                <div class="menu-item-text">Archives</div>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-
-                <nav id="socialmedia">
-                    <ul>
-                        <li>
-                            <a title="Email"
-                               href="mailto:noah.bogart@hey.com"
-                               target="_blank"
-                               rel="external"
-                               >
-                               <svg class="icon icon-mail-alt">
-                                   <use xlink:href="{{blog-prefix}}/img/icons.svg#icon-mail-alt"></use>
-                               </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a title="LinkedIn"
-                               href="https://www.linkedin.com/in/noah-bogart"
-                               target="_blank"
-                               rel="external"
-                               >
-                                <svg class="icon icon-linkedin">
-                                    <use xlink:href="{{blog-prefix}}/img/icons.svg#icon-linkedin"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a title="GitHub"
-                               href="https://github.com/NoahTheDuke"
-                               target="_blank"
-                               rel="external"
-                               >
-                               <svg class="icon icon-github-circled">
-                                   <use xlink:href="{{blog-prefix}}/img/icons.svg#icon-github-circled"></use>
-                               </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a title="RSS Feed"
-                               href="{{rss-uri}}"
-                               >
-                               <svg class="icon icon-rss-squared">
-                                   <use xlink:href="{{blog-prefix}}/img/icons.svg#icon-rss-squared"></use>
-                               </svg>
-                            </a>
-                        </li>
                     </ul>
                 </nav>
             </nav>

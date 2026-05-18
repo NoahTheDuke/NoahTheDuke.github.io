@@ -3,21 +3,16 @@
 {% block content %}
 <div id="posts">
     <div id="page-header">
-        <h1>Archives</h1>
+        <h1>Blog Posts</h1>
     </div>
+    <a href="/p/1">View posts with previews</a>
+    <ul>
     {% for group in groups %}
-        <h4>{{group.group}}</h4>
-        <ul>
-        {% for post in group.posts %}
-        <li>
-            <a href="{{post.uri}}">{{post.date|date:"yyyy-MM-dd"}}</a>
-            {% if post.title|not-empty %}
-            - <a href="{{post.uri}}">{{post.title}}</a>
-            {% endif %}
-        </li>
-        {% endfor %}
-        </ul>
+    {% for post in group.posts %}
+    <li>{{post.date|date:"yyyy-MM-dd"}} - <a href="{{post.uri}}">{{post.title}}</a></li>
     {% endfor %}
+    {% endfor %}
+    </ul>
 
 </div>
 {% endblock %}
