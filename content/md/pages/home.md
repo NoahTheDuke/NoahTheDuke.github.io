@@ -1,4 +1,4 @@
-{:title "Home"
+{:title ""
  :layout :home
  :home? true}
 
@@ -23,15 +23,6 @@ I'm Noah. [Learn about me](/about), if you wish.
         <li><a href="https://bsky.app/profile/noahbogart.com">Bluesky</a></li>
         <li><a href="https://tangled.org/noahbogart.com">Tangled</a></li>
         <li><a href="https://github.com/NoahTheDuke">Github</a></li>
-        <li><a href="feed.xml">RSS Feed</a></li>
     </ul>
 </div>
 </nav>
-
-<br>
-<a href="https://mykocalico.neocities.org/buttons">
-    <picture>
-      <source srcset="/img/i-was-on-cohost.gif" media="(prefers-reduced-motion: no-preference)" />
-      <img src="/img/i-was-on-cohost.png" alt="i was on cohost" />
-    </picture>
-</a>

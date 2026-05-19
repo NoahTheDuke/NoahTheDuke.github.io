@@ -52,6 +52,7 @@
                             </a>
                         </li>
                         {% endfor %}
+                        <li><a href="feed.xml"><div class="menu-item-text">RSS Feed</div></a></li>
                     </ul>
                 </nav>
             </nav>
@@ -61,9 +62,18 @@
             {% block content %}
             {% endblock %}
             <hr/>
-            <div id="footercont">
-                Copyright &copy; {{today|date:yyyy}} <a href="mailto:noah.bogart@hey.com">{{author}}</a>
-                <br /><a href="/credits">Website credits</a>
+            <div id="footercont" style="display: grid; grid-template-columns: 1fr 2fr 1fr;">
+                <div>
+                    Copyright &copy; {{today|date:yyyy}} <a href="mailto:noah.bogart@hey.com">{{author}}</a>
+                    <br>
+                    <a href="/credits">Website credits</a>
+                </div>
+                <a href="https://mykocalico.neocities.org/buttons">
+                    <picture>
+                        <source srcset="/img/i-was-on-cohost.gif" media="(prefers-reduced-motion: no-preference)" />
+                        <img src="/img/i-was-on-cohost.png" alt="i was on cohost" />
+                    </picture>
+                </a>
             </div>
         </article>
     </body>

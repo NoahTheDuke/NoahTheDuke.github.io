@@ -13,11 +13,10 @@
 
 ## Books I've started
 
-* Axiom's End by Lindsey Ellis
-  - I read less than a chapter and set it aside when it first came out. The writing didn't hook me, but I think I should at least give it more than 2 pages.
-
-* Mistborn by Brandon Sanderson
-  - Maaaannnnnnnnn, fuck Brandon Sanderson. Bad writing, video game-ass approaches to plot and action sequences, weird echoes of mormonism throughout.
+* Axiom's End by Lindsey Ellis<br>
+    I read less than a chapter and set it aside when it first came out. The writing didn't hook me, but I think I should at least give it more than 2 pages.
+* Mistborn - Brandon Sanderson<br>
+    This style of fiction sucks ass. Lifeless prose, really boring "action" scenes that go on and on and on, a video game understanding of magic. I made it like 1/3 the way in and gave up, there's no way I'm reading more.
 
 ## Books I will never start
 

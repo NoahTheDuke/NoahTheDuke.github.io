@@ -14,10 +14,8 @@
         {% endif %}
     </div>
 </div>
-<div>
-    {% if post.toc %}{{post.toc|safe}}{% endif %}
-    {{post.content|safe}}
-</div>
+{% if post.toc %}{{post.toc|safe}}{% endif %}
+{{post.content|safe}}
 <div class="centered-div">⁂</div>
 <div>
     Liked the post? Hated the post? Felt nothing whatsoever about the post?
