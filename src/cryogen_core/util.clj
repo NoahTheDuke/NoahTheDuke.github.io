@@ -10,6 +10,8 @@
   (:import
    (java.util.regex Pattern)))
 
+(set! *warn-on-reflection* true)
+
 (defn filter-html-elems
   "Recursively walks a sequence of enlive-style html elements depth first
   and returns a flat sequence of the elements where (pred elem)"
