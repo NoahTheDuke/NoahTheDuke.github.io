@@ -22,7 +22,7 @@
 {% if post.at-uri %}
 <h5 id="show-comments"
     class="post-content"
-    onclick="httpGetAsJsonAsync('https://public.api.bsky.app/xrpc/app.bsky.feed.getPostThread?uri={{post.at-uri}}', responseCallback);">Show comments (hits bluesky servers)</h5>
+    onclick="httpGetAsJsonAsync('{{post.at-uri}}', responseCallback);">Show comments (hits bluesky servers)</h5>
 <div id="social-section" class="post-content">
 </div>
 {% endif %}
