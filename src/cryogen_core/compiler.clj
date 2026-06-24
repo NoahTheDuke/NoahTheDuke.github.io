@@ -212,13 +212,16 @@
 (defn parse-page
   "Parses a page/post and returns a map of the content, uri, date etc."
   [page config markup]
-  (let [{:keys [file-name page-meta content-dom]} (page-content page config markup)]
+  (let [{:keys [file-name page-meta content-dom]} (page-content page config markup)
+        date (when (:date page-meta)
+               (.parse (java.text.SimpleDateFormat. (:page-date-format config)) (:date page-meta)))]
     (-> (merge-meta-and-content file-name (update page-meta :layout #(or % :page)) content-dom)
         (merge
          {:type          :page
           :uri           (page-uri file-name :page-root-uri config)
           :page-index    (find-page config page page-meta)
           :tags          (-> (:tags page-meta) distinct vec)
+          :date          date
           :klipse/global (:klipse config)
           :klipse/local  (:klipse page-meta)})
         (add-toc config))))

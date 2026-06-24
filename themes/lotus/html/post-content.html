@@ -1,7 +1,7 @@
 <div class="post-header">
     <h1>{{post.title}}</h1>
     <div class="byline">
-        <span title="{{post.date|date:"EEE, MMMM d, yyyy, HH:mm a"}}">
+        <span title="{{post.date|date:"MMMM d, yyyy, HH:mm a"}}">
             {{post.date|date:mediumDate}}, @{{post.date|.beat}}
         </span>
         {% if post.tags|not-empty %}

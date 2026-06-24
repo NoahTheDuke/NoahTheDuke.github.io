@@ -7,7 +7,7 @@ I wrote this draft months ago right before bed, planning on coming back to it in
 
 Original post:
 
-# I’ve had a breakthrough about jinyeki.net’s engine
+# I’ve had a breakthrough about jinteki.net’s engine
 
 ---
 

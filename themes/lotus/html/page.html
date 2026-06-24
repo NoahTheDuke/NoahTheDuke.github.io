@@ -14,8 +14,10 @@
 <div id="custom-page">
     <div id="page-header">
         <h1>{% firstof page.heading page.title %}</h1>
+        {% if page.date %}Last updated: {{page.date|date:mediumDate}}{% endif %}
     </div>
     {% if page.toc %}{{page.toc|safe}}{% endif %}
+    {% if page.date %}<br>{% endif %}
     {{page.content|safe}}
 </div>
 {% endblock %}

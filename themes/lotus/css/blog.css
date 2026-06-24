@@ -534,6 +534,10 @@ p img {
   width: 75%;
 }
 
+.emoji {
+  width: unset !important;
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
