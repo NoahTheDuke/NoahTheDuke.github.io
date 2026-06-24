@@ -206,4 +206,8 @@ blockquote .author {
 
 code, kbd, samp {
   font-family: $mono-font-family;
+
+  &:before, &:after {
+    content: "`"
+  }
 }

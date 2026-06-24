@@ -1,6 +1,6 @@
 {:title "Software Projects"}
 
-## My Own
+## My Own Projects
 
 ### [Splint](https://cljdoc.org/d/io.github.noahtheduke/splint)
 
