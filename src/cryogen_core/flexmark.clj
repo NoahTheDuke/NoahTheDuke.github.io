@@ -7,7 +7,8 @@
    (com.vladsch.flexmark.ext.attributes AttributesExtension)
    (com.vladsch.flexmark.ext.emoji EmojiExtension EmojiShortcutType)
    (com.vladsch.flexmark.ext.footnotes FootnoteExtension)
-   (com.vladsch.flexmark.ext.gfm.strikethrough StrikethroughExtension)
+   (com.vladsch.flexmark.ext.gfm.strikethrough StrikethroughSubscriptExtension)
+   (com.vladsch.flexmark.ext.gfm.tasklist TaskListExtension)
    (com.vladsch.flexmark.ext.superscript SuperscriptExtension)
    (com.vladsch.flexmark.ext.tables TablesExtension)
    (com.vladsch.flexmark.html HtmlRenderer)
@@ -19,13 +20,14 @@
 (defn markdown
   "Returns a Markdown (CommonMark) implementation of the Markup protocol."
   []
-  (let [extensions [(FootnoteExtension/create)
-                    (StrikethroughExtension/create)
-                    (SuperscriptExtension/create)
-                    (TablesExtension/create)
+  (let [extensions [(AsideExtension/create)
                     (AttributesExtension/create)
                     (EmojiExtension/create)
-                    (AsideExtension/create)]
+                    (FootnoteExtension/create)
+                    (StrikethroughSubscriptExtension/create)
+                    (SuperscriptExtension/create)
+                    (TablesExtension/create)
+                    (TaskListExtension/create)]
         options (-> (MutableDataSet.)
                     (.set Parser/EXTENSIONS (ArrayList. extensions))
                     (.set HtmlRenderer/FENCED_CODE_LANGUAGE_CLASS_PREFIX "")
