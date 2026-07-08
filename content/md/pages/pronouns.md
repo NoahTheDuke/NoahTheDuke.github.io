@@ -1,14 +1,12 @@
 {:title "pronouns"
- :date "2026-06-18"}
+ :date "2026-07-08"}
 
-my pronouns are they/he, which is to say i want you to use they/them, but i won't get mad if a he/him slips out. i suspect that over time this will change to they/them exclusively but i'm not there yet and life is long.
-
-do not use she/her or it/its or any others. i will correct you if you use them.
+my pronouns are they/them exclusively. for the last month, i was fine with "he/him" slipping out but no longer. i am growing into a trans femme identity, so be on the lookout for a switch to they/she or she/her at some later date, but please not at this time.
 
 | pronoun | acceptability |
 | --- | :---: |
 | [they/them](https://en.pronouns.page/they) | :heavy_check_mark: |
-| [he/him](https://en.pronouns.page/he) | :warning: |
+| [he/him](https://en.pronouns.page/he) | :x: |
 | [she/her](https://en.pronouns.page/she) | :x: |
 | [it/its](https://en.pronouns.page/it) | :x: |
 | all others | :x: |

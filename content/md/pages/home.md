@@ -2,7 +2,7 @@
  :layout :home
  :home? true}
 
-I'm Noah. [Learn about me](/about), if you wish.
+noah bogart's home page. [learn more](/about).
 
 <nav style="display: grid; grid-template-columns: 1fr 2fr 1fr;">
 <div>
