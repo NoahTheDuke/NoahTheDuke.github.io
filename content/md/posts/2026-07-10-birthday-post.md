@@ -1,6 +1,6 @@
 {:title "birthday post"
  :date "2026-07-10T14:06"
- :at-uri nil
+ :at-uri "https://bsky.app/profile/noahbogart.com/post/3mqdg7oyusk2l"
  :tags ["wifeposting"]}
 
 last month was my 39th birthday. i did't feel any particular urge to celebrate it, so instead i want to celebrate my wife.
