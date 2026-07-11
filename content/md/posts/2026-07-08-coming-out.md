@@ -1,6 +1,6 @@
 {:title "coming out"
  :date "2026-07-08T14:15"
- :at-uri nil
+ :at-uri "https://bsky.app/profile/noahbogart.com/post/3mq5w5tdo4222"
  :tags ["gender"]}
 
 turns out, i am trans, a late-in-life lady.
