@@ -1,6 +1,6 @@
 {:title "some version of regret"
  :date "2026-09-10T14:35"
- :at-uri nil
+ :at-uri "https://bsky.app/profile/noahbogart.com/post/3mv6s774dgs2k"
  :tags ["gender"]}
 
 in late 2016, i tried on my girlfriend's bra and put my shirt over it on a lark, and then felt a strange, intense, incredibly scary sensation that i ran away from for almost 10 years. (i've mentioned experience before, in a [2024 post](/posts/2024-01-19-gender-feelings).)
