@@ -62,7 +62,7 @@
             {% block content %}
             {% endblock %}
             <hr/>
-            <div id="footercont" style="display: grid; grid-template-columns: 1fr 2fr 1fr;">
+            <div id="footercont" style="display: grid; grid-auto-flow: column;">
                 <div>
                     Copyright &copy; {{today|date:yyyy}} <a href="mailto:noah.bogart@hey.com">{{author}}</a>
                     <br>
@@ -73,6 +73,12 @@
                         <source srcset="/img/i-was-on-cohost.gif" media="(prefers-reduced-motion: no-preference)" />
                         <img src="/img/i-was-on-cohost.png" alt="i was on cohost" />
                     </picture>
+                </a>
+                <a href="https://act.dsausa.org/donate/membership/">
+                    <img src="/img/DSA88x31.png" alt="join dsa" />
+                </a>
+                <a href="https://pghrt.diy">
+                    <img src="/img/pghrt_88x31.png" alt="take estrogen" />
                 </a>
             </div>
         </article>

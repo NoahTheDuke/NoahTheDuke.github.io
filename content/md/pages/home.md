@@ -2,9 +2,9 @@
  :layout :home
  :home? true}
 
-noah bogart's home page. [learn more](/about).
+noa bogart's home page. [learn more](/about).
 
-<nav style="display: grid; grid-template-columns: 1fr 2fr 1fr;">
+<nav style="display: grid; grid-auto-flow: column;">
 <div>
     <h4>Explore the site</h4>
     <ul>
