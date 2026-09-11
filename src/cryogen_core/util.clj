@@ -139,8 +139,8 @@
   (let [fmt (java.text.SimpleDateFormat. date-fmt)
         c (count date-fmt)]
     (try (if-let [last-slash (str/last-index-of file-name "/")]
-      (.parse fmt (.substring file-name (inc last-slash) (+ last-slash (inc c))))
-      (.parse fmt (.substring file-name 0 c)))
+           (.parse fmt (.substring file-name (inc last-slash) (+ last-slash (inc c))))
+           (.parse fmt (.substring file-name 0 c)))
          (catch Exception e
            (throw (ex-info "Failed to parse date from filename"
                           {:date-fmt date-fmt

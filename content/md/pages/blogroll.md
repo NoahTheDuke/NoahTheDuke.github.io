@@ -17,7 +17,7 @@ If you have one, tell me so I can add it to my blogroll below:
     <a href="https://virtualmoose.org" target="_blank"><img src="https://virtualmoose.org/wp-content/uploads/2024/09/88x31-export-export-1.png" style="image-rendering: pixelated" width="88" heigh="31"></a>
     <a href="https://damien.zone" title="damien dot zone" target="_blank"><img src="https://damien.zone/88x31_damien.png" alt="damien dot zone" style="image-rendering:pixelated;" width="88" heigh="31"></a>
     <a href="https://ewie.online/" target="_blank"><img src="/img/88x31-evie.png" style="image-rendering:pixelated;" width="88" heigh="31" /></a>
-    <!-- <a href="https://blog.radicaldream.land" target="_blank"><img src="https://i.postimg.cc/QxhG798p/dispatchblog-banner.gif" style="image-rendering:pixelated;" width="88" heigh="31" /></a> -->
+    <a href="https://blog.radicaldream.land" target="_blank"><img src="https://i.postimg.cc/QxhG798p/dispatchblog-banner.gif" style="image-rendering:pixelated;" width="88" heigh="31" /></a>
     <a href="https://jkap.io" target="_blank"><img src="https://files.crime.team/site/jkap-88x31.gif" style="image-rendering:pixelated;" width="88" heigh="31" /></a>
     <a href="https://blog.aurahack.jp" target="_blank"><img src="https://aurahack.neocities.org/88x31.gif" style="image-rendering:pixelated;" width="88" heigh="31" /></a>
     <a href="https://nickyflowers.com/" target="_blank"><img src="https://nickyflowers.com/nickyflowersbutton.gif" style="image-rendering:pixelated;" width="88" heigh="31" /></a>
@@ -26,9 +26,10 @@ If you have one, tell me so I can add it to my blogroll below:
     <a href="https://blog.someplace-else.xyz/"><img src="https://natclayton.uk/wp-content/uploads/2024/09/elsewhere.gif" style="image-rendering: pixelated;" width="88" height="31" /></a>
 </div>
 
-## Blogs / Newsletters
+## Blogs
 
 * [2 Mello](https://2mello.net) - 2 Mello
+* [Alice's Blog](https://welltypedwit.ch/) - welltypedwitch
 * [Aurahack](https://blog.aurahack.jp/) - Aurahack
 * [AURAMBLES](https://auratriolo.com/blog) - Aura Triolo
 * [Azhdarchid](https://azhdarchid.com) - Bruno Diaz
@@ -46,12 +47,12 @@ If you have one, tell me so I can add it to my blogroll below:
 * [Nic Hartley](https://redfennec.dev) - Nic Hartley
 * [Nicky Flowers](https://nickyflowers.com) - Nicky Flowers
 * [Nire Bryce](https://ellyardent.wordpress.com) - Nire Bryce
-* [Prophetlabs](https://prophetlabs.de) - Prophet/welltypedwitch
 * [someplace elsewhere](https://blog.someplace-else.xyz) - Nat Clayton
 * [The Transsexual Chofetz Chaim](https://shelraphen.com) - Shel Raphen
+* [The Virtual Moose](https://virtualmoose.org/) - Michael Klamerus
 * [wavebeem](https://www.wavebeem.com/) - Sage Fennel
 
-## News sites
+## News and reviews
 
 * [404 Media](https://www.404media.co) - Worker-owned investigative journalism focused on hacking, cybersecurity, cybercrime, sex, artificial intelligence, consumer rights, surveillance, privacy, and the democratization of the internet.
 * [Aftermath](https://aftermath.site) - Worker-owned journalism focused on video games and video game culture.
@@ -69,7 +70,8 @@ If you have one, tell me so I can add it to my blogroll below:
 
 ## Podcasts
 
+* [Remap Radio](https://remapradio.com)'s podcast.
+* [Pew Pew Bang!](https://bsky.app/profile/pewpewbang.bsky.social) - 4 women talk games, the games industry, life, and give a+ advice. Part of the [MinnMax](https://minnmax.com) network.
 * [404 Media](https://www.404media.co)'s podcast.
 * [Friends at the Table](https://friendsatthetable.net) - Actual play focused on critical world-building, smart characterization, and fun interactions between good friends.
 * [Functional Design in Clojure](https://clojuredesign.club/) - Discussions of functional programming and software design through the lens of Clojure.
-* [Remap Radio](https://remapradio.com)'s podcast.

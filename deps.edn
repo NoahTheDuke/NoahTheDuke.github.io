@@ -1,5 +1,5 @@
 {:paths ["src"]
- :deps {org.clojure/clojure {:mvn/version "1.12.4"}
+ :deps {org.clojure/clojure {:mvn/version "1.12.6"}
         ring-server/ring-server {:mvn/version "0.5.0"}
         ring/ring-devel {:mvn/version "1.12.2"}
         compojure/compojure {:mvn/version "1.7.1"}

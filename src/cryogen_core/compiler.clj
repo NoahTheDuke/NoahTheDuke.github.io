@@ -7,7 +7,7 @@
    [clojure.string :as str]
    [clojure.zip :as zip]
    [cryogen-core.config :refer [resolve-config]]
-   [cryogen-core.infer-meta :refer [using-inferred-metadata]]
+   [cryogen-core.infer-meta :refer [infer-meta]]
    [cryogen-core.io :as cryogen-io]
    [cryogen-core.klipse :as klipse]
    [cryogen-core.markup :as markup]
@@ -24,6 +24,7 @@
    [selmer.filters :refer [add-filter!]]
    [selmer.parser :refer [cache-off!]])
   (:import
+   (java.io File)
    (java.net URLEncoder)
    (java.time ZoneId ZonedDateTime)
    (java.util Date Locale)))
@@ -61,8 +62,8 @@
 (defn url-encode
   "Url encode path element. Encodes spaces as %20 instead of +,
   because some webservers pass + through to the file system"
-  [str]
-  (-> str
+  [^String s]
+  (-> s
       (URLEncoder/encode "UTF-8")
       (str/replace "+" "%20")))
 
@@ -82,7 +83,7 @@
   post and not the others. Previous/next links on neighbour posts won't be
   updated either."
   [changeset]
-  (let [changed-paths      (->> changeset (map #(.getPath %)) set)
+  (let [changed-paths      (into #{} (map #(File/.getPath %)) changeset)
         theme-html-change? (some
                             (fn [^java.io.File file]
                               (and (str/starts-with?
@@ -117,8 +118,7 @@
 (defn find-posts
   "Returns a list of markdown files representing posts under the post root."
   [{:keys [post-root ignored-files]} mu]
-  (concat (find-entries post-root mu ignored-files)
-          (find-entries "cohost-archive" mu ignored-files)))
+  (find-entries post-root mu ignored-files))
 
 (defn find-pages
   "Returns a list of markdown files representing pages under the page root."
@@ -156,34 +156,33 @@
       (throw (ex-info (ex-message e)
                       (assoc (ex-data e) :page page))))))
 
-(defn- using-embedded-metadata [page config markup]
-  (with-open [rdr (java.io.PushbackReader. (io/reader page))]
-    (let [re-root     (re-pattern (str "^.*?(" (:page-root config) "|" (:post-root config) ")/"))
-          page-fwd    (str/replace (str page) "\\" "/")  ;; make it work on Windows
-          page-name   (if (:collapse-subdirs? config) (.getName page) (str/replace page-fwd re-root ""))
-          file-name   (str/replace page-name (util/re-pattern-from-exts (markup/exts markup)) ".html")
-          page-meta   (read-page-meta page-name rdr)
-          content     ((markup/render-fn markup) rdr (assoc config :page-meta page-meta))
-          content-dom (util/trimmed-html-snippet content)]
-      {:file-name   file-name
-       :page-meta   page-meta
-       :content-dom content-dom})))
+(defn get-content-and-metadata [file config markup]
+  (let [re-root (re-pattern (str "^.*?(" (:page-root config) "|" (:post-root config) ")/"))
+        page-fwd (str/replace (str file) "\\" "/")
+        page-name (if (:collapse-subdirs? config)
+                    (File/.getName file)
+                    (str/replace page-fwd re-root ""))
+        file-name (str/replace page-name (util/re-pattern-from-exts (markup/exts markup)) ".html")
+        document (markup/parse markup file config)
+        {:keys [document metadata]} (markup/metadata markup document config)
+        content (markup/render markup document metadata config)
+        content-dom (util/trimmed-html-snippet content)
+        metadata' (or (not-empty metadata) (infer-meta file config content-dom))]
+    (if (seq metadata')
+      {:file-name file-name
+       :page-meta metadata'
+       :content-dom content-dom}
+      (throw (ex-info "frontmatter not found" {:file file})))))
 
-(def page-content
-  "Returns a map with the given page's file-name, metadata and content parsed from
-  the file with the given markup."
-  (memoize
-   (fn [^java.io.File page config markup]
-     (try
-       (using-embedded-metadata page config markup)
-       (catch Throwable embedded-fail
-         (try
-           (using-inferred-metadata page markup config)
-           (catch Throwable inferred-fail
-             (throw (ex-info "Could not compile content of page"
-                             {:page (.getName page)
-                              :embedded-fail embedded-fail
-                              :inferred-fail inferred-fail})))))))))
+(defn page-content
+  "Returns a map with the given page's file-name, metadata and content parsed from the file with the given markup."
+  [file config markup]
+  (try
+    (get-content-and-metadata file config markup)
+    (catch Throwable t
+      (throw (ex-info "Could not compile content of page"
+                      {:page (File/.getName file)}
+                      t)))))
 
 (defn add-toc
   "Adds :toc to article, if necessary"
@@ -232,7 +231,7 @@
   (let [{:keys [file-name page-meta content-dom]} (page-content page config markup)
         date            (if (:date page-meta)
                           (.parse (java.text.SimpleDateFormat. (:post-date-format config)) (:date page-meta))
-                          (util/parse-post-date file-name (:post-date-format config)))
+                          (util/parse-post-date file-name "yyyy-MM-dd"))
         archive-fmt     (java.text.SimpleDateFormat. ^String (:archive-group-format config) (Locale/getDefault))
         formatted-group (.format archive-fmt date)]
     (-> (merge-meta-and-content file-name (update page-meta :layout #(or % :post)) content-dom)
@@ -729,16 +728,17 @@
   ;; Build a single page (quicker than all)
   (compile-assets
     ;; Insert the prefix and suffix of the only file you _want_ to process
-   {:ignored-files [#"^(?!2019-12-12-nrepl-).*\.asc"]})
+   {:ignored-files [#"^(?!2017-08-06-pain).*\.md"]})
 
   (compile-assets)
 
-  (->> (read-posts *config)
+  (do (flexmark/init)
+      (->> (read-posts (assoc *config :ignored-files [#"^(?!2017-08-06-pain).*\.md"]))
        ; (map klipse/klipsify)
-       (map (partial add-description *config))
-       (take 10)
-       (tag-posts *config)
+       ; (map (partial add-description *config))
+       ; (take 10)
+       ; (tag-posts *config)
        #_(rss/make-channel *config)
-       )
+       ))
 
   nil)
