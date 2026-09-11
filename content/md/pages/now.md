@@ -4,30 +4,41 @@
 
 Last updated: September 2026
 
-Books I've read recently:
+[Books I've read recently](https://hardcover.app/@NoahTheDuke):
 
-* :heavy_check_mark: Cleat Cute by Meryl Wilsner
-* :heavy_check_mark: The Three Lives of Cate Kay by Kate Fagan
-* :heavy_check_mark: The Return of the King by J.R.R. Tolkein
-* :heavy_check_mark: Detransition, Baby by Torrey Peters
-* :soon: The Silmarillion by J.R.R. Tolkein
-* :soon: We Could Be Rats by Emily R. Austin
+* Cleat Cute by Meryl Wilsner
+* The Three Lives of Cate Kay by Kate Fagan
+* The Return of the King by J.R.R. Tolkein
+* Detransition, Baby by Torrey Peters
+* The Silmarillion by J.R.R. Tolkein
+* We Could Be Rats by Emily R. Austin
 
-Music I've listened recently, in order of release:
+[Video games I've played recently](https://www.backloggd.com/u/NoahTheDuke):
 
+* South of Midnight (PS5)
+* Helix (iPhone)
+* Order Automatica (iPhone)
+* Super Mario Odyssey (Switch 2)
+* Captain Toad Treasure Tracker (Switch 2)
+* Horizon Forbidden West (PS5)
+
+[Music I've listened to recently](https://rateyourmusic.com/~NoahTheDuke):
+
+* Elder - Through Zero
+* underscores - U
+* Cruel Force - Haneda
 * Phoebe Bridgers - Lost Weekend
 * Ripper - Towards Rebirth
 * Olivia Rodrigo - you seem pretty sad for a girl so in love
-* Converge - Hum of Hurt
-* Elder - Through Zero
-* Kacey Musgraves - Middle of Nowhere
-* Vanessa Carlton - Veils
-* Angine de Poitrine - Vol 1 & Vol 2
-* Slayyyter - WOR$T GIRL IN AMERICA
-* Cruel Force - Haneda
-* Neurosis - An Undying Love for a Burning World
-* underscores - U
-* 2 Mello - Sunsound Collisions
+
+[Movies I've watched recently](https://letterboxd.com/noahtheduke):
+
+* Ocean's Twelve
+* Independence Day
+* The Spy Next Door
+* Home on the Range
+* Toy Story 5
+* Hoppers
 
 <details><summary>my last.fm most recently played</summary>
 <img style="width:none" src="https://lastfm-recently-played.vercel.app/api?user=NoahTheDuke" alt="last.fm recent scrobbles">
@@ -40,15 +51,6 @@ Postcasts I'm listening to:
 * [Shelved by Genre](https://rangedtouch.com/shelved-by-genre/)
 * [Pew Pew Bang](https://bsky.app/profile/pewpewbang.bsky.social)
 * [The Secret Lives of Games](https://https://secretlives.games/)
-
-Video games I'm playing (tracked on [backloggd](https://www.backloggd.com/u/NoahTheDuke/games/added/type:playing/)):
-
-* South of Midnight (PS5)
-* Helix (iPhone)
-* Order Automatica (iPhone)
-* Super Mario Odyssey (Switch 2)
-* Captain Toad Treasure Tracker (Switch 2)
-* Horizon Forbidden West (PS5)
 
 Software I'm working on:
 
