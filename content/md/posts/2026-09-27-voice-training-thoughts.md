@@ -1,5 +1,5 @@
 {:title "voice training thoughts"
- :at-uri nil
+ :at-uri "https://bsky.app/profile/noahbogart.com/post/3mwixsltlus22"
  :date "2026-09-26T09:30"
  :tags ["gender" "voice training"]}
 
