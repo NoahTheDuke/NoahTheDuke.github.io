@@ -1,5 +1,5 @@
 {:title "Private Thoughts"
- :at-uri nil
+ :at-uri "https://bsky.app/profile/noahbogart.com/post/3mxjnx6k3m222"
  :date "2026-10-10T09:47"
  :tags ["gender"]}
 
