@@ -8,7 +8,13 @@ content:
         label: Posts
         type: collection
         path: content/md/posts
+        filename:
+          template: "{year}-{month}-{day}-{primary}.md"
+          field: true
       - name: pages
         label: Pages
         type: collection
         path: content/md/pages
+        filename:
+          template: "{primary}.md"
+          field: true
