@@ -1,0 +1,14 @@
+media: content/img
+content:
+  - name: all
+    label: All
+    type: group
+    items:
+      - name: posts
+        label: Posts
+        type: collection
+        path: content/md/posts
+      - name: pages
+        label: Pages
+        type: collection
+        path: content/md/pages
