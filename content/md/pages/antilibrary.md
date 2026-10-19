@@ -1,7 +1,7 @@
 {:title "Antilibrary"
  :date "2026-05-22"}
 
-[James's Coffee Blog](https://jamesg.blog/) has an excellent post titled [100 things you can do on your personal website](https://jamesg.blog/2024/02/19/personal-website-ideas), which I've had open in a pinned tab since he published it (2 years now). I love to read through it and think about what silly things I could add to my site, and then not add them. Today, I'm gonna add one, #23: "Make an antilibrary where you list the books you own but have not or do not plan to read."
+[James's Coffee Blog](https://jamesg.blog/) has an excellent post titled [100 things you can do on your personal website](https://jamesg.blog/2024/02/19/personal-website-ideas), which I've had open in a pinned tab since he published it. I love to read through it and think about what silly things I could add to my site, and then not add them. Today, I'm gonna add one, #23: "Make an antilibrary where you list the books you own but have not or do not plan to read."
 
 ## Books I have not started
 
