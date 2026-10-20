@@ -2,7 +2,6 @@
 title: Commissions
 date: 2026-05-11T17:15
 at-uri: at://did:plc:qbidoe2gpkfelnurqod37ikr/app.bsky.feed.post/3mlm7fb2nb22r
-tags: []
 ---
 
 I have commissioned an erotic piece of art. (You can see it in the brand-new [Gallery](/gallery).) As seen there, I previously commissioned a profile pic from Flynn Nichols, which I still use 3 years later and love dearly. Erotic art is different, however. I have a lot of mixed up feelings with sex and I've been struggling to untangle them.
