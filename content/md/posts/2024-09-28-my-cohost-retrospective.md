@@ -1,6 +1,6 @@
 ---
 title: my cohost retrospective
-date: '2024-09-28T22:34:41.607Z'
+date: 2024-09-28T22:34:41.607Z
 tags:
   - cohost mirror
   - Goodbye cohost

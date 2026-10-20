@@ -1,6 +1,6 @@
 ---
 title: try, try again
-date: '2024-04-08T01:13:57.777Z'
+date: 2024-04-08T01:13:57.777Z
 tags:
   - cohost mirror
   - kidposting

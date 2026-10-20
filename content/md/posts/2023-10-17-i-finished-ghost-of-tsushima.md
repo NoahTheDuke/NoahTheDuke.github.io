@@ -1,6 +1,6 @@
 ---
 title: i finished ghost of tsushima
-date: '2023-10-17T04:29:47.854Z'
+date: 2023-10-17T04:29:47.854Z
 tags:
   - cohost mirror
   - ghost of tsushima

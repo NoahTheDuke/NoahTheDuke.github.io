@@ -1,6 +1,6 @@
 ---
 title: Mild success!
-date: '2023-08-07T18:14:33.563Z'
+date: 2023-08-07T18:14:33.563Z
 tags:
   - cohost mirror
   - programming

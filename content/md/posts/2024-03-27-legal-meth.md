@@ -1,6 +1,6 @@
 ---
 title: Legal meth
-date: '2024-03-27T13:05:40.750Z'
+date: 2024-03-27T13:05:40.750Z
 tags:
   - cohost mirror
   - Adderall

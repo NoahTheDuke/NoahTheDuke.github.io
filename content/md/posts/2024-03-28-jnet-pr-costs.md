@@ -1,6 +1,6 @@
 ---
 title: 'jnet PR: costs'
-date: '2024-03-28T05:29:31.376Z'
+date: 2024-03-28T05:29:31.376Z
 tags:
   - cohost mirror
   - clojure

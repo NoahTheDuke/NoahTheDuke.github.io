@@ -1,6 +1,6 @@
 ---
 title: Ocaml as Lisp
-date: '2024-07-26T20:31:32.058Z'
+date: 2024-07-26T20:31:32.058Z
 tags:
   - cohost mirror
   - clojure

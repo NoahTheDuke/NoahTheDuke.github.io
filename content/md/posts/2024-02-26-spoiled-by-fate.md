@@ -1,6 +1,6 @@
 ---
 title: spoiled by fate
-date: '2024-02-26T03:08:17.768Z'
+date: 2024-02-26T03:08:17.768Z
 tags:
   - cohost mirror
   - wifeposting

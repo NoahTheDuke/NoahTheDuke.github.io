@@ -1,9 +1,9 @@
 ---
 title: pronouns
-date: '2026-07-08'
+date: 2026-10-21
 ---
 
-my pronouns are they/them exclusively. for the last month, i was fine with "he/him" slipping out but no longer. i am growing into a trans femme identity, so be on the lookout for a switch to they/she or she/her at some later date, but please not at this time.
+my pronouns are they/them exclusively. i am growing into a trans femme identity, so be on the lookout for a switch to they/she or she/her at some later date, but please not at this time.
 
 | pronoun | acceptability |
 | --- | :---: |

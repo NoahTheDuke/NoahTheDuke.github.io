@@ -1,6 +1,6 @@
 ---
 title: early thoughts on vampire
-date: '2023-07-18T15:59:59.138Z'
+date: 2023-07-18T15:59:59.138Z
 tags:
   - cohost mirror
   - noahtheduke asks

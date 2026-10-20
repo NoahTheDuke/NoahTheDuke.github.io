@@ -1,6 +1,6 @@
 ---
 title: Announcing splint 0.1.69
-date: '2023-03-03T20:53:00.569Z'
+date: 2023-03-03T20:53:00.569Z
 tags:
   - cohost mirror
   - clojure

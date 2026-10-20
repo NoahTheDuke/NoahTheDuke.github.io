@@ -1,6 +1,6 @@
 ---
 title: Reread the second half of Dune in preparation to see DUNC 2 in theaters
-date: '2024-03-17T19:30:06.685Z'
+date: 2024-03-17T19:30:06.685Z
 tags:
   - cohost mirror
   - Dune

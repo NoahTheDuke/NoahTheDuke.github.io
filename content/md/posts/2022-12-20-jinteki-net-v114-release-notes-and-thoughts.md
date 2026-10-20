@@ -1,6 +1,6 @@
 ---
 title: jinteki.net v114 release notes and thoughts
-date: '2022-12-20T21:12:01.915Z'
+date: 2022-12-20T21:12:01.915Z
 tags:
   - cohost mirror
   - jinteki.net

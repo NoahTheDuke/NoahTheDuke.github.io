@@ -1,6 +1,6 @@
 ---
 title: If you’re gonna criticize something, don’t make it look cool!
-date: '2023-09-19T22:57:07.929Z'
+date: 2023-09-19T22:57:07.929Z
 tags:
   - cohost mirror
   - Warbringer

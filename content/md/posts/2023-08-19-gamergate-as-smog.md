@@ -1,6 +1,6 @@
 ---
 title: gamergate as smog
-date: '2023-08-19T17:51:41.384Z'
+date: 2023-08-19T17:51:41.384Z
 tags:
   - cohost mirror
   - gamergate

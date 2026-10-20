@@ -1,6 +1,6 @@
 ---
 title: Cobalt Core Review
-date: '2023-12-22T23:52:23.409Z'
+date: 2023-12-22T23:52:23.409Z
 tags:
   - cohost mirror
   - backloggd

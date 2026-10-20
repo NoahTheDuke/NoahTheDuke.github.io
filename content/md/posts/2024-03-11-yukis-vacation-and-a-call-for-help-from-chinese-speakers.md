@@ -1,6 +1,6 @@
 ---
 title: '"Yuki''s Vacation" and a call for help from chinese speakers'
-date: '2024-03-11T16:51:09.349Z'
+date: 2024-03-11T16:51:09.349Z
 tags:
   - cohost mirror
   - james silva

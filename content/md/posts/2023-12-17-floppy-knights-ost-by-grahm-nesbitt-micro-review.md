@@ -1,6 +1,6 @@
 ---
 title: Floppy Knights OST by Grahm Nesbitt micro-review
-date: '2023-12-17T21:54:14.904Z'
+date: 2023-12-17T21:54:14.904Z
 tags:
   - cohost mirror
   - floppy knights

@@ -1,6 +1,6 @@
 ---
 title: My 2 y/o was STRESSED last night
-date: '2024-03-28T13:19:05.974Z'
+date: 2024-03-28T13:19:05.974Z
 tags:
   - cohost mirror
   - kidposting

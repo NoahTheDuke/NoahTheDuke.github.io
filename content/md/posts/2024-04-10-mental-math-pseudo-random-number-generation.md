@@ -1,6 +1,6 @@
 ---
 title: Mental Math Pseudo Random Number Generation
-date: '2024-04-10T04:39:42.722Z'
+date: 2024-04-10T04:39:42.722Z
 tags:
   - cohost mirror
   - mental math

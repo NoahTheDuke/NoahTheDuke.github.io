@@ -1,6 +1,6 @@
 ---
 title: companion star
-date: '2024-03-15T14:17:52.488Z'
+date: 2024-03-15T14:17:52.488Z
 tags:
   - cohost mirror
   - Vanessa Carlton

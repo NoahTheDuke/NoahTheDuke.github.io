@@ -1,6 +1,6 @@
 ---
 title: how do you come up with ideas for games lol
-date: '2023-09-14T03:46:37.406Z'
+date: 2023-09-14T03:46:37.406Z
 tags:
   - cohost mirror
   - game dev

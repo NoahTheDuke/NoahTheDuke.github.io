@@ -1,6 +1,6 @@
 ---
 title: adhd x remote work
-date: '2023-05-03T20:57:40.364Z'
+date: 2023-05-03T20:57:40.364Z
 tags:
   - cohost mirror
   - adhd

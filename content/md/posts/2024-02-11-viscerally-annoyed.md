@@ -1,6 +1,6 @@
 ---
 title: Viscerally annoyed
-date: '2024-02-11T20:51:23.007Z'
+date: 2024-02-11T20:51:23.007Z
 tags:
   - cohost mirror
   - ocaml

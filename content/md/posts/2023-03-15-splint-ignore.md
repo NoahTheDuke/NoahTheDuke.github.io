@@ -1,6 +1,6 @@
 ---
 title: splint/ignore
-date: '2023-03-15T18:52:49.736Z'
+date: 2023-03-15T18:52:49.736Z
 tags:
   - cohost mirror
   - clojure

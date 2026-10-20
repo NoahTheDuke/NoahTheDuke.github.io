@@ -1,6 +1,6 @@
 ---
 title: Blasphemous is hard as hell
-date: '2024-09-20T12:25:55.246Z'
+date: 2024-09-20T12:25:55.246Z
 tags:
   - cohost mirror
   - blasphemous

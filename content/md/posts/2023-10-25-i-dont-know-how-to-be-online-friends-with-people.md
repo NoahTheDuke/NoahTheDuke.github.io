@@ -1,6 +1,6 @@
 ---
 title: i don't know how to be online friends with people
-date: '2023-10-25T15:02:56.203Z'
+date: 2023-10-25T15:02:56.203Z
 tags:
   - cohost mirror
   - Friendship

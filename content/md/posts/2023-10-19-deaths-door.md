@@ -1,6 +1,6 @@
 ---
 title: Death’s Door
-date: '2023-10-19T02:37:51.394Z'
+date: 2023-10-19T02:37:51.394Z
 tags:
   - cohost mirror
   - death’s door

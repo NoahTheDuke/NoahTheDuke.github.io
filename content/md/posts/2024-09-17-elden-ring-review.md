@@ -1,6 +1,6 @@
 ---
 title: Elden Ring Review
-date: '2024-09-17T00:37:58.164Z'
+date: 2024-09-17T00:37:58.164Z
 tags:
   - cohost mirror
   - Elden Ring

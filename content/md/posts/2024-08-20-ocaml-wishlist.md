@@ -1,6 +1,6 @@
 ---
 title: Ocaml wishlist
-date: '2024-08-20T19:52:11.151Z'
+date: 2024-08-20T19:52:11.151Z
 tags:
   - cohost mirror
   - clojure

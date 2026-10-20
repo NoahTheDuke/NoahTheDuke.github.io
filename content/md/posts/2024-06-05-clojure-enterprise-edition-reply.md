@@ -1,6 +1,6 @@
 ---
 title: 'Clojure: Enterprise Edition reply'
-date: '2024-06-05T19:18:59.939Z'
+date: 2024-06-05T19:18:59.939Z
 tags:
   - cohost mirror
   - clojure

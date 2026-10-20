@@ -1,6 +1,6 @@
 ---
 title: card shark
-date: '2023-04-15T13:37:13.176Z'
+date: 2023-04-15T13:37:13.176Z
 tags:
   - cohost mirror
   - card shark

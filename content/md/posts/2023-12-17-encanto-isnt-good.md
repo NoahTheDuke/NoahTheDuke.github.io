@@ -1,6 +1,6 @@
 ---
 title: Encanto isn’t good
-date: '2023-12-17T13:00:50.365Z'
+date: 2023-12-17T13:00:50.365Z
 tags:
   - cohost mirror
   - encanto

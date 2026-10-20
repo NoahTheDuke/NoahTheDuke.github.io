@@ -1,6 +1,6 @@
 ---
 title: doom spiraling
-date: '2023-07-06T20:19:06.696Z'
+date: 2023-07-06T20:19:06.696Z
 tags:
   - cohost mirror
   - adhd

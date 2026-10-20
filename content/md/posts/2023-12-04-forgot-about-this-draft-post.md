@@ -1,6 +1,6 @@
 ---
 title: Forgot about this draft post
-date: '2023-12-04T22:55:10.872Z'
+date: 2023-12-04T22:55:10.872Z
 tags:
   - cohost mirror
   - jinteki.net

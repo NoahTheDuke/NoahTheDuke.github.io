@@ -1,6 +1,6 @@
 ---
 title: survived a round of layoffs
-date: '2023-03-29T13:37:37.405Z'
+date: 2023-03-29T13:37:37.405Z
 tags:
   - cohost mirror
   - capitalism

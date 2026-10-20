@@ -1,6 +1,6 @@
 ---
 title: tears of the kingdom feelings
-date: '2023-07-12T13:48:56.089Z'
+date: 2023-07-12T13:48:56.089Z
 tags:
   - cohost mirror
   - 'The Legend of Zelda: Tears of the Kingdom'

@@ -1,6 +1,6 @@
 ---
 title: i like ocaml
-date: '2023-07-07T00:33:44.088Z'
+date: 2023-07-07T00:33:44.088Z
 tags:
   - cohost mirror
   - noahtheduke asks

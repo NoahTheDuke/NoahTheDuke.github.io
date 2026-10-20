@@ -1,6 +1,6 @@
 ---
 title: Clojure Linters
-date: '2023-02-22T04:35:02.665Z'
+date: 2023-02-22T04:35:02.665Z
 tags:
   - cohost mirror
   - clojure

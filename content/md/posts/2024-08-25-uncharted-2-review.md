@@ -1,6 +1,6 @@
 ---
 title: Uncharted 2 review
-date: '2024-08-25T02:47:31.383Z'
+date: 2024-08-25T02:47:31.383Z
 tags:
   - cohost mirror
   - uncharted

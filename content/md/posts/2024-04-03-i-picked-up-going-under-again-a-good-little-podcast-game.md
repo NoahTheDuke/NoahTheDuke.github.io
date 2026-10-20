@@ -1,6 +1,6 @@
 ---
 title: I picked up Going Under again, a good little podcast game
-date: '2024-04-03T03:42:37.431Z'
+date: 2024-04-03T03:42:37.431Z
 tags:
   - cohost mirror
   - Going Under (2020)

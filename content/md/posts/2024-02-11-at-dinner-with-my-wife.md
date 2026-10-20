@@ -1,6 +1,6 @@
 ---
 title: At dinner with my wife
-date: '2024-02-11T01:38:54.177Z'
+date: 2024-02-11T01:38:54.177Z
 tags:
   - cohost mirror
   - wifeposting

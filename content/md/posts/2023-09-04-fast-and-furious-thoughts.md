@@ -1,6 +1,6 @@
 ---
 title: Fast and Furious thoughts
-date: '2023-09-04T20:47:12.691Z'
+date: 2023-09-04T20:47:12.691Z
 tags:
   - cohost mirror
   - the fast and the furious

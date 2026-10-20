@@ -1,6 +1,6 @@
 ---
 title: rip dasharez0ne
-date: '2024-02-25T16:02:18.474Z'
+date: 2024-02-25T16:02:18.474Z
 tags:
   - cohost mirror
   - da share z0ne

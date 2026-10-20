@@ -1,6 +1,6 @@
 ---
 title: Watching tv with a 2 year old
-date: '2024-01-14T17:34:23.350Z'
+date: 2024-01-14T17:34:23.350Z
 tags:
   - cohost mirror
   - kidposting

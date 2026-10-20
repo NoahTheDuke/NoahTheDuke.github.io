@@ -1,6 +1,6 @@
 ---
 title: they cut down the playground trees
-date: '2024-05-25T18:01:29.039Z'
+date: 2024-05-25T18:01:29.039Z
 tags:
   - cohost mirror
   - kidposting

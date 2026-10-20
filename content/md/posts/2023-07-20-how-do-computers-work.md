@@ -1,6 +1,6 @@
 ---
 title: '"how do computers work?"'
-date: '2023-07-20T18:45:10.746Z'
+date: 2023-07-20T18:45:10.746Z
 tags:
   - cohost mirror
   - programming

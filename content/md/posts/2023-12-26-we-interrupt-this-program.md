@@ -1,6 +1,6 @@
 ---
 title: we interrupt this program with an important message
-date: '2023-12-26T14:59:20.423Z'
+date: 2023-12-26T14:59:20.423Z
 tags:
   - cohost mirror
   - kidposting

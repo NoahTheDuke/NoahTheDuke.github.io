@@ -1,6 +1,6 @@
 ---
 title: fuck daylight saving time
-date: '2024-03-10T11:23:26.680Z'
+date: 2024-03-10T11:23:26.680Z
 tags:
   - cohost mirror
   - daylight saving time

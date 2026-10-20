@@ -1,6 +1,6 @@
 ---
 title: immortality x cohost
-date: '2022-11-22T05:26:46.301Z'
+date: 2022-11-22T05:26:46.301Z
 tags:
   - cohost mirror
   - immortality game

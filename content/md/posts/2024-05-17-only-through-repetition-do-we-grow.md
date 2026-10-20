@@ -1,6 +1,6 @@
 ---
 title: only through repetition do we grow
-date: '2024-05-17T04:46:41.314Z'
+date: 2024-05-17T04:46:41.314Z
 tags:
   - cohost mirror
 cohost-url: 6002566-only-through-repetit

@@ -1,6 +1,6 @@
 ---
 title: 'more reign 2e thoughts: there''s no gm chapter'
-date: '2024-03-15T15:20:50.290Z'
+date: 2024-03-15T15:20:50.290Z
 tags:
   - cohost mirror
   - Reign

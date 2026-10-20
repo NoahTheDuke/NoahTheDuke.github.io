@@ -1,6 +1,6 @@
 ---
 title: i am so into my wife, dude
-date: '2024-05-28T00:21:30.680Z'
+date: 2024-05-28T00:21:30.680Z
 tags:
   - cohost mirror
   - hornyposting

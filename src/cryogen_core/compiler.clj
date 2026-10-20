@@ -198,6 +198,10 @@
 
 (defn parse-date [date-str fmt filename]
   (cond
+    (= "<<now>>" date-str)
+    (Date/from (java.time.Instant/now))
+    (= 10 (count date-str))
+    (.parse (java.text.SimpleDateFormat. "yyyy-MM-dd") date-str)
     date-str
     (.parse (java.text.SimpleDateFormat. fmt) date-str)
     filename

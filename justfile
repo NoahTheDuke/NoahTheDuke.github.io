@@ -11,7 +11,13 @@ new-post *title:
     #!/usr/bin/env bash
     slug="$(./slugify {{title}})"
     touch {{new_post_stem}}-$slug.md
-    echo -en "{:title \"{{title}}\"\n :date \"{{now}}\"\n :at-uri nil\n :tags []}" > {{new_post_stem}}-$(./slugify {{title}}).md
+    echo -en "---\ntitle: {{title}}\ndate: '<<now>>'\nat-uri: nil\ntags:\n---" > {{new_post_stem}}-$(./slugify {{title}}).md
+
+publish-post:
+    fd .md -x sd --fixed-strings "<<now>>" "{{now}}"
+    jj commit -m 'publish post'
+    jj b a
+    jj git push
 
 # Create a new "page" file
 new-page *title:

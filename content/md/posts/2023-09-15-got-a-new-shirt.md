@@ -1,6 +1,6 @@
 ---
 title: got a new shirt
-date: '2023-09-15T01:07:23.219Z'
+date: 2023-09-15T01:07:23.219Z
 tags:
   - cohost mirror
   - Mares of Thrace

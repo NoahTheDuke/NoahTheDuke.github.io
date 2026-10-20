@@ -1,6 +1,6 @@
 ---
 title: no shade to the other artists but Hideki Naganuma's songs on the bomb rush cyberfunk soundtrack are the best.
-date: '2024-07-08T14:39:53.201Z'
+date: 2024-07-08T14:39:53.201Z
 tags:
   - cohost mirror
   - bomb rush cyberfunk

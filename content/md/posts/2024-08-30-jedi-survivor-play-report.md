@@ -1,6 +1,6 @@
 ---
 title: Jedi Survivor play report
-date: '2024-08-30T12:37:50.307Z'
+date: 2024-08-30T12:37:50.307Z
 tags:
   - cohost mirror
   - Jedi Survivor

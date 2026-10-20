@@ -1,6 +1,6 @@
 ---
 title: Ruminations on technical debt in jnet (sent from my iPhone)
-date: '2024-03-25T01:36:52.963Z'
+date: 2024-03-25T01:36:52.963Z
 tags:
   - cohost mirror
   - jinteki.net

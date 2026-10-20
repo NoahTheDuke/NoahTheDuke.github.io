@@ -1,6 +1,6 @@
 ---
 title: taylor swift superbowl cookies
-date: '2024-02-12T00:13:35.824Z'
+date: 2024-02-12T00:13:35.824Z
 tags:
   - cohost mirror
   - superbowl 2024

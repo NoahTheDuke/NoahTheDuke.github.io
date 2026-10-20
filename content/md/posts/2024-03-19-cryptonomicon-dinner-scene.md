@@ -1,6 +1,6 @@
 ---
 title: cryptonomicon dinner scene
-date: '2024-03-19T17:27:47.494Z'
+date: 2024-03-19T17:27:47.494Z
 tags:
   - cohost mirror
   - neal stephenson

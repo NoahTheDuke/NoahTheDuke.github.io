@@ -1,6 +1,6 @@
 ---
 title: Full Parhelion implementation on jinteki.net
-date: '2022-12-09T21:21:00.931Z'
+date: 2022-12-09T21:21:00.931Z
 tags:
   - cohost mirror
   - netrunner

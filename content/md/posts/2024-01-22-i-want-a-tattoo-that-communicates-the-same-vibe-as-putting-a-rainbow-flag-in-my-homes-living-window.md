@@ -1,6 +1,6 @@
 ---
 title: I want a tattoo that communicates the same vibe as putting a rainbow flag in my home’s living window.
-date: '2024-01-22T23:15:41.804Z'
+date: 2024-01-22T23:15:41.804Z
 tags:
   - cohost mirror
 cohost-url: 4253502-i-want-a-tattoo-that

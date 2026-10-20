@@ -1,6 +1,6 @@
 ---
 title: Old memories
-date: '2023-08-23T22:47:24.734Z'
+date: 2023-08-23T22:47:24.734Z
 tags:
   - cohost mirror
 cohost-url: 2598417-old-memories

@@ -1,6 +1,6 @@
 ---
 title: 'Splint rambling: Clojure Parsers'
-date: '2023-03-15T18:36:20.459Z'
+date: 2023-03-15T18:36:20.459Z
 tags:
   - cohost mirror
   - clojure

@@ -1,6 +1,6 @@
 ---
 title: deeper well
-date: '2024-04-15T04:14:13.170Z'
+date: 2024-04-15T04:14:13.170Z
 tags:
   - cohost mirror
   - kacey musgraves

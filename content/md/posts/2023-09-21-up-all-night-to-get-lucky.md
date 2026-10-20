@@ -1,6 +1,6 @@
 ---
 title: up all night to get lucky
-date: '2023-09-21T11:17:08.704Z'
+date: 2023-09-21T11:17:08.704Z
 tags:
   - cohost mirror
   - shitchost

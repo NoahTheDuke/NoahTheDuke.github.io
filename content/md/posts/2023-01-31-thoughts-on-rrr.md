@@ -1,6 +1,6 @@
 ---
 title: Thoughts on RRR
-date: '2023-01-31T20:34:15.607Z'
+date: 2023-01-31T20:34:15.607Z
 tags:
   - cohost mirror
   - RRR

@@ -1,6 +1,6 @@
 ---
 title: '"one must imagine sisyphus happy"'
-date: '2023-08-30T14:56:39.957Z'
+date: 2023-08-30T14:56:39.957Z
 tags:
   - cohost mirror
   - programming

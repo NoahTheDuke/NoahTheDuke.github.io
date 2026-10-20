@@ -1,6 +1,6 @@
 ---
 title: adhd vibes
-date: '2023-03-23T18:40:00.865Z'
+date: 2023-03-23T18:40:00.865Z
 tags:
   - cohost mirror
   - adhd

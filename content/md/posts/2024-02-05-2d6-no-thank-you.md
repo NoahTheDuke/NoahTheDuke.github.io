@@ -1,6 +1,6 @@
 ---
 title: 2d6? no thank you, too complex
-date: '2024-02-05T01:27:47.845Z'
+date: 2024-02-05T01:27:47.845Z
 tags:
   - cohost mirror
   - TTRPG

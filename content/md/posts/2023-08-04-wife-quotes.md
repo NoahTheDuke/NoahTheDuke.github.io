@@ -1,6 +1,6 @@
 ---
 title: wife quotes
-date: '2023-08-04T00:37:13.077Z'
+date: 2023-08-04T00:37:13.077Z
 tags:
   - cohost mirror
   - wifeposting

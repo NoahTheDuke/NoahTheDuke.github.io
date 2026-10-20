@@ -1,6 +1,6 @@
 ---
 title: Performance Chasing
-date: '2023-07-27T21:00:36.056Z'
+date: 2023-07-27T21:00:36.056Z
 tags:
   - cohost mirror
   - programming

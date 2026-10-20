@@ -1,6 +1,6 @@
 ---
 title: css in clojure
-date: '2023-11-20T15:41:05.551Z'
+date: 2023-11-20T15:41:05.551Z
 tags:
   - cohost mirror
   - jinteki.net

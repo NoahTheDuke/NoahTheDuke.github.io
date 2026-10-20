@@ -1,6 +1,6 @@
 ---
 title: got 'em lmao
-date: '2023-11-24T23:57:08.073Z'
+date: 2023-11-24T23:57:08.073Z
 tags:
   - cohost mirror
   - wifeposting

@@ -1,6 +1,6 @@
 ---
 title: Taken from stimslack
-date: '2024-03-28T17:05:03.829Z'
+date: 2024-03-28T17:05:03.829Z
 tags:
   - cohost mirror
   - out of context jnet

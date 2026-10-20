@@ -1,6 +1,6 @@
 ---
 title: every child is my own
-date: '2023-04-15T13:48:42.694Z'
+date: 2023-04-15T13:48:42.694Z
 tags:
   - cohost mirror
   - parenthood feelings

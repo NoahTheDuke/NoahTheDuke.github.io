@@ -1,6 +1,6 @@
 ---
 title: Finished death stranding
-date: '2023-05-13T13:13:24.523Z'
+date: 2023-05-13T13:13:24.523Z
 tags:
   - cohost mirror
   - death stranding

@@ -1,6 +1,6 @@
 ---
 title: splint reaches 1.0
-date: '2023-03-22T16:27:07.412Z'
+date: 2023-03-22T16:27:07.412Z
 tags:
   - cohost mirror
   - splint

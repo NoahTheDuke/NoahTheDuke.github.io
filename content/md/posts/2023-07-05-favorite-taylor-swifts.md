@@ -1,6 +1,6 @@
 ---
 title: favorite taylor swifts
-date: '2023-07-05T18:50:56.541Z'
+date: 2023-07-05T18:50:56.541Z
 tags:
   - cohost mirror
   - taylor swift

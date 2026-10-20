@@ -1,6 +1,6 @@
 ---
 title: splint v1.15.0 - custom rules support!
-date: '2024-05-01T18:07:25.488Z'
+date: 2024-05-01T18:07:25.488Z
 tags:
   - cohost mirror
   - clojure

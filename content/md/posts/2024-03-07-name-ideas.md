@@ -1,6 +1,6 @@
 ---
 title: Name ideas
-date: '2024-03-07T18:28:16.400Z'
+date: 2024-03-07T18:28:16.400Z
 tags:
   - cohost mirror
   - baby names

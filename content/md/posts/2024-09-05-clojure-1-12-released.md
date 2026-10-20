@@ -1,6 +1,6 @@
 ---
 title: Clojure 1.12 released!!!
-date: '2024-09-05T20:25:52.727Z'
+date: 2024-09-05T20:25:52.727Z
 tags:
   - cohost mirror
   - clojure

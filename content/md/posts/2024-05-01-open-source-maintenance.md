@@ -1,6 +1,6 @@
 ---
 title: open source maintenance
-date: '2024-05-01T15:36:29.776Z'
+date: 2024-05-01T15:36:29.776Z
 tags:
   - cohost mirror
   - just

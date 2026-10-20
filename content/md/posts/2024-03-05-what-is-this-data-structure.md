@@ -1,6 +1,6 @@
 ---
 title: What is this data structure?
-date: '2024-03-05T04:41:30.424Z'
+date: 2024-03-05T04:41:30.424Z
 tags:
   - cohost mirror
   - data structures

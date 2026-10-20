@@ -1,6 +1,6 @@
 ---
 title: looking for a live action web series
-date: '2023-08-28T02:38:42.912Z'
+date: 2023-08-28T02:38:42.912Z
 tags:
   - cohost mirror
   - lazyweb

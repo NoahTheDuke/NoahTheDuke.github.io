@@ -1,6 +1,6 @@
 ---
 title: '"The main goal of this project was to create a sequence of inputs that beats [Pokemon FireRed] with an 100% chance of success."'
-date: '2024-03-15T20:22:09.476Z'
+date: 2024-03-15T20:22:09.476Z
 tags:
   - cohost mirror
   - pokemon

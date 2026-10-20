@@ -1,6 +1,6 @@
 ---
 title: broke my iphone
-date: '2024-06-10T15:35:13.532Z'
+date: 2024-06-10T15:35:13.532Z
 tags:
   - cohost mirror
   - iphone

@@ -1,6 +1,6 @@
 ---
 title: more Blasphemous thoughts
-date: '2024-09-24T00:25:13.696Z'
+date: 2024-09-24T00:25:13.696Z
 tags:
   - cohost mirror
   - blasphemous

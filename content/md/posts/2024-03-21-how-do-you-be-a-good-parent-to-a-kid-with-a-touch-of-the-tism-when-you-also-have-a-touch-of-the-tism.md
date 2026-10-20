@@ -1,6 +1,6 @@
 ---
 title: how do you be a good parent to a kid with a touch of the 'tism when you also have a touch of the 'tism
-date: '2024-03-21T14:11:16.707Z'
+date: 2024-03-21T14:11:16.707Z
 tags:
   - cohost mirror
   - parenting

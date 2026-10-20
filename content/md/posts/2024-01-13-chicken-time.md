@@ -1,6 +1,6 @@
 ---
 title: chicken time
-date: '2024-01-13T13:37:53.867Z'
+date: 2024-01-13T13:37:53.867Z
 tags:
   - cohost mirror
   - wifeposting

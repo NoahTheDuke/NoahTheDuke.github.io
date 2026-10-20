@@ -1,6 +1,6 @@
 ---
 title: guacamelee thoughts
-date: '2024-01-19T06:57:05.810Z'
+date: 2024-01-19T06:57:05.810Z
 tags:
   - cohost mirror
   - guacamelee

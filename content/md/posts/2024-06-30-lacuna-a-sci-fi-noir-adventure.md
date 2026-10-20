@@ -1,6 +1,6 @@
 ---
 title: Lacuna - A Sci Fi Noir Adventure
-date: '2024-06-30T12:37:06.648Z'
+date: 2024-06-30T12:37:06.648Z
 tags:
   - cohost mirror
   - lacuna

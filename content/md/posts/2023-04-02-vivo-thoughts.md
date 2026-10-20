@@ -1,6 +1,6 @@
 ---
 title: vivo thoughts
-date: '2023-04-02T15:04:34.719Z'
+date: 2023-04-02T15:04:34.719Z
 tags:
   - cohost mirror
   - Movie Review

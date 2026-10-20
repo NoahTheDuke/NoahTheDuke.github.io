@@ -1,6 +1,6 @@
 ---
 title: Saw Taylor Swift last night
-date: '2023-07-01T13:43:41.475Z'
+date: 2023-07-01T13:43:41.475Z
 tags:
   - cohost mirror
   - concert

@@ -1,6 +1,6 @@
 ---
 title: consequences
-date: '2024-05-05T13:01:54.487Z'
+date: 2024-05-05T13:01:54.487Z
 tags:
   - cohost mirror
   - wifeposting

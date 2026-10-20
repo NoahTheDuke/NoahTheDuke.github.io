@@ -3,7 +3,7 @@ title: About
 navbar: true
 ---
 
-i'm Noah ([they/them](/pronouns)) - [trans femme](https://en.wikipedia.org/wiki/Trans_woman) - [queer lesbian](https://en.wikipedia.org/wiki/Lesbian) - [white](https://en.wikipedia.org/wiki/White_Americans) - [millenial](https://en.wikipedia.org/wiki/Millennials)
+i'm [noa](/name). ([they/them](/pronouns)) - [trans femme](https://en.wikipedia.org/wiki/Trans_woman) - [queer lesbian](https://en.wikipedia.org/wiki/Lesbian) - [white](https://en.wikipedia.org/wiki/White_Americans) - [millenial](https://en.wikipedia.org/wiki/Millennials)
 
 i created my first website in 1995, a 3 page geocites site about world war 2, handcrafting every line of html and hosting my very first 5-paragraph essay. ever since then, i've found means and methods of posting my thoughts on the internet; i begged my way into a Livejournal invite code and posted on that until college, i wrote on every forum i had a passing interest in, i put my rants on facebook, i argued on tumblr, i fell in love with cohost, and here i am with a few scattered blogs written in 2016 that i've somehow carried forward.
 

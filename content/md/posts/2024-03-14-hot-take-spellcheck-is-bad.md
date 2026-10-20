@@ -1,6 +1,6 @@
 ---
 title: 'hot take: spellcheck is bad'
-date: '2024-03-14T14:36:49.772Z'
+date: 2024-03-14T14:36:49.772Z
 tags:
   - cohost mirror
   - spellcheck is bad

@@ -1,6 +1,6 @@
 ---
 title: rant about clojure and community stewardship
-date: '2022-10-31T00:05:15.672Z'
+date: 2022-10-31T00:05:15.672Z
 tags:
   - cohost mirror
   - clojure

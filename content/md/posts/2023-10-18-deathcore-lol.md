@@ -1,6 +1,6 @@
 ---
 title: deathcore lol
-date: '2023-10-18T00:55:45.682Z'
+date: 2023-10-18T00:55:45.682Z
 tags:
   - cohost mirror
   - metal

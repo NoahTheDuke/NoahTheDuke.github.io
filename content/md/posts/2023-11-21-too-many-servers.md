@@ -1,6 +1,6 @@
 ---
 title: too many servers
-date: '2023-11-21T13:53:52.096Z'
+date: 2023-11-21T13:53:52.096Z
 tags:
   - cohost mirror
   - discord

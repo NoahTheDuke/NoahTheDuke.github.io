@@ -1,6 +1,6 @@
 ---
 title: 'splint update: magic comments edition'
-date: '2023-03-17T04:16:19.355Z'
+date: 2023-03-17T04:16:19.355Z
 tags:
   - cohost mirror
   - clojure

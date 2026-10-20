@@ -1,6 +1,6 @@
 ---
 title: Disenchantment
-date: '2024-06-03T03:50:43.207Z'
+date: 2024-06-03T03:50:43.207Z
 tags:
   - cohost mirror
   - Disenchantment

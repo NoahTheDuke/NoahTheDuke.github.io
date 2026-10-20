@@ -1,6 +1,6 @@
 ---
 title: bought some more music
-date: '2023-10-05T01:07:48.351Z'
+date: 2023-10-05T01:07:48.351Z
 tags:
   - cohost mirror
   - bandcamp

@@ -1,6 +1,6 @@
 ---
 title: splint 1.6.0 and then of course 1.6.1 lol
-date: '2023-05-23T20:10:28.197Z'
+date: 2023-05-23T20:10:28.197Z
 tags:
   - cohost mirror
   - splint

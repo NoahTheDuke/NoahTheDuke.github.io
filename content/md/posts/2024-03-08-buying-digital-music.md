@@ -1,6 +1,6 @@
 ---
 title: buying digital music
-date: '2024-03-08T15:41:57.724Z'
+date: 2024-03-08T15:41:57.724Z
 tags:
   - cohost mirror
   - Qobuz

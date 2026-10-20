@@ -1,6 +1,6 @@
 ---
 title: idk if i'll ever be as disappointed by an album as i was with glitch mob's love death immortality
-date: '2024-08-09T04:50:35.837Z'
+date: 2024-08-09T04:50:35.837Z
 tags:
   - cohost mirror
   - the glitch mob

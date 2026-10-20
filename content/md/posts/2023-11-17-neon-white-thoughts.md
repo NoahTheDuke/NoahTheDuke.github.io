@@ -1,6 +1,6 @@
 ---
 title: neon white thoughts
-date: '2023-11-17T17:08:37.631Z'
+date: 2023-11-17T17:08:37.631Z
 tags:
   - cohost mirror
   - neon white

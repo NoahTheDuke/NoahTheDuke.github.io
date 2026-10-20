@@ -1,6 +1,6 @@
 ---
 title: portrait of kalvin brnine
-date: '2024-03-24T12:20:07.671Z'
+date: 2024-03-24T12:20:07.671Z
 tags:
   - cohost mirror
   - Friends at the table

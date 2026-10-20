@@ -1,6 +1,6 @@
 ---
 title: smelly hospital
-date: '2024-04-14T16:02:23.169Z'
+date: 2024-04-14T16:02:23.169Z
 tags:
   - cohost mirror
   - kidposting

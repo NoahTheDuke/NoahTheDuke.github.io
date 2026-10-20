@@ -1,6 +1,6 @@
 ---
 title: consistent labels
-date: '2023-07-08T17:35:05.700Z'
+date: 2023-07-08T17:35:05.700Z
 tags:
   - cohost mirror
   - shitpost

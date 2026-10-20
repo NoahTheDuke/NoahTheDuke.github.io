@@ -1,6 +1,6 @@
 ---
 title: jinteki.net has full implementation of Rebellion Without Rehearsal
-date: '2024-03-19T02:10:32.162Z'
+date: 2024-03-19T02:10:32.162Z
 tags:
   - cohost mirror
   - jinteki.net

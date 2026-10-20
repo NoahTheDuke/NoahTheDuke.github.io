@@ -1,6 +1,6 @@
 ---
 title: gross dude
-date: '2024-02-04T04:01:07.939Z'
+date: 2024-02-04T04:01:07.939Z
 tags:
   - cohost mirror
   - wifeposting

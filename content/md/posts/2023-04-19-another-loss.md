@@ -1,6 +1,6 @@
 ---
 title: another loss
-date: '2023-04-19T19:50:08.439Z'
+date: 2023-04-19T19:50:08.439Z
 tags:
   - cohost mirror
   - i'm fuckin sad dude

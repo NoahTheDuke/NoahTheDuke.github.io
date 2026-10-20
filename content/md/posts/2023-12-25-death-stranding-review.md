@@ -1,6 +1,6 @@
 ---
 title: Death Stranding Review
-date: '2023-12-25T17:18:37.362Z'
+date: 2023-12-25T17:18:37.362Z
 tags:
   - cohost mirror
   - death stranding

@@ -1,6 +1,6 @@
 ---
 title: bad (job) thoughts
-date: '2024-08-22T16:12:17.943Z'
+date: 2024-08-22T16:12:17.943Z
 tags:
   - cohost mirror
   - please don't worry about me it's just bad brains shit

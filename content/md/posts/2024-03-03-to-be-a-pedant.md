@@ -1,6 +1,6 @@
 ---
 title: To be a pedant
-date: '2024-03-03T21:37:26.384Z'
+date: 2024-03-03T21:37:26.384Z
 tags:
   - cohost mirror
   - dad jokes

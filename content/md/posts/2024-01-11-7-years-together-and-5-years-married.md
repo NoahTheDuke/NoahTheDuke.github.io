@@ -1,6 +1,6 @@
 ---
 title: 7 years together and 5 years married
-date: '2024-01-11T16:40:41.306Z'
+date: 2024-01-11T16:40:41.306Z
 tags:
   - cohost mirror
   - we did it joe

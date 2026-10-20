@@ -1,6 +1,6 @@
 ---
 title: pain at work today
-date: '2024-03-20T20:42:21.383Z'
+date: 2024-03-20T20:42:21.383Z
 tags:
   - cohost mirror
   - clojure

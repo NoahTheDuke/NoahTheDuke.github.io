@@ -1,6 +1,6 @@
 ---
 title: palisade theme
-date: '2024-03-13T02:18:02.052Z'
+date: 2024-03-13T02:18:02.052Z
 tags:
   - cohost mirror
   - palisade

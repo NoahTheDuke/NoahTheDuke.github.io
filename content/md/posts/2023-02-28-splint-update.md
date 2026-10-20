@@ -1,6 +1,6 @@
 ---
 title: splint update
-date: '2023-02-28T04:10:16.636Z'
+date: 2023-02-28T04:10:16.636Z
 tags:
   - cohost mirror
   - clojure

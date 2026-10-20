@@ -1,6 +1,6 @@
 ---
 title: y’all ever think about all of the super stimuli you engage with in modern life? i do.
-date: '2023-09-12T03:56:16.182Z'
+date: 2023-09-12T03:56:16.182Z
 tags:
   - cohost mirror
   - bedtime thoughts

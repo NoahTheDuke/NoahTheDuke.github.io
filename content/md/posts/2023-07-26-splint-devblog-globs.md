@@ -1,6 +1,6 @@
 ---
 title: 'Split devblog: globs'
-date: '2023-07-26T13:57:52.805Z'
+date: 2023-07-26T13:57:52.805Z
 tags:
   - cohost mirror
   - splint

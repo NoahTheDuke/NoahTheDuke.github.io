@@ -1,6 +1,6 @@
 ---
 title: disney music thoughts
-date: '2023-04-27T14:45:53.555Z'
+date: 2023-04-27T14:45:53.555Z
 tags:
   - cohost mirror
   - Movie reviews

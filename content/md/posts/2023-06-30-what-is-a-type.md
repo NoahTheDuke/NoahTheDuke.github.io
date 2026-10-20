@@ -1,6 +1,6 @@
 ---
 title: what is a type?
-date: '2023-06-30T13:44:23.025Z'
+date: 2023-06-30T13:44:23.025Z
 tags:
   - cohost mirror
   - programming

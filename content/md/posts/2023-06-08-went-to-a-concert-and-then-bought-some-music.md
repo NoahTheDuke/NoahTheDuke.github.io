@@ -1,6 +1,6 @@
 ---
 title: went to a concert and then bought some music
-date: '2023-06-08T14:14:00.155Z'
+date: 2023-06-08T14:14:00.155Z
 tags:
   - cohost mirror
   - bandcamp

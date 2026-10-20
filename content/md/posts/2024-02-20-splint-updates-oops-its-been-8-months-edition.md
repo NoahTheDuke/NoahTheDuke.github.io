@@ -1,6 +1,6 @@
 ---
 title: Splint updates! Oops it's been 8 months edition
-date: '2024-02-20T17:18:30.600Z'
+date: 2024-02-20T17:18:30.600Z
 tags:
   - cohost mirror
   - clojure

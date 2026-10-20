@@ -1,6 +1,6 @@
 ---
 title: heat signature
-date: '2024-09-18T04:17:39.890Z'
+date: 2024-09-18T04:17:39.890Z
 tags:
   - cohost mirror
   - Heat Signature

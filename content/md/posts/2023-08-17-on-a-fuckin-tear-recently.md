@@ -1,6 +1,6 @@
 ---
 title: on a fuckin tear recently
-date: '2023-08-17T03:28:46.449Z'
+date: 2023-08-17T03:28:46.449Z
 tags:
   - cohost mirror
   - adhd

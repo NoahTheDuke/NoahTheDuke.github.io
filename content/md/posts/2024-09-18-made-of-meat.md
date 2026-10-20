@@ -1,6 +1,6 @@
 ---
 title: made of meat
-date: '2024-09-18T00:56:02.292Z'
+date: 2024-09-18T00:56:02.292Z
 tags:
   - cohost mirror
   - kidposting

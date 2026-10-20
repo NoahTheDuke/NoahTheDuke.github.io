@@ -1,6 +1,6 @@
 ---
 title: shredded cheese
-date: '2024-03-04T13:56:58.998Z'
+date: 2024-03-04T13:56:58.998Z
 tags:
   - cohost mirror
   - shredded cheese

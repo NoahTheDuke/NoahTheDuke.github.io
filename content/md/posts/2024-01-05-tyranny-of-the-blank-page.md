@@ -1,6 +1,6 @@
 ---
 title: tyranny of the blank page
-date: '2024-01-05T14:50:49.573Z'
+date: 2024-01-05T14:50:49.573Z
 tags:
   - cohost mirror
   - programming

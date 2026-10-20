@@ -1,6 +1,6 @@
 ---
 title: 'Happy day in our house: Wish has come to Disney+'
-date: '2024-04-03T19:24:29.500Z'
+date: 2024-04-03T19:24:29.500Z
 tags:
   - cohost mirror
   - kidposting

@@ -1,6 +1,6 @@
 ---
 title: Super Mario Bros. Wonder review
-date: '2024-12-01T09:30:00'
+date: 2024-12-01T09:30:00
 tags:
   - review
   - backloggd

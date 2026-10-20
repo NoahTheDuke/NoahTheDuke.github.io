@@ -1,6 +1,6 @@
 ---
 title: i don't like presents
-date: '2023-12-23T04:14:12.344Z'
+date: 2023-12-23T04:14:12.344Z
 tags:
   - cohost mirror
   - wifeposting

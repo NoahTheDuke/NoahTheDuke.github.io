@@ -1,6 +1,6 @@
 ---
 title: she's a biter
-date: '2024-02-20T00:42:44.456Z'
+date: 2024-02-20T00:42:44.456Z
 tags:
   - cohost mirror
   - kidposting

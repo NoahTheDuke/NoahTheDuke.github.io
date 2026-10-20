@@ -1,6 +1,6 @@
 ---
 title: autumn sunsets
-date: '2023-11-06T22:13:48.547Z'
+date: 2023-11-06T22:13:48.547Z
 tags:
   - cohost mirror
   - wifeposting

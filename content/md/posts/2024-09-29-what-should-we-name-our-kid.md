@@ -1,6 +1,6 @@
 ---
 title: what should we name our kid?
-date: '2024-09-29T15:43:33.980Z'
+date: 2024-09-29T15:43:33.980Z
 tags:
   - cohost mirror
   - parentposting

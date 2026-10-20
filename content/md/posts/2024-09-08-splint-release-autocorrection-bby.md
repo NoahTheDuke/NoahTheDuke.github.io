@@ -1,6 +1,6 @@
 ---
 title: 'splint release: autocorrection bby'
-date: '2024-09-08T20:15:07.420Z'
+date: 2024-09-08T20:15:07.420Z
 tags:
   - cohost mirror
   - clojure
