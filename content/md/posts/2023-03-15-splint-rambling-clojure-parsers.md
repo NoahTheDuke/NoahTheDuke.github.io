@@ -1,7 +1,14 @@
-{:title "Splint rambling: Clojure Parsers"
- :date "2023-03-15T18:36:20.459Z"
- :tags ["cohost mirror" "clojure" "linters" "splint" "parsing"]
- :cohost-url "1183106-splint-rambling-clo"}
+---
+title: 'Splint rambling: Clojure Parsers'
+date: '2023-03-15T18:36:20.459Z'
+tags:
+  - cohost mirror
+  - clojure
+  - linters
+  - splint
+  - parsing
+cohost-url: 1183106-splint-rambling-clo
+---
 
 I want another parser because I want access to comments. Without comments, I can't parse magic comments, meaning I can't enable or disable rules inline, only globally. That's annoying and not ideal. However, every solution I've dreamed up has some deep issue.
 

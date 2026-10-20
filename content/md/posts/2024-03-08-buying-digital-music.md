@@ -1,7 +1,16 @@
-{:title "buying digital music"
- :date "2024-03-08T15:41:57.724Z"
- :tags ["cohost mirror" "Qobuz" "fuck spotify" "bandcamp" "indie music" "Indie musicians" "plex server"]
- :cohost-url "4962364-buying-digital-music"}
+---
+title: buying digital music
+date: '2024-03-08T15:41:57.724Z'
+tags:
+  - cohost mirror
+  - Qobuz
+  - fuck spotify
+  - bandcamp
+  - indie music
+  - Indie musicians
+  - plex server
+cohost-url: 4962364-buying-digital-music
+---
 
 i buy almost all of my music through bandcamp, but there are a lot of artists (mostly those signed with big name labels) that don't have their music on it. for the other music i want, i have to use qobuz.
 

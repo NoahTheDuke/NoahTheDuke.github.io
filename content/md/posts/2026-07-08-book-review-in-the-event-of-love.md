@@ -1,7 +1,10 @@
-{:title "Book Review: In the Event of Love"
- :date "2026-07-08T14:56"
- :at-uri nil
- :tags ["book review"]}
+---
+title: 'Book Review: In the Event of Love'
+date: 2026-07-08T14:56
+at-uri: null
+tags:
+  - book review
+---
 
 i got 1/5 of the way through in the event of love and then it was time to return it to the library and i felt no urge to check it out again. this kind of story is great for a movie that only requires 2 hours max, but drawn out in a novel, it's much harder to dedicate a full 16 hours of attention.
 

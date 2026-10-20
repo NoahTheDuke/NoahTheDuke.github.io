@@ -1,6 +1,10 @@
-{:title "at this point, i don't know that i can view selling one's company as anything other than an evil act"
- :date "2023-10-16T19:35"
- :tags ["cohost mirror" "capitalism"]}
+---
+title: at this point, i don't know that i can view selling one's company as anything other than an evil act
+date: 2023-10-16T19:35
+tags:
+  - cohost mirror
+  - capitalism
+---
 
 owning and running a company is already mired in a complex set of circumstances and power relationships that i don't have a firm grasp on, but i at least see an aspect of "thing i built alongside other people and have pride in and want to see succeed as a reflection of myself".
 

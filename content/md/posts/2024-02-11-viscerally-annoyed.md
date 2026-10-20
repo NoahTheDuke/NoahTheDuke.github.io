@@ -1,7 +1,14 @@
-{:title "Viscerally annoyed"
- :date "2024-02-11T20:51:23.007Z"
- :tags ["cohost mirror" "ocaml" "amgry" "functional programming" "programming"]
- :cohost-url "4445263-viscerally-annoyed"}
+---
+title: Viscerally annoyed
+date: '2024-02-11T20:51:23.007Z'
+tags:
+  - cohost mirror
+  - ocaml
+  - amgry
+  - functional programming
+  - programming
+cohost-url: 4445263-viscerally-annoyed
+---
 
 I’m trying to learn Ocaml. It’s going okay, learning new languages is hard, and learning new warts is the hardest part. I came across one that’s left me so viscerally annoyed that I might stop learning the language altogether.
 

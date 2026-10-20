@@ -1,7 +1,11 @@
-{:title "disney music thoughts"
- :date "2023-04-27T14:45:53.555Z"
- :tags ["cohost mirror" "Movie reviews"]
- :cohost-url "1403670-disney-music-thought"}
+---
+title: disney music thoughts
+date: '2023-04-27T14:45:53.555Z'
+tags:
+  - cohost mirror
+  - Movie reviews
+cohost-url: 1403670-disney-music-thought
+---
 
 my kids are growing into prime animated movie ages, so we're been listening to a lot of the disney and related animated musicals, as well as watching other animated movies too. because of who i am as a person, i spend a lot of time deeply thinking about this stuff because it's omnipresent. i could write up whole posts about them individually but i'm just gonna put down a couple thoughts to purge them.
 

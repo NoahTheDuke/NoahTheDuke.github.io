@@ -1,7 +1,16 @@
-{:title "my cohost retrospective"
- :date "2024-09-28T22:34:41.607Z"
- :tags ["cohost mirror" "Goodbye cohost" "goodbye eggbug" "Farewell Cohost" "the cohost farewell feed" "rip cohost" "cohost retrospective"]
- :cohost-url "7871761-my-cohost-retrospect"}
+---
+title: my cohost retrospective
+date: '2024-09-28T22:34:41.607Z'
+tags:
+  - cohost mirror
+  - Goodbye cohost
+  - goodbye eggbug
+  - Farewell Cohost
+  - the cohost farewell feed
+  - rip cohost
+  - cohost retrospective
+cohost-url: 7871761-my-cohost-retrospect
+---
 
 > [!NOTE]
 > I wrote this hours before the website [https://cohost.org](https://cohost.org) closed.

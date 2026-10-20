@@ -1,7 +1,13 @@
-{:title "What is this data structure?"
- :date "2024-03-05T04:41:30.424Z"
- :tags ["cohost mirror" "data structures" "programming" "functional programming"]
- :cohost-url "4896592-what-is-this-data-st"}
+---
+title: What is this data structure?
+date: '2024-03-05T04:41:30.424Z'
+tags:
+  - cohost mirror
+  - data structures
+  - programming
+  - functional programming
+cohost-url: 4896592-what-is-this-data-st
+---
 
 I re-discovered a data structure I used many years ago from a game engine. It’s like a queue but is well built for recursive or nested work. The name I know it as is the Pipeline.
 

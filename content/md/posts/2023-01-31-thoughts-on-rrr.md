@@ -1,7 +1,12 @@
-{:title "Thoughts on RRR"
- :date "2023-01-31T20:34:15.607Z"
- :tags ["cohost mirror" "RRR" "noahtheduke reviews"]
- :cohost-url "939918-thoughts-on-rrr"}
+---
+title: Thoughts on RRR
+date: '2023-01-31T20:34:15.607Z'
+tags:
+  - cohost mirror
+  - RRR
+  - noahtheduke reviews
+cohost-url: 939918-thoughts-on-rrr
+---
 
 I feel like RRR showcased a style of melodrama that I don't see super frequently. The term that comes to mind is "legibility", a word/concept that @austin has placed into my brain. RRR doesn't try to use lots of dialogue or subtle acting, it leans into big emotions in all directions and keeps both the content and conveyance relatively easily understood, but then treats those big emotions as real and legitimate.
 

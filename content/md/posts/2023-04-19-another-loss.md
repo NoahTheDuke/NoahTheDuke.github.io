@@ -1,7 +1,12 @@
-{:title "another loss"
- :date "2023-04-19T19:50:08.439Z"
- :tags ["cohost mirror" "i'm fuckin sad dude" "death is a tragedy"]
- :cohost-url "1360941-cw-suicide"}
+---
+title: another loss
+date: '2023-04-19T19:50:08.439Z'
+tags:
+  - cohost mirror
+  - i'm fuckin sad dude
+  - death is a tragedy
+cohost-url: 1360941-cw-suicide
+---
 
 someone i knew roughly 6 years ago passed away at her own hand. this is the third one in the last year, which doesn't even go back to my wife's mother 1.6 years ago.
 

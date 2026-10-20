@@ -1,7 +1,16 @@
-{:title "splint update"
- :date "2023-02-28T04:10:16.636Z"
- :tags ["cohost mirror" "clojure" "linting" "devlog" "splint" "programming" "functional programming"]
- :cohost-url "1103922-splint-update"}
+---
+title: splint update
+date: '2023-02-28T04:10:16.636Z'
+tags:
+  - cohost mirror
+  - clojure
+  - linting
+  - devlog
+  - splint
+  - programming
+  - functional programming
+cohost-url: 1103922-splint-update
+---
 
 I’ve named my new clojure linter splint, a portmanteau of spat and lint. Spat is the name of the s-expression pattern matching/regex library I wrote, the name also a portmanteau from s-expression and pattern.
 

@@ -1,7 +1,15 @@
-{:title "rip dasharez0ne"
- :date "2024-02-25T16:02:18.474Z"
- :tags ["cohost mirror" "da share z0ne" "furthermore capitalism must be destroyed" "shitlibs" "drew toothpaste" "jane moon"]
- :cohost-url "4687878-learned-about-the-ta"}
+---
+title: rip dasharez0ne
+date: '2024-02-25T16:02:18.474Z'
+tags:
+  - cohost mirror
+  - da share z0ne
+  - furthermore capitalism must be destroyed
+  - shitlibs
+  - drew toothpaste
+  - jane moon
+cohost-url: 4687878-learned-about-the-ta
+---
 
 Learned about the takeover of da share z0ne yesterday, like a lot of terminally online folks. Pretty disappointing and disheartening.
 

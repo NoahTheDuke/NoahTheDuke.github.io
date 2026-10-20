@@ -1,7 +1,13 @@
-{:title "rant about clojure and community stewardship"
- :date "2022-10-31T00:05:15.672Z"
- :tags ["cohost mirror" "clojure" "rant" "open source"]
- :cohost-url "161270-i-commented-on-someo"}
+---
+title: rant about clojure and community stewardship
+date: '2022-10-31T00:05:15.672Z'
+tags:
+  - cohost mirror
+  - clojure
+  - rant
+  - open source
+cohost-url: 161270-i-commented-on-someo
+---
 
 I commented on someone else’s post about open source community norms and brought up Rich Hickey’s Open Source is Not About You. I said  that I admired the stance after initially thinking it rude. However,,,
 

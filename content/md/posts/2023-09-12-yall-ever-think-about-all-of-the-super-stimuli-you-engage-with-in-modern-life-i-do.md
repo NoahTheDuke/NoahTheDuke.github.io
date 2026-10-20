@@ -1,7 +1,12 @@
-{:title "y’all ever think about all of the super stimuli you engage with in modern life? i do."
- :date "2023-09-12T03:56:16.182Z"
- :tags ["cohost mirror" "bedtime thoughts" "super stimuli"]
- :cohost-url "2812517-y-all-ever-think-abo"}
+---
+title: y’all ever think about all of the super stimuli you engage with in modern life? i do.
+date: '2023-09-12T03:56:16.182Z'
+tags:
+  - cohost mirror
+  - bedtime thoughts
+  - super stimuli
+cohost-url: 2812517-y-all-ever-think-abo
+---
 
 idk why or when this happened but at some point i learned about super stimuli and became deeply unsettled by them and i’m now leery of anything that resemble one. feels too easy to fall off the cliff and lose a sense of what’s “average”.
 

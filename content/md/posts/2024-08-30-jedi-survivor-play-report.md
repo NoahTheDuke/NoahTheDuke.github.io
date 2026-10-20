@@ -1,7 +1,14 @@
-{:title "Jedi Survivor play report"
- :date "2024-08-30T12:37:50.307Z"
- :tags ["cohost mirror" "Jedi Survivor" "star wars jedi survivor" "Star Wars: Jedi Survivor" "noahtheduke reviews"]
- :cohost-url "7485565-jedi-survivor-play-r"}
+---
+title: Jedi Survivor play report
+date: '2024-08-30T12:37:50.307Z'
+tags:
+  - cohost mirror
+  - Jedi Survivor
+  - star wars jedi survivor
+  - 'Star Wars: Jedi Survivor'
+  - noahtheduke reviews
+cohost-url: 7485565-jedi-survivor-play-r
+---
 
 Started playing Jedi Survivor after burning out on Elden Ring again.
 

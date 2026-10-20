@@ -1,7 +1,18 @@
-{:title "open source maintenance"
- :date "2024-05-01T15:36:29.776Z"
- :tags ["cohost mirror" "just" "vim" "neovim" "open source" "open source software" "programming" "rust" "rust-lang"]
- :cohost-url "5793881-open-source-maintena"}
+---
+title: open source maintenance
+date: '2024-05-01T15:36:29.776Z'
+tags:
+  - cohost mirror
+  - just
+  - vim
+  - neovim
+  - open source
+  - open source software
+  - programming
+  - rust
+  - rust-lang
+cohost-url: 5793881-open-source-maintena
+---
 
 i am the maintainer of the vim syntax highlighting file for just, [vim-just](https://github.com/NoahTheDuke/vim-just), and while i did the heavy lifting to write up the initial version back in 2021, i haven't cared much about keeping up with the latest changes and have let others make changes as they do.
 

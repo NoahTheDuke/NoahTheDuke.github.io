@@ -1,5 +1,7 @@
-{:title "Vacations"
- :date "2025-08-25T09:10"}
+---
+title: Vacations
+date: 2025-08-25T09:10
+---
 
 Vacations are hard. A lot of work to make happen, filled with joy and stress throughout, and the ending which hangs heavy. Another one has come to an end in our family and I'm left with a familiar poignant ache, mourning the loss for my children as well as for myself.
 

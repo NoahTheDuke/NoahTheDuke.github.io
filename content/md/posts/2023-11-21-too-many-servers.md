@@ -1,7 +1,14 @@
-{:title "too many servers"
- :date "2023-11-21T13:53:52.096Z"
- :tags ["cohost mirror" "discord" "slack" "forums" "communities"]
- :cohost-url "3611722-the-funny-thing-abou"}
+---
+title: too many servers
+date: '2023-11-21T13:53:52.096Z'
+tags:
+  - cohost mirror
+  - discord
+  - slack
+  - forums
+  - communities
+cohost-url: 3611722-the-funny-thing-abou
+---
 
 the funny thing about chat servers is that they're self-contained communities. to feel comfortable in one, you need to spend enough time to both know the other people and to be known by them. you gotta learn the implications and usages of the emoji, you gotta learn the in-jokes and the history, you gotta actually put in effort to be a real part of the community! you can't skip right to the "i enjoy being here" part.
 

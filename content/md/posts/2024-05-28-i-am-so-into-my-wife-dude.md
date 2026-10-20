@@ -1,7 +1,15 @@
-{:title "i am so into my wife, dude"
- :date "2024-05-28T00:21:30.680Z"
- :tags ["cohost mirror" "hornyposting" "wifeposting" "thrumming with desire like a taut cord" "so horny i could fucking dieeeeeeeeeeeeeeeeeeee" "am i in high school again? what is going on in my body?"]
- :cohost-url "6147119-i-am-so-into-my-wife"}
+---
+title: i am so into my wife, dude
+date: '2024-05-28T00:21:30.680Z'
+tags:
+  - cohost mirror
+  - hornyposting
+  - wifeposting
+  - thrumming with desire like a taut cord
+  - so horny i could fucking dieeeeeeeeeeeeeeeeeeee
+  - am i in high school again? what is going on in my body?
+cohost-url: 6147119-i-am-so-into-my-wife
+---
 
 idk how to write it. i'm not a poet, i was raised by a writer but words don't come easily to me so when i feel these feelings, all i come up with is stuff like "she's so fucking hot" which is true but also shallow.
 

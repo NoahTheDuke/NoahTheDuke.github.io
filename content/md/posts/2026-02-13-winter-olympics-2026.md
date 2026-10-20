@@ -1,6 +1,9 @@
-{:title "Winter Olympics 2026"
- :date "2026-02-13T14:46"
- :tags ["olympics"]}
+---
+title: Winter Olympics 2026
+date: 2026-02-13T14:46
+tags:
+  - olympics
+---
 
 Every 2 years I enter a state of frenzy, where I become obsessed with the Olympics. I grew up watching the Olympics in prime time with my mom. The whole family and friends would watch, but my mom cared the most and so I did as well. I took many years off of watching for various reasons, missing 2006-2016, and each year since 2018 I've increased the amount I watch. This year is the most yet, relying on Peacock's streaming service that is equal parts shit and excellent.
 

@@ -1,7 +1,10 @@
-{:title "Old memories"
- :date "2023-08-23T22:47:24.734Z"
- :tags ["cohost mirror"]
- :cohost-url "2598417-old-memories"}
+---
+title: Old memories
+date: '2023-08-23T22:47:24.734Z'
+tags:
+  - cohost mirror
+cohost-url: 2598417-old-memories
+---
 
 Just remembered without provocation that roughly 14 years ago I had reconnected with an old friend from Livejournal. She wanted to be penpals so we exchanged addresses and she sent me a long and intimate letter with drawings in the marginalia, detailing her life after moving to San Francisco.
 

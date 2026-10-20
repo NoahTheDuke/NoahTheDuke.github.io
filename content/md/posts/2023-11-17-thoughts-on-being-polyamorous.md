@@ -1,6 +1,11 @@
-{:title "thoughts on being polyamorous"
- :date "2023-11-17T14:15"
- :tags ["cohost mirror" "polyamory" "ayyy lmao"]}
+---
+title: thoughts on being polyamorous
+date: 2023-11-17T14:15
+tags:
+  - cohost mirror
+  - polyamory
+  - ayyy lmao
+---
 
 a friend asked me recently about my "poly" status with my wife, and i started to write a short thing which turned into a long thing. here it is as i sent it to her, to avoid editing and nitpicking it into not getting posted.
 

@@ -1,7 +1,14 @@
-{:title "favorite taylor swifts"
- :date "2023-07-05T18:50:56.541Z"
- :tags ["cohost mirror" "taylor swift" "noahtheduke asks" "Jack Antonoff" "Steel Train"]
- :cohost-url "1887941-album-is-easy-lover"}
+---
+title: favorite taylor swifts
+date: '2023-07-05T18:50:56.541Z'
+tags:
+  - cohost mirror
+  - taylor swift
+  - noahtheduke asks
+  - Jack Antonoff
+  - Steel Train
+cohost-url: 1887941-album-is-easy-lover
+---
 
 **@ridiculousdino** asked:
 > Tell me your favorite tswift song and album please and thank you

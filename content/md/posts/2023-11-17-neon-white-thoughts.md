@@ -1,7 +1,12 @@
-{:title "neon white thoughts"
- :date "2023-11-17T17:08:37.631Z"
- :tags ["cohost mirror" "neon white" "noahtheduke reviews"]
- :cohost-url "3565265-got-to-the-last-batc"}
+---
+title: neon white thoughts
+date: '2023-11-17T17:08:37.631Z'
+tags:
+  - cohost mirror
+  - neon white
+  - noahtheduke reviews
+cohost-url: 3565265-got-to-the-last-batc
+---
 
 got to the last batch of stages in neon white and these might be the best yet. spoilers below
 

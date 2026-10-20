@@ -1,7 +1,14 @@
-{:title "how do you come up with ideas for games lol"
- :date "2023-09-14T03:46:37.406Z"
- :tags ["cohost mirror" "game dev" "gamedev" "game development" "lazyweb"]
- :cohost-url "2837714-how-do-you-come-up-w"}
+---
+title: how do you come up with ideas for games lol
+date: '2023-09-14T03:46:37.406Z'
+tags:
+  - cohost mirror
+  - game dev
+  - gamedev
+  - game development
+  - lazyweb
+cohost-url: 2837714-how-do-you-come-up-w
+---
 
 i do _a lot_ of hobby programming. it's my primary hobby. i spend a lot of time writing code for fun, but it's quote unquote boring stuff like tinkering with an alternative test framework or building a linter or fixing a bug in a library i use.
 

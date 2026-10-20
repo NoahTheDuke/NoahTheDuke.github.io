@@ -1,7 +1,17 @@
-{:title "Mental Math Pseudo Random Number Generation"
- :date "2024-04-10T04:39:42.722Z"
- :tags ["cohost mirror" "mental math" "pseudo random number generation" "pseudo rng" "prng" "rng" "random number generation" "programming"]
- :cohost-url "5500275-mental-math-pseudo-r"}
+---
+title: Mental Math Pseudo Random Number Generation
+date: '2024-04-10T04:39:42.722Z'
+tags:
+  - cohost mirror
+  - mental math
+  - pseudo random number generation
+  - pseudo rng
+  - prng
+  - rng
+  - random number generation
+  - programming
+cohost-url: 5500275-mental-math-pseudo-r
+---
 
 \> given a large prime p, a multiplier m, and a seed number x_0, a Lehmer PRNG can be defined by the recursive function x_{n+1} = m \cdot x_n \mod p.
 

@@ -1,7 +1,15 @@
-{:title "early thoughts on vampire"
- :date "2023-07-18T15:59:59.138Z"
- :tags ["cohost mirror" "noahtheduke asks" "Asks" "olivia rodrigo" "olivia rodrigo - vampire" "lorde"]
- :cohost-url "2100053-vampire-https-ww"}
+---
+title: early thoughts on vampire
+date: '2023-07-18T15:59:59.138Z'
+tags:
+  - cohost mirror
+  - noahtheduke asks
+  - Asks
+  - olivia rodrigo
+  - olivia rodrigo - vampire
+  - lorde
+cohost-url: 2100053-vampire-https-ww
+---
 
 **@ridiculousdino** asked:
 > Need a vibe check on the new olivia rodrigo song

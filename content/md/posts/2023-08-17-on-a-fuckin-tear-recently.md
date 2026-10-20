@@ -1,7 +1,14 @@
-{:title "on a fuckin tear recently"
- :date "2023-08-17T03:28:46.449Z"
- :tags ["cohost mirror" "adhd" "adhdchosting" "programming" "programming as art"]
- :cohost-url "2515311-on-a-fuckin-tear-rec"}
+---
+title: on a fuckin tear recently
+date: '2023-08-17T03:28:46.449Z'
+tags:
+  - cohost mirror
+  - adhd
+  - adhdchosting
+  - programming
+  - programming as art
+cohost-url: 2515311-on-a-fuckin-tear-rec
+---
 
 when it comes to hobby programming, i don't believe in pushing myself to work on stuff i don't feel like working on. i just lean as far into my [strange desire](https://www.youtube.com/watch?v=HgQCLh9lQ1Y) as i have energy, and go where my curiosity leads.
 

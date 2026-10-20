@@ -1,7 +1,13 @@
-{:title "vivo thoughts"
- :date "2023-04-02T15:04:34.719Z"
- :tags ["cohost mirror" "Movie Review" "Vivo (2021)" "noahtheduke reviews"]
- :cohost-url "1272146-watched-vivo-again-w"}
+---
+title: vivo thoughts
+date: '2023-04-02T15:04:34.719Z'
+tags:
+  - cohost mirror
+  - Movie Review
+  - Vivo (2021)
+  - noahtheduke reviews
+cohost-url: 1272146-watched-vivo-again-w
+---
 
 ![Still from Vivo of 2d animation sequence. Two characters are dancing together](/img/cohost-mirror/1272146-watched-vivo-again-w/IMG_4440.jpeg)
 

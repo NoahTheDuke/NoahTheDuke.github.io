@@ -1,6 +1,10 @@
-{:title "Jedi Survivor Rambles"
- :date "2025-07-25T09:10"
- :tags ["rant" "amgry"]}
+---
+title: Jedi Survivor Rambles
+date: 2025-07-25T09:10
+tags:
+  - rant
+  - amgry
+---
 
 spoiler warning for the ending of jedi survivor.
 

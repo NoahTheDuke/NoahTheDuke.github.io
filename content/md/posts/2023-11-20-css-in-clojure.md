@@ -1,7 +1,12 @@
-{:title "css in clojure"
- :date "2023-11-20T15:41:05.551Z"
- :tags ["cohost mirror" "jinteki.net" "noahtheduke asks"]
- :cohost-url "3598833-i-think-garden-is-su"}
+---
+title: css in clojure
+date: '2023-11-20T15:41:05.551Z'
+tags:
+  - cohost mirror
+  - jinteki.net
+  - noahtheduke asks
+cohost-url: 3598833-i-think-garden-is-su
+---
 
 **@voidmoth** asked:
 > do you have a preferred method for generating/integrating CSS in Clojurescript projects (via Garden, CLJSS, or whatever else) or do you just end up writing CSS normally?

@@ -1,7 +1,12 @@
-{:title "7 years together and 5 years married"
- :date "2024-01-11T16:40:41.306Z"
- :tags ["cohost mirror" "we did it joe" "wifeposting"]
- :cohost-url "4146323-7-years-together-and"}
+---
+title: 7 years together and 5 years married
+date: '2024-01-11T16:40:41.306Z'
+tags:
+  - cohost mirror
+  - we did it joe
+  - wifeposting
+cohost-url: 4146323-7-years-together-and
+---
 
 ![two humans standing at the bottom of a grimy staircase. the woman on the left has green and brown hair, the man on the right has dark hair and a greying beard.](/img/cohost-mirror/4146323-7-years-together-and/image.png)
 

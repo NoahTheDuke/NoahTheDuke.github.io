@@ -1,7 +1,11 @@
-{:title "Clojure 1.12 released!!!"
- :date "2024-09-05T20:25:52.727Z"
- :tags ["cohost mirror" "clojure"]
- :cohost-url "7564321-clojure-1-12-release"}
+---
+title: Clojure 1.12 released!!!
+date: '2024-09-05T20:25:52.727Z'
+tags:
+  - cohost mirror
+  - clojure
+cohost-url: 7564321-clojure-1-12-release
+---
 
 https://clojure.org/news/2024/09/05/clojure-1-12-0
 

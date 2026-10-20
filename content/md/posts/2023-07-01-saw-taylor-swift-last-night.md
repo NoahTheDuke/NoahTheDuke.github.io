@@ -1,7 +1,14 @@
-{:title "Saw Taylor Swift last night"
- :date "2023-07-01T13:43:41.475Z"
- :tags ["cohost mirror" "concert" "Cincinnati" "taylor swift" "Taylor Swift concert"]
- :cohost-url "1798662-saw-taylor-swift-las"}
+---
+title: Saw Taylor Swift last night
+date: '2023-07-01T13:43:41.475Z'
+tags:
+  - cohost mirror
+  - concert
+  - Cincinnati
+  - taylor swift
+  - Taylor Swift concert
+cohost-url: 1798662-saw-taylor-swift-las
+---
 
 ![Taylor Swift concert, performing a song off Red](/img/cohost-mirror/1798662-saw-taylor-swift-las/IMG_5560.jpeg)
 

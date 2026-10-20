@@ -1,7 +1,15 @@
-{:title "doom spiraling"
- :date "2023-07-06T20:19:06.696Z"
- :tags ["cohost mirror" "adhd" "adhd brain nonsense" "professional programming" "programming as vocation" "adhd posting"]
- :cohost-url "1912882-doom-spiraling"}
+---
+title: doom spiraling
+date: '2023-07-06T20:19:06.696Z'
+tags:
+  - cohost mirror
+  - adhd
+  - adhd brain nonsense
+  - professional programming
+  - programming as vocation
+  - adhd posting
+cohost-url: 1912882-doom-spiraling
+---
 
 instead of doing work, i'm chosting because i'm at a point where i don't know that i can reasonably do my job. i've been here over a year and i still can't work tickets without significant help and multiple missed deadlines. knowledge about how the business works or what it does rolls off my mind like water off a duck's back.
 

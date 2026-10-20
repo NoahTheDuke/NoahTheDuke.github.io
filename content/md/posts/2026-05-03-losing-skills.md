@@ -1,7 +1,10 @@
-{:title "Losing Skills"
- :date "2026-05-03T20:59"
- :at-uri "at://did:plc:qbidoe2gpkfelnurqod37ikr/app.bsky.feed.post/3mkyk35mkgc2n"
- :tags ["vibecoding"]}
+---
+title: Losing Skills
+date: 2026-05-03T20:59
+at-uri: at://did:plc:qbidoe2gpkfelnurqod37ikr/app.bsky.feed.post/3mkyk35mkgc2n
+tags:
+  - vibecoding
+---
 
 For the last year, I've been driving a 2025 Toyota Sienna, a boat of a minivan. It's got all sorts of fancy features that I won't get into right now, but the big one that bothers me the most is a "lane drift" sensor that makes the steering wheel vibrate if you start to leave your lane (without a turn signal) and will actually turn the wheel/redirect the vehicle for you if you drift too far. Ostensibly, this is a great feature, as it helps you notice a Very Bad Thing:tm:, but I've found that it's had the opposite effect on me.
 

@@ -1,7 +1,16 @@
-{:title "tears of the kingdom feelings"
- :date "2023-07-12T13:48:56.089Z"
- :tags ["cohost mirror" "The Legend of Zelda: Tears of the Kingdom" "the legend of zelda tears of the kingdom" "tears of the kingdom" "TotK" "Daryl Talks Games" "noahtheduke reviews"]
- :cohost-url "2012699-tears-of-the-kingdom"}
+---
+title: tears of the kingdom feelings
+date: '2023-07-12T13:48:56.089Z'
+tags:
+  - cohost mirror
+  - 'The Legend of Zelda: Tears of the Kingdom'
+  - the legend of zelda tears of the kingdom
+  - tears of the kingdom
+  - TotK
+  - Daryl Talks Games
+  - noahtheduke reviews
+cohost-url: 2012699-tears-of-the-kingdom
+---
 
 sometimes i feel like i play a game and i get it, i just don't enjoy it so i put it down (uncharted series). or i get to a point where the game stops being fun for a variety of reasons (elden ring). other times tho, i spend the whole time going "i don't get it, what's the point, where's the fun?"
 

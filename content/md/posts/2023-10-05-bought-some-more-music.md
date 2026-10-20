@@ -1,7 +1,31 @@
-{:title "bought some more music"
- :date "2023-10-05T01:07:48.351Z"
- :tags ["cohost mirror" "bandcamp" "fuck spotify" "bandcamp recs" "wallsocket" "underscores" "transgressive (band)" "fugitive (band)" "spinebreaker" "healthyliving" "woe (band)" "oromet" "horrendous (band)" "tomb mold" "black metal" "thrash metal" "Crossover" "doom metal" "avant-garde metal" "blackbraid (band)" "ashenspire" "metal"]
- :cohost-url "3070906-bought-some-more-mus"}
+---
+title: bought some more music
+date: '2023-10-05T01:07:48.351Z'
+tags:
+  - cohost mirror
+  - bandcamp
+  - fuck spotify
+  - bandcamp recs
+  - wallsocket
+  - underscores
+  - transgressive (band)
+  - fugitive (band)
+  - spinebreaker
+  - healthyliving
+  - woe (band)
+  - oromet
+  - horrendous (band)
+  - tomb mold
+  - black metal
+  - thrash metal
+  - Crossover
+  - doom metal
+  - avant-garde metal
+  - blackbraid (band)
+  - ashenspire
+  - metal
+cohost-url: 3070906-bought-some-more-mus
+---
 
 https://oromet.bandcamp.com/track/familiar-spirits?_layout=standard&_theme=dar
 

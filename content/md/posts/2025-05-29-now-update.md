@@ -1,6 +1,9 @@
-{:title "Now update"
- :date "2025-05-29T09:24"
- :tags ["now update"]}
+---
+title: Now update
+date: 2025-05-29T09:24
+tags:
+  - now update
+---
 
 I began to update the [Now](/now) page and realized that because it's ephemeral, I should put all of my transient thoughts in a post first.
 

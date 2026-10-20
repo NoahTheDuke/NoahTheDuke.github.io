@@ -1,7 +1,12 @@
-{:title "If you’re gonna criticize something, don’t make it look cool!"
- :date "2023-09-19T22:57:07.929Z"
- :tags ["cohost mirror" "Warbringer" "thrash metal"]
- :cohost-url "2901583-if-you-re-gonna-crit"}
+---
+title: If you’re gonna criticize something, don’t make it look cool!
+date: '2023-09-19T22:57:07.929Z'
+tags:
+  - cohost mirror
+  - Warbringer
+  - thrash metal
+cohost-url: 2901583-if-you-re-gonna-crit
+---
 
 One of my favorite thrash bands is Warbringer. Their lyrics are generally anti-war but they fall into the trap of accidentally glorifying it . The same way full metal jacket is anti-war but it was used as a recruiting tool because soldiers love it.
 

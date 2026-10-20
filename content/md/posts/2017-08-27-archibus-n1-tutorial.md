@@ -1,6 +1,12 @@
-{:title "Archibus and the SELECT N+1 Problem"
- :date "2017-08-27T12:51"
- :tags ["archibus" "javascript" "programming" "tutorial"]}
+---
+title: Archibus and the SELECT N+1 Problem
+date: 2017-08-27T12:51
+tags:
+  - archibus
+  - javascript
+  - programming
+  - tutorial
+---
 
 This past week, I had the opportunity to contribute to an existing custom report built for a client. It loaded incredibly slowly, so in between working on the contribution I had been tasked with, I also took it upon myself to speed it up. I think it's time to share what I've learned.
 

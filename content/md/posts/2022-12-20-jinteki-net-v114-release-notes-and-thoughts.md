@@ -1,7 +1,14 @@
-{:title "jinteki.net v114 release notes and thoughts"
- :date "2022-12-20T21:12:01.915Z"
- :tags ["cohost mirror" "jinteki.net" "jnet" "netrunner" "clojure"]
- :cohost-url "666939-jinteki-net-v114-rel"}
+---
+title: jinteki.net v114 release notes and thoughts
+date: '2022-12-20T21:12:01.915Z'
+tags:
+  - cohost mirror
+  - jinteki.net
+  - jnet
+  - netrunner
+  - clojure
+cohost-url: 666939-jinteki-net-v114-rel
+---
 
 In [release v114](https://github.com/mtgred/netrunner/releases/tag/114), Francesco Pellegrini fixed a whole mess of bugs, added `set-mark` command, and added some tests to cover bug reports we couldn't reproduce. I added compiling css and cljs in Github Actions, to catch basic compiler errors.
 

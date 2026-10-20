@@ -1,7 +1,17 @@
-{:title "more Blasphemous thoughts"
- :date "2024-09-24T00:25:13.696Z"
- :tags ["cohost mirror" "blasphemous" "animal well" "dark souls" "quest logs" "quest markers" "Elden Ring" "noahtheduke asks"]
- :cohost-url "7816531-i-ve-been-playing-bl"}
+---
+title: more Blasphemous thoughts
+date: '2024-09-24T00:25:13.696Z'
+tags:
+  - cohost mirror
+  - blasphemous
+  - animal well
+  - dark souls
+  - quest logs
+  - quest markers
+  - Elden Ring
+  - noahtheduke asks
+cohost-url: 7816531-i-ve-been-playing-bl
+---
 
 i'm still playing blasphemous, trying to finish it, and it's a grind in part because there's no quest markers or log or anything. i don't remember characters, i don't know what i'm supposed to be doing, i'm just going around trying to unlock new portions of the map, and exploring old stuff.
 

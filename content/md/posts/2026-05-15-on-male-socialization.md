@@ -1,7 +1,11 @@
-{:title "On 'Male Socialization'"
- :date "2026-05-15T16:26"
- :at-uri "at://did:plc:qbidoe2gpkfelnurqod37ikr/app.bsky.feed.post/3mlu74wihik27"
- :tags ["gender" "bluesky thread"]}
+---
+title: On 'Male Socialization'
+date: 2026-05-15T16:26
+at-uri: at://did:plc:qbidoe2gpkfelnurqod37ikr/app.bsky.feed.post/3mlu74wihik27
+tags:
+  - gender
+  - bluesky thread
+---
 
 there's "male socialization" discourse on bluesky, and it has been making me reevaluate my life and my experiences of malehood. i've wondered about that idea before, didn't come up with a satisfying answer so i let it be. but after reading lots of posts, i've been reconsidering my own experiences, the ways i was inculcated and hazed and rejected by men in my life, mostly found wanting or lacking or not measuring up.
 

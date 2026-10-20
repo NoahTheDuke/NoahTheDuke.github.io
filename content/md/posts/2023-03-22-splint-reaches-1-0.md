@@ -1,7 +1,16 @@
-{:title "splint reaches 1.0"
- :date "2023-03-22T16:27:07.412Z"
- :tags ["cohost mirror" "splint" "linters" "clojure" "linter" "programming" "devblog"]
- :cohost-url "1216432-splint-reaches-1-0"}
+---
+title: splint reaches 1.0
+date: '2023-03-22T16:27:07.412Z'
+tags:
+  - cohost mirror
+  - splint
+  - linters
+  - clojure
+  - linter
+  - programming
+  - devblog
+cohost-url: 1216432-splint-reaches-1-0
+---
 
 i don't like waiting around for version 1.0. [0ver](https://0ver.org/) is funny but annoying. BE NOT AFRAID. so i've released [splint 1.0](https://cljdoc.org/d/io.github.noahtheduke/splint/1.0.1/doc/home).
 

@@ -1,7 +1,15 @@
-{:title "Full Parhelion implementation on jinteki.net"
- :date "2022-12-09T21:21:00.931Z"
- :tags ["cohost mirror" "netrunner" "android: netrunner" "android netrunner" "jinteki.net" "jnet"]
- :cohost-url "580461-full-parhelion-imple"}
+---
+title: Full Parhelion implementation on jinteki.net
+date: '2022-12-09T21:21:00.931Z'
+tags:
+  - cohost mirror
+  - netrunner
+  - 'android: netrunner'
+  - android netrunner
+  - jinteki.net
+  - jnet
+cohost-url: 580461-full-parhelion-imple
+---
 
 I have just released Null Signal Games' newest set [Parhelion](https://nullsignal.games/blog/parhelion-is-out-now/) on [jinteki.net](https://www.jinteki.net/). ([Release notes here.](https://github.com/mtgred/netrunner/releases/tag/112))
 

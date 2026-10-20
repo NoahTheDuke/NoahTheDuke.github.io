@@ -1,7 +1,13 @@
-{:title "looking for a live action web series"
- :date "2023-08-28T02:38:42.912Z"
- :tags ["cohost mirror" "lazyweb" "tip of my tongue" "someone please help me"]
- :cohost-url "2646635-looking-for-a-live-a"}
+---
+title: looking for a live action web series
+date: '2023-08-28T02:38:42.912Z'
+tags:
+  - cohost mirror
+  - lazyweb
+  - tip of my tongue
+  - someone please help me
+cohost-url: 2646635-looking-for-a-live-a
+---
 
 roughly 20 years ago, i watched a live action web series, a "tv show" but made by nerds and uploaded to the internet in mp4 or quicktime or whatever format we were using back then. i'm searching for it now and _cannot_ find it (cf popular post about how google sucks now).
 

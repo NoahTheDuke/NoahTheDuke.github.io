@@ -1,6 +1,11 @@
-{:title "From Elegance to Speed, with Clojure"
- :date "2021-10-02T22:33"
- :tags ["clojure" "personal" "programming"]}
+---
+title: From Elegance to Speed, with Clojure
+date: 2021-10-02T22:33
+tags:
+  - clojure
+  - personal
+  - programming
+---
 
 I recently came across a [blogpost](http://johnj.com/from-elegance-to-speed.html) about rewriting an "elegant" function in Clojure into an optimized function in Common Lisp.
 

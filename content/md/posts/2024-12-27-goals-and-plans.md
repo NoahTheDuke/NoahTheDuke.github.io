@@ -1,6 +1,9 @@
-{:title "Goals and plans for the new year"
- :date "2024-12-27T21:09"
- :tags ["year in review"]}
+---
+title: Goals and plans for the new year
+date: 2024-12-27T21:09
+tags:
+  - year in review
+---
 
 I have some plans for the new year that I'd like to put to paper as a small measure of accountability and internal pressure to follow through. I don't expect to do all of these, all goals are transitory and cannot account for future changes, but I do plan to hold these in mind as I move through the year.
 

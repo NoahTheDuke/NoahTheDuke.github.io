@@ -1,7 +1,15 @@
-{:title "jinteki.net has full implementation of Rebellion Without Rehearsal"
- :date "2024-03-19T02:10:32.162Z"
- :tags ["cohost mirror" "jinteki.net" "netrunner" "netrunner scoops" "rebellion without rehearsal" "android: netrunner"]
- :cohost-url "5158900-jinteki-net-has-full"}
+---
+title: jinteki.net has full implementation of Rebellion Without Rehearsal
+date: '2024-03-19T02:10:32.162Z'
+tags:
+  - cohost mirror
+  - jinteki.net
+  - netrunner
+  - netrunner scoops
+  - rebellion without rehearsal
+  - 'android: netrunner'
+cohost-url: 5158900-jinteki-net-has-full
+---
 
 [Full release notes](https://github.com/mtgred/netrunner/releases/tag/123):
 - Prevent format filter dropdown from closing when toggling formats by butzopower

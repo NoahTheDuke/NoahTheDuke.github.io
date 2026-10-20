@@ -1,7 +1,14 @@
-{:title "went to a concert and then bought some music"
- :date "2023-06-08T14:14:00.155Z"
- :tags ["cohost mirror" "bandcamp" "fuck spotify" "yob" "cave in"]
- :cohost-url "1645249-went-to-a-concert-an"}
+---
+title: went to a concert and then bought some music
+date: '2023-06-08T14:14:00.155Z'
+tags:
+  - cohost mirror
+  - bandcamp
+  - fuck spotify
+  - yob
+  - cave in
+cohost-url: 1645249-went-to-a-concert-an
+---
 
 ![8 yob albums and 1 cave in album](/img/cohost-mirror/1645249-went-to-a-concert-an/topsters2.png)
 

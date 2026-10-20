@@ -1,7 +1,20 @@
-{:title "more reign 2e thoughts: there's no gm chapter"
- :date "2024-03-15T15:20:50.290Z"
- :tags ["cohost mirror" "Reign" "reign 2e" "Greg Stolze" "indie rpg" "indie rpgs" "indie ttrpg" "indie ttrpgs" "TTRPG" "ttrpgs" "noahtheduke reviews"]
- :cohost-url "5094613-more-reign-2e-though"}
+---
+title: 'more reign 2e thoughts: there''s no gm chapter'
+date: '2024-03-15T15:20:50.290Z'
+tags:
+  - cohost mirror
+  - Reign
+  - reign 2e
+  - Greg Stolze
+  - indie rpg
+  - indie rpgs
+  - indie ttrpg
+  - indie ttrpgs
+  - TTRPG
+  - ttrpgs
+  - noahtheduke reviews
+cohost-url: 5094613-more-reign-2e-though
+---
 
 okay, so i just skimmed the rules book again and there's no GM chapter. i glanced through the realms book and there's no GM chapter there either. There's a chapter with 3 example scenarios, but no thoughts or ideas about how to run a game, no "enemies and adversaries", no "how to build a campaign", no "gm principles", no agenda, no vibes, nothing.
 

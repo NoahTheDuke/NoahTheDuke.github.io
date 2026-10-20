@@ -1,7 +1,15 @@
-{:title "i like ocaml"
- :date "2023-07-07T00:33:44.088Z"
- :tags ["cohost mirror" "noahtheduke asks" "programming" "functional programming" "haskell" "ocaml"]
- :cohost-url "1918803-ocaml-it-s-like-has"}
+---
+title: i like ocaml
+date: '2023-07-07T00:33:44.088Z'
+tags:
+  - cohost mirror
+  - noahtheduke asks
+  - programming
+  - functional programming
+  - haskell
+  - ocaml
+cohost-url: 1918803-ocaml-it-s-like-has
+---
 
 **@prophet** asked:
 > What is *your* favorite programming language you don't know? :)

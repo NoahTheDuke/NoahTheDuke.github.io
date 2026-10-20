@@ -1,7 +1,13 @@
-{:title "Disenchantment"
- :date "2024-06-03T03:50:43.207Z"
- :tags ["cohost mirror" "Disenchantment" "bean and mora" "noahtheduke reviews"]
- :cohost-url "6240979-disenchantment"}
+---
+title: Disenchantment
+date: '2024-06-03T03:50:43.207Z'
+tags:
+  - cohost mirror
+  - Disenchantment
+  - bean and mora
+  - noahtheduke reviews
+cohost-url: 6240979-disenchantment
+---
 
 watched the final season after taking a year off. what a good fuckin show.
 

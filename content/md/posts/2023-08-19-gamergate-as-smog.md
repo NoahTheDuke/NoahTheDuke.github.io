@@ -1,7 +1,15 @@
-{:title "gamergate as smog"
- :date "2023-08-19T17:51:41.384Z"
- :tags ["cohost mirror" "gamergate" "games journalism" "video games journalism" "games criticism" "video games criticism"]
- :cohost-url "2546608-cw-gamergate"}
+---
+title: gamergate as smog
+date: '2023-08-19T17:51:41.384Z'
+tags:
+  - cohost mirror
+  - gamergate
+  - games journalism
+  - video games journalism
+  - games criticism
+  - video games criticism
+cohost-url: 2546608-cw-gamergate
+---
 
 I hate that gamergate someone buried itself into our understanding of games journalism and games criticism. Frequently I find ostensibly left-leaning (or explicitly leftist) groups and communities who will parrot gg talking points about game reviews or criticism without a hint of self-awareness and then react angrily when called out about it.
 

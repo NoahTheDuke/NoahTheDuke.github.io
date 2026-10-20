@@ -1,7 +1,12 @@
-{:title "i don't know how to be online friends with people"
- :date "2023-10-25T15:02:56.203Z"
- :tags ["cohost mirror" "Friendship" "friendship is hard"]
- :cohost-url "3296132-i-don-t-know-how-to"}
+---
+title: i don't know how to be online friends with people
+date: '2023-10-25T15:02:56.203Z'
+tags:
+  - cohost mirror
+  - Friendship
+  - friendship is hard
+cohost-url: 3296132-i-don-t-know-how-to
+---
 
 i have a number of friends i used to see semi-regularly (at least once a year) that was helped by us both being active on facebook. now none of us are very active on facebook and i had some kids and everything is harder to schedule.
 

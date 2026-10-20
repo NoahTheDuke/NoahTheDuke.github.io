@@ -1,7 +1,13 @@
-{:title "Clojure Linters"
- :date "2023-02-22T04:35:02.665Z"
- :tags ["cohost mirror" "clojure" "linting" "splint"]
- :cohost-url "1054973-clojure-linters"}
+---
+title: Clojure Linters
+date: '2023-02-22T04:35:02.665Z'
+tags:
+  - cohost mirror
+  - clojure
+  - linting
+  - splint
+cohost-url: 1054973-clojure-linters
+---
 
 Clojure’s best linter, [clj-kondo][1], is pretty dang great. It covers a lot of ground: checks syntax, provides light type checking, tracks variables and usage, an entire hook system for linting/reading custom macros statically (without code execution), etc. it’s quite extensive.
 

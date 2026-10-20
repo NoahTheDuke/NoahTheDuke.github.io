@@ -1,7 +1,11 @@
-{:title "miscarriage"
- :date "2024-04-16T21:22:57.009Z"
- :tags ["cohost mirror" "wifeposting"]
- :cohost-url "5592870-cw-miscarriage"}
+---
+title: miscarriage
+date: '2024-04-16T21:22:57.009Z'
+tags:
+  - cohost mirror
+  - wifeposting
+cohost-url: 5592870-cw-miscarriage
+---
 
 my wife is experiencing a miscarriage right now. all either of us can do when we're alone together is hug and cry.
 

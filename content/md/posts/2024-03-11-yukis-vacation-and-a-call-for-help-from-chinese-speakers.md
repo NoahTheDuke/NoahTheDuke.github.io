@@ -1,7 +1,21 @@
-{:title "\"Yuki's Vacation\" and a call for help from chinese speakers"
- :date "2024-03-11T16:51:09.349Z"
- :tags ["cohost mirror" "james silva" "ska studios" "totally screwed software" "The Dishwasher" "Salt and Sanctuary" "lazyweb" "chinese language" "Google Translate" "visual basic" "visual basic 6" "i'm willing to pay real money if you can help me relive my childhood"]
- :cohost-url "5018957-yuki-s-vacation-an"}
+---
+title: '"Yuki''s Vacation" and a call for help from chinese speakers'
+date: '2024-03-11T16:51:09.349Z'
+tags:
+  - cohost mirror
+  - james silva
+  - ska studios
+  - totally screwed software
+  - The Dishwasher
+  - Salt and Sanctuary
+  - lazyweb
+  - chinese language
+  - Google Translate
+  - visual basic
+  - visual basic 6
+  - i'm willing to pay real money if you can help me relive my childhood
+cohost-url: 5018957-yuki-s-vacation-an
+---
 
 There's an abandoned freeware game made by James Silva (Ska Studios, The Dishwasher, Salt and Sanctuary) in 2002 called [Yuki's Vacation](https://www.mobygames.com/game/31152/yukis-vacation/). He made it in Visual Basic 6 after [Zombie Smasher X](https://www.mobygames.com/game/28374/zombie-smashers-x/) as a way of showing how he made games. I was already obsessed with Zombie Smasher X ([just look at this gloriousness](https://www.youtube.com/watch?v=sEbGqOB2vaU)), so getting access to the source code was a revelation.
 

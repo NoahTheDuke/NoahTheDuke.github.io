@@ -1,7 +1,13 @@
-{:title "Finished death stranding"
- :date "2023-05-13T13:13:24.523Z"
- :tags ["cohost mirror" "death stranding" "death stranding director’s cut" "spoilers"]
- :cohost-url "1491959-finished-death-stran"}
+---
+title: Finished death stranding
+date: '2023-05-13T13:13:24.523Z'
+tags:
+  - cohost mirror
+  - death stranding
+  - death stranding director’s cut
+  - spoilers
+cohost-url: 1491959-finished-death-stran
+---
 
 Spoilers under the fold
 

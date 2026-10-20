@@ -1,7 +1,15 @@
-{:title "hot take: spellcheck is bad"
- :date "2024-03-14T14:36:49.772Z"
- :tags ["cohost mirror" "spellcheck is bad" "fuck spellcheck" "also fuck computers" "immiserate" "amgry"]
- :cohost-url "5075781-hot-take-spellcheck"}
+---
+title: 'hot take: spellcheck is bad'
+date: '2024-03-14T14:36:49.772Z'
+tags:
+  - cohost mirror
+  - spellcheck is bad
+  - fuck spellcheck
+  - also fuck computers
+  - immiserate
+  - amgry
+cohost-url: 5075781-hot-take-spellcheck
+---
 
 i tried to use the word ["immiserate"](https://www.merriam-webster.com/dictionary/immiseration) earlier and firefox's spellchecker yelled at me. this is not a technical or archaic word. and yet it doesn't appear in the "top x words" dictionary that's included by default in firefox.
 

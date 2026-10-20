@@ -1,7 +1,10 @@
-{:title "whomst can i talk to?"
- :date "2023-03-22T13:28:15.209Z"
- :tags ["cohost mirror"]
- :cohost-url "1215841-whomst-can-i-talk-to"}
+---
+title: whomst can i talk to?
+date: '2023-03-22T13:28:15.209Z'
+tags:
+  - cohost mirror
+cohost-url: 1215841-whomst-can-i-talk-to
+---
 
 sometimes, i have a conflict with my wife and i'm unsure if i did the "right thing", if i acted in a way that's consistent with my values and my ideal self, and if there's space between our shared expectations that i can either stand firm and say, "i acted in an acceptable manner, it's not on me to manage this" or i can bend and say, "i acted inappropriately, i'm sorry, i'll try to do better in the future."
 

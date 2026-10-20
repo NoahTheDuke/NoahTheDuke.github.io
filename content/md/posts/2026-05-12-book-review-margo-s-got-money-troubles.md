@@ -1,7 +1,10 @@
-{:title "Book Review: Margo's Got Money Troubles"
- :date "2026-05-12T11:45"
- :at-uri "at://did:plc:qbidoe2gpkfelnurqod37ikr/app.bsky.feed.post/3mlo5wn3df227"
- :tags ["book review"]}
+---
+title: 'Book Review: Margo''s Got Money Troubles'
+date: 2026-05-12T11:45
+at-uri: at://did:plc:qbidoe2gpkfelnurqod37ikr/app.bsky.feed.post/3mlo5wn3df227
+tags:
+  - book review
+---
 
 Sometimes, the prose felt inspired, marvelous and deft, and I luxuriated in it. Rufi made me laugh, made me worry, peppered little insights about humanity and art in here. And then the prose would shift into a didactic passage, like an informational segment on PBS, and I would recoil like a spider jumped on my face.
 

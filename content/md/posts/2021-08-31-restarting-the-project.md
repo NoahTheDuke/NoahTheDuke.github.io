@@ -1,6 +1,11 @@
-{:title "Restarting the project"
- :date "2021-08-31T12:01"
- :tags ["clojure" "personal" "programming"]}
+---
+title: Restarting the project
+date: 2021-08-31T12:01
+tags:
+  - clojure
+  - personal
+  - programming
+---
 
 I started writing a little blog in the summer of 2017, when I had really hit a local maxima happiness. A year into my software career, feeling medium good about Avuity, feeling very good about May, it seemed right to talk about it, even privately. I'm very glad I wrote all those things down. It makes me quite happy to read [Marriage](/posts/2017-07-30-marriage/) and see the seeds of good decisions, even if the execution took a lot of work.
 

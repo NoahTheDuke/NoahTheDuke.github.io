@@ -1,7 +1,10 @@
-{:title "looking for a new workout program"
- :date "2026-10-15T08:11"
- :at-uri "https://bsky.app/profile/noahbogart.com/post/3mxw3cj7w722b"
- :tags ["working out"]}
+---
+title: looking for a new workout program
+date: 2026-10-15T08:11
+at-uri: https://bsky.app/profile/noahbogart.com/post/3mxw3cj7w722b
+tags:
+  - working out
+---
 
 i am pretty strong for a normie, and pretty weak for consistent lifters. that puts me in an odd spot when looking at new workout programs.
 

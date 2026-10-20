@@ -1,7 +1,13 @@
-{:title "what is a type?"
- :date "2023-06-30T13:44:23.025Z"
- :tags ["cohost mirror" "programming" "functional programming" "noahtheduke asks"]
- :cohost-url "1789527-in-increasing-order"}
+---
+title: what is a type?
+date: '2023-06-30T13:44:23.025Z'
+tags:
+  - cohost mirror
+  - programming
+  - functional programming
+  - noahtheduke asks
+cohost-url: 1789527-in-increasing-order
+---
 
 **@wiredaemon** asked:
 > What is a type in programming languages? Hot take answers only!

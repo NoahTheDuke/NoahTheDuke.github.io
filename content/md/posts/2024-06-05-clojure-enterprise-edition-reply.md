@@ -1,7 +1,13 @@
-{:title "Clojure: Enterprise Edition reply"
- :date "2024-06-05T19:18:59.939Z"
- :tags ["cohost mirror" "clojure" "dynamic typing" "lisp"]
- :cohost-url "6286441-clojure-enterprise"}
+---
+title: 'Clojure: Enterprise Edition reply'
+date: '2024-06-05T19:18:59.939Z'
+tags:
+  - cohost mirror
+  - clojure
+  - dynamic typing
+  - lisp
+cohost-url: 6286441-clojure-enterprise
+---
 
 (I wrote the below in a [comment on the original post](https://cohost.org/chreke/post/6283639-clojure-enterprise#comment-99e8e159-2d3d-40e6-9486-de21cabea332))
 

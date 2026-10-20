@@ -1,7 +1,16 @@
-{:title "Split devblog: globs"
- :date "2023-07-26T13:57:52.805Z"
- :tags ["cohost mirror" "splint" "clojure" "programming" "functional programming" "devblog" "Java"]
- :cohost-url "2212320-i-ve-been-putting-of"}
+---
+title: 'Split devblog: globs'
+date: '2023-07-26T13:57:52.805Z'
+tags:
+  - cohost mirror
+  - splint
+  - clojure
+  - programming
+  - functional programming
+  - devblog
+  - Java
+cohost-url: 2212320-i-ve-been-putting-of
+---
 
 I’ve been putting off implementing a feature in Splint for months because I worried it would be annoying to write, but I needed it yesterday so I took a stab at it and it basically went as smoothly as I could hope.
 

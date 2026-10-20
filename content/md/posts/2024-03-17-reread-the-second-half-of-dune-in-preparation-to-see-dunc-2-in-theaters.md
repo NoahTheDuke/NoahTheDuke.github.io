@@ -1,7 +1,16 @@
-{:title "Reread the second half of Dune in preparation to see DUNC 2 in theaters"
- :date "2024-03-17T19:30:06.685Z"
- :tags ["cohost mirror" "Dune" "Dune 2" "DUNC" "Dune (2021)" "Dune (book)" "wifeposting"]
- :cohost-url "5134301-reread-the-second-ha"}
+---
+title: Reread the second half of Dune in preparation to see DUNC 2 in theaters
+date: '2024-03-17T19:30:06.685Z'
+tags:
+  - cohost mirror
+  - Dune
+  - Dune 2
+  - DUNC
+  - Dune (2021)
+  - Dune (book)
+  - wifeposting
+cohost-url: 5134301-reread-the-second-ha
+---
 
 This book is fucking sick and it’s honestly disappointing to see how little of the machinations and politicking of included in the movies. We’ll see how much that changes in D2 but DUNC felt like the barest smatterings of dialogue and context so we could have some beautiful visuals.
 

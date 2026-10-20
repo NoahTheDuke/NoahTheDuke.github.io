@@ -1,7 +1,12 @@
-{:title "jumbled sexuality thoughts"
- :date "2023-09-11T03:47:28.024Z"
- :tags ["cohost mirror" "sex" "sexuality"]
- :cohost-url "2801315-jumbled-sexuality-th"}
+---
+title: jumbled sexuality thoughts
+date: '2023-09-11T03:47:28.024Z'
+tags:
+  - cohost mirror
+  - sex
+  - sexuality
+cohost-url: 2801315-jumbled-sexuality-th
+---
 
 up front: i gotta pee real bad and im falling asleep on the couch but i had this desire to write some thoughts down and i wanna get them out before starting the work week and forgetting everything until next friday so excuse me. this is gonna be rambly and all over the place.
 

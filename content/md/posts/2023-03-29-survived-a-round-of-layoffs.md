@@ -1,7 +1,19 @@
-{:title "survived a round of layoffs"
- :date "2023-03-29T13:37:37.405Z"
- :tags ["cohost mirror" "capitalism" "Anti-capitalism" "anti-capitalist" "Capitalism ruins everything" "fuck capitalism" "fuck venture firms" "fuck venture capital" "fuck bosses" "i'm so ticked off that i'm molting"]
- :cohost-url "1249274-company-fired-some-o"}
+---
+title: survived a round of layoffs
+date: '2023-03-29T13:37:37.405Z'
+tags:
+  - cohost mirror
+  - capitalism
+  - Anti-capitalism
+  - anti-capitalist
+  - Capitalism ruins everything
+  - fuck capitalism
+  - fuck venture firms
+  - fuck venture capital
+  - fuck bosses
+  - i'm so ticked off that i'm molting
+cohost-url: 1249274-company-fired-some-o
+---
 
 company fired some of my coworkers. i somehow survived; i suspect because i'm cheaper than them. doesn't feel so good.
 

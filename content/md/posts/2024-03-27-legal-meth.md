@@ -1,7 +1,18 @@
-{:title "Legal meth"
- :date "2024-03-27T13:05:40.750Z"
- :tags ["cohost mirror" "Adderall" "vyvanse" "mixed methamphetamine salts" "legal meth" "adhd" "adhdchosting" "jinteki.net" "jnet"]
- :cohost-url "5295779-legal-meth"}
+---
+title: Legal meth
+date: '2024-03-27T13:05:40.750Z'
+tags:
+  - cohost mirror
+  - Adderall
+  - vyvanse
+  - mixed methamphetamine salts
+  - legal meth
+  - adhd
+  - adhdchosting
+  - jinteki.net
+  - jnet
+cohost-url: 5295779-legal-meth
+---
 
 It’s weird to use adderall/vyvanse/mixed methamphetamine salts and see immediate results. I’ve been without my drugs for a month due to the shortage but found my stash of old prescription that was too high, and decided to start taking it because I really like being productive.
 

@@ -1,7 +1,17 @@
-{:title "Ruminations on technical debt in jnet (sent from my iPhone)"
- :date "2024-03-25T01:36:52.963Z"
- :tags ["cohost mirror" "jinteki.net" "netrunner" "android: netrunner" "programming" "venting" "i hate programming" "functional programming"]
- :cohost-url "5258703-ruminations-on-techn"}
+---
+title: Ruminations on technical debt in jnet (sent from my iPhone)
+date: '2024-03-25T01:36:52.963Z'
+tags:
+  - cohost mirror
+  - jinteki.net
+  - netrunner
+  - 'android: netrunner'
+  - programming
+  - venting
+  - i hate programming
+  - functional programming
+cohost-url: 5258703-ruminations-on-techn
+---
 
 <jinteki.net> has a lot of problems, some which are easy to solve and some which are not. There’s a difference between bugs and tech debt. Bugs are things like “misplaced parameters”, or “forgot to check an additional predicate”. Technical debt is “the core system is built on callbacks” or “there is no game loop”.
 

@@ -1,7 +1,15 @@
-{:title "splint release: autocorrection bby"
- :date "2024-09-08T20:15:07.420Z"
- :tags ["cohost mirror" "clojure" "splint" "devblog" "programming" "functional programming"]
- :cohost-url "7599350-splint-release-auto"}
+---
+title: 'splint release: autocorrection bby'
+date: '2024-09-08T20:15:07.420Z'
+tags:
+  - cohost mirror
+  - clojure
+  - splint
+  - devblog
+  - programming
+  - functional programming
+cohost-url: 7599350-splint-release-auto
+---
 
 **Big feature:** Safety and Autocorrection
 

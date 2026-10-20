@@ -1,7 +1,16 @@
-{:title "splint/ignore"
- :date "2023-03-15T18:52:49.736Z"
- :tags ["cohost mirror" "clojure" "linters" "splint" "parsing" "ZA̡͊͠͝LGΌ ISͮ̂҉̯͈͕̹̘̱ TO͇̹̺ͅƝ̴ȳ̳ TH̘Ë͖́̉ ͠P̯͍̭O̚​N̐Y̡ H̸̡̪̯ͨ͊̽̅̾̎Ȩ̬̩̾͛ͪ̈́̀́͘ ̶̧̨̱̹̭̯ͧ̾ͬC̷̙̲̝͖ͭ̏ͥͮ͟Oͮ͏̮̪̝͍M̲̖͊̒ͪͩͬ̚̚͜Ȇ̴̟̟͙̞ͩ͌͝S̨̥̫͎̭ͯ̿̔̀ͅ" "regex"]
- :cohost-url "1183207-quick-follow-up-beca"}
+---
+title: splint/ignore
+date: '2023-03-15T18:52:49.736Z'
+tags:
+  - cohost mirror
+  - clojure
+  - linters
+  - splint
+  - parsing
+  - ZA̡͊͠͝LGΌ ISͮ̂҉̯͈͕̹̘̱ TO͇̹̺ͅƝ̴ȳ̳ TH̘Ë͖́̉ ͠P̯͍̭O̚​N̐Y̡ H̸̡̪̯ͨ͊̽̅̾̎Ȩ̬̩̾͛ͪ̈́̀́͘ ̶̧̨̱̹̭̯ͧ̾ͬC̷̙̲̝͖ͭ̏ͥͮ͟Oͮ͏̮̪̝͍M̲̖͊̒ͪͩͬ̚̚͜Ȇ̴̟̟͙̞ͩ͌͝S̨̥̫͎̭ͯ̿̔̀ͅ
+  - regex
+cohost-url: 1183207-quick-follow-up-beca
+---
 
 Quick follow-up because I meant to post that last night and accidentally left it in my drafts.
 

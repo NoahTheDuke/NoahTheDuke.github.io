@@ -1,7 +1,18 @@
-{:title "Ocaml wishlist"
- :date "2024-08-20T19:52:11.151Z"
- :tags ["cohost mirror" "clojure" "ocaml" "programming languages" "programming language design" "functional programming" "mutation is bad" "Rich Hickey" "The Value of Values"]
- :cohost-url "7369102-ocaml-wishlist"}
+---
+title: Ocaml wishlist
+date: '2024-08-20T19:52:11.151Z'
+tags:
+  - cohost mirror
+  - clojure
+  - ocaml
+  - programming languages
+  - programming language design
+  - functional programming
+  - mutation is bad
+  - Rich Hickey
+  - The Value of Values
+cohost-url: 7369102-ocaml-wishlist
+---
 
 On twitter, [someone asked](https://x.com/andreypopp/status/1825393694708494623): "But seriously, what changes would you make to OCaml which would worth it to break backward compatibility?"
 

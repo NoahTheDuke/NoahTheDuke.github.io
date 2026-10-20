@@ -1,7 +1,12 @@
-{:title "i finished ghost of tsushima"
- :date "2023-10-17T04:29:47.854Z"
- :tags ["cohost mirror" "ghost of tsushima" "noahtheduke reviews"]
- :cohost-url "3204158-i-finished-ghost-of"}
+---
+title: i finished ghost of tsushima
+date: '2023-10-17T04:29:47.854Z'
+tags:
+  - cohost mirror
+  - ghost of tsushima
+  - noahtheduke reviews
+cohost-url: 3204158-i-finished-ghost-of
+---
 
 got the platinum trophy cuz i was roughly one hour of collecting away from it.
 

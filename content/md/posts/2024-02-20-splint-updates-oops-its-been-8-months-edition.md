@@ -1,7 +1,15 @@
-{:title "Splint updates! Oops it's been 8 months edition"
- :date "2024-02-20T17:18:30.600Z"
- :tags ["cohost mirror" "clojure" "splint" "programming" "functional programming" "devblog"]
- :cohost-url "4532528-splint-updates-oops"}
+---
+title: Splint updates! Oops it's been 8 months edition
+date: '2024-02-20T17:18:30.600Z'
+tags:
+  - cohost mirror
+  - clojure
+  - splint
+  - programming
+  - functional programming
+  - devblog
+cohost-url: 4532528-splint-updates-oops
+---
 
 I forgot to post about the updates back in December, so I'm gonna write about everything from 1.11 through 1.14.
 

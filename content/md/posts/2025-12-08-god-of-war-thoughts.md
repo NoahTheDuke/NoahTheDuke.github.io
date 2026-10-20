@@ -1,6 +1,9 @@
-{:title "God of War Thoughts"
- :date "2025-12-08T11:09"
- :tags ["video game reviews"]}
+---
+title: God of War Thoughts
+date: 2025-12-08T11:09
+tags:
+  - video game reviews
+---
 
 saw credits in 25 hours.
 

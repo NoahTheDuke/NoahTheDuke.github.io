@@ -1,7 +1,14 @@
-{:title "Mild success!"
- :date "2023-08-07T18:14:33.563Z"
- :tags ["cohost mirror" "programming" "rust" "splint" "clojure"]
- :cohost-url "2400662-mild-success"}
+---
+title: Mild success!
+date: '2023-08-07T18:14:33.563Z'
+tags:
+  - cohost mirror
+  - programming
+  - rust
+  - splint
+  - clojure
+cohost-url: 2400662-mild-success
+---
 
 I have spent every evening over the last week and a bit working on the parser, because a parser is a very good place to start when linting code.
 

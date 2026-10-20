@@ -1,7 +1,14 @@
-{:title "Forgot about this draft post"
- :date "2023-12-04T22:55:10.872Z"
- :tags ["cohost mirror" "jinteki.net" "clojure" "devblog" "oops i forgot about this draft"]
- :cohost-url "3401833-forgot-about-this-dr"}
+---
+title: Forgot about this draft post
+date: '2023-12-04T22:55:10.872Z'
+tags:
+  - cohost mirror
+  - jinteki.net
+  - clojure
+  - devblog
+  - oops i forgot about this draft
+cohost-url: 3401833-forgot-about-this-dr
+---
 
 I wrote this draft months ago right before bed, planning on coming back to it in the morning. Now I don’t remember what my breakthrough was. Damn. The description below of jnet’s problems is well worth reading if you give a shit, but never resolves lol.
 

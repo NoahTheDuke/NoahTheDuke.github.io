@@ -1,7 +1,11 @@
-{:title "Bluesky Comments"
- :date "2026-05-04T13:00"
- :at-uri "at://did:plc:qbidoe2gpkfelnurqod37ikr/app.bsky.feed.post/3ml27oyl34s2y"
- :tags ["atproto" "open source"]}
+---
+title: Bluesky Comments
+date: 2026-05-04T13:00
+at-uri: at://did:plc:qbidoe2gpkfelnurqod37ikr/app.bsky.feed.post/3ml27oyl34s2y
+tags:
+  - atproto
+  - open source
+---
 
 > [!IMPORTANT]
 > EDIT: I WROTE ALL THIS FUCKING SHIT AND FORGOT TO CREDIT THE AUTHOR OF MY JAVASCRIPT CODE! FUCK MY STUPID LIFE! I'M SORRY JONATHAN!

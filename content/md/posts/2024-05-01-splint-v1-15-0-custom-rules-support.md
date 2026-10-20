@@ -1,7 +1,15 @@
-{:title "splint v1.15.0 - custom rules support!"
- :date "2024-05-01T18:07:25.488Z"
- :tags ["cohost mirror" "clojure" "splint" "programming" "functional programming" "devblog"]
- :cohost-url "5796000-splint-v1-15-0-cus"}
+---
+title: splint v1.15.0 - custom rules support!
+date: '2024-05-01T18:07:25.488Z'
+tags:
+  - cohost mirror
+  - clojure
+  - splint
+  - programming
+  - functional programming
+  - devblog
+cohost-url: 5796000-splint-v1-15-0-cus
+---
 
 I've been sitting on this release for a little while now, trying to find the right way to approach to supporting custom rules.
 

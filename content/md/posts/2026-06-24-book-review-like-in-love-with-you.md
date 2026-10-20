@@ -1,7 +1,10 @@
-{:title "Book Review: Like in Love with You"
- :date "2026-06-24T14:54"
- :at-uri nil
- :tags ["book review"]}
+---
+title: 'Book Review: Like in Love with You'
+date: 2026-06-24T14:54
+at-uri: null
+tags:
+  - book review
+---
 
 after [commissioning](../../gallery) a bunch of sapphic art in may, i was feeling intense gender feelings while sitting in the san fransisco airport, waiting to board the plane home from my cousin's wedding. i'd read all of "bury your gays" by chuck tingle on the flight out, which felt pretty cool, so reading a whole second book seemed both possible and pleasurable.
 

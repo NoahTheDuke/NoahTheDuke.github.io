@@ -1,7 +1,15 @@
-{:title "broke my iphone"
- :date "2024-06-10T15:35:13.532Z"
- :tags ["cohost mirror" "iphone" "future phone" "flip phone" "flip phone posting" "adhdchosting"]
- :cohost-url "6365357-i-dropped-my-iphone"}
+---
+title: broke my iphone
+date: '2024-06-10T15:35:13.532Z'
+tags:
+  - cohost mirror
+  - iphone
+  - future phone
+  - flip phone
+  - flip phone posting
+  - adhdchosting
+cohost-url: 6365357-i-dropped-my-iphone
+---
 
 i dropped my iphone nearly a week ago, busted the screen just enough that it no longer registers touches. so i swapped the sim into a flip phone and have been living an offline life.
 

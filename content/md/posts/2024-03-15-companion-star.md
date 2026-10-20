@@ -1,7 +1,14 @@
-{:title "companion star"
- :date "2024-03-15T14:17:52.488Z"
- :tags ["cohost mirror" "Vanessa Carlton" "companion star" "sad girl music" "wifeposting"]
- :cohost-url "5093775-https-www-youtube"}
+---
+title: companion star
+date: '2024-03-15T14:17:52.488Z'
+tags:
+  - cohost mirror
+  - Vanessa Carlton
+  - companion star
+  - sad girl music
+  - wifeposting
+cohost-url: 5093775-https-www-youtube
+---
 
 https://www.youtube.com/watch?v=dDVDi4avnwk
 

@@ -1,7 +1,13 @@
-{:title "Fast and Furious thoughts"
- :date "2023-09-04T20:47:12.691Z"
- :tags ["cohost mirror" "the fast and the furious" "fast and furious" "noahtheduke reviews"]
- :cohost-url "2731501-fast-and-furious-tho"}
+---
+title: Fast and Furious thoughts
+date: '2023-09-04T20:47:12.691Z'
+tags:
+  - cohost mirror
+  - the fast and the furious
+  - fast and furious
+  - noahtheduke reviews
+cohost-url: 2731501-fast-and-furious-tho
+---
 
 My wife and I finished Fast and Furious 6 last night. Overall, I really like the series. The action is fun, the fights aren’t gratuitous, the characters have plot armor but there’s still plenty of tension, and I’ve totally bought into the whole “family” thing. I genuinely like the characters and watch to see them happy in their lives.
 

@@ -1,7 +1,11 @@
-{:title "made of meat"
- :date "2024-09-18T00:56:02.292Z"
- :tags ["cohost mirror" "kidposting"]
- :cohost-url "7760753-4-year-old-interrup"}
+---
+title: made of meat
+date: '2024-09-18T00:56:02.292Z'
+tags:
+  - cohost mirror
+  - kidposting
+cohost-url: 7760753-4-year-old-interrup
+---
 
 4 year old, interrupting my bed time song: cows are made of meat. are humans made of meat?  
 me: yes, we are made of meat.  

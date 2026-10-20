@@ -1,7 +1,12 @@
-{:title "deathcore lol"
- :date "2023-10-18T00:55:45.682Z"
- :tags ["cohost mirror" "metal" "deathcore"]
- :cohost-url "3213204-on-the-one-hand-i-d"}
+---
+title: deathcore lol
+date: '2023-10-18T00:55:45.682Z'
+tags:
+  - cohost mirror
+  - metal
+  - deathcore
+cohost-url: 3213204-on-the-one-hand-i-d
+---
 
 On the one hand, I don’t wanna hate on someone’s favorite thing.
 

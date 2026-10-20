@@ -1,7 +1,12 @@
-{:title "adhd x remote work"
- :date "2023-05-03T20:57:40.364Z"
- :tags ["cohost mirror" "adhd" "adhd posting"]
- :cohost-url "1441261-idk-how-people-do-re"}
+---
+title: adhd x remote work
+date: '2023-05-03T20:57:40.364Z'
+tags:
+  - cohost mirror
+  - adhd
+  - adhd posting
+cohost-url: 1441261-idk-how-people-do-re
+---
 
 idk how people do remote work. i've been at it for 3 years and these have been the least productive, most frustrating and painful years of my software career.
 

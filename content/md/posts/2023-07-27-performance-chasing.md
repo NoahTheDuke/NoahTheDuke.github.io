@@ -1,7 +1,16 @@
-{:title "Performance Chasing"
- :date "2023-07-27T21:00:36.056Z"
- :tags ["cohost mirror" "programming" "rust" "rust-lang" "Rewrite it in Rust!" "Zig" "clojure"]
- :cohost-url "2235168-performance-chasing"}
+---
+title: Performance Chasing
+date: '2023-07-27T21:00:36.056Z'
+tags:
+  - cohost mirror
+  - programming
+  - rust
+  - rust-lang
+  - Rewrite it in Rust!
+  - Zig
+  - clojure
+cohost-url: 2235168-performance-chasing
+---
 
 I spend a lot of time thinking about my linter’s performance, and I’ve changed some of the ways I program in Clojure to support that. But it also means that I’ve sacrificed some of the benefits of Clojure and I’m not always writing “idiomatic” Clojure.
 

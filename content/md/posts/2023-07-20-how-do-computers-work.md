@@ -1,7 +1,12 @@
-{:title "\"how do computers work?\""
- :date "2023-07-20T18:45:10.746Z"
- :tags ["cohost mirror" "programming" "wifeposting"]
- :cohost-url "2128894-my-wife-made-the-mis"}
+---
+title: '"how do computers work?"'
+date: '2023-07-20T18:45:10.746Z'
+tags:
+  - cohost mirror
+  - programming
+  - wifeposting
+cohost-url: 2128894-my-wife-made-the-mis
+---
 
 My wife made the mistake of asking me the dreaded question, the one I have attempted and failed to answer for many people throughout my life: “When I push a button on my keyboard, how does it show up on the screen?”
 

@@ -1,7 +1,14 @@
-{:title "\"one must imagine sisyphus happy\""
- :date "2023-08-30T14:56:39.957Z"
- :tags ["cohost mirror" "programming" "clojure" "bad hobbies" "i'm dumb"]
- :cohost-url "2674341-one-must-imagine-si"}
+---
+title: '"one must imagine sisyphus happy"'
+date: '2023-08-30T14:56:39.957Z'
+tags:
+  - cohost mirror
+  - programming
+  - clojure
+  - bad hobbies
+  - i'm dumb
+cohost-url: 2674341-one-must-imagine-si
+---
 
 ![discord post from noahtheduke](/img/cohost-mirror/2674341-one-must-imagine-si/signal-2023-08-30-102247_002.png)
 

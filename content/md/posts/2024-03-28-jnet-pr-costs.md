@@ -1,7 +1,19 @@
-{:title "jnet PR: costs"
- :date "2024-03-28T05:29:31.376Z"
- :tags ["cohost mirror" "clojure" "functional programming" "jinteki.net" "jnet" "netrunner" "android: netrunner" "devblog" "thank you drugs" "thrugs"]
- :cohost-url "5308825-https-github-com-m"}
+---
+title: 'jnet PR: costs'
+date: '2024-03-28T05:29:31.376Z'
+tags:
+  - cohost mirror
+  - clojure
+  - functional programming
+  - jinteki.net
+  - jnet
+  - netrunner
+  - 'android: netrunner'
+  - devblog
+  - thank you drugs
+  - thrugs
+cohost-url: 5308825-https-github-com-m
+---
 
 https://github.com/mtgred/netrunner/pull/7346
 
