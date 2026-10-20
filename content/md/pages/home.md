@@ -1,6 +1,8 @@
-{:title ""
- :layout :home
- :home? true}
+---
+title: ''
+layout: home
+home: true
+---
 
 noa bogart's home page. [learn more](/about).
 

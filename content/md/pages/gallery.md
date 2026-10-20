@@ -1,5 +1,7 @@
-{:title "Gallery"
- :navbar? true}
+---
+title: Gallery
+navbar: true
+---
 
 Here is the art I have commissioned. Hidden works are potentially erotic or sexual. Click on each image to see it in full.
 

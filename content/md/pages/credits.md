@@ -1,4 +1,6 @@
-{:title "Credits"}
+---
+title: Credits
+---
 
 Sources for everything used to make this website:
 

@@ -1,6 +1,8 @@
-{:title "Now"
- :heading "What Am I Up To?"
- :navbar? true}
+---
+title: Now
+heading: What Am I Up To?
+navbar: true
+---
 
 Last updated: September 2026
 

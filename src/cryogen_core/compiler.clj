@@ -13,14 +13,12 @@
    [cryogen-core.markup :as markup]
    [cryogen-core.rss :as rss]
    [cryogen-core.sass :as sass]
-   [cryogen-core.schemas :as schemas]
    [cryogen-core.sitemap :as sitemap]
    [cryogen-core.toc :as toc]
    [cryogen-core.util :as util :refer [blue cyan green red yellow]]
    [cryogen-core.zip-util :as zip-util]
    [medley.core :as m]
    [net.cgrand.enlive-html :as enlive]
-   [schema.core :as s]
    [selmer.filters :refer [add-filter!]]
    [selmer.parser :refer [cache-off!]])
   (:import
@@ -169,6 +167,7 @@
   (try
     (get-content-and-metadata file config markup)
     (catch Throwable t
+      (prn t)
       (throw (ex-info "Could not compile content of page"
                       {:page (File/.getName file)}
                       t)))))
@@ -197,12 +196,18 @@
   (or (m/index-of (:pages-order config) (fs/file-name page))
       (:page-index page-meta)))
 
+(defn parse-date [date-str fmt filename]
+  (cond
+    date-str
+    (.parse (java.text.SimpleDateFormat. fmt) date-str)
+    filename
+    (util/parse-post-date filename "yyyy-MM-dd")))
+
 (defn parse-page
   "Parses a page/post and returns a map of the content, uri, date etc."
   [page config markup]
   (let [{:keys [file-name page-meta content-dom]} (page-content page config markup)
-        date (when (:date page-meta)
-               (.parse (java.text.SimpleDateFormat. (:page-date-format config)) (:date page-meta)))]
+        date (parse-date (:date page-meta) (:page-date-format config) file-name)]
     (-> (merge-meta-and-content file-name (update page-meta :layout #(or % :page)) content-dom)
         (merge
          {:type          :page
@@ -218,14 +223,7 @@
   "Return a map with the given post's information."
   [page config markup]
   (let [{:keys [file-name page-meta content-dom]} (page-content page config markup)
-        date            (if-let [date (:date page-meta)]
-                          (let [fixed-date (if
-                                             (and (= \' (.charAt date 0))
-                                               (= \' (.charAt date (dec (count date)))))
-                                             (subs date 1 (dec (count date)))
-                                             date)]
-                            (.parse (java.text.SimpleDateFormat. (:post-date-format config)) fixed-date))
-                          (util/parse-post-date file-name "yyyy-MM-dd"))
+        date (parse-date (:date page-meta) (:post-date-format config) file-name)
         archive-fmt     (java.text.SimpleDateFormat. ^String (:archive-group-format config) (Locale/getDefault))
         formatted-group (.format archive-fmt date)]
     (-> (merge-meta-and-content file-name (update page-meta :layout #(or % :post)) content-dom)
@@ -249,8 +247,8 @@
         (fn [mu]
           (->>
            (find-posts config mu)
-           (pmap #(parse-post % config mu))
-           (remove #(= (:draft? %) true)))))
+           (mapv #(parse-post % config mu))
+           (remove #(= (:draft %) true)))))
        (sort-by :date)
        reverse
        (drop-while #(and (:hide-future-posts? config) (.after ^Date (:date %) (Date.))))
@@ -330,8 +328,8 @@
   "Separates the pages into links for the navbar and links for the sidebar"
   [pages]
   (let [{navbar-pages  true
-         sidebar-pages false} (group-by #(boolean (:navbar? %)) pages)]
-    (map (partial sort-by :page-index) [navbar-pages sidebar-pages])))
+         sidebar-pages false} (group-by #(boolean (:navbar %)) pages)]
+    (mapv (partial sort-by :page-index) [navbar-pages sidebar-pages])))
 
 (defn write-html
   "When `clean-urls` is set to:
@@ -628,7 +626,7 @@
                                (mapv klipse/klipsify)
                                (mapv (partial add-description config))
                                (remove nil?))
-         grouped-posts (group-by #(get % :unlisted? false) all-posts)
+         grouped-posts (group-by #(get % :unlisted false) all-posts)
          unlisted-posts (get grouped-posts true [])
          posts (get grouped-posts false [])
          posts (add-prev-next :date posts)
@@ -638,7 +636,7 @@
          pages        (->> (read-pages config)
                            (mapv klipse/klipsify)
                            (mapv (partial add-description config)))
-         home-page    (m/find-first :home? pages)
+         home-page    (m/find-first :home pages)
          other-pages  (->> pages
                            (remove #{home-page})
                            (add-prev-next :page-index))
@@ -711,9 +709,8 @@
           (print-exception e)))))))
 
 (comment
-  (require '[cryogen-core.flexmark :as flexmark])
-  (flexmark/init)
-  (def *config (resolve-config {}))
+  (do (require '[cryogen-core.flexmark :as flexmark])
+    (def *config (resolve-config {})))
 
   ;; Build and copy only styles & theme
   (do
@@ -728,12 +725,13 @@
   (compile-assets)
 
   (do (flexmark/init)
-      (->> (read-posts (assoc *config :ignored-files [#"^(?!2023-07-25-splint-v1-9-0-and-v1-10-0).*\.md"]))
-       ; (map klipse/klipsify)
-       ; (map (partial add-description *config))
-       ; (take 10)
-       ; (tag-posts *config)
-       #_(rss/make-channel *config)
-       ))
+    (->> (read-pages *config)
+      ; (map klipse/klipsify)
+      ; (map (partial add-description *config))
+      ; (take 10)
+      ; (tag-posts *config)
+      #_(rss/make-channel *config)
+      ))
+  nil
 
   nil)

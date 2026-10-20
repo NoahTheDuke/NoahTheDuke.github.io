@@ -138,14 +138,16 @@
   [^String file-name date-fmt]
   (let [fmt (java.text.SimpleDateFormat. date-fmt)
         c (count date-fmt)]
-    (try (if-let [last-slash (str/last-index-of file-name "/")]
-           (.parse fmt (.substring file-name (inc last-slash) (+ last-slash (inc c))))
-           (.parse fmt (.substring file-name 0 c)))
-         (catch Exception e
-           (throw (ex-info "Failed to parse date from filename"
-                          {:date-fmt date-fmt
-                           :file-name file-name}
-                          e))))))
+    (when (re-find #"^\d" file-name)
+      (try (if-let [last-slash (str/last-index-of file-name "/")]
+             (.parse fmt (.substring file-name (inc last-slash) (+ last-slash (inc c))))
+             (.parse fmt (.substring file-name 0 c)))
+        (catch Exception e
+          (throw (ex-info (str "Failed to parse date from filename: "
+                            file-name)
+                   {:date-fmt date-fmt
+                    :file-name file-name}
+                   e)))))))
 
 (defn re-pattern-from-exts
   "Creates a properly quoted regex pattern for the given file extensions"

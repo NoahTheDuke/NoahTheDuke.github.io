@@ -1,4 +1,6 @@
-{:title "Software Projects"}
+---
+title: Software Projects
+---
 
 ## My Own Projects
 

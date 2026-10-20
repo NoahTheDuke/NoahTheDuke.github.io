@@ -1,5 +1,7 @@
-{:title "About"
- :navbar? true}
+---
+title: About
+navbar: true
+---
 
 i'm Noah ([they/them](/pronouns)) - [trans femme](https://en.wikipedia.org/wiki/Trans_woman) - [queer lesbian](https://en.wikipedia.org/wiki/Lesbian) - [white](https://en.wikipedia.org/wiki/White_Americans) - [millenial](https://en.wikipedia.org/wiki/Millennials)
 

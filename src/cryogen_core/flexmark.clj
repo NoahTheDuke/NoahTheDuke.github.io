@@ -5,8 +5,9 @@
    [clojure.string :as str]
    [clojure.walk :as walk]
    [cryogen-core.markup :refer [markup-registry rewrite-hrefs]]
-   [cryogen-core.schemas :as schemas]
-   [schema.core :as s])
+   [malli.core :as m]
+   [malli.transform :as mt]
+   [medley.core :refer [update-existing]])
   (:import
    (com.vladsch.flexmark.ext.aside AsideExtension)
    (com.vladsch.flexmark.ext.attributes AttributesExtension)
@@ -41,11 +42,41 @@
                      x))
     metadata))
 
+(def quoted-string-transformer
+  (mt/transformer
+    {:name :quoted-string-transformer
+     :encoders {}
+     :decoders {:string (fn [s]
+                          (if (and (= \' (String/.charAt s 0))
+                                (= \' (String/.charAt s (dec (count s)))))
+                            (subs s 1 (dec (count s)))
+                            s))}}))
+
+(def Metadata
+  (m/schema
+   [:map
+    [:title :string]
+    [:layout {:optional true} :keyword]
+    [:date {:optional true} :string]
+    [:author {:optional true} :string]
+    [:tags {:optional true} [:sequential :string]]
+    [:toc {:optional true} [:or [:enum :ol :ul] :boolean]]
+    [:draft {:optional true} :boolean]
+    [:home {:optional true} :boolean]
+    [:page-index {:optional true} :int]
+    [:navbar {:optional true} :boolean]]))
+
+(def string-strip-quotes
+  (mt/transformer mt/string-transformer quoted-string-transformer))
+
+(def coerce-metadata
+  (m/coercer Metadata string-strip-quotes))
+
 (defrecord MD [dir exts parser renderer]
   Markup
-    (dir [this] dir)
-    (exts [this] exts)
-    (render-fn [this] (throw (ex-info "don't use this" {})))
+  (dir [this] dir)
+  (exts [this] exts)
+  (render-fn [this] (throw (ex-info "don't use this" {})))
   RenderSteps
   (parse [this file _config]
     (->> (java.io.BufferedReader. (io/reader (fs/file file)))
@@ -66,10 +97,9 @@
                   (when m
                     (Node/.unlink child)
                     m)))
-          metadata (or yaml clj)]
-      (s/validate schemas/MetaData metadata)
+          metadata (update-existing (or yaml clj) :tags vec)]
       {:document document
-       :metadata metadata}))
+       :metadata (coerce-metadata metadata)}))
   (render [this document _metadata config]
     (->> document
       (HtmlRenderer/.render renderer)

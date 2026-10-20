@@ -9,6 +9,7 @@
         babashka/fs {:mvn/version "0.5.33"}
         dev.weavejester/medley {:mvn/version "1.10.0"}
         org.clojure/data.json {:mvn/version "2.5.0"}
+        metosin/malli {:mvn/version "0.20.3"}
         com.vladsch.flexmark/flexmark-all {:mvn/version "0.64.8"}}
  :aliases {:dev {}
            :test {}
@@ -24,6 +25,9 @@
                                     "-i"
                                     "-f" "rebel-readline.main/-main"]}
            :build {:main-opts ["-m" "cryogen.server"]}
-           :serve {:exec-fn   cryogen.server/serve
+           :serve {:override-deps {
+                                   clj-stacktrace/clj-stacktrace nil
+                                   }
+                   :exec-fn   cryogen.server/serve
                    :exec-args {:port 3000}}
            :fast {:exec-args {:fast true}}}}
