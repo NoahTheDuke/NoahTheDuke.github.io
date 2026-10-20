@@ -55,8 +55,7 @@
   (metadata [this document _config]
     (let [yaml (let [visitor (new AbstractYamlFrontMatterVisitor)]
                  (.visit visitor ^Node document)
-                 (some-> (not-empty (into {} (.getData visitor)))
-                   (convert-metadata)))
+                 (not-empty (convert-metadata (into {} (.getData visitor)))))
           clj (when-not yaml
                 (let [child (Node/.getFirstChild document)
                       m (-> (Node/.getChars child)

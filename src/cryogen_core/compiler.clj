@@ -145,17 +145,6 @@
    (let [page-filename (page-file-name file-name uri-type params)]
      (str/join "/" (map url-encode (str/split page-filename #"/" -1))))))
 
-(defn read-page-meta
-  "Returns the clojure map from the top of a markdown page/post"
-  [page rdr]
-  (try
-    (let [metadata (read rdr)]
-      (s/validate schemas/MetaData metadata)
-      metadata)
-    (catch Exception e
-      (throw (ex-info (ex-message e)
-                      (assoc (ex-data e) :page page))))))
-
 (defn get-content-and-metadata [file config markup]
   (let [re-root (re-pattern (str "^.*?(" (:page-root config) "|" (:post-root config) ")/"))
         page-fwd (str/replace (str file) "\\" "/")
@@ -164,7 +153,7 @@
                     (str/replace page-fwd re-root ""))
         file-name (str/replace page-name (util/re-pattern-from-exts (markup/exts markup)) ".html")
         document (markup/parse markup file config)
-        {:keys [document metadata]} (markup/metadata markup document config)
+        {:keys [document metadata]} (markup/metadata markup document (assoc config :filename file-name))
         content (markup/render markup document metadata config)
         content-dom (util/trimmed-html-snippet content)
         metadata' (or (not-empty metadata) (infer-meta file config content-dom))]
@@ -229,8 +218,13 @@
   "Return a map with the given post's information."
   [page config markup]
   (let [{:keys [file-name page-meta content-dom]} (page-content page config markup)
-        date            (if (:date page-meta)
-                          (.parse (java.text.SimpleDateFormat. (:post-date-format config)) (:date page-meta))
+        date            (if-let [date (:date page-meta)]
+                          (let [fixed-date (if
+                                             (and (= \' (.charAt date 0))
+                                               (= \' (.charAt date (dec (count date)))))
+                                             (subs date 1 (dec (count date)))
+                                             date)]
+                            (.parse (java.text.SimpleDateFormat. (:post-date-format config)) fixed-date))
                           (util/parse-post-date file-name "yyyy-MM-dd"))
         archive-fmt     (java.text.SimpleDateFormat. ^String (:archive-group-format config) (Locale/getDefault))
         formatted-group (.format archive-fmt date)]
@@ -259,7 +253,8 @@
            (remove #(= (:draft? %) true)))))
        (sort-by :date)
        reverse
-       (drop-while #(and (:hide-future-posts? config) (.after ^Date (:date %) (Date.))))))
+       (drop-while #(and (:hide-future-posts? config) (.after ^Date (:date %) (Date.))))
+    (vec)))
 
 (defn read-pages
   "Returns a sequence of maps representing the data from markdown files of pages.
@@ -630,8 +625,8 @@
    (let [{:keys [^String site-url blog-prefix rss-name recent-posts keep-files theme]
           :as   config} (resolve-config overrides)
          all-posts        (->> (read-posts config)
-                               (map klipse/klipsify)
-                               (map (partial add-description config))
+                               (mapv klipse/klipsify)
+                               (mapv (partial add-description config))
                                (remove nil?))
          grouped-posts (group-by #(get % :unlisted? false) all-posts)
          unlisted-posts (get grouped-posts true [])
@@ -641,8 +636,8 @@
          posts        (tag-posts config posts)
          latest-posts (->> posts (take recent-posts) vec)
          pages        (->> (read-pages config)
-                           (map klipse/klipsify)
-                           (map (partial add-description config)))
+                           (mapv klipse/klipsify)
+                           (mapv (partial add-description config)))
          home-page    (m/find-first :home? pages)
          other-pages  (->> pages
                            (remove #{home-page})
@@ -733,7 +728,7 @@
   (compile-assets)
 
   (do (flexmark/init)
-      (->> (read-posts (assoc *config :ignored-files [#"^(?!2017-08-06-pain).*\.md"]))
+      (->> (read-posts (assoc *config :ignored-files [#"^(?!2023-07-25-splint-v1-9-0-and-v1-10-0).*\.md"]))
        ; (map klipse/klipsify)
        ; (map (partial add-description *config))
        ; (take 10)
