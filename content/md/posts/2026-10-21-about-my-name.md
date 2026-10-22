@@ -1,6 +1,6 @@
 ---
 title: about my name
-date: <<now>>
+date: 2026-10-21T23:35
 at-uri: nil
 tags:
 ---
