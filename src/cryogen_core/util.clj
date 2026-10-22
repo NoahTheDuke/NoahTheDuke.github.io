@@ -46,7 +46,7 @@
 (defn enlive->plain-text [node-or-nodes]
   (->> node-or-nodes
        (enlive/texts)
-       (str/join)))
+       (str/join " ")))
 
 (defn highlight-code-block [node]
   (let [n (first (:content node))]
