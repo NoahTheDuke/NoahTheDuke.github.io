@@ -251,7 +251,7 @@
         (fn [mu]
           (->>
            (find-posts config mu)
-           (mapv #(parse-post % config mu))
+           (pmap #(parse-post % config mu))
            (remove #(= (:draft %) true)))))
        (sort-by :date)
        reverse
@@ -267,7 +267,7 @@
         (fn [mu]
           (->>
            (find-pages config mu)
-           (mapv #(parse-page % config mu)))))
+           (pmap #(parse-page % config mu)))))
        (sort-by :page-index)))
 
 (defn tag-post

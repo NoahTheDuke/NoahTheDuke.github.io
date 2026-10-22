@@ -27,16 +27,23 @@
 
 (set! *warn-on-reflection* true)
 
+(defn convert-vals [k v]
+  (cond
+    (= :tags k) v
+    (= "nil" (first v)) nil
+    :else (first v)))
+
 (defn convert-metadata [metadata]
   (walk/postwalk (fn [x]
                    (if (map? x)
                      (persistent!
                        (reduce-kv
                          (fn [m k v]
-                           (let [k' (if (string? k) (keyword k) k)]
-                             (if (= :tags k')
-                               (assoc! m k' v)
-                               (assoc! m k' (first v)))))
+                           (let [k' (if (string? k) (keyword k) k)
+                                 v' (convert-vals k' v)]
+                             (if (some? v')
+                               (assoc! m k' v')
+                               m)))
                          (transient {})
                          x))
                      x))
