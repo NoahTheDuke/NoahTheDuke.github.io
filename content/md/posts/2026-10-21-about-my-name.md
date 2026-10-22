@@ -1,7 +1,7 @@
 ---
 title: about my name
 date: 2026-10-21T23:35
-at-uri: nil
+at-uri: https://bsky.app/profile/noahbogart.com/post/3mygrnntvrk2v
 tags:
 ---
 
