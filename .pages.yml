@@ -19,10 +19,11 @@ content:
           - name: at-uri
             type: string
           - name: tags
-            type: block
-            list: true
-            blocks:
-              - name: text
+            label: Tags
+            type: select
+            options:
+              creatable: true
+              multiple: true
           - name: body
             type: rich-text
       - name: pages
