@@ -3,8 +3,9 @@ title: about my name
 date: 2026-10-21T23:35
 at-uri: https://bsky.app/profile/noahbogart.com/post/3mygrnntvrk2v
 tags:
+  - type: text
+    tag: gender-feelings
 ---
-
 when i came out, i wanted to keep my name. i didn't meet another "noah" until i was 13, and probably due to that i've always loved it. until very recently, it's been very much a masculine name, a boys name, and only now has "noa" risen in popularity as the feminine version.
 
 when i came out, i decided to trim it to "noa" to gain some semblance of "femininity" in these early parts of my transition, to feminize myself online, to present less masculinely to others, and to place myself somewhat distinct from my life as a boy, while still keeping the parts of my name that i loved. it's gone swimmingly, to the extent that i can continue to hide as a man in public, i can switch slowly with friends and family, i can get emails to a new name that gives me the thrill of gender euphoria, and people still think of me in continuity with my old presentation.
