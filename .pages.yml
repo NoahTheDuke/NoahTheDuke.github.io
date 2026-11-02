@@ -18,8 +18,15 @@ content:
             type: string
           - name: at-uri
             type: string
-          - name: body
-            type: rich-text
+          - name: tags
+            type: block
+            list: true
+            blockKey: type
+            blocks:
+              - name: text
+                fields:
+                  - name: body
+                    type: rich-text
       - name: pages
         label: Pages
         type: collection
