@@ -2,6 +2,8 @@
 title: about my name
 date: 2026-10-21T23:35
 at-uri: https://bsky.app/profile/noahbogart.com/post/3mygrnntvrk2v
+tags:
+  - gender
 ---
 when i came out, i wanted to keep my name. i didn't meet another "noah" until i was 13, and probably due to that i've always loved it. until very recently, it's been very much a masculine name, a boys name, and only now has "noa" risen in popularity as the feminine version.
 
