@@ -21,12 +21,8 @@ content:
           - name: tags
             type: block
             list: true
-            blockKey: type
             blocks:
               - name: text
-                fields:
-                  - name: tag
-                    type: string
           - name: body
             type: rich-text
       - name: pages
