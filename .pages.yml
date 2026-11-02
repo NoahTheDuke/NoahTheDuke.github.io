@@ -11,6 +11,15 @@ content:
         filename:
           template: "{year}-{month}-{day}-{primary}.md"
           field: true
+        fields:
+          - name: title
+            type: string
+          - name: date
+            type: string
+          - name: at-uri
+            type: string
+          - name: body
+            type: rich-text
       - name: pages
         label: Pages
         type: collection
