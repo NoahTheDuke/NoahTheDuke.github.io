@@ -7,7 +7,7 @@ tags:
   - galactic racer
 ---
 
-finally beat act 2 of galactic racer after ~16 hours. this game rips. unmatched sense of speed, really cool map design, clever reuse/overlaps in the maps themselves, which gives them a sense of place. it hits all the notes i wanted from fast fusion last year, which was i loved but found a little thin.
+finally beat act 2 of galactic racer after ~16 hours. this game rips. unmatched sense of speed, really cool map design, clever reuse/overlaps in the maps themselves which gives them a sense of place. it hits all the notes i wanted from fast fusion last year, which i loved but found a little thin.
 
 i'm sorry to say the run based system is good. it's forced me to actually learn the maps, to pay attention to shortcuts and other racers, to not just roll the dice on a map into i sneak out a win. i've learned my favorite vehicle (speeder), my favorite racing style (redliner), my favorite favors (hibi, biddy blas, goli), and which parts to target.
 
