@@ -3,7 +3,7 @@ title: quick thoughts on Galactic Racer
 date: 2026-11-07T13:57
 at-uri:
 tags:
-  - reviews
+  - review
   - galactic racer
 ---
 
