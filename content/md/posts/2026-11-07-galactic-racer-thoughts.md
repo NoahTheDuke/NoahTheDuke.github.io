@@ -1,5 +1,6 @@
 ---
 title: Quick Thoughts on Galactic Racer after act 2
+date: 2026-11-07
 draft: true
 ---
 
