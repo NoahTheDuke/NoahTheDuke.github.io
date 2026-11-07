@@ -1,7 +1,7 @@
 ---
 title: quick thoughts on Galactic Racer
 date: 2026-11-07T13:57
-at-uri:
+at-uri: https://bsky.app/profile/noahbogart.com/post/3mzqw2yol6225
 tags:
   - review
   - galactic racer
