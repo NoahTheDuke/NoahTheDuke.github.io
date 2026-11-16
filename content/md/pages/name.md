@@ -9,10 +9,6 @@ at birth, i was gifted the name "noah" by my parents and it served me well for m
 
 ### Q/A
 
-> why not stick with noa?
-
-noa is a beautiful name. however, "noah" is a traditionally male name and even with the rise of "noa" in popularity, i personally can't break away from it as a man's name. i feel like a man when i hear it and when i speak it, no matter how i present myself.
-
 > why naomi?
 
 a couple of reasons:
@@ -26,6 +22,10 @@ a couple of reasons:
 nadine, neve (naimh), and jessica.
 
 shout out to my mom who wanted to name me jessica if i'd been born with a vulva but i'm too "unique-name"-pilled for that one. neve is beautiful and i have irish ancestry, but while i have redheaded siblings, i'm not meaningfully irish in any way. it feels weird to say "i'll use this unknown english name to dip into a different culture that i'm only tenuously connected with" when i can't even spell the original without looking it up. and "nadine" is fun because it's DW's invisible friend in the pbs show Arthur, but otherwise it doesn't thrill me.
+
+> why not stick with noa?
+
+noa is a beautiful name. however, "noah" is a traditionally male name and even with the rise of "noa" in popularity, i personally can't break away from it as a man's name. i feel like a man when i hear it and when i speak it, no matter how i present myself.
 
 > what about your deadname?
 
