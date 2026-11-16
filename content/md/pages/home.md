@@ -4,7 +4,7 @@ layout: home
 home: true
 ---
 
-naomi (née noa) bogart's home page.
+naomi (née noah) bogart's home page.
 
 <nav style="display: grid; grid-auto-flow: column;">
 <div>
