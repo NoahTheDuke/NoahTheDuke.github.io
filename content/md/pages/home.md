@@ -4,13 +4,15 @@ layout: home
 home: true
 ---
 
-noa bogart's home page. [learn more](/about).
+naomi (née noa) bogart's home page.
 
 <nav style="display: grid; grid-auto-flow: column;">
 <div>
     <h4>Explore the site</h4>
     <ul>
-        <li><a href="archives">The blog</a></li>
+        <li><a href="about">about me</a></li>
+        <li><a href="ai">stance on ai</a></li>
+        <li><a href="archives">the blog</a></li>
         <li><a href="antilibrary">Antilibrary</a></li>
         <li><a href="now">What am I read/listening to/playing?</a></li>
         <li><a href="software-projects">Software Projects</a></li>
@@ -23,7 +25,7 @@ noa bogart's home page. [learn more](/about).
     <ul>
         <li><a href="mailto:noah.bogart@hey.com">Email me</a></li>
         <li><a href="https://bsky.app/profile/noahbogart.com">Bluesky</a></li>
-        <li><a href="https://tangled.org/noahbogart.com">Tangled</a></li>
+        <!-- <li><a href="https://tangled.org/noahbogart.com">Tangled</a></li> -->
         <li><a href="https://github.com/NoahTheDuke">Github</a></li>
     </ul>
 </div>

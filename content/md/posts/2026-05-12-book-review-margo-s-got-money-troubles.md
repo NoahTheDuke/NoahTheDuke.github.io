@@ -1,5 +1,5 @@
 ---
-title: 'Book Review: Margo''s Got Money Troubles'
+title: "Book Review: Margo's Got Money Troubles"
 date: 2026-05-12T11:45
 at-uri: at://did:plc:qbidoe2gpkfelnurqod37ikr/app.bsky.feed.post/3mlo5wn3df227
 tags:

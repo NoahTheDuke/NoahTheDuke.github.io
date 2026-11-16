@@ -12,9 +12,9 @@ title: Software Projects
 
 Alessandra Sierra wrote a successor to the built-in Clojure test "framework" `clojure.test` back in 2010, but quickly abandoned it. I came across it in 2023, found that while the code was half-formed, the foundational ideas were superb. [Lazytest](https://cljdoc.org/d/io.github.noahtheduke/lazytest) is the culmination of that work, a proper Clojure BDD test framework that supports first-class test suites, proper separation of assertions and reporting, extensions, and doctests.
 
-### [cond+](https://tangled.org/noahbogart.com/cond-plus)
+### [cond+](https://github.com/noahtheduke/cond-plus)
 
-I learned Racket before I learned Clojure, and while I agree with most of the design decisions in Clojure, the changes to `cond` are among my least favorite. Because I missed them, I wrote [cond-plus](https://tangled.org/noahbogart.com/cond-plus) to let me continue to use Racket's `cond` in my Clojure code.
+I learned Racket before I learned Clojure, and while I agree with most of the design decisions in Clojure, the changes to `cond` are among my least favorite. Because I missed them, I wrote [cond-plus](https://github.com/noahtheduke/cond-plus) to let me continue to use Racket's `cond` in my Clojure code.
 
 ### [fluent-clj](https://github.com/NoahTheDuke/fluent-clj/)
 

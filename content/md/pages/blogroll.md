@@ -1,8 +1,6 @@
 ---
 title: Cool links
 heading: Other places on the internet
-navbar: true
-page-index: 2
 ---
 
 ## Buttons

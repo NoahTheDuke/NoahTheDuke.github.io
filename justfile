@@ -11,7 +11,7 @@ new-post *title:
     #!/usr/bin/env bash
     slug="$(./slugify {{title}})"
     touch {{new_post_stem}}-$slug.md
-    echo -en "---\ntitle: {{title}}\ndate: '<<now>>'\nat-uri: nil\ntags:\n---" > {{new_post_stem}}-$(./slugify {{title}}).md
+    echo -en "---\ntitle: {{title}}\ndate: '<<now>>'\nat-uri:\ntags:\n---" > {{new_post_stem}}-$(./slugify {{title}}).md
 
 publish-post:
     fd .md -x sd --fixed-strings "<<now>>" "{{now}}"
@@ -24,7 +24,7 @@ new-page *title:
     #!/usr/bin/env bash
     slug="$(./slugify {{title}})"
     touch {{new_page_stem}}/$slug.md
-    echo -en "{:title \"{{title}}\"}\n" > {{new_page_stem}}/$slug.md
+    echo -en "---\ntitle: {{title}}\n---" > {{new_page_stem}}/$slug.md
 
 build:
     clojure -M:build

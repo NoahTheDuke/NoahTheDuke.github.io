@@ -54,8 +54,10 @@
     {:name :quoted-string-transformer
      :encoders {}
      :decoders {:string (fn [s]
-                          (if (and (= \' (String/.charAt s 0))
-                                (= \' (String/.charAt s (dec (count s)))))
+                          (if (or (and (= \' (String/.charAt s 0))
+                                       (= \' (String/.charAt s (dec (count s)))))
+                                  (and (= \" (String/.charAt s 0))
+                                       (= \" (String/.charAt s (dec (count s))))))
                             (subs s 1 (dec (count s)))
                             s))}}))
 
