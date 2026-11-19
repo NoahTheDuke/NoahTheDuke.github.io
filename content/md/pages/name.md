@@ -5,7 +5,7 @@ date: 2026-11-16
 
 my name is naomi.
 
-at birth, i was gifted the name "noah" by my parents and it served me well for more than 39 years. in 2026, i changed it to "noa" as i began to openly explore my gender and sexuality. after 5 months, i have come to solidify my identity as a trans woman by choosing my (hopefully final) name.
+at birth, i was gifted the name "noah" by my parents and it served me well for more than 39 years. in 2026, i changed it to "noa" as i began to openly explore my gender and sexuality. and now i have settled on my (hopefully final) name.
 
 ### Q/A
 
@@ -14,7 +14,7 @@ at birth, i was gifted the name "noah" by my parents and it served me well for m
 a couple of reasons:
 
 1) i liked my initials and wanted to keep "n".
-2) the story of ruth and naomi is really meaningful to me. loss, love, a binding that goes beyond reason. ruth saying "where you go i will go, where you stay i will stay. your people shall be my people and your god my god. where you die i will die and be buried." goddamn, it still hits.
+2) i liked that both "noah" and "naomi" come from stories in the hebrew bible. the story of ruth and naomi is really meaningful to me. loss, love, a binding that goes beyond reason. ruth saying "where you go i will go, where you stay i will stay. your people shall be my people and your god my god. where you die i will die and be buried."
 3) i've known many cool naomis, and reading "doppelganger" by naomi klein was magical a couple years ago.
 
 > what other names did you consider?
